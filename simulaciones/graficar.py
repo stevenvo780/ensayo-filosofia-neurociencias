@@ -106,6 +106,23 @@ A continuación se tabulan las métricas reales medidas en la GPU para la simula
         f.write(f"""
 ---
 
+## ⚡ Comparación Termodinámica por Evento Sináptico Efectivo (GPU vs. Carbono)
+
+A continuación se detalla la comparación energética justa basada en la transmisión de señales por evento sináptico efectivo (GPU vs. ATP biológico):
+
+| Neuronas ($N$) | Eventos Sinápticos | Energía por Evento GPU (J) | Energía por Evento Carbono (J) | Factor de Ventaja Biológica |
+| :---: | :---: | :---: | :---: | :---: |
+""")
+        for _, row in df_gpu.iterrows():
+            ev = int(row['Eventos_Sinapticos'])
+            e_gpu_ev = row['Energia_Por_Evento_Sinaptico_Silicio_J']
+            e_carb_ev = row['Energia_Por_Evento_Sinaptico_Carbono_J']
+            ventaja = e_gpu_ev / e_carb_ev if e_carb_ev > 0 else 0
+            f.write(f"| {int(row['N']):,} | {ev:,} | {e_gpu_ev:.2e} | {e_carb_ev:.2e} | {ventaja:.2e} |\n")
+
+        f.write(f"""
+---
+
 ## 📈 Hallazgos Clave de la Aceleración por GPU
 
 ### 1. El Crossover de Latencia (Gastos de Lanzamiento vs. Paralelismo)
@@ -117,7 +134,7 @@ El gráfico ![Tiempo de Cómputo](file:///workspace/ensayo-filosofia-neurocienci
 El gráfico ![Energía consumida](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png) en escala logarítmica expone la realidad termodinámica:
 * Aunque la GPU (RTX 2060) es increíblemente rápida, requiere sostener una potencia constante de **250 vatios** (potencia del sistema bajo uso de GPU).
 * A $N = {N_max:}$, la GPU consumió **{row_max_gpu['Energia_Silicio_J']:.2e} Joules** para simular 1 segundo.
-* El carbono biológico procesó los mismos eventos sinápticos gastando apenas **{row_max_gpu['Energia_Carbono_Sinaptica_J']:.2e} Joules**.
+* El carbono biológico procesó los mismos eventos sinápticos gastando apenas **{row_max_gpu['Energia_Carbono_Sinaptica_J']:.2e} Joules** (con base en hidrólisis de ATP para repolarización post-spike y mantenimiento pasivo de potencial de fuga).
 * **La brecha de ineficiencia de la GPU es de {brecha_max_gpu:.2e} veces (más de 1,000 millones de veces)**.
 * Esto demuestra que la aceleración digital por hardware no resuelve el problema termodinámico: para procesar más rápido en silicio digital, simplemente inyectamos más energía, aumentando la brecha respecto al carbono húmedo que aprovecha la física molecular libre de conmutación artificial.
 """)

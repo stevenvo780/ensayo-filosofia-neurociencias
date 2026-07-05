@@ -58,10 +58,14 @@ def ejecutar_experimento():
             total_spikes_quimica += np.sum(spikes)
         t_quimica_ms = (time.perf_counter() - t_inicio) * 1000.0
         
-        # Energía del carbono biológico sináptico
+        # Energía del carbono biológico con el nuevo modelo biofísico de ATP
+        duracion = pasos_tiempo * dt
+        energia_carbono_atp = (total_spikes_quimica * 1.65e-9) + (N * duracion * 5e-11)
+        
         conexiones_por_neurona = int(N * 0.1)
         eventos_sinapticos = total_spikes_quimica * conexiones_por_neurona
-        energia_carbono_sinaptica = eventos_sinapticos * 1e-14 # 10 fJ por sinapsis
+        energia_por_evento_sinaptico_cpu = (potencia_cpu * (t_quimica_ms / 1000.0)) / eventos_sinapticos if eventos_sinapticos > 0 else 0.0
+        energia_por_evento_sinaptico_carbono = energia_carbono_atp / eventos_sinapticos if eventos_sinapticos > 0 else 0.0
         
         registros_cpu.append({
             'N': N,
@@ -69,7 +73,12 @@ def ejecutar_experimento():
             'Tiempo_Quimica_ms': t_quimica_ms,
             'FLOPs_Quimica': flops_quimica_acum,
             'Energia_Silicio_J': (t_quimica_ms / 1000.0) * potencia_cpu,
-            'Energia_Carbono_Sinaptica_J': energia_carbono_sinaptica
+            'Energia_Carbono_Sinaptica_J': energia_carbono_atp,  # Para compatibilidad con graficar.py
+            'Energia_Carbono_ATP_J': energia_carbono_atp,
+            'Eventos_Sinapticos': eventos_sinapticos,
+            'Energia_Por_Evento_Sinaptico_Silicio_J': energia_por_evento_sinaptico_cpu,
+            'Energia_Por_Evento_Sinaptico_Carbono_J': energia_por_evento_sinaptico_carbono,
+            'Spikes_Totales': total_spikes_quimica
         })
 
     # ------------------ 2. EJECUCIÓN BENCHMARK EN GPU (PYTORCH + CUDA) ------------------
@@ -87,13 +96,13 @@ def ejecutar_experimento():
         I_ext_gpu = torch.randn((N,), device=device, dtype=torch.float32) * 5.0 + 25.0
         
         t_inicio = time.perf_counter()
-        flops_quimica_acum = 0
-        total_spikes_quimica = 0
+        flops_quimica_acum = torch.tensor(0.0, device=device)
+        total_spikes_quimica = torch.tensor(0.0, device=device)
         
         for _ in range(pasos_tiempo):
             spikes, _, flops = red_quimica_gpu.paso(I_ext_gpu)
             flops_quimica_acum += flops
-            total_spikes_quimica += spikes.sum().item()
+            total_spikes_quimica += spikes.sum()
             
         # Esperar a que la GPU complete todas las operaciones de forma asíncrona
         if torch.cuda.is_available():
@@ -101,20 +110,32 @@ def ejecutar_experimento():
             
         t_quimica_ms = (time.perf_counter() - t_inicio) * 1000.0
         
-        # Energía del carbono biológico sináptico
+        # Extraer valores finales a la CPU de una sola vez
+        flops_quimica_acum = flops_quimica_acum.item()
+        total_spikes_quimica = total_spikes_quimica.item()
+        
+        # Energía del carbono biológico con el nuevo modelo biofísico de ATP
+        duracion = pasos_tiempo * dt
+        energia_carbono_atp = (total_spikes_quimica * 1.65e-9) + (N * duracion * 5e-11)
+        
         conexiones_por_neurona = int(N * 0.1)
         eventos_sinapticos = total_spikes_quimica * conexiones_por_neurona
-        energia_carbono_sinaptica = eventos_sinapticos * 1e-14
+        energia_por_evento_sinaptico_gpu = (potencia_gpu * (t_quimica_ms / 1000.0)) / eventos_sinapticos if eventos_sinapticos > 0 else 0.0
+        energia_por_evento_sinaptico_carbono = energia_carbono_atp / eventos_sinapticos if eventos_sinapticos > 0 else 0.0
         
         registros_gpu.append({
             'N': N,
             'Tiempo_Quimica_ms': t_quimica_ms,
             'FLOPs_Quimica': flops_quimica_acum,
             'Energia_Silicio_J': (t_quimica_ms / 1000.0) * potencia_gpu,
-            'Energia_Carbono_Sinaptica_J': energia_carbono_sinaptica,
+            'Energia_Carbono_Sinaptica_J': energia_carbono_atp,  # Para compatibilidad con graficar.py
+            'Energia_Carbono_ATP_J': energia_carbono_atp,
+            'Eventos_Sinapticos': eventos_sinapticos,
+            'Energia_Por_Evento_Sinaptico_Silicio_J': energia_por_evento_sinaptico_gpu,
+            'Energia_Por_Evento_Sinaptico_Carbono_J': energia_por_evento_sinaptico_carbono,
             'Spikes_Totales': total_spikes_quimica
         })
-        print(f"       [Spikes: {total_spikes_quimica:,} | Tiempo GPU: {t_quimica_ms:.2f} ms | Energía GPU: {(t_quimica_ms/1000.0)*potencia_gpu:.2e} J]")
+        print(f"       [Spikes: {int(total_spikes_quimica):,} | Tiempo GPU: {t_quimica_ms:.2f} ms | Energía GPU: {(t_quimica_ms/1000.0)*potencia_gpu:.2e} J]")
 
     # Exportar resultados
     df_cpu = pd.DataFrame(registros_cpu)

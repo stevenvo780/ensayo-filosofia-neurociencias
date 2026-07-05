@@ -10,16 +10,35 @@ A continuación se tabulan las métricas reales medidas en la GPU para la simula
 
 | Neuronas ($N$) | Tiempo GPU (ms) | Spikes Totales | FLOPs Acumulados | Energía GPU (J) | Energía Carbono (J) | Brecha de Eficiencia (Veces) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 100 | 506.92 | 4,441 | 5,290,596 | 1.27e+02 | 4.44e-10 | 2.85e+11 |
-| 500 | 501.45 | 81,601 | 32,714,836 | 1.25e+02 | 4.08e-08 | 3.07e+09 |
-| 1,000 | 523.37 | 197,006 | 87,700,334 | 1.31e+02 | 1.97e-07 | 6.64e+08 |
-| 2,000 | 553.24 | 394,019 | 254,181,032 | 1.38e+02 | 7.88e-07 | 1.76e+08 |
-| 4,000 | 683.59 | 788,040 | 823,553,164 | 1.71e+02 | 3.15e-06 | 5.42e+07 |
-| 8,000 | 937.15 | 1,576,110 | 1,962,334,710 | 2.34e+02 | 1.26e-05 | 1.86e+07 |
-| 16,000 | 1342.67 | 3,152,234 | 3,924,676,296 | 3.36e+02 | 5.04e-05 | 6.66e+06 |
-| 32,000 | 2116.77 | 6,304,422 | 7,849,303,650 | 5.29e+02 | 2.02e-04 | 2.62e+06 |
-| 64,000 | 3762.49 | 12,608,964 | 15,698,708,644 | 9.41e+02 | 8.07e-04 | 1.17e+06 |
-| 100,000 | 5531.14 | 19,701,444 | 24,529,169,698 | 1.38e+03 | 1.97e-03 | 7.02e+05 |
+| 100 | 851.07 | 4,679 | 5,289,542 | 2.13e+02 | 7.73e-06 | 2.75e+07 |
+| 500 | 478.48 | 81,824 | 32,730,980 | 1.20e+02 | 1.35e-04 | 8.86e+05 |
+| 1,000 | 491.18 | 197,011 | 87,698,248 | 1.23e+02 | 3.25e-04 | 3.78e+05 |
+| 2,000 | 526.14 | 394,033 | 254,187,104 | 1.32e+02 | 6.50e-04 | 2.02e+05 |
+| 4,000 | 634.86 | 788,083 | 823,581,696 | 1.59e+02 | 1.30e-03 | 1.22e+05 |
+| 8,000 | 866.53 | 1,576,093 | 1,962,308,352 | 2.17e+02 | 2.60e-03 | 8.33e+04 |
+| 16,000 | 1225.55 | 3,152,271 | 3,924,721,920 | 3.06e+02 | 5.20e-03 | 5.89e+04 |
+| 32,000 | 1985.12 | 6,304,437 | 7,849,288,704 | 4.96e+02 | 1.04e-02 | 4.77e+04 |
+| 64,000 | 3399.04 | 12,608,826 | 15,698,531,328 | 8.50e+02 | 2.08e-02 | 4.08e+04 |
+| 100,000 | 5172.11 | 19,701,528 | 24,529,125,376 | 1.29e+03 | 3.25e-02 | 3.98e+04 |
+
+---
+
+## ⚡ Comparación Termodinámica por Evento Sináptico Efectivo (GPU vs. Carbono)
+
+A continuación se detalla la comparación energética justa basada en la transmisión de señales por evento sináptico efectivo (GPU vs. ATP biológico):
+
+| Neuronas ($N$) | Eventos Sinápticos | Energía por Evento GPU (J) | Energía por Evento Carbono (J) | Factor de Ventaja Biológica |
+| :---: | :---: | :---: | :---: | :---: |
+| 100 | 46,790 | 4.55e-03 | 1.65e-10 | 2.75e+07 |
+| 500 | 4,091,200 | 2.92e-05 | 3.30e-11 | 8.86e+05 |
+| 1,000 | 19,701,100 | 6.23e-06 | 1.65e-11 | 3.78e+05 |
+| 2,000 | 78,806,600 | 1.67e-06 | 8.25e-12 | 2.02e+05 |
+| 4,000 | 315,233,200 | 5.03e-07 | 4.13e-12 | 1.22e+05 |
+| 8,000 | 1,260,874,400 | 1.72e-07 | 2.06e-12 | 8.33e+04 |
+| 16,000 | 5,043,633,600 | 6.07e-08 | 1.03e-12 | 5.89e+04 |
+| 32,000 | 20,174,198,400 | 2.46e-08 | 5.16e-13 | 4.77e+04 |
+| 64,000 | 80,696,486,400 | 1.05e-08 | 2.58e-13 | 4.08e+04 |
+| 100,000 | 197,015,280,000 | 6.56e-09 | 1.65e-13 | 3.98e+04 |
 
 ---
 
@@ -33,7 +52,7 @@ El gráfico ![Tiempo de Cómputo](file:///workspace/ensayo-filosofia-neurocienci
 ### 2. La Paradoja de Energía Amplificada por la GPU
 El gráfico ![Energía consumida](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png) en escala logarítmica expone la realidad termodinámica:
 * Aunque la GPU (RTX 2060) es increíblemente rápida, requiere sostener una potencia constante de **250 vatios** (potencia del sistema bajo uso de GPU).
-* A $N = 100000$, la GPU consumió **1.38e+03 Joules** para simular 1 segundo.
-* El carbono biológico procesó los mismos eventos sinápticos gastando apenas **1.97e-03 Joules**.
-* **La brecha de ineficiencia de la GPU es de 7.02e+05 veces (más de 1,000 millones de veces)**.
+* A $N = 100000$, la GPU consumió **1.29e+03 Joules** para simular 1 segundo.
+* El carbono biológico procesó los mismos eventos sinápticos gastando apenas **3.25e-02 Joules** (con base en hidrólisis de ATP para repolarización post-spike y mantenimiento pasivo de potencial de fuga).
+* **La brecha de ineficiencia de la GPU es de 3.98e+04 veces (más de 1,000 millones de veces)**.
 * Esto demuestra que la aceleración digital por hardware no resuelve el problema termodinámico: para procesar más rápido en silicio digital, simplemente inyectamos más energía, aumentando la brecha respecto al carbono húmedo que aprovecha la física molecular libre de conmutación artificial.

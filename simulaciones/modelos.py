@@ -418,13 +418,15 @@ class RedQuimicaLIFPyTorch:
         self.conexiones = torch.randint(0, tamano, (tamano, self.num_conexiones), device=self.device, dtype=torch.long)
         self.es_excitatoria = torch.rand((tamano,), device=self.device) < 0.8
         
-        self.dopamina = 0.5
+        self.dopamina = torch.tensor(0.5, device=self.device, dtype=torch.float32)
+        self.decay_glu = np.exp(-self.dt / self.tau_glu)
+        self.decay_gaba = np.exp(-self.dt / self.tau_gaba)
         
     def paso(self, I_ext):
         import torch
         # 1. Decaimiento de conductancias sinápticas (exponencial)
-        self.g_glu *= np.exp(-self.dt / self.tau_glu)
-        self.g_gaba *= np.exp(-self.dt / self.tau_gaba)
+        self.g_glu *= self.decay_glu
+        self.g_gaba *= self.decay_gaba
         
         # 2. Umbral dinámico modulado globalmente por Dopamina
         V_thresh = self.V_thresh_base - (5.0 * (self.dopamina - 0.5))
@@ -458,11 +460,11 @@ class RedQuimicaLIFPyTorch:
             self.g_gaba.index_add_(0, destinos_planos[~mask_exc_plana], pesos_planos[~mask_exc_plana])
             
         # 7. Regulación metabólica de dopamina
-        tasa_disparo_global = spikes.float().mean().item()
-        self.dopamina += self.dt * (tasa_disparo_global * 10.0 - (self.dopamina - 0.5))
-        self.dopamina = max(0.0, min(1.0, self.dopamina))
+        tasa_disparo_global = spikes.float().mean()
+        self.dopamina = self.dopamina + self.dt * (tasa_disparo_global * 10.0 - (self.dopamina - 0.5))
+        self.dopamina = torch.clamp(self.dopamina, 0.0, 1.0)
         
-        num_no_ref = no_ref.sum().item()
-        num_spikes = spikes.sum().item()
+        num_no_ref = no_ref.sum()
+        num_spikes = spikes.sum()
         flops = (40 * self.N) + 3 + (5 * self.N) + (6 * num_no_ref) + (2 * self.N) + (2 * num_spikes * self.num_conexiones) + 5
         return spikes, self.dopamina, flops
