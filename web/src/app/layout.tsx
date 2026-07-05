@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { BookOpen, Presentation, BarChart2 } from "lucide-react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,7 +53,7 @@ export default function RootLayout({
                 Filosofía de las Neurociencias
               </span>
             </div>
-            <nav style={{ display: 'flex', gap: '10px' }}>
+            <nav style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
               <Link href="/" style={{
                 color: '#e0e6ed',
                 padding: '8px 16px',
@@ -60,9 +61,12 @@ export default function RootLayout({
                 fontSize: '0.9rem',
                 fontWeight: 500,
                 transition: 'all 0.2s',
-                border: '1px solid #1e293b'
+                border: '1px solid #1e293b',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px'
               }}>
-                📖 Ensayo
+                <BookOpen size={16} /> Ensayo
               </Link>
               <Link href="/slides/0" style={{
                 color: '#e0e6ed',
@@ -71,9 +75,12 @@ export default function RootLayout({
                 fontSize: '0.9rem',
                 fontWeight: 500,
                 transition: 'all 0.2s',
-                border: '1px solid #1e293b'
+                border: '1px solid #1e293b',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px'
               }}>
-                🖥️ Diapositivas
+                <Presentation size={16} /> Diapositivas
               </Link>
               <Link href="/laboratorio" style={{
                 color: '#e0e6ed',
@@ -82,9 +89,12 @@ export default function RootLayout({
                 fontSize: '0.9rem',
                 fontWeight: 500,
                 transition: 'all 0.2s',
-                border: '1px solid #1e293b'
+                border: '1px solid #1e293b',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px'
               }}>
-                📊 Laboratorio
+                <BarChart2 size={16} /> Laboratorio
               </Link>
             </nav>
           </div>

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Mic } from "lucide-react";
 
 interface SlideData {
   title: string;
@@ -259,8 +260,8 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
           fontSize: "0.95rem",
           color: "#e2e8f0"
         }}>
-          <strong style={{ color: "var(--accent-light)", display: "block", marginBottom: "5px" }}>
-            🎙️ Notas del Orador:
+          <strong style={{ color: "var(--accent-light)", display: "flex", alignItems: "center", gap: "6px", marginBottom: "5px" }}>
+            <Mic size={16} /> Notas del Orador:
           </strong>
           &ldquo;{slide.speakerNotes}&rdquo;
         </div>
