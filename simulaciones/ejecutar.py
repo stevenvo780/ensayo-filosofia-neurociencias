@@ -3,7 +3,7 @@ import time
 import pandas as pd
 import numpy as np
 import torch
-from modelos import RedDensa, RedLIF, RedQuimicaLIF, RedQuimicaLIFPyTorch
+from modelos import RedDensa, RedLIF, RedQuimicaLIF, RedQuimicaLIFPyTorch, RedQuimicaLIFMultiGPU
 
 def asegurar_directorios():
     os.makedirs("/workspace/ensayo-filosofia-neurociencias/simulaciones/datos", exist_ok=True)
@@ -15,7 +15,7 @@ def ejecutar_experimento():
     # Rango de tamaños de red para CPU (escala menor para evitar timeout)
     tamanos_cpu = [100, 500, 1000, 2000, 4000, 6000, 8000]
     # Rango de tamaños de red para GPU (escala masiva aprovechando la RTX 5070 Ti)
-    tamanos_gpu = [100, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 100000, 250000, 500000, 1000000, 2000000]
+    tamanos_gpu = [100, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 100000, 250000, 500000, 1000000, 2000000, 3000000]
     
     dt = 0.001 # 1 ms
     pasos_tiempo = 1000 # 1 segundo simulado
@@ -91,7 +91,11 @@ def ejecutar_experimento():
         print(f"    -> GPU: Probando N = {N}...")
         
         # Red Química Spiking en GPU (PyTorch)
-        red_quimica_gpu = RedQuimicaLIFPyTorch(N, device=device, dt=dt)
+        if N >= 3000000 and torch.cuda.device_count() > 1:
+            print("       [Multi-GPU: Utilizando RTX 5070 Ti (cuda:0) + RTX 2060 (cuda:1) en paralelo]")
+            red_quimica_gpu = RedQuimicaLIFMultiGPU(N, device0='cuda:0', device1='cuda:1', dt=dt)
+        else:
+            red_quimica_gpu = RedQuimicaLIFPyTorch(N, device=device, dt=dt)
         # Corriente externa directamente cargada en VRAM
         I_ext_gpu = torch.randn((N,), device=device, dtype=torch.float32) * 5.0 + 25.0
         

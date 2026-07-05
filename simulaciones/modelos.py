@@ -468,3 +468,90 @@ class RedQuimicaLIFPyTorch:
         num_spikes = spikes.sum()
         flops = (40 * self.N) + 3 + (5 * self.N) + (6 * num_no_ref) + (2 * self.N) + (2 * num_spikes * self.num_conexiones) + 5
         return spikes, self.dopamina, flops
+
+class RedQuimicaLIFMultiGPU:
+    """
+    Simulación distribuida multi-GPU (Blackwell RTX 5070 Ti + Turing RTX 2060).
+    Divide la red en dos subredes locales y realiza propagaciones inter-GPU cruzadas
+    durante cada paso de tiempo, transmitiendo de forma asíncrona solo los impulsos sinápticos.
+    """
+    def __init__(self, tamano, device0='cuda:0', device1='cuda:1', dt=0.001):
+        import torch
+        import numpy as np
+        self.N = tamano
+        self.dt = dt
+        self.device0 = torch.device(device0)
+        self.device1 = torch.device(device1)
+        
+        # Repartir carga: 2/3 en la GPU potente (5070 Ti), 1/3 en la GPU secundaria (2060)
+        self.N0 = int(tamano * 2 / 3)
+        self.N1 = tamano - self.N0
+        
+        # Instanciar subredes locales
+        self.subred0 = RedQuimicaLIFPyTorch(self.N0, device=device0, dt=dt)
+        self.subred1 = RedQuimicaLIFPyTorch(self.N1, device=device1, dt=dt)
+        
+        # Inicializar streams CUDA paralelos
+        self.stream0 = torch.cuda.Stream(device=self.device0)
+        self.stream1 = torch.cuda.Stream(device=self.device1)
+        
+        # Conectividad inter-GPU esparcida (15 conexiones cruzadas por neurona)
+        self.num_conexiones_cruzadas = 15
+        
+        # Conexiones 0 -> 1 (Guardadas en GPU 0, apuntan a neuronas en GPU 1)
+        self.conexiones_0_1 = torch.randint(0, self.N1, (self.N0, self.num_conexiones_cruzadas), device=self.device0, dtype=torch.int32)
+        self.W_0_1 = (torch.randn((self.N0, self.num_conexiones_cruzadas), device=self.device0, dtype=torch.float32) * 0.05 + 0.1)
+        
+        # Conexiones 1 -> 0 (Guardadas en GPU 1, apuntan a neuronas en GPU 0)
+        self.conexiones_1_0 = torch.randint(0, self.N0, (self.N1, self.num_conexiones_cruzadas), device=self.device1, dtype=torch.int32)
+        self.W_1_0 = (torch.randn((self.N1, self.num_conexiones_cruzadas), device=self.device1, dtype=torch.float32) * 0.05 + 0.1)
+        
+    def paso(self, I_ext):
+        import torch
+        # Dividir la corriente externa entre las dos GPUs
+        I_ext0 = I_ext[:self.N0].to(self.device0)
+        I_ext1 = I_ext[self.N0:].to(self.device1)
+        
+        # 1. Ejecutar el paso local de cada subred en streams paralelos
+        with torch.cuda.stream(self.stream0):
+            spikes0, dopa0, flops0 = self.subred0.paso(I_ext0)
+        with torch.cuda.stream(self.stream1):
+            spikes1, dopa1, flops1 = self.subred1.paso(I_ext1)
+            
+        # Esperar a que ambas GPUs terminen su paso local antes de propagar cruzado
+        torch.cuda.synchronize(self.device0)
+        torch.cuda.synchronize(self.device1)
+        
+        # 2. Propagación Cruzada 0 -> 1 (spikes de GPU 0 excitan/inhiben neuronas en GPU 1)
+        indices_disparo0 = torch.where(spikes0)[0]
+        flops_comunicacion = 0
+        if len(indices_disparo0) > 0:
+            destinos_1 = self.conexiones_0_1[indices_disparo0].view(-1).long().to(self.device1)
+            pesos_1 = self.W_0_1[indices_disparo0].view(-1).to(self.device1)
+            
+            es_exc0 = self.subred0.es_excitatoria[indices_disparo0]
+            mask_exc_plana = es_exc0.repeat_interleave(self.num_conexiones_cruzadas).to(self.device1)
+            
+            self.subred1.g_glu.index_add_(0, destinos_1[mask_exc_plana], pesos_1[mask_exc_plana])
+            self.subred1.g_gaba.index_add_(0, destinos_1[~mask_exc_plana], pesos_1[~mask_exc_plana])
+            flops_comunicacion += 2 * len(indices_disparo0) * self.num_conexiones_cruzadas
+            
+        # 3. Propagación Cruzada 1 -> 0 (spikes de GPU 1 excitan/inhiben neuronas en GPU 0)
+        indices_disparo1 = torch.where(spikes1)[0]
+        if len(indices_disparo1) > 0:
+            destinos_0 = self.conexiones_1_0[indices_disparo1].view(-1).long().to(self.device0)
+            pesos_0 = self.W_1_0[indices_disparo1].view(-1).to(self.device0)
+            
+            es_exc1 = self.subred1.es_excitatoria[indices_disparo1]
+            mask_exc_plana = es_exc1.repeat_interleave(self.num_conexiones_cruzadas).to(self.device0)
+            
+            self.subred0.g_glu.index_add_(0, destinos_0[mask_exc_plana], pesos_0[mask_exc_plana])
+            self.subred0.g_gaba.index_add_(0, destinos_0[~mask_exc_plana], pesos_0[~mask_exc_plana])
+            flops_comunicacion += 2 * len(indices_disparo1) * self.num_conexiones_cruzadas
+            
+        # Unificar spikes y FLOPS para estadísticas
+        spikes_totales = torch.cat([spikes0.to(self.device0), spikes1.to(self.device0)], dim=0)
+        flops_totales = flops0 + flops1.to(self.device0) + flops_comunicacion
+        
+        return spikes_totales, dopa0, flops_totales
+

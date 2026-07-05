@@ -150,59 +150,67 @@ export default function Home() {
             <tbody>
               <tr style={{ borderBottom: "1px solid var(--border)" }}>
                 <td style={{ padding: "12px" }}>100</td>
-                <td style={{ padding: "12px" }}>448.74</td>
-                <td style={{ padding: "12px" }}>4,215</td>
-                <td style={{ padding: "12px" }}>2.66e-03 J</td>
+                <td style={{ padding: "12px" }}>450.95</td>
+                <td style={{ padding: "12px" }}>4,805</td>
+                <td style={{ padding: "12px" }}>2.35e-03 J</td>
                 <td style={{ padding: "12px" }}>1.65e-10 J</td>
-                <td style={{ padding: "12px" }}><strong>1.61e+07 veces</strong></td>
+                <td style={{ padding: "12px" }}><strong>1.42e+07 veces</strong></td>
               </tr>
               <tr style={{ borderBottom: "1px solid var(--border)" }}>
                 <td style={{ padding: "12px" }}>1,000</td>
-                <td style={{ padding: "12px" }}>365.18</td>
-                <td style={{ padding: "12px" }}>197,010</td>
-                <td style={{ padding: "12px" }}>4.63e-06 J</td>
+                <td style={{ padding: "12px" }}>362.68</td>
+                <td style={{ padding: "12px" }}>197,011</td>
+                <td style={{ padding: "12px" }}>4.60e-06 J</td>
                 <td style={{ padding: "12px" }}>1.65e-11 J</td>
-                <td style={{ padding: "12px" }}><strong>2.81e+05 veces</strong></td>
+                <td style={{ padding: "12px" }}><strong>2.79e+05 veces</strong></td>
               </tr>
               <tr style={{ borderBottom: "1px solid var(--border)" }}>
                 <td style={{ padding: "12px" }}>16,000</td>
-                <td style={{ padding: "12px" }}>400.00</td>
-                <td style={{ padding: "12px" }}>3,152,123</td>
-                <td style={{ padding: "12px" }}>1.98e-08 J</td>
+                <td style={{ padding: "12px" }}>403.27</td>
+                <td style={{ padding: "12px" }}>3,152,135</td>
+                <td style={{ padding: "12px" }}>2.00e-08 J</td>
                 <td style={{ padding: "12px" }}>1.03e-12 J</td>
-                <td style={{ padding: "12px" }}><strong>1.92e+04 veces</strong></td>
+                <td style={{ padding: "12px" }}><strong>1.94e+04 veces</strong></td>
               </tr>
               <tr style={{ borderBottom: "1px solid var(--border)" }}>
                 <td style={{ padding: "12px" }}>100,000</td>
-                <td style={{ padding: "12px" }}>748.71</td>
-                <td style={{ padding: "12px" }}>19,700,866</td>
-                <td style={{ padding: "12px" }}>9.50e-10 J</td>
+                <td style={{ padding: "12px" }}>768.36</td>
+                <td style={{ padding: "12px" }}>19,700,848</td>
+                <td style={{ padding: "12px" }}>9.75e-10 J</td>
                 <td style={{ padding: "12px" }}>1.65e-13 J</td>
-                <td style={{ padding: "12px" }}><strong>5.76e+03 veces</strong></td>
+                <td style={{ padding: "12px" }}><strong>5.91e+03 veces</strong></td>
               </tr>
               <tr style={{ borderBottom: "1px solid var(--border)" }}>
                 <td style={{ padding: "12px" }}>500,000</td>
-                <td style={{ padding: "12px" }}>2,647.80</td>
-                <td style={{ padding: "12px" }}>98,503,824</td>
-                <td style={{ padding: "12px" }}>1.34e-10 J</td>
+                <td style={{ padding: "12px" }}>2,677.69</td>
+                <td style={{ padding: "12px" }}>98,504,200</td>
+                <td style={{ padding: "12px" }}>1.36e-10 J</td>
                 <td style={{ padding: "12px" }}>3.30e-14 J</td>
-                <td style={{ padding: "12px" }}><strong>4.07e+03 veces</strong></td>
+                <td style={{ padding: "12px" }}><strong>4.12e+03 veces</strong></td>
               </tr>
               <tr style={{ borderBottom: "1px solid var(--border)" }}>
                 <td style={{ padding: "12px" }}>1,000,000</td>
-                <td style={{ padding: "12px" }}>5,244.33</td>
-                <td style={{ padding: "12px" }}>197,008,512</td>
-                <td style={{ padding: "12px" }}>6.65e-11 J</td>
+                <td style={{ padding: "12px" }}>5,340.86</td>
+                <td style={{ padding: "12px" }}>197,008,560</td>
+                <td style={{ padding: "12px" }}>6.78e-11 J</td>
                 <td style={{ padding: "12px" }}>1.65e-14 J</td>
-                <td style={{ padding: "12px" }}><strong>4.03e+03 veces</strong></td>
+                <td style={{ padding: "12px" }}><strong>4.11e+03 veces</strong></td>
               </tr>
               <tr style={{ borderBottom: "1px solid var(--border)" }}>
                 <td style={{ padding: "12px" }}>2,000,000</td>
-                <td style={{ padding: "12px" }}>10,758.64</td>
-                <td style={{ padding: "12px" }}>394,015,456</td>
-                <td style={{ padding: "12px" }}>3.41e-11 J</td>
+                <td style={{ padding: "12px" }}>10,343.12</td>
+                <td style={{ padding: "12px" }}>394,015,200</td>
+                <td style={{ padding: "12px" }}>3.28e-11 J</td>
                 <td style={{ padding: "12px" }}>8.25e-15 J</td>
-                <td style={{ padding: "12px" }}><strong>4.14e+03 veces</strong></td>
+                <td style={{ padding: "12px" }}><strong>3.98e+03 veces</strong></td>
+              </tr>
+              <tr style={{ borderBottom: "1px solid var(--border)", background: "rgba(105, 240, 174, 0.05)" }}>
+                <td style={{ padding: "12px" }}>3,000,000 (Multi-GPU)</td>
+                <td style={{ padding: "12px" }}>95,418.19</td>
+                <td style={{ padding: "12px" }}>1,742,034,176</td>
+                <td style={{ padding: "12px" }}>4.56e-11 J</td>
+                <td style={{ padding: "12px" }}>5.50e-15 J</td>
+                <td style={{ padding: "12px" }}><strong>8.30e+03 veces</strong></td>
               </tr>
             </tbody>
           </table>

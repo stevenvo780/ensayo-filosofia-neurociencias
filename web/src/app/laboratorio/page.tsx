@@ -68,7 +68,7 @@ export default function LaboratorioPage() {
           Métricas e Infraestructura de Simulación
         </h2>
         <p style={{ color: "var(--text-muted)", fontSize: "1.1rem" }}>
-          Resultados empíricos obtenidos en el benchmark de aceleración por GPU (N=2,000,000 neuronas esparcidas) y emulación física.
+          Resultados empíricos obtenidos en el benchmark de aceleración Multi-GPU (N=3,000,000 neuronas esparcidas, RTX 5070 Ti + RTX 2060) y emulación física.
         </p>
       </header>
 

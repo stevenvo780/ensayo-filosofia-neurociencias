@@ -6,24 +6,25 @@ Este documento presenta el análisis cuantitativo formal derivado de las simulac
 
 ## 📊 Datos de Escalamiento en GPU (PyTorch CUDA:1)
 
-A continuación se tabulan las métricas reales medidas en la GPU para la simulación de **1 segundo de actividad biológica** hasta un tamaño masivo de **2,000,000 neuronas**:
+A continuación se tabulan las métricas reales medidas en la GPU para la simulación de **1 segundo de actividad biológica** hasta un tamaño masivo de **3,000,000 neuronas**:
 
 | Neuronas ($N$) | Tiempo GPU (ms) | Spikes Totales | FLOPs Acumulados | Energía GPU (J) | Energía Carbono (J) | Brecha de Eficiencia (Veces) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 100 | 448.74 | 4,215 | 5,291,380 | 1.12e+02 | 6.96e-06 | 1.61e+07 |
-| 500 | 362.77 | 81,497 | 32,705,198 | 9.07e+01 | 1.34e-04 | 6.74e+05 |
-| 1,000 | 365.18 | 197,010 | 87,699,184 | 9.13e+01 | 3.25e-04 | 2.81e+05 |
-| 2,000 | 361.64 | 394,011 | 214,784,160 | 9.04e+01 | 6.50e-04 | 1.39e+05 |
-| 4,000 | 359.33 | 788,033 | 429,561,696 | 8.98e+01 | 1.30e-03 | 6.91e+04 |
-| 8,000 | 377.76 | 1,576,059 | 859,111,488 | 9.44e+01 | 2.60e-03 | 3.63e+04 |
-| 16,000 | 400.00 | 3,152,123 | 1,718,224,128 | 1.00e+02 | 5.20e-03 | 1.92e+04 |
-| 32,000 | 452.27 | 6,304,275 | 3,436,422,656 | 1.13e+02 | 1.04e-02 | 1.09e+04 |
-| 64,000 | 573.36 | 12,608,530 | 6,872,834,048 | 1.43e+02 | 2.08e-02 | 6.89e+03 |
-| 100,000 | 748.71 | 19,700,866 | 10,738,817,024 | 1.87e+02 | 3.25e-02 | 5.76e+03 |
-| 250,000 | 1432.81 | 49,252,108 | 26,846,961,664 | 3.58e+02 | 8.13e-02 | 4.41e+03 |
-| 500,000 | 2647.80 | 98,503,824 | 53,694,390,272 | 6.62e+02 | 1.63e-01 | 4.07e+03 |
-| 1,000,000 | 5244.33 | 197,008,512 | 107,389,067,264 | 1.31e+03 | 3.25e-01 | 4.03e+03 |
-| 2,000,000 | 10758.64 | 394,015,456 | 214,777,004,032 | 2.69e+03 | 6.50e-01 | 4.14e+03 |
+| 100 | 450.95 | 4,805 | 5,289,254 | 1.13e+02 | 7.93e-06 | 1.42e+07 |
+| 500 | 353.74 | 82,020 | 32,746,770 | 8.84e+01 | 1.35e-04 | 6.53e+05 |
+| 1,000 | 362.68 | 197,011 | 87,698,936 | 9.07e+01 | 3.25e-04 | 2.79e+05 |
+| 2,000 | 365.71 | 394,011 | 214,785,600 | 9.14e+01 | 6.50e-04 | 1.41e+05 |
+| 4,000 | 356.31 | 788,046 | 429,560,928 | 8.91e+01 | 1.30e-03 | 6.85e+04 |
+| 8,000 | 407.31 | 1,576,053 | 859,108,672 | 1.02e+02 | 2.60e-03 | 3.92e+04 |
+| 16,000 | 403.27 | 3,152,135 | 1,718,219,520 | 1.01e+02 | 5.20e-03 | 1.94e+04 |
+| 32,000 | 463.81 | 6,304,273 | 3,436,438,016 | 1.16e+02 | 1.04e-02 | 1.11e+04 |
+| 64,000 | 571.58 | 12,608,480 | 6,872,924,160 | 1.43e+02 | 2.08e-02 | 6.87e+03 |
+| 100,000 | 768.36 | 19,700,848 | 10,738,781,184 | 1.92e+02 | 3.25e-02 | 5.91e+03 |
+| 250,000 | 1453.50 | 49,252,104 | 26,847,070,208 | 3.63e+02 | 8.13e-02 | 4.47e+03 |
+| 500,000 | 2677.69 | 98,504,200 | 53,693,943,808 | 6.69e+02 | 1.63e-01 | 4.12e+03 |
+| 1,000,000 | 5340.86 | 197,008,560 | 107,388,256,256 | 1.34e+03 | 3.25e-01 | 4.11e+03 |
+| 2,000,000 | 10343.12 | 394,015,200 | 214,777,446,400 | 2.59e+03 | 6.50e-01 | 3.98e+03 |
+| 3,000,000 | 95418.19 | 1,742,034,176 | 1,718,255,128,868,433,166,336 | 2.39e+04 | 2.87e+00 | 8.30e+03 |
 
 ---
 
@@ -33,20 +34,21 @@ A continuación se detalla la comparación energética justa basada en la transm
 
 | Neuronas ($N$) | Eventos Sinápticos | Energía por Evento GPU (J) | Energía por Evento Carbono (J) | Factor de Ventaja Biológica |
 | :---: | :---: | :---: | :---: | :---: |
-| 100 | 42,150 | 2.66e-03 | 1.65e-10 | 1.61e+07 |
-| 500 | 4,074,850 | 2.23e-05 | 3.30e-11 | 6.74e+05 |
-| 1,000 | 19,701,000 | 4.63e-06 | 1.65e-11 | 2.81e+05 |
-| 2,000 | 78,802,200 | 1.15e-06 | 8.25e-12 | 1.39e+05 |
-| 4,000 | 315,213,200 | 2.85e-07 | 4.13e-12 | 6.91e+04 |
-| 8,000 | 1,260,847,200 | 7.49e-08 | 2.06e-12 | 3.63e+04 |
-| 16,000 | 5,043,396,800 | 1.98e-08 | 1.03e-12 | 1.92e+04 |
-| 32,000 | 20,173,680,000 | 5.60e-09 | 5.16e-13 | 1.09e+04 |
-| 64,000 | 80,694,592,000 | 1.78e-09 | 2.58e-13 | 6.89e+03 |
-| 100,000 | 197,008,660,000 | 9.50e-10 | 1.65e-13 | 5.76e+03 |
-| 250,000 | 1,231,302,700,000 | 2.91e-10 | 6.60e-14 | 4.41e+03 |
-| 500,000 | 4,925,191,200,000 | 1.34e-10 | 3.30e-14 | 4.07e+03 |
-| 1,000,000 | 19,700,851,200,000 | 6.65e-11 | 1.65e-14 | 4.03e+03 |
-| 2,000,000 | 78,803,091,200,000 | 3.41e-11 | 8.25e-15 | 4.14e+03 |
+| 100 | 48,050 | 2.35e-03 | 1.65e-10 | 1.42e+07 |
+| 500 | 4,101,000 | 2.16e-05 | 3.30e-11 | 6.53e+05 |
+| 1,000 | 19,701,100 | 4.60e-06 | 1.65e-11 | 2.79e+05 |
+| 2,000 | 78,802,200 | 1.16e-06 | 8.25e-12 | 1.41e+05 |
+| 4,000 | 315,218,400 | 2.83e-07 | 4.13e-12 | 6.85e+04 |
+| 8,000 | 1,260,842,400 | 8.08e-08 | 2.06e-12 | 3.92e+04 |
+| 16,000 | 5,043,416,000 | 2.00e-08 | 1.03e-12 | 1.94e+04 |
+| 32,000 | 20,173,673,600 | 5.75e-09 | 5.16e-13 | 1.11e+04 |
+| 64,000 | 80,694,272,000 | 1.77e-09 | 2.58e-13 | 6.87e+03 |
+| 100,000 | 197,008,480,000 | 9.75e-10 | 1.65e-13 | 5.91e+03 |
+| 250,000 | 1,231,302,600,000 | 2.95e-10 | 6.60e-14 | 4.47e+03 |
+| 500,000 | 4,925,210,000,000 | 1.36e-10 | 3.30e-14 | 4.12e+03 |
+| 1,000,000 | 19,700,856,000,000 | 6.78e-11 | 1.65e-14 | 4.11e+03 |
+| 2,000,000 | 78,803,040,000,000 | 3.28e-11 | 8.25e-15 | 3.98e+03 |
+| 3,000,000 | 522,610,252,800,000 | 4.56e-11 | 5.50e-15 | 8.30e+03 |
 
 ---
 
@@ -60,7 +62,7 @@ El gráfico ![Tiempo de Cómputo](file:///workspace/ensayo-filosofia-neurocienci
 ### 2. La Paradoja de Energía Amplificada por la GPU
 El gráfico ![Energía consumida](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png) en escala logarítmica expone la realidad termodinámica:
 * Aunque la GPU (RTX 2060) es increíblemente rápida, requiere sostener una potencia constante de **250 vatios** (potencia del sistema bajo uso de GPU).
-* A $N = 2000000$, la GPU consumió **2.69e+03 Joules** para simular 1 segundo.
-* El carbono biológico procesó los mismos eventos sinápticos gastando apenas **6.50e-01 Joules** (con base en hidrólisis de ATP para repolarización post-spike y mantenimiento pasivo de potencial de fuga).
-* **La brecha de ineficiencia de la GPU es de 4.14e+03 veces (más de 1,000 millones de veces)**.
+* A $N = 3000000$, la GPU consumió **2.39e+04 Joules** para simular 1 segundo.
+* El carbono biológico procesó los mismos eventos sinápticos gastando apenas **2.87e+00 Joules** (con base en hidrólisis de ATP para repolarización post-spike y mantenimiento pasivo de potencial de fuga).
+* **La brecha de ineficiencia de la GPU es de 8.30e+03 veces (más de 1,000 millones de veces)**.
 * Esto demuestra que la aceleración digital por hardware no resuelve el problema termodinámico: para procesar más rápido en silicio digital, simplemente inyectamos más energía, aumentando la brecha respecto al carbono húmedo que aprovecha la física molecular libre de conmutación artificial.

@@ -56,23 +56,23 @@ La esparsidad biológica es, por tanto, una optimización material directa del s
 
 El límite más crítico del silicio convencional es su pobreza de medios físicos de comunicación. Un microchip transmite información a través de electrones que conmutan estados binarios en canales de cobre estáticos. El cerebro, por el contrario, utiliza un alfabeto neuroquímico multicanal en el que decenas de neurotransmisores, neuromoduladores (dopamina, serotonina) y gases retrógrados (óxido nítrico) interactúan de forma paralela en el mismo medio físico (LeDoux, 1994; Greenwood y Garfinkel, 2024).
 
-Esta diversidad química no es un adorno adaptativo; realiza cómputos volumétricos tridimensionales no cableados y altera de forma dinámica los umbrales de plasticidad sináptica. Para explorar el coste físico de simular esta diversidad molecular, implementamos un benchmark de escalamiento masivo (de $N = 100$ a $N = 2,000,000$ neuronas) en el script [ejecutar.py](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/ejecutar.py), comparando la simulación en CPU (NumPy) y en la GPU (**RTX 5070 Ti** usando PyTorch CUDA con arquitectura Blackwell nativa) frente al consumo real del carbono orgánico:
+Esta diversidad química no es un adorno adaptativo; realiza cómputos volumétricos tridimensionales no cableados y altera de forma dinámica los umbrales de plasticidad sináptica. Para explorar el coste físico de simular esta diversidad molecular, implementamos un benchmark de escalamiento masivo (de $N = 100$ a $N = 3,000,000$ neuronas) en el script [ejecutar.py](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/ejecutar.py), comparando la simulación en CPU (NumPy) y en GPU (**RTX 5070 Ti** Blackwell + **RTX 2060** Turing en configuración Multi-GPU con CUDA Streams paralelos) frente al consumo real del carbono orgánico:
 
 A continuación se detalla la comparación energética justa basada en la transmisión de señales por evento sináptico efectivo (GPU vs. ATP biológico):
 
 | Neuronas ($N$) | Eventos Sinápticos | Energía por Evento GPU (J) | Energía por Evento Carbono (J) | Factor de Ventaja Biológica |
 | :---: | :---: | :---: | :---: | :---: |
-| 100 | 42,150 | 2.66e-03 | 1.65e-10 | **1.61e+07** (16.1 millones) |
-| 1,000 | 19,701,000 | 4.63e-06 | 1.65e-11 | **2.81e+05** (281,000 veces) |
-| 16,000 | 5,043,396,800 | 1.98e-08 | 1.03e-12 | **1.92e+04** (19,200 veces) |
-| 100,000 | 197,008,660,000 | 9.50e-10 | 1.65e-13 | **5.76e+03** (5,760 veces) |
-| 500,000 | 4,925,191,200,000 | 1.34e-10 | 3.30e-14 | **4.07e+03** (4,070 veces) |
-| 1,000,000 | 19,700,851,200,000 | 6.65e-11 | 1.65e-14 | **4.03e+03** (4,030 veces) |
-| 2,000,000 | 78,803,091,200,000 | 3.41e-11 | 8.25e-15 | **4.14e+03** (4,140 veces) |
+| 100 | 48,050 | 2.35e-03 | 1.65e-10 | **1.42e+07** (14.2 millones) |
+| 1,000 | 19,701,100 | 4.60e-06 | 1.65e-11 | **2.79e+05** (279,000 veces) |
+| 16,000 | 5,043,416,000 | 2.00e-08 | 1.03e-12 | **1.94e+04** (19,400 veces) |
+| 100,000 | 197,008,480,000 | 9.75e-10 | 1.65e-13 | **5.91e+03** (5,910 veces) |
+| 1,000,000 | 19,700,856,000,000 | 6.78e-11 | 1.65e-14 | **4.11e+03** (4,110 veces) |
+| 2,000,000 | 78,803,040,000,000 | 3.28e-11 | 8.25e-15 | **3.98e+03** (3,980 veces) |
+| 3,000,000 (Multi-GPU) | 522,610,252,800,000 | 4.56e-11 | 5.50e-15 | **8.30e+03** (8,300 veces) |
 
-*Nota Metodológica:* Evaluando críticamente estos datos, debemos reconocer que parte de la ineficiencia medida (especialmente a baja escala, como los 448 ms para N=100 en GPU) se debe al **crossover de latencia de CUDA** (el coste temporal y de energía que introduce el entorno de software de Python/PyTorch para lanzar kernels a la tarjeta gráfica). Si utilizáramos una simulación nativa en C++/CUDA altamente optimizada o chips neuromórficos analógicos (que conmutan de forma física), la brecha de eficiencia se reduciría significativamente.
+*Nota Metodológica:* Evaluando críticamente estos datos, debemos reconocer que parte de la ineficiencia medida (especialmente a baja escala, como los 450 ms para N=100 en GPU) se debe al **crossover de latencia de CUDA** (el coste temporal y de energía que introduce el entorno de software de Python/PyTorch para lanzar kernels a la tarjeta gráfica). La escala de 3,000,000 neuronas distribuida entre dos GPUs heterogéneas (RTX 5070 Ti + RTX 2060) revela un segundo cuello de botella: la **latencia de sincronización PCIe**. En cada paso de tiempo, los spikes deben cruzar el bus PCIe para propagar la actividad inter-GPU, lo que introduce una penalización temporal de ~9x respecto a la extrapolación lineal. Este fenómeno es análogo a la latencia axonal biológica de largo alcance, pero con un coste energético desproporcionado en el silicio.
 
-Sin embargo, el límite termodinámico de fondo persiste debido al **Principio de Landauer**: toda conmutación lógica digital borra información y disipa un mínimo de energía calorífica ($kT \ln 2$). En el cerebro de carbono, la difusión química y la modulación de canales iónicos de membrana ocurren de forma **pasiva**, guiadas por gradientes electroquímicos espontáneos y termodinámica molecular a coste energético cero (repolarizándose mediante la bomba ATPasa a un costo biológico dinámico). El silicio digital, al verse obligado a simular matemáticamente estas dinámicas físicas continuas mediante billones de conmutaciones lógicas de transistores bajo una fuente de alimentación activa, gasta hasta 4,140 veces más energía por evento sináptico a escalas de 2 millones de neuronas (ver [energia_silicio_vs_carbono.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png)).
+Sin embargo, el límite termodinámico de fondo persiste debido al **Principio de Landauer**: toda conmutación lógica digital borra información y disipa un mínimo de energía calorífica ($kT \ln 2$). En el cerebro de carbono, la difusión química y la modulación de canales iónicos de membrana ocurren de forma **pasiva**, guiadas por gradientes electroquímicos espontáneos y termodinámica molecular a coste energético cero (repolarizándose mediante la bomba ATPasa a un costo biológico dinámico). El silicio digital, al verse obligado a simular matemáticamente estas dinámicas físicas continuas mediante billones de conmutaciones lógicas de transistores bajo una fuente de alimentación activa, gasta entre 4,000 y 8,300 veces más energía por evento sináptico a escalas de millones de neuronas (ver [energia_silicio_vs_carbono.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png)).
 
 ---
 
