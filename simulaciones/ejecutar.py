@@ -15,7 +15,7 @@ def ejecutar_experimento():
     # Rango de tamaños de red para CPU (escala menor para evitar timeout)
     tamanos_cpu = [100, 500, 1000, 2000, 4000, 6000, 8000]
     # Rango de tamaños de red para GPU (escala masiva aprovechando la RTX 2060)
-    tamanos_gpu = [100, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 100000]
+    tamanos_gpu = [100, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 100000, 250000, 500000, 1000000]
     
     dt = 0.001 # 1 ms
     pasos_tiempo = 1000 # 1 segundo simulado

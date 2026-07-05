@@ -300,7 +300,7 @@ class RedLIF:
         self.V = np.full(tamano, self.V_rest, dtype=np.float32)
         self.refractario = np.zeros(tamano, dtype=np.float32)
         self.p_conexion = 0.1
-        self.num_conexiones = min(int(tamano * self.p_conexion), 500)
+        self.num_conexiones = min(int(tamano * self.p_conexion), 150)
         self.W_esparcido = np.random.normal(0.5, 0.1, (tamano, self.num_conexiones)).astype(np.float32)
         self.conexiones = np.random.randint(0, tamano, size=(tamano, self.num_conexiones))
         
@@ -343,7 +343,7 @@ class RedQuimicaLIF:
         self.tau_glu = 0.005
         self.tau_gaba = 0.010
         self.p_conexion = 0.1
-        self.num_conexiones = min(int(tamano * self.p_conexion), 500)
+        self.num_conexiones = min(int(tamano * self.p_conexion), 150)
         self.W_esparcido = np.random.normal(0.2, 0.05, (tamano, self.num_conexiones)).astype(np.float32)
         self.conexiones = np.random.randint(0, tamano, size=(tamano, self.num_conexiones))
         self.es_excitatoria = np.random.rand(tamano) < 0.8
@@ -411,11 +411,11 @@ class RedQuimicaLIFPyTorch:
         
         # Conectividad esparcida (10%)
         self.p_conexion = 0.1
-        self.num_conexiones = min(int(tamano * self.p_conexion), 500)
+        self.num_conexiones = min(int(tamano * self.p_conexion), 150)
         
         # Pesos y topología de red pre-cargados en la VRAM de la GPU
         self.W_esparcido = (torch.randn((tamano, self.num_conexiones), device=self.device, dtype=torch.float32) * 0.05 + 0.2)
-        self.conexiones = torch.randint(0, tamano, (tamano, self.num_conexiones), device=self.device, dtype=torch.long)
+        self.conexiones = torch.randint(0, tamano, (tamano, self.num_conexiones), device=self.device, dtype=torch.int32)
         self.es_excitatoria = torch.rand((tamano,), device=self.device) < 0.8
         
         self.dopamina = torch.tensor(0.5, device=self.device, dtype=torch.float32)
@@ -449,7 +449,7 @@ class RedQuimicaLIFPyTorch:
         # 6. Propagación de spikes en paralelo usando index_add_ de CUDA
         indices_disparo = torch.where(spikes)[0]
         if len(indices_disparo) > 0:
-            destinos_planos = self.conexiones[indices_disparo].view(-1)
+            destinos_planos = self.conexiones[indices_disparo].view(-1).long()
             pesos_planos = self.W_esparcido[indices_disparo].view(-1)
             
             es_exc_disparo = self.es_excitatoria[indices_disparo]
