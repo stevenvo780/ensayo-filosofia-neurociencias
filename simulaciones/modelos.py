@@ -385,7 +385,7 @@ class RedQuimicaLIFPyTorch:
     Simulación a gran escala en GPU (CUDA) de una red neuronal de disparo con modulación neuroquímica.
     Optimiza la propagación esparcida usando operaciones vectorizadas paralelas (index_add_).
     """
-    def __init__(self, tamano, device='cuda:1', dt=0.001):
+    def __init__(self, tamano, device='cuda:0', dt=0.001):
         import torch
         self.N = tamano
         self.device = torch.device(device)
