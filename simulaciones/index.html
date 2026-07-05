@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Fierro o Carne? Límites del Silicio en la Emulación Neuronal</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -402,9 +403,9 @@
 
     <nav>
         <div class="nav-container">
-            <button class="nav-btn active" onclick="switchTab(0)">📖 El Ensayo Completo</button>
-            <button class="nav-btn" onclick="switchTab(1)">🖥️ Exposición de Diapositivas</button>
-            <button class="nav-btn" onclick="switchTab(2)">📊 Datos del Laboratorio</button>
+            <button class="nav-btn active" onclick="switchTab(0)"><i data-lucide="book-open" style="vertical-align: middle; margin-right: 6px; width: 18px; height: 18px; display: inline-block;"></i> El Ensayo Completo</button>
+            <button class="nav-btn" onclick="switchTab(1)"><i data-lucide="presentation" style="vertical-align: middle; margin-right: 6px; width: 18px; height: 18px; display: inline-block;"></i> Exposición de Diapositivas</button>
+            <button class="nav-btn" onclick="switchTab(2)"><i data-lucide="bar-chart-2" style="vertical-align: middle; margin-right: 6px; width: 18px; height: 18px; display: inline-block;"></i> Datos del Laboratorio</button>
         </div>
     </nav>
 
@@ -897,6 +898,9 @@ $ ./ejecutar_laboratorio.sh
             if (currentSlide >= slides.length) currentSlide = slides.length - 1;
             showSlide(currentSlide);
         }
+        
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
     </script>
 </body>
 </html>
