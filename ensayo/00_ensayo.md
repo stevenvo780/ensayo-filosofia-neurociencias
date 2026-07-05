@@ -1,10 +1,10 @@
-# ¿Fierro o Carne? Los Límites del Silicio en la Emulación Neuronal y el Problema de la Mente
+# ¿Silicio o Tejido? Límites materiales y ontológicos en la emulación de la mente
 
 **Autor:** Steven Vallejo Ortiz  
 **Curso:** Filosofía de las Neurociencias (2026-1)  
 **Profesor:** Santiago Arango-Muñoz  
 **Institución:** Instituto de Filosofía, Universidad de Antioquia  
-**Anexo de Laboratorio:** [reproducir con ejecutar_laboratorio.sh](file:///workspace/ensayo-filosofia-neurociencias/ejecutar_laboratorio.sh) | [Dashboard de Resultados](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/index.html)
+**Anexo de Laboratorio:** [reproducir con ejecutar_laboratorio.sh](file:///workspace/ensayo-filosofia-neurociencias/ejecutar_laboratorio.sh) | [Dashboard de Resultados (Next.js)](http://localhost:8000)
 
 ---
 
@@ -12,9 +12,9 @@
 
 El problema de la mente y su relación con el sustrato físico es uno de los debates epistemológicos más densos de la ciencia contemporánea. A mediados del siglo XX, el funcionalismo clásico formuló la *tesis de la realizabilidad múltiple* (Putnam, 1967; Fodor, 1974), sosteniendo que los estados mentales son esencialmente estados funcionales y organizacionales. Según esta postura, la mente es realizable en múltiples soportes físicos (carbono, silicio o cualquier medio capaz de sostener las transiciones de estado adecuadas), lo que impulsó la *metáfora del cerebro como computadora* (Daugman, 2001) y la convicción de que los modelos conexionistas (Hinton, 1992) implementados en microchips digitales eventualmente producirían procesos cognitivos conscientes.
 
-Sin embargo, este ensayo propone una crítica rigurosa a la neutralidad del sustrato defendida por el funcionalismo computacional, delineando los límites materiales e instrumentales del silicio frente al carbono orgánico. A diferencia de las críticas cognitivas tradicionales, estructuramos este análisis sobre tres dimensiones físico-conceptuales, validadas empíricamente mediante un laboratorio computacional anexo (disponible en [index.html](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/index.html)):
+Sin embargo, este ensayo propone una crítica rigurosa a la neutralidad del sustrato defendida por el funcionalismo computacional, delineando los límites materiales e instrumentales del silicio frente al carbono orgánico. A diferencia de las críticas cognitivas tradicionales, estructuramos este análisis sobre tres dimensiones físico-conceptuales, validadas empíricamente mediante un laboratorio computacional anexo (disponible en la aplicación Next.js local):
 
-1. **La divergencia en la economía de la codificación:** el contraste entre el procesamiento densamente distribuido de los modelos de silicio tradicionales y la codificación esparcida basada en "células de concepto" (Quian Quiroga, Fried y Koch, 2013) y segmentación retinotópica jerárquica (Zeki, 1992).
+1. **La divergencia en la economía de la codificación:** el contraste entre el procesamiento densamente distribuido de los modelos de silicio tradicionales y la codificación esparcida basada en "células de concepto" (Quian Quiroga, Fried y Koch, 2013) y la jerarquía retinotópica (Zeki, 1992).
 2. **El límite termodinámico y de señalización:** la diferencia cualitativa entre la conmutación binaria de canal único en el silicio y la física molecular pasiva de la señalización química húmeda (neurotransmisores y modulación volumétrica), lo que genera una insostenible brecha de eficiencia energética al emular la biología en computadoras digitales.
 3. **La relevancia del sustrato en la emergencia de la conciencia:** la vinculación entre autopoiesis (Maturana y Varela, 1974) y la organicidad del carbono, problematizando si la ineficiencia física del silicio constituye un límite práctico o si apunta a una imposibilidad ontológica para originar una conciencia fenoménica en aislamiento corporal.
 
@@ -56,18 +56,23 @@ La esparsidad biológica es, por tanto, una optimización material directa del s
 
 El límite más crítico del silicio convencional es su pobreza de medios físicos de comunicación. Un microchip transmite información a través de electrones que conmutan estados binarios en canales de cobre estáticos. El cerebro, por el contrario, utiliza un alfabeto neuroquímico multicanal en el que decenas de neurotransmisores, neuromoduladores (dopamina, serotonina) y gases retrógrados (óxido nítrico) interactúan de forma paralela en el mismo medio físico (LeDoux, 1994; Greenwood y Garfinkel, 2024).
 
-Esta diversidad química no es un adorno adaptativo; realiza cómputos volumétricos tridimensionales no cableados y altera de forma dinámica los umbrales de plasticidad sináptica. Para explorar el coste físico de simular esta diversidad molecular, implementamos un benchmark de escalamiento masivo (de $N = 100$ a $N = 100,000$ neuronas) en el script [ejecutar.py](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/ejecutar.py), comparando la simulación en CPU (NumPy) y en la GPU (**RTX 2060** usando PyTorch CUDA) frente al consumo real del carbono orgánico:
+Esta diversidad química no es un adorno adaptativo; realiza cómputos volumétricos tridimensionales no cableados y altera de forma dinámica los umbrales de plasticidad sináptica. Para explorar el coste físico de simular esta diversidad molecular, implementamos un benchmark de escalamiento masivo (de $N = 100$ a $N = 2,000,000$ neuronas) en el script [ejecutar.py](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/ejecutar.py), comparando la simulación en CPU (NumPy) y en la GPU (**RTX 5070 Ti** usando PyTorch CUDA con arquitectura Blackwell nativa) frente al consumo real del carbono orgánico:
 
-| Neuronas ($N$) | Tiempo GPU (ms) | Spikes Totales | FLOPs Acumulados | Energía GPU (J) | Energía Carbono (J) | Brecha de Eficiencia (Veces) |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 100 | 506.92 | 4,441 | 5.29e+06 | 1.27e+02 | 4.44e-10 | **2.85e+11** (285,000 millones) |
-| 1,000 | 523.37 | 197,006 | 8.77e+07 | 1.31e+02 | 1.97e-07 | **6.64e+08** (664 millones) |
-| 10,000 | 1100.25 | 1,970,120 | 1.96e+09 | 2.75e+02 | 1.97e-05 | **1.40e+07** (14 millones) |
-| 100,000 | 5531.14 | 19,701,444 | 2.45e+10 | 1.38e+03 | 1.97e-03 | **7.02e+05** (702,000 veces) |
+A continuación se detalla la comparación energética justa basada en la transmisión de señales por evento sináptico efectivo (GPU vs. ATP biológico):
 
-*Nota Metodológica:* Evaluando críticamente estos datos, debemos reconocer que parte de la ineficiencia medida (especialmente a baja escala, como los 506 ms para N=100 en GPU) se debe al **crossover de latencia de CUDA** (el coste temporal y de energía que introduce el entorno de software de Python/PyTorch para lanzar kernels a la tarjeta gráfica). Si utilizáramos una simulación nativa en C++/CUDA altamente optimizada o chips neuromórficos analógicos (que conmutan de forma física), la brecha de eficiencia se reduciría significativamente.
+| Neuronas ($N$) | Eventos Sinápticos | Energía por Evento GPU (J) | Energía por Evento Carbono (J) | Factor de Ventaja Biológica |
+| :---: | :---: | :---: | :---: | :---: |
+| 100 | 42,150 | 2.66e-03 | 1.65e-10 | **1.61e+07** (16.1 millones) |
+| 1,000 | 19,701,000 | 4.63e-06 | 1.65e-11 | **2.81e+05** (281,000 veces) |
+| 16,000 | 5,043,396,800 | 1.98e-08 | 1.03e-12 | **1.92e+04** (19,200 veces) |
+| 100,000 | 197,008,660,000 | 9.50e-10 | 1.65e-13 | **5.76e+03** (5,760 veces) |
+| 500,000 | 4,925,191,200,000 | 1.34e-10 | 3.30e-14 | **4.07e+03** (4,070 veces) |
+| 1,000,000 | 19,700,851,200,000 | 6.65e-11 | 1.65e-14 | **4.03e+03** (4,030 veces) |
+| 2,000,000 | 78,803,091,200,000 | 3.41e-11 | 8.25e-15 | **4.14e+03** (4,140 veces) |
 
-Sin embargo, el límite termodinámico de fondo persiste debido al **Principio de Landauer**: toda conmutación lógica digital borra información y disipa un mínimo de energía calorífica ($kT \ln 2$). En el cerebro de carbono, la difusión química y la modulación de canales iónicos de membrana ocurren de forma **pasiva**, guiadas por gradientes electroquímicos espontáneos y termodinámica molecular a coste energético cero. El silicio digital, al verse obligado a simular matemáticamente estas dinámicas físicas continuas mediante billones de conmutaciones lógicas discretas de transistores bajo una fuente de alimentación activa, gasta hasta 702,000 veces más energía a gran escala (ver [energia_silicio_vs_carbono.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png)).
+*Nota Metodológica:* Evaluando críticamente estos datos, debemos reconocer que parte de la ineficiencia medida (especialmente a baja escala, como los 448 ms para N=100 en GPU) se debe al **crossover de latencia de CUDA** (el coste temporal y de energía que introduce el entorno de software de Python/PyTorch para lanzar kernels a la tarjeta gráfica). Si utilizáramos una simulación nativa en C++/CUDA altamente optimizada o chips neuromórficos analógicos (que conmutan de forma física), la brecha de eficiencia se reduciría significativamente.
+
+Sin embargo, el límite termodinámico de fondo persiste debido al **Principio de Landauer**: toda conmutación lógica digital borra información y disipa un mínimo de energía calorífica ($kT \ln 2$). En el cerebro de carbono, la difusión química y la modulación de canales iónicos de membrana ocurren de forma **pasiva**, guiadas por gradientes electroquímicos espontáneos y termodinámica molecular a coste energético cero (repolarizándose mediante la bomba ATPasa a un costo biológico dinámico). El silicio digital, al verse obligado a simular matemáticamente estas dinámicas físicas continuas mediante billones de conmutaciones lógicas de transistores bajo una fuente de alimentación activa, gasta hasta 4,140 veces más energía por evento sináptico a escalas de 2 millones de neuronas (ver [energia_silicio_vs_carbono.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png)).
 
 ---
 
