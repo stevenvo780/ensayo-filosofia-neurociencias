@@ -1,173 +1,128 @@
-import Image from "next/image";
+import Reveal from "@/components/Reveal";
+import SparseCoding from "@/components/explainers/SparseCoding";
+import VonNeumannBus from "@/components/explainers/VonNeumannBus";
+import EfficiencyStaircase from "@/components/explainers/EfficiencyStaircase";
+import LandauerFloor from "@/components/explainers/LandauerFloor";
+import GammaOscillation from "@/components/explainers/GammaOscillation";
+import MorphologyFlops from "@/components/explainers/MorphologyFlops";
 
-interface LabCard {
-  id: number;
-  title: string;
-  desc: string;
-  metric: string;
-  metricLabel: string;
-  image: string;
-}
-
-const labCardsData: LabCard[] = [
-  {
-    id: 1,
-    title: "Exp 1: Jerarquía Visual",
-    desc: "Cálculo local retinotópico con campos receptivos del 10% (Zeki, 1992) vs. conexionismo denso clásico.",
-    metric: "90% Ahorro",
-    metricLabel: "reducción de FLOPs",
-    image: "/graficos/exp1_visual.png"
-  },
-  {
-    id: 2,
-    title: "Exp 2: Interferencia Conceptual",
-    desc: "Nivel de solapamiento conceptual (crosstalk) entre 20 conceptos usando codificación esparcida del 1% (WTA).",
-    metric: "0.01% Solape",
-    metricLabel: "frente a 64% en densa",
-    image: "/graficos/exp2_crosstalk.png"
-  },
-  {
-    id: 3,
-    title: "Exp 3: Diversidad Química",
-    desc: "Impacto en los FLOPs de silicio al simular múltiples neurotransmisores difusos por volumen en paralelo.",
-    metric: "Escalamiento Lineal",
-    metricLabel: "de costo en CPU/GPU",
-    image: "/graficos/exp3_escalamiento_quimico.png"
-  },
-  {
-    id: 4,
-    title: "Exp 4: Oscilaciones Gamma",
-    desc: "Emergencia espontánea de ritmos colectivos (~40 Hz) mediante interacciones E-I y retardos de propagación.",
-    metric: "Ondas Gamma",
-    metricLabel: "emergencia pasiva física",
-    image: "/graficos/exp4_oscilaciones_emergentes.png"
-  },
-  {
-    id: 5,
-    title: "Exp 5: Plasticidad Sináptica",
-    desc: "Memoria de estado requerida para el aprendizaje con la regla local STDP vs. retropropagación global.",
-    metric: "200x Menos RAM",
-    metricLabel: "4 KB vs 768 KB",
-    image: "/graficos/exp5_aprendizaje.png"
-  },
-  {
-    id: 6,
-    title: "Exp 6: Cómputo Morfológico",
-    desc: "Operaciones lógicas requeridas para localización sonora usando morfología acústica (grillo de Webb) vs. FFT.",
-    metric: "2 FLOPs vs 21k",
-    metricLabel: "delegación en la morfología",
-    image: "/graficos/exp6_morfologia.png"
-  }
+const TIERS = [
+  { t: "Tier 1 · CPU", hw: "NumPy · hasta 8K", cuello: "loop Python", c: "var(--si)" },
+  { t: "Tier 2 · Single GPU", hw: "RTX 5070 Ti · hasta 6M", cuello: "VRAM 16 GB", c: "var(--si-2)" },
+  { t: "Tier 3 · Multi-GPU", hw: "+ RTX 2060 · hasta 12M", cuello: "bus PCIe (×10)", c: "var(--carbon-2)" },
+  { t: "Tier 4 · Híbrido", hw: "CPU+2GPU+DDR · hasta 16M", cuello: "DDR+PCIe+GIL (×100)", c: "var(--carbon)" },
 ];
 
-export default function LaboratorioPage() {
-  return (
-    <div style={{ color: "var(--text-color)" }}>
-      <header style={{ marginBottom: "45px" }}>
-        <h2 style={{ fontSize: "2.2rem", fontWeight: 800, marginBottom: "10px" }}>
-          Métricas e Infraestructura de Simulación
-        </h2>
-        <p style={{ color: "var(--text-muted)", fontSize: "1.1rem" }}>
-          Resultados empíricos obtenidos en el benchmark de aceleración Multi-GPU (N=3,000,000 neuronas esparcidas, RTX 5070 Ti + RTX 2060) y emulación física.
-        </p>
-      </header>
+const EXPERIMENTS = [
+  { n: "01", title: "Codificación esparcida", sub: "Exp 2 · crosstalk 80% → 1,03%", C: SparseCoding },
+  { n: "02", title: "Cuello de botella de Von Neumann", sub: "Exp 5 · 20.000 KB vs 39 KB (512×)", C: VonNeumannBus },
+  { n: "03", title: "La escalera de la ineficiencia", sub: "Benchmark · brecha 3.000× → 104.450×", C: EfficiencyStaircase },
+  { n: "04", title: "El piso de Landauer", sub: "Límite termodinámico universal", C: LandauerFloor },
+  { n: "05", title: "Oscilaciones beta–gamma", sub: "Exp 4 · emergencia de la física pasiva", C: GammaOscillation },
+  { n: "06", title: "Cómputo morfológico", sub: "Exp 6 · 757.760 FLOPs vs 2 FLOPs", C: MorphologyFlops },
+];
 
-      {/* Grid of Experiments */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
-        gap: "25px",
-        marginBottom: "50px"
-      }}>
-        {labCardsData.map((card) => (
-          <div key={card.id} style={{
-            background: "var(--bg-card)",
-            border: "1px solid var(--border)",
-            borderRadius: "12px",
-            padding: "25px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            gap: "15px"
-          }}>
-            <div>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "8px", color: "#ffffff" }}>
-                {card.title}
-              </h3>
-              <p style={{ fontSize: "0.95rem", color: "var(--text-muted)", marginBottom: "15px", lineHeight: "1.5" }}>
-                {card.desc}
-              </p>
-              <div style={{
-                display: "inline-block",
-                background: "rgba(0, 230, 118, 0.08)",
-                border: "1px solid var(--accent)",
-                borderRadius: "6px",
-                padding: "8px 12px",
-                marginBottom: "15px"
-              }}>
-                <span style={{ fontSize: "1.1rem", fontWeight: "bold", color: "var(--accent-light)", display: "block" }}>
-                  {card.metric}
-                </span>
-                <span style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
-                  {card.metricLabel}
-                </span>
+export default function Laboratorio() {
+  return (
+    <div className="container" style={{ maxWidth: 820, paddingTop: 56 }}>
+      <Reveal>
+        <div className="eyebrow" style={{ marginBottom: 14 }}>Laboratorio computacional · reproducible</div>
+        <h1 style={{ fontSize: "clamp(2.2rem, 6vw, 3.4rem)", margin: "0 0 0.4em" }}>
+          Los experimentos, en vivo
+        </h1>
+        <p className="prose" style={{ marginBottom: 40 }}>
+          Un benchmark <strong>deliberadamente escalonado</strong> en cuatro tiers de hardware
+          (CPU → Single GPU → Multi-GPU → Híbrido) hace visible el cuello de botella de Von Neumann en
+          cada nivel de escala. Cada tier expone un límite físico distinto del silicio; cada experimento
+          es interactivo y usa los datos reales de <span className="mono">simulaciones/datos/</span>.
+        </p>
+      </Reveal>
+
+      <Reveal>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: 14,
+            marginBottom: 56,
+          }}
+        >
+          {TIERS.map((t) => (
+            <div
+              key={t.t}
+              style={{
+                background: "var(--surface)",
+                border: "1px solid var(--border)",
+                borderLeft: `3px solid ${t.c}`,
+                borderRadius: 10,
+                padding: "14px 16px",
+              }}
+            >
+              <div className="mono" style={{ fontSize: "0.82rem", fontWeight: 600, color: t.c }}>{t.t}</div>
+              <div style={{ fontSize: "0.9rem", color: "var(--text-soft)", margin: "6px 0" }}>{t.hw}</div>
+              <div className="mono" style={{ fontSize: "0.72rem", color: "var(--muted)" }}>
+                cuello: {t.cuello}
               </div>
             </div>
-            
-            <div style={{
-              background: "rgba(0,0,0,0.15)",
-              borderRadius: "8px",
-              padding: "10px",
-              border: "1px solid var(--border)",
-              textAlign: "center"
-            }}>
-              <Image
-                src={card.image}
-                alt={card.title}
-                width={300}
-                height={160}
-                style={{
-                  borderRadius: "4px",
-                  maxWidth: "100%",
-                  height: "auto",
-                  objectFit: "contain"
-                }}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </Reveal>
 
-      {/* Reproduction Guide */}
-      <section style={{
-        background: "linear-gradient(135deg, #151d30 0%, #0f172a 100%)",
-        border: "1px solid var(--border)",
-        borderRadius: "12px",
-        padding: "35px",
-        marginTop: "40px"
-      }}>
-        <h3 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "15px", color: "#ffffff" }}>
-          Reproducción del Experimento
-        </h3>
-        <p style={{ fontSize: "1rem", color: "var(--text-muted)", marginBottom: "20px", lineHeight: "1.6" }}>
-          La suite de simulaciones fue optimizada eliminando llamadas de sincronización bloqueantes host-device en PyTorch CUDA. El cálculo energético del carbono biológico implementa un modelo de ATP basado en la restauración del gradiente iónico por la bomba sodio-potasio.
-        </p>
-        <p style={{ fontSize: "1rem", color: "var(--text-muted)", marginBottom: "15px" }}>
-          Puedes compilar, ejecutar y verificar el benchmark completo de forma local corriendo el script maestro en tu terminal:
-        </p>
-        <pre style={{
-          backgroundColor: "#0b0f19",
-          border: "1px solid var(--border)",
-          padding: "20px",
-          borderRadius: "8px",
-          fontFamily: "monospace",
-          fontSize: "1rem",
-          color: "var(--primary-light)",
-          overflowX: "auto"
-        }}>
-          $ ./ejecutar_laboratorio.sh
-        </pre>
-      </section>
+      {EXPERIMENTS.map(({ n, title, sub, C }) => (
+        <Reveal key={n}>
+          <div style={{ marginTop: 8 }}>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 4 }}>
+              <span
+                className="mono"
+                style={{ fontSize: "0.9rem", color: "var(--carbon)", fontWeight: 600 }}
+              >
+                {n}
+              </span>
+              <div>
+                <h2 style={{ fontSize: "1.5rem", margin: 0 }}>{title}</h2>
+                <div className="mono" style={{ fontSize: "0.74rem", color: "var(--muted)", marginTop: 2 }}>
+                  {sub}
+                </div>
+              </div>
+            </div>
+            <C />
+          </div>
+        </Reveal>
+      ))}
+
+      <Reveal>
+        <div
+          style={{
+            marginTop: 48,
+            background: "var(--surface)",
+            border: "1px solid var(--border)",
+            borderRadius: 14,
+            padding: 28,
+          }}
+        >
+          <h3 style={{ marginTop: 0, fontSize: "1.3rem" }}>Reproducir</h3>
+          <p style={{ color: "var(--text-soft)", fontSize: "1rem" }}>
+            La suite implementa homeostasis sináptica, topología esparcida y propagación por chunks. El
+            costo del carbono se basa en la hidrólisis de ATP (1,65·10⁻⁹ J/spike). Es{" "}
+            <strong>deliberadamente ineficiente</strong>: cada cuello de botella es una observación.
+          </p>
+          <pre
+            style={{
+              background: "var(--bg-2)",
+              border: "1px solid var(--border)",
+              padding: "16px 18px",
+              borderRadius: 10,
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.95rem",
+              color: "var(--carbon)",
+              overflowX: "auto",
+              margin: 0,
+            }}
+          >
+            $ ./ejecutar_laboratorio.sh
+          </pre>
+        </div>
+      </Reveal>
     </div>
   );
 }

@@ -1,16 +1,23 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, ComponentType } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Mic } from "lucide-react";
+import { Mic, ArrowLeft, ArrowRight } from "lucide-react";
+import Emblem from "@/components/Emblem";
+import SparseCoding from "@/components/explainers/SparseCoding";
+import VonNeumannBus from "@/components/explainers/VonNeumannBus";
+import EfficiencyStaircase from "@/components/explainers/EfficiencyStaircase";
+import GammaOscillation from "@/components/explainers/GammaOscillation";
+import MorphologyFlops from "@/components/explainers/MorphologyFlops";
 
 interface SlideData {
   title: string;
   subtitle: string;
   bullets: string[];
-  image: string;
-  imageAlt: string;
+  explainer?: ComponentType;
+  image?: string;
+  imageAlt?: string;
   speakerNotes: string;
 }
 
@@ -19,313 +26,264 @@ const slidesData: SlideData[] = [
     title: "¿Silicio o Tejido?",
     subtitle: "Límites materiales y ontológicos en la emulación de la mente",
     bullets: [
-      "Tesis: La emulación mental en silicio digital es térmicamente incompatible con el carbono orgánico vivo.",
-      "El funcionalismo clásico sostiene que el sustrato material es irrelevante para los estados mentales.",
-      "Sin embargo, la bioenergética y la termodinámica demuestran una insostenible brecha de eficiencia.",
-      "El problema duro de la conciencia (qualia) requiere la homeostasis y la vulnerabilidad metabólica de la vida celular."
+      "Tesis con dos niveles: el material (demostrable) y el ontológico (conjetura fundada en la autopoiesis).",
+      "El funcionalismo sostiene que el sustrato es irrelevante para los estados mentales.",
+      "Pero emular el carbono vivo sobre silicio digital revela una incompatibilidad material profunda.",
+      "La conciencia fenoménica (qualia) exige la vulnerabilidad homeostática de la vida celular.",
     ],
-    image: "/graficos/exp5_aprendizaje.png",
-    imageAlt: "Tesis de investigación",
-    speakerNotes: "Buenas tardes. En esta exposición analizaremos la tesis central de mi ensayo: la emulación de la mente biológica en silicio digital se topa con límites termodinámicos infranqueables. Planteamos que la conciencia no es un software abstracto, sino una propiedad de la dinámica material de la vida."
+    speakerNotes:
+      "Buenas tardes. La tesis tiene dos niveles que no hay que confundir: uno práctico —el costo de emular carbono sobre silicio es insostenible— y uno ontológico —el sustrato vivo sería constitutivo de la conciencia—, y este segundo NO se sigue del primero: se funda en la autopoiesis.",
   },
   {
-    title: "El Cuello de Botella de Von Neumann",
+    title: "El cuello de botella de Von Neumann",
     subtitle: "Separación física vs. integración biológica",
     bullets: [
-      "Silicio Clásico: Separación estricta entre CPU/GPU (procesamiento) y memoria RAM (almacenamiento).",
-      "Cerebro de Carbono: El procesamiento y el almacenamiento son co-locales, ocurriendo in-situ en el cambio sináptico.",
-      "Experimento 5: STDP local (4 KB de memoria de estado) frente a la retropropagación global de silicio (768 KB de memoria).",
-      "La plasticidad biológica es un reordenamiento molecular pasivo; en silicio es una simulación matemática costosa."
+      "Silicio: procesador y memoria separados por un bus; el tráfico de datos es el límite.",
+      "Carbono: procesamiento y almacenamiento son co-locales, en la propia sinapsis (Bechtel).",
+      "Experimento 5: STDP local (39 KB) frente a la retropropagación global (20.000 KB): 512× menos.",
+      "La plasticidad biológica es reordenamiento físico pasivo; en silicio, simulación matemática costosa.",
     ],
-    image: "/graficos/exp5_aprendizaje.png",
-    imageAlt: "Mapeo de memoria STDP vs Backpropagation",
-    speakerNotes: "El primer problema del silicio es su arquitectura física. Von Neumann separa la memoria del cómputo. En el carbono, la sinapsis es a la vez memoria y procesador. Vemos en el experimento 5 cómo la plasticidad local STDP requiere 200 veces menos memoria de estado que el algoritmo de Backpropagation usado en silicio."
+    explainer: VonNeumannBus,
+    speakerNotes:
+      "Von Neumann separa memoria y cómputo; en el carbono la sinapsis es ambas cosas. El experimento 5 muestra que la regla local STDP necesita 512 veces menos memoria de estado que la retropropagación.",
   },
   {
-    title: "Economía del Silencio",
+    title: "Economía del silencio",
     subtitle: "Codificación esparcida contra procesamiento denso",
     bullets: [
-      "Células de Concepto (Quian Quiroga): Activación ultra-específica ante ideas discretas en el temporal medial.",
-      "Esparsidad del 1%: El cerebro apaga activamente el 99% de su red, optimizando energía y evitando el crosstalk.",
-      "Experimento 2: El solapamiento del 64% en redes densas de silicio produce interferencia destructiva de memoria.",
-      "En silicio digital, simular el silencio o valor cero requiere computar y gastar energía de conmutación de compuertas."
+      "Células de concepto (Quian Quiroga): activación ultra-específica en el temporal medial.",
+      "Esparsidad del 1%: el cerebro apaga activamente el 99%, ahorrando energía y evitando crosstalk.",
+      "Experimento 2: la red densa solapa el 80% entre conceptos; la esparcida del 1%, solo el 1,03%.",
+      "En silicio, simular el silencio (el cero) también gasta energía de conmutación.",
     ],
-    image: "/graficos/exp2_crosstalk.png",
-    imageAlt: "Histograma de crosstalk conceptual",
-    speakerNotes: "En el Experimento 2 evaluamos la codificación esparcida. Mientras que las redes artificiales de silicio procesan de forma densamente distribuido, sufriendo interferencias del 64%, la red biológica del 1% aísla por completo los conceptos (0.01% de solape). En silicio, simular el silencio cuesta energía lógicas; en carbono, el silencio es gratis."
+    explainer: SparseCoding,
+    speakerNotes:
+      "En el Experimento 2, la red densa sufre un solapamiento del 80% entre conceptos; la esparcida del 1% lo reduce al 1,03%. Arrastra el control para verlo: la interferencia crece con la densidad.",
   },
   {
-    title: "El Canal Químico",
+    title: "El canal químico",
     subtitle: "El alfabeto molecular frente al cableado binario",
     bullets: [
-      "Silicio Digital: Canal de señalización única basado en el flujo de electrones en pistas de cobre estáticas.",
-      "Carbono Biológico: Decenas de neurotransmisores y neuromoduladores que difunden volumétricamente en paralelo.",
-      "Experimento 3: Incorporar modulación química digital escala linealmente los FLOPs por canal en el microchip.",
-      "La química biológica realiza cómputos volumétricos pasivos; el silicio debe emularlos mediante costosas ecuaciones lógicas."
+      "Silicio: señalización de canal único, electrones en pistas de cobre estáticas.",
+      "Carbono: decenas de neurotransmisores y neuromoduladores que difunden en volumen, en paralelo.",
+      "Experimento 3: incorporar cada canal químico escala linealmente los FLOPs (120K → 428K).",
+      "La química realiza cómputos volumétricos pasivos; el silicio debe emularlos con ecuaciones lógicas.",
     ],
     image: "/graficos/exp3_escalamiento_quimico.png",
-    imageAlt: "Escalamiento de canales químicos",
-    speakerNotes: "El cerebro no está cableado de forma binaria. La difusión por volumen de dopamina o GABA ocurre físicamente en un espacio tridimensional de forma paralela. Para simular esto en silicio, debemos iterar sobre costosos bucles lógicos secuenciales por cada neurotransmisor, incrementando los FLOPs lineales."
+    imageAlt: "Escalamiento lineal de canales químicos",
+    speakerNotes:
+      "El cerebro no es binario: la difusión por volumen de dopamina o GABA ocurre en 3D y en paralelo. Simularla en silicio incrementa los FLOPs de forma lineal por cada neurotransmisor.",
   },
   {
-    title: "La Paradoja Termodinámica",
+    title: "La paradoja termodinámica",
     subtitle: "Costo del cómputo lógico vs. física molecular pasiva",
     bullets: [
-      "Principio de Landauer: Borrar bits digitales disipa calor calorífico inevitable ($kT \\ln 2$).",
-      "Termodinámica del ATP: El flujo de iones por espiga es pasivo; restaurar el gradiente consume ATP metabólico diferido.",
-      "Benchmark Empírico: La GPU gasta $6.56 \\times 10^{-9}$ J por sinapsis; el carbono gasta $1.65 \\times 10^{-13}$ J.",
-      "La emulación en silicio digital es unas 39,760 veces más ineficiente por evento que el cerebro orgánico vivo."
+      "Principio de Landauer: piso universal (kT·ln 2) que NI el silicio NI el carbono se acercan a tocar.",
+      "La brecha medida (3.000× → 104.450×) es arquitectónica, no fundamental.",
+      "No es monotónica: baja en single-GPU y rebota al cruzar VRAM → PCIe → DDR.",
+      "Cautela: compara potencia total de hardware no optimizado con señalización idealizada por spike.",
     ],
-    image: "/graficos/energia_silicio_vs_carbono.png",
-    imageAlt: "Eficiencia energética logarítmica",
-    speakerNotes: "Esta es la diapositiva central. Realizando una comparación justa por evento sináptico individual, la GPU gasta 6.56 nanojoules por sinapsis, mientras que el modelo de ATP biológico gasta 0.16 picojoules. La brecha es de casi 40,000 veces a escala masiva, y de miles de millones de veces a menor escala debido a la sobrecarga del software."
+    explainer: EfficiencyStaircase,
+    speakerNotes:
+      "La brecha va de ~3.000× con una GPU hasta 104.450× en el híbrido a 16M, porque cada cuello de botella la amplifica. Pero el límite fundamental, Landauer, es común a ambos sustratos: no favorece a ninguno.",
   },
   {
-    title: "Emergencia Temporal",
-    subtitle: "Sincronización Gamma y retardos físicos axonales",
+    title: "Emergencia temporal",
+    subtitle: "Sincronización beta–gamma y retardos axonales",
     bullets: [
-      "Sincronía Cortical (Bechtel): Las ondas Gamma (~40 Hz) ligan perceptivamente los conceptos en el cerebro.",
-      "Retardo Axonal: En el carbono, el retardo de conducción es una propiedad pasiva del espacio físico de los axones.",
-      "Experimento 4: Emergencia espontánea de ritmos Gamma al simular redes excitatorias-inhibitorias con retardo.",
-      "En silicio digital, mantener los desfases temporales precisos exige un inmenso procesamiento de buffers de memoria."
+      "Las oscilaciones rápidas (~40 Hz) ligan perceptivamente los conceptos en el cerebro (Bechtel).",
+      "El retardo de conducción es una propiedad pasiva del espacio físico de los axones.",
+      "Experimento 4: emergen oscilaciones beta–gamma (13–80 Hz, ~58% de potencia) de la red E-I.",
+      "En silicio, mantener los desfases exige indexar miles de buffers de memoria.",
     ],
-    image: "/graficos/exp4_oscilaciones_emergentes.png",
-    imageAlt: "Gráficos de oscilaciones Gamma",
-    speakerNotes: "Las oscilaciones cerebrales sincronizan áreas distantes para unificar la percepción. En el Experimento 4, demostramos cómo estas oscilaciones emergen de forma natural gracias a los retardos de conducción axonal. En silicio digital, procesar estos buffers de desfase temporal requiere miles de operaciones secuenciales por segundo."
+    explainer: GammaOscillation,
+    speakerNotes:
+      "Las oscilaciones sincronizan áreas distantes para unificar la percepción. En el Experimento 4 emergen solas de los retardos de conducción de una red excitatoria-inhibitoria; en silicio, procesarlas exige miles de operaciones por segundo.",
   },
   {
-    title: "Computación Morfológica",
-    subtitle: "El cuerpo inorgánico como andamio cognitivo",
+    title: "Computación morfológica",
+    subtitle: "El cuerpo como parte del cómputo",
     bullets: [
-      "Grillo Robot de Webb (1996): Resuelve la fonotaxis mediante acústica morfológica traqueal física pasiva.",
-      "Experimento 6: El modelo desencarnado (Fourier/FFT) requiere 21,480 FLOPs; el modelo corporal requiere 2 FLOPs.",
-      "Contradicción clave: El robot de Webb demuestra que el silicio analógico/inorgánico sí puede usar computación morfológica.",
-      "Mente Extendida (Clark): El silicio funciona como andamio sintáctico acoplado; el carbono origina el qualia."
+      "Grillo robot de Webb (1996): resuelve la fonotaxis por acústica morfológica pasiva.",
+      "Experimento 6: el modelo desencarnado gasta 757.760 FLOPs; el corporizado, solo 2 FLOPs.",
+      "El cómputo no desaparece: se REUBICA en la física del cuerpo (que puede ser materia no viva).",
+      "Lo decisivo, entonces, no es el carbono, sino la autopoiesis. El silicio andamia; no origina.",
     ],
-    image: "/graficos/exp6_morfologia.png",
-    imageAlt: "Costo FLOPs Computación Morfológica",
-    speakerNotes: "El grillo de Webb demuestra la computación morfológica: delegar cómputo al cuerpo. El modelo desencarnado necesita 21,480 FLOPs matemáticos, mientras que el corporizado hace una simple resta de 2 FLOPs. Esto muestra que la cognición depende del acoplamiento corporal, y que el silicio puede actuar como andamio de esta extensión."
+    explainer: MorphologyFlops,
+    speakerNotes:
+      "El grillo de Webb reubica el cómputo en el cuerpo: 757.760 FLOPs frente a 2. Y como ese cuerpo puede ser materia no viva, lo decisivo no es el carbono en sí, sino la autopoiesis; el silicio sirve de andamio.",
   },
   {
-    title: "Hacia el Neuromorfismo Analógico",
-    subtitle: "Límites lógicos de Turing y conclusiones",
+    title: "Hacia el neuromorfismo corporizado",
+    subtitle: "Límites de Turing y conclusión",
     bullets: [
-      "El sustrato material importa: El qualia y la conciencia fenoménica emergen de la lucha autopoyética celular viva.",
-      "El silicio digital Von Neumann es un accidente histórico industrial, no el medio óptimo para la cognición.",
-      "Computación neuromórfica analógica (Loihi 2, memristores): Integra corrientes pasivas directamente en el hardware.",
-      "Conclusión: Debemos transitar de la computación digital abstracta a sistemas analógicos neuromórficos corporizados."
+      "El sustrato importa: la conciencia fenoménica se apoya en la auto-producción autopoiética.",
+      "El silicio digital de Von Neumann es un accidente histórico, no el medio óptimo para la cognición.",
+      "Neuromorfismo analógico (Loihi, memristores): integra corrientes pasivas en el hardware.",
+      "Transitar del cálculo digital abstracto a sistemas analógicos neuromórficos corporizados.",
     ],
-    image: "/graficos/tiempo_escalamiento.png",
-    imageAlt: "Crossover de latencia computacional",
-    speakerNotes: "Para concluir, la ineficiencia de la GPU no es un problema de potencia de cálculo, sino de paradigma. La conciencia surge de la necesidad biológica de supervivencia. Si queremos emular procesos conscientes, debemos abandonar la arquitectura Von Neumann digital tradicional y transitar hacia el silicio neuromórfico analógico corporizado."
-  }
+    speakerNotes:
+      "La ineficiencia del silicio no es un problema de potencia, sino de paradigma. Si queremos emular procesos conscientes, hay que abandonar la arquitectura de Von Neumann y transitar hacia el silicio neuromórfico analógico corporizado.",
+  },
 ];
 
 export default function SlideClient({ slideIndex }: { slideIndex: number }) {
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") {
-        if (slideIndex < slidesData.length - 1) {
-          window.location.href = `/slides/${slideIndex + 1}`;
-        }
-      } else if (e.key === "ArrowLeft") {
-        if (slideIndex > 0) {
-          window.location.href = `/slides/${slideIndex - 1}`;
-        }
-      }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight" && slideIndex < slidesData.length - 1)
+        window.location.href = `/slides/${slideIndex + 1}`;
+      else if (e.key === "ArrowLeft" && slideIndex > 0)
+        window.location.href = `/slides/${slideIndex - 1}`;
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [slideIndex]);
 
   if (isNaN(slideIndex) || slideIndex < 0 || slideIndex >= slidesData.length) {
     return (
-      <div style={{ textAlign: "center", padding: "50px" }}>
+      <div style={{ textAlign: "center", padding: 60 }}>
         <h2>Diapositiva no encontrada</h2>
-        <Link href="/slides/0" style={{ color: "var(--primary-light)" }}>Volver al inicio</Link>
+        <Link href="/slides/0">Volver al inicio</Link>
       </div>
     );
   }
 
   const slide = slidesData[slideIndex];
+  const Explainer = slide.explainer;
+  const isTitle = slideIndex === 0;
 
   return (
-    <div style={{
-      minHeight: "calc(100vh - 180px)",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      gap: "20px"
-    }}>
-      <div style={{
-        background: "var(--bg-card)",
-        borderRadius: "12px",
-        border: "1px solid var(--border)",
-        padding: "35px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        flexGrow: 1
-      }}>
-        {/* Header */}
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          borderBottom: "1px solid var(--border)",
-          paddingBottom: "15px"
-        }}>
-          <div>
-            <h2 style={{ fontSize: "1.8rem", color: "#ffffff", fontWeight: 700, margin: 0 }}>
-              {slide.title}
-            </h2>
-            <p style={{ fontSize: "0.95rem", color: "var(--primary-light)", margin: 0 }}>
-              {slide.subtitle}
-            </p>
+    <div className="container" style={{ maxWidth: 960, paddingTop: 32, paddingBottom: 24 }}>
+      {/* Progreso */}
+      <div style={{ display: "flex", gap: 5, marginBottom: 22 }}>
+        {slidesData.map((_, i) => (
+          <div
+            key={i}
+            style={{
+              height: 3,
+              flex: 1,
+              borderRadius: 3,
+              background: i <= slideIndex ? "var(--carbon)" : "var(--border)",
+              transition: "background 0.3s var(--ease)",
+            }}
+          />
+        ))}
+      </div>
+
+      <div
+        style={{
+          background: "var(--surface)",
+          border: "1px solid var(--border)",
+          borderRadius: 18,
+          padding: "clamp(24px, 4vw, 44px)",
+          boxShadow: "var(--shadow-md)",
+          minHeight: "60vh",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 26 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <Emblem size={30} />
+            <span className="mono" style={{ fontSize: "0.72rem", letterSpacing: "0.12em", color: "var(--muted)", textTransform: "uppercase" }}>
+              Silicio ⇄ Tejido
+            </span>
           </div>
-          <span style={{ fontSize: "0.85rem", color: "var(--text-muted)", fontWeight: "bold" }}>
-            Slide {slideIndex + 1} / {slidesData.length}
+          <span className="mono" style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
+            {String(slideIndex + 1).padStart(2, "0")} / {String(slidesData.length).padStart(2, "0")}
           </span>
         </div>
 
-        {/* Content Layout */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1.2fr 1fr",
-          gap: "30px",
-          alignItems: "center",
-          flexGrow: 1
-        }}>
-          {/* Bullets */}
-          <ul style={{
-            listStyleType: "none",
-            display: "flex",
-            flexDirection: "column",
-            gap: "18px",
-            fontSize: "1.05rem"
-          }}>
-            {slide.bullets.map((bullet, idx) => (
-              <li key={idx} style={{
-                position: "relative",
-                paddingLeft: "25px",
-                lineHeight: "1.6"
-              }}>
-                <span style={{
-                  position: "absolute",
-                  left: 0,
-                  top: "6px",
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  backgroundColor: "var(--accent)"
-                }} />
-                {bullet}
+        <h1
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: isTitle ? "clamp(2.4rem, 7vw, 4rem)" : "clamp(1.8rem, 4.5vw, 2.7rem)",
+            margin: "0 0 0.2em",
+            lineHeight: 1.06,
+          }}
+        >
+          {slide.title}
+        </h1>
+        <p
+          style={{
+            fontFamily: "var(--font-display)",
+            fontStyle: "italic",
+            color: "var(--carbon)",
+            fontSize: "clamp(1.05rem, 2.6vw, 1.35rem)",
+            margin: "0 0 26px",
+          }}
+        >
+          {slide.subtitle}
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: Explainer || slide.image ? "minmax(0, 1fr) minmax(0, 1.05fr)" : "1fr",
+            gap: 30,
+            alignItems: "start",
+          }}
+        >
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 15 }}>
+            {slide.bullets.map((b, i) => (
+              <li key={i} style={{ position: "relative", paddingLeft: 22, lineHeight: 1.55, fontSize: "1.02rem", color: "var(--text-soft)" }}>
+                <span style={{ position: "absolute", left: 0, top: 9, width: 7, height: 7, borderRadius: "50%", background: "var(--carbon)" }} />
+                {b}
               </li>
             ))}
           </ul>
 
-          {/* Visual Panel */}
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            background: "rgba(0, 0, 0, 0.2)",
-            borderRadius: "8px",
-            padding: "15px",
-            border: "1px solid var(--border)",
-            height: "100%",
-            minHeight: "280px"
-          }}>
-            <Image
-              src={slide.image}
-              alt={slide.imageAlt}
-              width={450}
-              height={260}
-              style={{
-                borderRadius: "6px",
-                maxWidth: "100%",
-                height: "auto",
-                objectFit: "contain"
-              }}
-            />
-          </div>
+          {Explainer ? (
+            <div style={{ minWidth: 0 }}>
+              <Explainer />
+            </div>
+          ) : slide.image ? (
+            <div style={{ background: "var(--bg-2)", borderRadius: 12, padding: 14, border: "1px solid var(--border)" }}>
+              <Image
+                src={slide.image}
+                alt={slide.imageAlt || slide.title}
+                width={460}
+                height={280}
+                style={{ borderRadius: 6, maxWidth: "100%", height: "auto", objectFit: "contain" }}
+              />
+            </div>
+          ) : null}
         </div>
 
-        {/* Speaker Notes */}
-        <div style={{
-          background: "rgba(105, 240, 174, 0.05)",
-          borderLeft: "4px solid var(--accent)",
-          padding: "15px 20px",
-          borderRadius: "4px",
-          fontSize: "0.95rem",
-          color: "#e2e8f0"
-        }}>
-          <strong style={{ color: "var(--accent-light)", display: "flex", alignItems: "center", gap: "6px", marginBottom: "5px" }}>
-            <Mic size={16} /> Notas del Orador:
+        <div
+          style={{
+            marginTop: 28,
+            background: "var(--carbon-soft)",
+            borderLeft: "3px solid var(--carbon)",
+            padding: "14px 18px",
+            borderRadius: 8,
+            fontSize: "0.95rem",
+            color: "var(--text-soft)",
+          }}
+        >
+          <strong style={{ color: "var(--carbon)", display: "flex", alignItems: "center", gap: 6, marginBottom: 4, fontFamily: "var(--font-mono)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+            <Mic size={14} /> Notas del orador
           </strong>
-          &ldquo;{slide.speakerNotes}&rdquo;
+          {slide.speakerNotes}
         </div>
       </div>
 
-      {/* Slide Controls */}
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}>
-        <div>
-          <span style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
-            Tip: Usa las teclas <strong>← izquierda</strong> y <strong>→ derecha</strong> de tu teclado para navegar.
-          </span>
-        </div>
-        <div style={{ display: "flex", gap: "10px" }}>
-          {slideIndex > 0 ? (
-            <Link href={`/slides/${slideIndex - 1}`} style={{
-              background: "var(--bg-card)",
-              border: "1px solid var(--border)",
-              color: "#ffffff",
-              padding: "10px 24px",
-              borderRadius: "8px",
-              fontSize: "0.9rem",
-              fontWeight: 600
-            }}>
-              Anterior
+      {/* Controles */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 18 }}>
+        <span className="mono" style={{ fontSize: "0.74rem", color: "var(--muted)" }}>
+          ← → para navegar
+        </span>
+        <div style={{ display: "flex", gap: 10 }}>
+          {slideIndex > 0 && (
+            <Link href={`/slides/${slideIndex - 1}`} className="btn">
+              <ArrowLeft size={14} /> Anterior
             </Link>
-          ) : (
-            <button disabled style={{
-              background: "rgba(255, 255, 255, 0.02)",
-              border: "1px solid var(--border)",
-              color: "var(--text-muted)",
-              padding: "10px 24px",
-              borderRadius: "8px",
-              fontSize: "0.9rem",
-              cursor: "not-allowed"
-            }}>
-              Anterior
-            </button>
           )}
-
           {slideIndex < slidesData.length - 1 ? (
-            <Link href={`/slides/${slideIndex + 1}`} style={{
-              background: "var(--primary)",
-              color: "#ffffff",
-              padding: "10px 24px",
-              borderRadius: "8px",
-              fontSize: "0.9rem",
-              fontWeight: 600
-            }}>
-              Siguiente
+            <Link href={`/slides/${slideIndex + 1}`} className="btn btn-primary">
+              Siguiente <ArrowRight size={14} />
             </Link>
           ) : (
-            <Link href="/" style={{
-              background: "var(--accent)",
-              color: "#0b0f19",
-              padding: "10px 24px",
-              borderRadius: "8px",
-              fontSize: "0.9rem",
-              fontWeight: 700
-            }}>
-              Finalizar
+            <Link href="/" className="btn btn-primary">
+              Ir al ensayo <ArrowRight size={14} />
             </Link>
           )}
         </div>
