@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useReducedMotion } from "framer-motion";
 import CountUp from "@/components/CountUp";
 import { IO } from "@/lib/data";
 
 export default function IOBandwidth() {
   const [substrate, setSubstrate] = useState<"carbon" | "silicon">("carbon");
   const [logN, setLogN] = useState(6); // log10(unidades) → 1e6 por defecto
+  const reduced = useReducedMotion();
 
   const n = Math.pow(10, logN);
   // Cableado 2D vs 3D: ratio crece como N^(1/6)
@@ -48,7 +50,7 @@ export default function IOBandwidth() {
             stroke="var(--carbon)"
             strokeWidth={2}
             opacity={opacity}
-            style={{ transition: "opacity 0.35s var(--ease)" }}
+            style={{ transition: reduced ? "none" : "opacity 0.35s var(--ease)" }}
           />
         );
 
@@ -61,7 +63,7 @@ export default function IOBandwidth() {
             r={4}
             fill="var(--carbon)"
             opacity={opacity}
-            style={{ transition: "opacity 0.35s var(--ease)" }}
+            style={{ transition: reduced ? "none" : "opacity 0.35s var(--ease)" }}
           />
         );
       }
@@ -98,7 +100,7 @@ export default function IOBandwidth() {
             stroke="var(--si)"
             strokeWidth={2}
             opacity={1}
-            style={{ transition: "opacity 0.35s var(--ease)" }}
+            style={{ transition: reduced ? "none" : "opacity 0.35s var(--ease)" }}
           />
         );
 
@@ -110,7 +112,7 @@ export default function IOBandwidth() {
             r={4}
             fill="var(--si)"
             opacity={1}
-            style={{ transition: "opacity 0.35s var(--ease)" }}
+            style={{ transition: reduced ? "none" : "opacity 0.35s var(--ease)" }}
           />
         );
       }
@@ -160,7 +162,7 @@ export default function IOBandwidth() {
           display: "block",
           background: "var(--surface-2)",
           borderRadius: 8,
-          transition: "background 0.35s var(--ease)",
+          transition: reduced ? "none" : "background 0.35s var(--ease)",
         }}
         aria-label={`Neurona ${substrate === "carbon" ? "carbono" : "silicio"} con conexiones`}
       >

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { useInView, useReducedMotion } from "framer-motion";
 import { EXCHANGE } from "@/lib/data";
 import CountUp from "@/components/CountUp";
 
@@ -16,6 +16,7 @@ import CountUp from "@/components/CountUp";
 export default function ExchangeMode() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
+  const reduced = useReducedMotion();
 
   // Barras de energía: cada una ocupa espacio proporcional a su valor en escala log
   const items = [
@@ -25,8 +26,9 @@ export default function ExchangeMode() {
   ];
 
   // Para escala logarítmica, normalizamos por log
-  const maxLog = Math.log10(Math.max(...items.map((i) => i.value)));
-  const normalizeLog = (val: number) => Math.log10(val) / maxLog;
+  const maxVal = Math.max(...items.map((i) => i.value));
+  const maxLog = maxVal > 0 ? Math.log10(maxVal) : 1;
+  const normalizeLog = (val: number) => (val > 0 ? Math.log10(val) : 0) / maxLog;
 
   // Desglose del silicio: 99,8% movimiento, 0,2% cómputo
   const computeFraction = 1 - EXCHANGE.interchangeFraction; // 0.002
@@ -41,7 +43,7 @@ export default function ExchangeMode() {
       {/* Barras de energía por evento (escala logarítmica) */}
       <div style={{ display: "flex", flexDirection: "column", gap: 18, margin: "20px 0" }}>
         {items.map((item, i) => (
-          <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <span
               style={{
                 fontSize: "0.82rem",
@@ -67,7 +69,7 @@ export default function ExchangeMode() {
                   height: "100%",
                   background: item.color,
                   width: inView ? `${normalizeLog(item.value) * 100}%` : "0%",
-                  transition: inView ? "width 0.8s var(--ease)" : "none",
+                  transition: inView && !reduced ? "width 0.8s var(--ease)" : "none",
                   display: "flex",
                   alignItems: "center",
                   paddingRight: 8,
@@ -81,7 +83,7 @@ export default function ExchangeMode() {
                     color: item.color === "#d94f4f" ? "#fff" : "inherit",
                     opacity:
                       normalizeLog(item.value) > 0.15 ? 1 : 0,
-                    transition: "opacity 0.8s var(--ease) 0.4s",
+                    transition: reduced ? "none" : "opacity 0.8s var(--ease) 0.4s",
                     whiteSpace: "nowrap",
                   }}
                 >
@@ -128,7 +130,7 @@ export default function ExchangeMode() {
               color: "#fff",
               fontWeight: 600,
               opacity: inView ? 1 : 0.3,
-              transition: "opacity 0.8s var(--ease)",
+              transition: reduced ? "none" : "opacity 0.8s var(--ease)",
             }}
           >
             {computeFraction > 0.05 && `${(computeFraction * 100).toFixed(1)}%`}
@@ -146,7 +148,7 @@ export default function ExchangeMode() {
               color: "#fff",
               fontWeight: 600,
               opacity: inView ? 1 : 0.3,
-              transition: "opacity 0.8s var(--ease)",
+              transition: reduced ? "none" : "opacity 0.8s var(--ease)",
             }}
           >
             {inView && <span>{(moveFraction * 100).toFixed(1)}%</span>}

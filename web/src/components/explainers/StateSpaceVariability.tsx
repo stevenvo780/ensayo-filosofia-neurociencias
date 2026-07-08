@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useReducedMotion } from "framer-motion";
 import { VAR } from "@/lib/data";
 import CountUp from "@/components/CountUp";
 
@@ -11,19 +12,18 @@ import CountUp from "@/components/CountUp";
  */
 export default function StateSpaceVariability() {
   const [modulators, setModulators] = useState(50); // 0..100
+  const reduced = useReducedMotion();
 
-  const { carbonBits, siliconBits, stateSpaceRatio, carbonLevels } = useMemo(() => {
+  const { stateSpaceRatioLog10, carbonLevels } = useMemo(() => {
     const M = modulators;
     const synCarb = VAR.synPerNeuron * VAR.bitsSynCarbon;
     const synSil = VAR.synPerNeuron * VAR.bitsSynSilicon;
     const modBits = M > 0 ? M * Math.log2(VAR.modulatorLevels) : 0;
     const carbTotal = synCarb + modBits;
-    const ratio = Math.pow(2, carbTotal - synSil); // estados carbono / estados silicio
-
+    // log10 del ratio SIN materializar 2^diff (2^26000 desborda a Infinity)
+    const ratioLog10 = (carbTotal - synSil) * Math.log10(2);
     return {
-      carbonBits: carbTotal,
-      siliconBits: synSil,
-      stateSpaceRatio: ratio,
+      stateSpaceRatioLog10: ratioLog10,
       carbonLevels: Math.pow(2, VAR.bitsSynCarbon), // ≈ 26 niveles
     };
   }, [modulators]);
@@ -42,10 +42,10 @@ export default function StateSpaceVariability() {
       <div className="explainer-head">
         <span className="explainer-title">Exp 7 · Variabilidad del espacio de estados</span>
         <div className="seg">
-          <button className={modulators <= 10 ? "active" : ""} onClick={() => preset(0)}>
+          <button className={modulators <= 10 ? "active" : ""} onClick={() => preset(0)} aria-label="Sin neuromoduladores">
             Sin moduladores
           </button>
-          <button className={modulators >= 90 ? "active" : ""} onClick={() => preset(100)}>
+          <button className={modulators >= 90 ? "active" : ""} onClick={() => preset(100)} aria-label="Máxima modulación: 100 neuromoduladores">
             Máxima modulación
           </button>
         </div>
@@ -95,7 +95,7 @@ export default function StateSpaceVariability() {
                     width: "100%",
                     height: "50%",
                     background: "var(--si)",
-                    transition: "height 0.6s var(--ease)",
+                    transition: reduced ? "none" : "height 0.6s var(--ease)",
                   }}
                 />
               </div>
@@ -149,7 +149,7 @@ export default function StateSpaceVariability() {
                       width: "100%",
                       height: `${heightFrac * 100}%`,
                       background: `linear-gradient(to top, var(--carbon), var(--carbon-2))`,
-                      transition: "height 0.6s var(--ease)",
+                      transition: reduced ? "none" : "height 0.6s var(--ease)",
                     }}
                   />
                 </div>
@@ -199,11 +199,7 @@ export default function StateSpaceVariability() {
 
         <div className="stat" style={{ textAlign: "center" }}>
           <div className="stat-num" style={{ color: "var(--carbon)" }}>
-            <CountUp
-              to={Math.log10(stateSpaceRatio)}
-              decimals={1}
-              suffix=""
-            />
+            <CountUp to={stateSpaceRatioLog10} decimals={1} />
           </div>
           <div className="stat-label">log₁₀(razón de estados)</div>
         </div>

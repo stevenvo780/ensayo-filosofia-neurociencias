@@ -8,6 +8,7 @@ import Emblem from "./Emblem";
 
 const LINKS = [
   { href: "/", label: "Ensayo" },
+  { href: "/tesis", label: "Tesis" },
   { href: "/laboratorio", label: "Laboratorio" },
   { href: "/slides/0", label: "Presentación" },
 ];
