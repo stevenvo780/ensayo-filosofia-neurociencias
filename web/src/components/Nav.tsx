@@ -19,8 +19,8 @@ function GithubMark() {
 const LINKS = [
   { href: "/", label: "Ensayo" },
   { href: "/tesis", label: "Tesis" },
-  { href: "/laboratorio", label: "Laboratorio" },
-  { href: "/slides/0", label: "Presentación" },
+  { href: "/laboratorio", label: "Lab" },
+  { href: "/slides/0", label: "Slides" },
 ];
 
 export default function Nav() {
@@ -54,7 +54,7 @@ export default function Nav() {
     <nav className="nav">
       <Link href="/" className="nav-brand" style={{ textDecoration: "none" }}>
         <Emblem size={30} />
-        <span>
+        <span className="nav-brand-text">
           Silicio <span style={{ color: "var(--muted)" }}>⇄</span> Tejido
         </span>
       </Link>
