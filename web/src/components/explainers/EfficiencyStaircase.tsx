@@ -94,12 +94,12 @@ export default function EfficiencyStaircase() {
         </div>
       </div>
       <svg
-        viewBox="-80 0 960 500"
+        viewBox="-80 -6 1085 512"
         width="100%"
         preserveAspectRatio="xMidYMid meet"
         role="img"
         aria-label="Brecha de eficiencia en escala log-log"
-        style={{ display: "block", height: "auto", overflow: "visible", margin: "10px 0 4px" }}
+        style={{ display: "block", width: "100%", maxWidth: "100%", height: "auto", overflow: "hidden", margin: "10px 0 4px" }}
       >
         {xTicks.map((tick) => (
           <g key={`x-${tick.label}`}>

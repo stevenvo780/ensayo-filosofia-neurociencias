@@ -17,11 +17,26 @@ Ensayo completo + **laboratorio computacional escalonado en 4 tiers de hardware*
 
 **Hallazgo central**: la brecha silicio/carbono es **emergente de la arquitectura**, no monotónica con N. Va de **3.000×** (single GPU 1M neuronas) hasta **104.450×** (híbrido 16M neuronas). Simular 1 segundo biológico tarda 11 minutos en el híbrido.
 
+## 🔓 Ciencia abierta y reproducibilidad
+
+Este repositorio es **completamente abierto**: todo el proceso, los datos y el código de cómo se construyó el trabajo están aquí, para que cualquiera pueda inspeccionarlo, verificarlo y reproducirlo.
+
+- **Textos** (`ensayo/`): ensayo y tesis en Markdown y **PDF**, más el guion de sustentación.
+- **Código** (`simulaciones/`): los modelos biofísicos y los 9 experimentos, sin ofuscación.
+- **Datos crudos** (`simulaciones/datos/`): los CSV/JSON exactos que producen las cifras citadas en el ensayo — cada número del texto es rastreable a un archivo.
+- **Gráficos** (`simulaciones/graficos/`): generados por scripts versionados, no editados a mano.
+- **Web** (`web/`): el código fuente de las cuatro superficies interactivas (ensayo, tesis, laboratorio, presentación).
+
+**Método.** El laboratorio no *demuestra* la tesis filosófica: la hace *visible y cuantificable*. Cada experimento aísla un límite físico distinto del silicio digital frente al carbono vivo, y cada cifra está fundamentada en fuentes primarias verificadas (Bartol et al. 2015; Attwell & Laughlin 2001; Horowitz 2014; entre otras). El benchmark se ejecuta **deliberadamente sin optimizar**, tal como correría una red de silicio típica, para que cada cuello de botella sea una observación reproducible y no un detalle de implementación. Reproducir todo: `./ejecutar_laboratorio.sh`.
+
+**Licencia:** [MIT](LICENSE) para el código; los textos e imágenes son del autor. Ver [`CRITICA_ENSAYO.md`](CRITICA_ENSAYO.md) para el registro de autocrítica y correcciones.
+
 ## Estructura del Proyecto
 
-* **Textos finales:**
-  * **[ensayo/00_ensayo.md](ensayo/00_ensayo.md):** Ensayo final (~2.000 palabras en español) con datos del benchmark escalonado.
-  * **[ensayo/tesis.md](ensayo/tesis.md):** Tesis extendida (~4.500 palabras) con los 3 ejes nuevos (variabilidad, I/O, intercambio) y síntesis de fuentes primarias.
+* **Textos finales (`ensayo/`):**
+  * **[00_ensayo.md](ensayo/00_ensayo.md)** · **[00_ensayo.pdf](ensayo/00_ensayo.pdf):** Ensayo final (~2.000 palabras) con datos del benchmark escalonado.
+  * **[tesis.md](ensayo/tesis.md)** · **[tesis.pdf](ensayo/tesis.pdf):** Tesis extendida (~4.500 palabras) con los 3 ejes nuevos (variabilidad, I/O, intercambio) y fuentes primarias.
+  * **[guion_presentacion.md](ensayo/guion_presentacion.md):** Guion de sustentación (13 diapositivas, tiempos, defensa de preguntas).
 
 * **[ejecutar_laboratorio.sh](ejecutar_laboratorio.sh):** Script ejecutable que activa el venv, corre los 4 tiers + los 9 experimentos, genera todos los gráficos y el dashboard.
 
@@ -49,16 +64,16 @@ Ensayo completo + **laboratorio computacional escalonado en 4 tiers de hardware*
 
 1. **Jerarquía Visual (Zeki, 1992)** — Campos receptivos locales en 5 capas corticales (V1→IT). FLOPs: 22.154.880 → 2.218.827 = **90% reducción**.
 2. **Células de Concepto (Quian Quiroga et al., 2013)** — 200 conceptos × 500 trials; WTA esparcida del 1% elimina crosstalk: **80,0% → 1,03%**.
-3. **Diversidad Neuroquímica (LeDoux, 1994 / Marder, 1998)** — Hodgkin-Huxley con 1–15 canales iónicos; coste: 120.000 → 428.000 FLOPs. Lineal en silicio, marginal en carbono.
+3. **Diversidad Neuroquímica (LeDoux, 1994 / Marder, 2012)** — Hodgkin-Huxley con 1–15 canales iónicos; coste: 120.000 → 428.000 FLOPs. Lineal en silicio, marginal en carbono.
 4. **Oscilaciones y Sincronía (Bechtel, 2008)** — Red cortical de 5.000 neuronas, 2 s simulado; emergencia de banda **BETA–GAMMA (13–80 Hz)** (~58% de potencia).
-5. **Plasticidad y Aprendizaje (Hinton, 1992 / Kappel, 2015)** — STDP local: 39 KB vs. backprop centralizado: 20.000 KB = **512× reducción de memoria**.
+5. **Plasticidad y Aprendizaje (Hinton, 1992)** — STDP local: 39 KB vs. backprop centralizado: 20.000 KB = **512× reducción de memoria**.
 6. **Computación Morfológica (Webb, 1996 / Clark, 2015)** — Localización sonora: 757.760 FLOPs (FFT digital) vs. 2 FLOPs (cuerpo resonante del grillo) = **378.880× más ineficiente**.
 
 **Experimentos 7–9 (Nuevos ejes: variabilidad, I/O, intercambio):**
 
-7. **Variabilidad Sináptica (Bartol et al. 2015, eLife)** — Ultraestructura EM 25 nm³. Sinapsis carbono: **4,7 bits/sinapsis** (100 neuromoduladores = +332 bits combinatorios) vs. silicio: ~1 bit/sinápsis.
-8. **Fan-Out I/O (Attwell & Laughlin 2001, JCBFM)** — Carbono: ~7.000 sinapsis/neurona vs. silicio: 6 = **1.167× más conexiones**. Cableado 2D→3D con 600 km de capilares; cada neurona a ~20 µm; ratio 1:1 volúmico.
-9. **Intercambio vs. Cómputo (Horowitz 2014, ISSCC / Attwell-Laughlin 2001)** — Mover datos cuesta ~650× computarlos. En silicio: **99,8% energía es I/O**, no lógica. Potencial de acción: ~211 pJ/evento.
+7. **Variabilidad Sináptica (Bartol et al. 2015, eLife)** — Reconstrucción nanoconectómica. Sinapsis carbono: **4,7 bits/sinapsis** (26 estados; +100 neuromoduladores ≈ +332 bits combinatorios) vs. silicio: ~1 bit/sinapsis.
+8. **Fan-Out I/O y entrega circulatoria** — Carbono: ~7.000 sinapsis/neurona vs. silicio: ~6 = **1.167×**. Cableado 2D vs 3D: ~68× a escala cerebral (N^(1/6)); 600 km de capilares, cada neurona a ~20 µm, ratio 1:1 volumétrico.
+9. **Intercambio vs. Cómputo (Horowitz 2014, ISSCC / Attwell-Laughlin 2001)** — Mover datos cuesta ~650× computarlos; en silicio **99,8% de la energía es intercambio**, no cómputo. Potencial de acción del carbono: ~211 pJ/evento.
 
 ## 🚀 Cómo Reproducir
 
@@ -68,7 +83,7 @@ Ensayo completo + **laboratorio computacional escalonado en 4 tiers de hardware*
 
 Tiempo total de ejecución: ~45-60 minutos (limitado por los tiers multi-GPU, híbrido y experimentos 7-9). El script:
 
-1. Activa el venv Python con dependencias (NumPy, CuPy, Matplotlib, Plotly).
+1. Activa el venv Python con dependencias (NumPy, pandas, PyTorch, Matplotlib, SciPy).
 2. Ejecuta el benchmark escalonado (CPU + RTX 5070 Ti + multi-GPU + híbrido).
 3. Ejecuta los 6 experimentos biofísicos (jerarquía visual, células de concepto, diversidad química, oscilaciones, plasticidad, cómputo morfológico).
 4. Ejecuta los 3 experimentos de variabilidad (sináptica, fan-out I/O, intercambio energético).
@@ -81,21 +96,21 @@ Tiempo total de ejecución: ~45-60 minutos (limitado por los tiers multi-GPU, h�
 |---|---|---|
 | **Zeki (1992)** | Jerarquía visual | V1→IT: campos receptivos progresivamente amplios |
 | **Quian Quiroga et al. (2013)** | Células de concepto | 1% WTA esparcida → crosstalk 80% → 1,03% |
-| **LeDoux (1994), Marder (1998)** | Diversidad química | 100+ neuromoduladores, 15+ canales iónicos/neurona |
+| **LeDoux (1994), Marder (2012)** | Diversidad química | decenas de neuromoduladores, 15+ canales iónicos/neurona |
 | **Bechtel (2008)** | Oscilaciones | Banda beta–gamma emergente (13–80 Hz) |
-| **Hinton (1992), Kappel (2015)** | Plasticidad local | STDP: 39 KB vs backprop: 20.000 KB |
+| **Hinton (1992)** | Plasticidad local | STDP: 39 KB vs backprop: 20.000 KB (512×) |
 | **Webb (1996), Clark (2015)** | Cómputo morfológico | Resonancia acústica 2 FLOPs vs FFT 757.760 |
-| **Bartol et al. (2015)** | Ultraestructura sináptica | 4,7 bits/sinapsis; 100+ neuromoduladores = 332 bits combinatorios |
-| **Attwell & Laughlin (2001)** | Metabolismo cerebral | 99,8% energía es I/O; fan-out carbono 7.000 vs silicio 6 |
-| **Horowitz (2014)** | Física del silicio | Mover datos: 650× computarlos; potencial acción: 211 pJ |
+| **Bartol et al. (2015)** | Variabilidad sináptica | 4,7 bits/sinapsis (26 estados); +100 moduladores ≈ +332 bits |
+| **Attwell & Laughlin (2001)** | Metabolismo cerebral | ~211 pJ por potencial de acción (~3,29·10⁹ ATP) |
+| **Horowitz (2014)** | Física del silicio | Mover datos ~650× computarlos; 99,8% de la energía es intercambio |
 
 ## Notas Técnicas
 
 - **Reproducibilidad:** Todos los CSVs, JSONs y gráficos generados se almacenan en `simulaciones/datos/` y `simulaciones/graficos/`. Los PNGs se sincronizan automáticamente a `web/public/graficos/` para la web.
 - **Hardware mínimo:** GPU NVIDIA con CUDA 12.x. Para CPU-only: ejecutar solo el tier 1 (descomentar en `ejecutar.py`).
-- **Dependencias:** NumPy, CuPy, Matplotlib, Plotly, Next.js 14 (web).
-- **Entorno web:** Desplegado en Vercel con CI/CD automatizado. URL: https://neurocarbon.stevenvallejo.com
-- **Datos de muestra:** Los 9 experimentos generan ~100 MB de CSVs + 8 gráficos PNG (~2 MB cada uno).
+- **Dependencias:** NumPy, pandas, PyTorch, Matplotlib, SciPy (simulaciones) · Next.js 14 (web). Ver [`requirements.txt`](requirements.txt).
+- **Entorno web:** Desplegado en Vercel. URL: https://neurocarbon.stevenvallejo.com
+- **Datos de muestra:** Los 9 experimentos generan los CSVs de `simulaciones/datos/` + los PNG de `simulaciones/graficos/` (~90–100 KB cada uno).
 
 ## Checklist de Entrega
 
