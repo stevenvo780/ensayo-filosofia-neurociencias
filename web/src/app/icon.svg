@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Silicio ⇄ Tejido">
+  <rect x="0" y="0" width="64" height="64" rx="13" fill="#0f141b"/>
+  <!-- Silicio: hexágono -->
+  <polygon points="37,32 30.5,20.7 17.5,20.7 11,32 17.5,43.3 30.5,43.3" fill="none" stroke="#6ea8e0" stroke-width="3.4" stroke-linejoin="round"/>
+  <circle cx="37" cy="32" r="2.6" fill="#6ea8e0"/>
+  <!-- Puente -->
+  <line x1="37" y1="32" x2="42.5" y2="32" stroke="#8a94a0" stroke-width="1.6" stroke-dasharray="1.4 2"/>
+  <!-- Carbono: neurona -->
+  <path d="M47.5,32 L56.5,24.5" stroke="#e6a860" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M47.5,32 L57,33.5" stroke="#e6a860" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M47.5,32 L54.5,40.5" stroke="#e6a860" stroke-width="2.8" stroke-linecap="round"/>
+  <circle cx="47.5" cy="32" r="6" fill="#e6a860"/>
+  <circle cx="56.5" cy="24.5" r="2.3" fill="#e6a860"/>
+  <circle cx="54.5" cy="40.5" r="2.3" fill="#e6a860"/>
+</svg>
