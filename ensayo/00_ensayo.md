@@ -4,7 +4,7 @@
 **Curso:** Filosofía de las Neurociencias (2026-1)  
 **Profesor:** Santiago Arango-Muñoz  
 **Institución:** Instituto de Filosofía, Universidad de Antioquia  
-**Anexo experimental:** laboratorio computacional reproducible (6 experimentos biofísicos + benchmark escalonado en cuatro tiers de hardware). Las figuras 1–7 están incrustadas en el texto.
+**Anexo experimental:** laboratorio computacional reproducible (9 experimentos biofísicos + benchmark escalonado en cuatro tiers de hardware). Los tres últimos ejes se desarrollan en la *tesis* anexa. Las figuras 1–7 están incrustadas en el texto.
 
 ---
 

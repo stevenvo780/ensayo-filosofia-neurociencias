@@ -7,19 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0b0f19;
-            --card: #151c2c;
-            --primary: #4f46e5;
-            --primary-l: #818cf8;
-            --accent: #10b981;
-            --warn: #dc2626;
-            --text: #f3f4f6;
-            --muted: #9ca3af;
-            --border: #2d3748;
-            --cpu: #9ca3af;
-            --single: #2563eb;
+            --bg: #faf9f8;
+            --card: #ffffff;
+            --primary: #2f6ea6;
+            --primary-light: #5a8fc8;
+            --accent: #b25a24;
+            --accent-light: #d47a44;
+            --warn: #c84c2f;
+            --text: #1a1a1a;
+            --text-muted: #555555;
+            --border: #e5e0da;
+            --border-light: #f0ebe6;
+            --cpu: #8a8a8a;
+            --single: #0066cc;
             --multi: #7c3aed;
             --hibrido: #dc2626;
+            --banner-bg: linear-gradient(135deg, rgba(47, 110, 166, 0.08), rgba(178, 90, 36, 0.06));
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -27,28 +30,53 @@
             color: var(--text);
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            padding: 40px 20px;
+            padding: 0;
         }
-        .container { max-width: 1280px; margin: 0 auto; }
+        .banner-link {
+            background: var(--banner-bg);
+            border-bottom: 2px solid var(--primary);
+            padding: 16px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .banner-link a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .banner-link a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+        .banner-link .banner-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-right: 8px;
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; margin-bottom: 50px; }
         h1 {
             font-family: 'Outfit', sans-serif;
             font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #a5b4fc, #6366f1, #312e81);
+            background: linear-gradient(135deg, #2f6ea6, #b25a24, #8a5a2f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 12px;
         }
         p.subtitle {
             font-size: 1.15rem;
-            color: var(--muted);
+            color: var(--text-muted);
             max-width: 900px;
             margin: 0 auto;
         }
         .tier-banner {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-bottom: 40px;
         }
@@ -57,16 +85,18 @@
             border-radius: 12px;
             padding: 18px;
             border-left: 4px solid var(--single);
+            border: 1px solid var(--border);
+            border-left-width: 4px;
         }
-        .tier-card.cpu { border-color: var(--cpu); }
-        .tier-card.single { border-color: var(--single); }
-        .tier-card.multi { border-color: var(--multi); }
-        .tier-card.hibrido { border-color: var(--hibrido); }
-        .tier-card h3 { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-        .tier-card .N { font-size: 1.6rem; font-weight: 700; margin: 4px 0; font-family: 'Outfit', sans-serif; }
-        .tier-card .meta { font-size: 0.85rem; color: var(--muted); }
+        .tier-card.cpu { border-left-color: var(--cpu); }
+        .tier-card.single { border-left-color: var(--single); }
+        .tier-card.multi { border-left-color: var(--multi); }
+        .tier-card.hibrido { border-left-color: var(--hibrido); }
+        .tier-card h3 { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        .tier-card .N { font-size: 1.6rem; font-weight: 700; margin: 4px 0; font-family: 'Outfit', sans-serif; color: var(--primary); }
+        .tier-card .meta { font-size: 0.85rem; color: var(--text-muted); }
         .intro {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.15) 0%, rgba(21, 28, 44, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(47, 110, 166, 0.08) 0%, rgba(178, 90, 36, 0.04) 100%);
             border: 1.5px solid var(--primary);
             border-radius: 16px;
             padding: 30px;
@@ -74,7 +104,7 @@
         }
         .intro h2 {
             font-family: 'Outfit', sans-serif;
-            color: var(--primary-l);
+            color: var(--primary);
             font-size: 1.5rem;
             margin-bottom: 12px;
         }
@@ -85,10 +115,11 @@
             margin: 50px 0 25px;
             padding-bottom: 8px;
             border-bottom: 2px solid var(--primary);
+            color: var(--text);
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 25px;
         }
         .card {
@@ -98,50 +129,66 @@
             padding: 22px;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
         .card h3 {
             font-family: 'Outfit', sans-serif;
             font-size: 1.3rem;
             margin: 8px 0;
+            color: var(--text);
         }
         .card .badge {
             display: inline-block;
-            padding: 3px 9px;
-            background: rgba(79, 70, 229, 0.2);
-            color: var(--primary-l);
+            padding: 4px 10px;
+            background: linear-gradient(135deg, rgba(47, 110, 166, 0.12), rgba(178, 90, 36, 0.08));
+            color: var(--primary);
             border-radius: 6px;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
+            width: fit-content;
         }
         .card .author { color: var(--accent); font-size: 0.85rem; font-weight: 600; margin: 6px 0 14px; }
         .card img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
             margin-bottom: 14px;
         }
-        .card p { color: var(--muted); font-size: 0.92rem; }
+        .card p { color: var(--text-muted); font-size: 0.92rem; }
         .card .conclusion {
-            background: rgba(16, 185, 129, 0.08);
+            background: linear-gradient(135deg, rgba(47, 110, 166, 0.08), rgba(178, 90, 36, 0.06));
             border-left: 3px solid var(--accent);
-            padding: 10px;
+            padding: 12px;
             border-radius: 0 8px 8px 0;
             font-size: 0.88rem;
             margin-top: 10px;
+            color: var(--text);
         }
+        .card .conclusion strong { color: var(--primary); }
         footer {
             text-align: center;
             margin-top: 80px;
-            color: var(--muted);
+            color: var(--text-muted);
             font-size: 0.9rem;
             border-top: 1px solid var(--border);
-            padding-top: 25px;
+            padding: 40px 20px 25px;
+            background: var(--bg);
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
+    <div class="banner-link">
+        <span class="banner-text">📊 Versión interactiva:</span>
+        <a href="https://neurocarbon.stevenvallejo.com" target="_blank">neurocarbon.stevenvallejo.com</a>
+        <span class="banner-text">(versión completa recomendada con gráficos dinámicos)</span>
+    </div>
     <div class="container">
         <header>
             <span class="badge">EVIDENCIA EMPÍRICA ESCALONADA</span>
@@ -225,14 +272,14 @@
                 <div class="conclusion"><strong>Evidencia:</strong> el híbrido no es escalable.</div>
             </div>
         </div>
-        <h2 class="section-title">🧠 Los 6 Experimentos Biofísicos</h2>
+        <h2 class="section-title">🧠 Los 9 Experimentos Biofísicos</h2>
         <div class="grid">
             <div class="card">
                 <span class="badge">Experimento 1</span>
                 <h3>Jerarquía Visual (Zeki)</h3>
                 <div class="author">Campos receptivos locales</div>
                 <img src="graficos/exp1_visual.png" alt="Jerarquía visual">
-                <p>Corteza visual jerárquica V1→IT con esparcimiento retinotópico del 10% reduce los FLOPs un <strong>90%</strong> frente a la conexión densa.</p>
+                <p>Corteza visual jerárquica V1→IT con esparcimiento retinotópico del 10% reduce los FLOPs un <strong>90%</strong> (de 22.154.880 a 2.218.827) frente a la conexión densa.</p>
                 <div class="conclusion"><strong>Implicación:</strong> el sustrato biológico optimiza el cómputo materialmente.</div>
             </div>
             <div class="card">
@@ -240,7 +287,7 @@
                 <h3>Células de Concepto (Quian Quiroga)</h3>
                 <div class="author">Codificación esparcida del 1%</div>
                 <img src="graficos/exp2_crosstalk.png" alt="Crosstalk">
-                <p>Con WTA del 1% (carbono) el solapamiento entre conceptos cae de 80% (silicio) a ~1%, eliminando el crosstalk de memoria.</p>
+                <p>Con WTA del 1% (carbono) el solapamiento entre conceptos cae de 80% (silicio) a ~1,03%, eliminando el crosstalk de memoria.</p>
                 <div class="conclusion"><strong>Implicación:</strong> silencio activo ≠ ausencia; es cómputo económico.</div>
             </div>
             <div class="card">
@@ -248,15 +295,15 @@
                 <h3>Diversidad Neuroquímica (LeDoux)</h3>
                 <div class="author">Costo de canales químicos en silicio</div>
                 <img src="graficos/exp3_escalamiento_quimico.png" alt="Canales químicos">
-                <p>Añadir 15 canales químicos a una neurona HH eleva los FLOPs linealmente en silicio. En carbono, el costo marginal es cero.</p>
+                <p>Añadir 15 canales químicos a una neurona HH eleva los FLOPs de 120.000 a 428.000 en silicio. En carbono, el costo marginal es cero.</p>
                 <div class="conclusion"><strong>Implicación:</strong> el alfabeto neuroquímico no es simulable sin pagar.</div>
             </div>
             <div class="card">
                 <span class="badge">Experimento 4</span>
-                <h3>Oscilaciones Gamma (Bechtel)</h3>
+                <h3>Oscilaciones Beta-Gamma (Bechtel)</h3>
                 <div class="author">Red E-I 5000 neuronas, 2 s</div>
-                <img src="graficos/exp4_oscilaciones_emergentes.png" alt="Oscilaciones gamma">
-                <p>La red cortical con 80/20 E/I y retardos axonales genera oscilaciones colectivas en la banda gamma. FFT muestra el pico emergente.</p>
+                <img src="graficos/exp4_oscilaciones_emergentes.png" alt="Oscilaciones beta-gamma">
+                <p>La red cortical con 80/20 E/I y retardos axonales genera oscilaciones colectivas en la <strong>banda beta–gamma (13–80 Hz)</strong>, con ~58% de potencia concentrada. FFT muestra el pico emergente.</p>
                 <div class="conclusion"><strong>Implicación:</strong> la sincronía es propiedad pasiva del tejido.</div>
             </div>
             <div class="card">
@@ -264,7 +311,7 @@
                 <h3>Plasticidad STDP (Hinton)</h3>
                 <div class="author">STDP local vs. backprop</div>
                 <img src="graficos/exp5_aprendizaje.png" alt="Memoria STDP">
-                <p>STDP local usa <strong>39 KB</strong> de memoria de estado; backpropagation usa <strong>20 MB</strong>. Reducción del 99.8%.</p>
+                <p>STDP local usa <strong>39 KB</strong> de memoria de estado; backpropagation usa <strong>20.000 KB</strong> (20 MB). Reducción del 99,8%.</p>
                 <div class="conclusion"><strong>Implicación:</strong> la plasticidad biológica es local y metabólica.</div>
             </div>
             <div class="card">
@@ -272,13 +319,35 @@
                 <h3>Computación Morfológica (Webb)</h3>
                 <div class="author">Grillo robot</div>
                 <img src="graficos/exp6_morfologia.png" alt="Morfología">
-                <p>Localización de sonido: 757.760 FLOPs (silicio FFT) vs. <strong>2 FLOPs</strong> (cuerpo del grillo). Reducción 99.9997%.</p>
+                <p>Localización de sonido: 757.760 FLOPs (silicio FFT) vs. <strong>2 FLOPs</strong> (cuerpo del grillo). Reducción 99,9997%.</p>
                 <div class="conclusion"><strong>Implicación:</strong> el cuerpo hace cómputo gratis.</div>
+            </div>
+            <div class="card">
+                <span class="badge">Experimento 7</span>
+                <h3>Variabilidad Sináptica (Bartol et al. 2015)</h3>
+                <div class="author">Capacidad de información por sinapsis</div>
+                <p>Cada sinapsis biológica codifica <strong>4,7 bits</strong> (tamaño vesícula, liberación estocástica, disposición estructural). Silicio clásico: 1 bit/sinapsis. 100 neuromoduladores emergentes = +332 bits combinatorios de comunicación de corto alcance (en blanco).</p>
+                <div class="conclusion"><strong>Implicación:</strong> la variabilidad biológica NO es ruido; es datos.</div>
+            </div>
+            <div class="card">
+                <span class="badge">Experimento 8</span>
+                <h3>Entrada-Salida y Cableado (Horowitz 2014)</h3>
+                <div class="author">Topología 2D vs. 3D biológica</div>
+                <p>Fan-out: carbono 7.000 conexiones/sinapsis vs. silicio 6 = <strong>1.167×</strong> más densa. Cableado: 2D vs. 3D tridimensional; a N=10¹¹ neuronas, el cableado 3D biológico es <strong>68×</strong> más eficiente. 600 km de capilares en el cerebro; cada neurona a ~20 µm.</p>
+                <div class="conclusion"><strong>Implicación:</strong> la arquitectura 3D compensa la lentitud química.</div>
+            </div>
+            <div class="card">
+                <span class="badge">Experimento 9</span>
+                <h3>Intercambio de Datos (Horowitz 2014, Attwell-Laughlin 2001)</h3>
+                <div class="author">Energía de transporte vs. cómputo</div>
+                <p><strong>Mover datos cuesta ~650 veces más que computarlos.</strong> En silicio digital: 99,8% de la energía es intercambio (DDR, PCIe, buses), solo 0,2% es cómputo lógico. Potencial de acción biológico: ~211 pJ (evento químico); silicio: >10 pJ/bit a 7nm.</p>
+                <div class="conclusion"><strong>Implicación:</strong> el silicio está optimizado para lo contrario (cómputo, no transporte).</div>
             </div>
         </div>
         <footer>
-            <p>Laboratorio de Filosofía de las Neurociencias (2026-1) · Steven Vallejo Ortiz · Universidad de Antioquia · Santiago Arango-Muñoz</p>
+            <p>Laboratorio de Filosofía de las Neurociencias (2026-2) · Steven Vallejo Ortiz · Universidad de Antioquia · Santiago Arango-Muñoz</p>
             <p style="margin-top: 6px;">Hardware: NVIDIA GeForce RTX 5070 Ti (16.6 GB), NVIDIA GeForce RTX 2060 (6.0 GB)</p>
+            <p style="margin-top: 6px; font-size: 0.85rem; color: var(--text-muted);">Basado en: Zeki (1999), Quian Quiroga (2012), LeDoux (2012), Bechtel (2012), Hinton (2007), Webb (2001), Bartol et al. (2015), Attwell & Laughlin (2001), Horowitz (2014)</p>
         </footer>
     </div>
 </body>

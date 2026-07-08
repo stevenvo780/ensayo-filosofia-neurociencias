@@ -10,6 +10,9 @@ import VonNeumannBus from "@/components/explainers/VonNeumannBus";
 import EfficiencyStaircase from "@/components/explainers/EfficiencyStaircase";
 import GammaOscillation from "@/components/explainers/GammaOscillation";
 import MorphologyFlops from "@/components/explainers/MorphologyFlops";
+import StateSpaceVariability from "@/components/explainers/StateSpaceVariability";
+import ExchangeMode from "@/components/explainers/ExchangeMode";
+import IOBandwidth from "@/components/explainers/IOBandwidth";
 
 interface SlideData {
   title: string;
@@ -112,6 +115,69 @@ const slidesData: SlideData[] = [
     explainer: MorphologyFlops,
     speakerNotes:
       "El grillo de Webb reubica el cómputo en el cuerpo: 757.760 FLOPs frente a 2. Y como ese cuerpo puede ser materia no viva, lo decisivo no es el carbono en sí, sino la autopoiesis; el silicio sirve de andamio.",
+  },
+  {
+    title: "La variabilidad del sustrato",
+    subtitle: "Grados de libertad: analógico graduado vs. binario",
+    bullets: [
+      "El silicio conmuta 1 bit por señal; una sinapsis de carbono porta ~4,7 bits (26 estados graduados; Bartol et al., 2015).",
+      "La modulación química añade una dimensión combinatoria: +100 neuromoduladores ≈ +332 bits de contexto.",
+      "El espacio de estados del carbono no es más grande: es de otro tipo.",
+      "Emular esa variabilidad en digital exige N bits por valor graduado: el patrón físico-local vs. contable-global.",
+    ],
+    explainer: StateSpaceVariability,
+    speakerNotes:
+      "Primer eje nuevo. La realizabilidad múltiple asume que un medio de baja variabilidad puede instanciar la misma organización. Pero una sinapsis de carbono codifica 4,7 bits graduados frente a 1 binario, y la modulación química multiplica el espacio de estados de forma combinatoria. La variabilidad quizá no sea implementación, sino parte de la organización relevante.",
+  },
+  {
+    title: "El modo de intercambio",
+    subtitle: "Químico-pasivo vs. eléctrico-activo",
+    bullets: [
+      "Lo que fija el piso energético no es cuánto se computa, sino cómo se intercambia la señal.",
+      "En silicio, mover un dato cuesta ~650× computarlo; el 99,8% de la energía es tráfico, no cómputo (Horowitz, 2014).",
+      "El carbono difunde química de forma pasiva, a favor del gradiente; solo restaura el gradiente de forma amortizada (Attwell-Laughlin, 2001).",
+      "La asimetría de consumo se sigue de elegir electrones-que-empujar sobre iones-que-se-difunden.",
+    ],
+    explainer: ExchangeMode,
+    speakerNotes:
+      "El eje más decisivo, porque explica la energía sin apelar a una esencia. En el silicio cada bit movido carga y descarga activamente un cable, y ese transporte domina el consumo (99,8%). En el carbono el transporte es difusión pasiva a favor del gradiente; solo se paga, amortizada, la restauración del gradiente. El modo de intercambio fija el piso.",
+  },
+  {
+    title: "Ancho de banda de I/O",
+    subtitle: "Fan-out 3D y entrega circulatoria",
+    bullets: [
+      "Fan-out: una neurona irradia ~7.000 sinapsis en 3D; una compuerta CMOS, ~6 (1.167×).",
+      "Cablear en 2D vs. 3D penaliza como N^(1/6): a escala cerebral, ~68× más interconexión.",
+      "600 km de capilares, cada neurona a ~20 µm, ratio 1:1: entrega volumétrica de energía y química.",
+      "Los cables difícilmente superarán a los sistemas circulatorios.",
+    ],
+    explainer: IOBandwidth,
+    speakerNotes:
+      "Tercer eje: la conectividad. El fan-out biológico supera al del silicio por mil, el cableado 3D es intrínsecamente más eficiente que el 2D, y —lo decisivo— el sistema circulatorio entrega combustible y señal en el mismo volumen donde se computa. El silicio no tiene análogo a una vasculatura. La I/O biológica no es solo más ancha: es de otra clase topológica.",
+  },
+  {
+    title: "Autopoiesis: el sustrato como candidato",
+    subtitle: "Del costo material a la conjetura ontológica",
+    bullets: [
+      "Maturana y Varela (1974): lo vivo se define por auto-producirse —regenerar continuamente su propia frontera material—.",
+      "En el carbono, procesar información es inseparable de mantenerse existiendo: la neurona computa para regular su homeostasis, no para resolver un problema lógico.",
+      "Thompson (2007): el sentido nace de la precariedad de un ser que debe producirse para no disolverse.",
+      "Conjetura: los qualia podrían requerir esa vulnerabilidad homeostática. El silicio es estático: no tiene nada que perder.",
+    ],
+    speakerNotes:
+      "Aquí bajo del costo a la ontología, y aquí suelto el laboratorio. El salto NO lo da la energía —eso sería ilícito—, lo da la autopoiesis: la idea de que la conciencia primaria requiere que algo importe a un sistema porque su existencia está en juego. Variabilidad, intercambio pasivo y entrega circulatoria dejan de ser 'eficiencia' y pasan a ser las condiciones de un sistema que se auto-produce.",
+  },
+  {
+    title: "La objeción de Chalmers",
+    subtitle: "Qualia danzantes y la respuesta enactivista",
+    bullets: [
+      "Chalmers (1995): si sustituyes neuronas por chips funcionalmente idénticos, los qualia no deberían 'danzar' sin que lo notes → la experiencia la fijaría la organización, no el material.",
+      "Respuesta: distingo ser 'discreto' de estar 'desacoplado de la vida'.",
+      "Aproximar la salida no es instanciar la organización; el isomorfo de grano fino tendría que replicar variabilidad, intercambio pasivo y entrega volumétrica.",
+      "En ese punto ya no es 'lo mismo en otro sustrato': es construir otro sistema físico con esas propiedades.",
+    ],
+    speakerNotes:
+      "No caricaturizo a Chalmers: su argumento es fuerte. Mi respuesta no niega su fuerza, sino su premisa —que la organización relevante se preserve en un medio discreto y desacoplado de la vida—. No afirmo que sea no-computable en principio; afirmo que la carga de la prueba no está saldada, y que los cinco ejes dan razones concretas para dudarlo.",
   },
   {
     title: "Hacia el neuromorfismo corporizado",
