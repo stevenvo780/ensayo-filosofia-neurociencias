@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
 };
 
-const themeInit = `(function(){try{var t=localStorage.getItem('sot-theme');if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`;
+const themeInit = `(function(){try{var t=localStorage.getItem('sot-theme');if(t){document.documentElement.setAttribute('data-theme',t);}var c=localStorage.getItem('sot-toc');if(c){document.documentElement.setAttribute('data-toc',c);}}catch(e){}})();`;
 
 export default function RootLayout({
   children,
