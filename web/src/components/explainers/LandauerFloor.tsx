@@ -25,6 +25,7 @@ function toSuper(n: number): string {
 }
 
 function fmtSci(v: number): string {
+  if (!(v > 0) || !Number.isFinite(v)) return "0";
   const exp = Math.floor(Math.log10(v));
   const mantissa = v / Math.pow(10, exp);
   const mantStr = mantissa.toLocaleString("es", { maximumFractionDigits: 2 });

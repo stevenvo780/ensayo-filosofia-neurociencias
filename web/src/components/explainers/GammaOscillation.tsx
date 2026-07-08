@@ -139,9 +139,9 @@ export default function GammaOscillation() {
       }
     };
 
-    draw(0);
-
-    if (!reducedMotionEnabled()) {
+    if (reducedMotionEnabled()) {
+      draw(0);
+    } else {
       frame = window.requestAnimationFrame(draw);
     }
 
@@ -162,7 +162,7 @@ export default function GammaOscillation() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "minmax(0, 320px) minmax(220px, 1fr)",
+          gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
           gap: 24,
           alignItems: "end",
         }}

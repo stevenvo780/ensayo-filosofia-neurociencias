@@ -217,7 +217,7 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: Explainer || slide.image ? "minmax(0, 1fr) minmax(0, 1.05fr)" : "1fr",
+            gridTemplateColumns: Explainer || slide.image ? "repeat(auto-fit, minmax(280px, 1fr))" : "1fr",
             gap: 30,
             alignItems: "start",
           }}

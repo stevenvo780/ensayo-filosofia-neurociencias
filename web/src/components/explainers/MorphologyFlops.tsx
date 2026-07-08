@@ -115,6 +115,8 @@ function SVGDisembodied({ animate }: SVGDisembodiedProps) {
       viewBox="0 0 200 200"
       width={200}
       height={200}
+      role="img"
+      aria-label="Modelo desencarnado: FFT y correlación cruzada (757.760 FLOPs)"
       style={{
         maxWidth: "100%",
       }}
@@ -204,6 +206,8 @@ function SVGEmbodied() {
       viewBox="0 0 200 200"
       width={200}
       height={200}
+      role="img"
+      aria-label="Modelo corporizado: micrófonos y tubo de desfase acústico (2 FLOPs)"
       style={{
         maxWidth: "100%",
       }}

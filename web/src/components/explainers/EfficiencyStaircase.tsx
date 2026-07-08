@@ -178,6 +178,8 @@ export default function EfficiencyStaircase() {
               strokeWidth={isActive ? 2 : 1.4}
               filter={isActive ? `drop-shadow(0 0 4px ${meta.color})` : undefined}
               style={{ cursor: "pointer" }}
+              role="button"
+              aria-label={`${fmtInt(point.row.n)} neuronas · brecha ${fmtGap(point.row.gap)}`}
               initial={false}
               animate={{ r: isActive ? 6 : 3.8, opacity: isActive ? 1 : 0.72 }}
               transition={reduced ? { duration: 0 } : { duration: 0.25, ease: EASE }}
@@ -267,8 +269,8 @@ export default function EfficiencyStaircase() {
         </div>
       </div>
       <figcaption className="explainer-cap">
-        La escalera no es monotónica: la brecha baja hasta ~3.000× en single-GPU 6M, donde pesa la
-        VRAM, pero rebota a 104.450× en el híbrido 16M cuando aparecen PCIe, DDR y GIL. No es una
+        La escalera no es monotónica: la brecha baja hasta ~3.000× en single-GPU 1M, donde mejor se
+        usa la VRAM, pero rebota a 104.450× en el híbrido 16M cuando aparecen PCIe, DDR y GIL. No es una
         ley suave de escala, sino un patrón emergente de arquitectura y de sus cuellos sucesivos.
       </figcaption>
     </figure>

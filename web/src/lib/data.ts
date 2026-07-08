@@ -14,17 +14,17 @@ export interface BenchRow {
 
 // resultados_escalamiento.csv (1 s biológico simulado)
 export const BENCH: BenchRow[] = [
-  { tier: "CPU", n: 100, timeMs: 19.1, powerW: 100, eSi: 1.91, eCarbon: 4.67e-6, gap: 4.1e5 },
-  { tier: "CPU", n: 1000, timeMs: 78.7, powerW: 100, eSi: 7.87, eCarbon: 7.39e-5, gap: 1.07e5 },
-  { tier: "CPU", n: 8000, timeMs: 397.8, powerW: 100, eSi: 39.78, eCarbon: 6.0e-4, gap: 6.63e4 },
-  { tier: "SingleGPU", n: 50000, timeMs: 707.5, powerW: 66.8, eSi: 47.24, eCarbon: 3.65e-3, gap: 1.3e4 },
-  { tier: "SingleGPU", n: 250000, timeMs: 849, powerW: 91.2, eSi: 77.42, eCarbon: 1.82e-2, gap: 4.25e3 },
-  { tier: "SingleGPU", n: 1000000, timeMs: 1217, powerW: 139, eSi: 169.16, eCarbon: 5.44e-2, gap: 3.11e3 },
-  { tier: "SingleGPU", n: 6000000, timeMs: 6231, powerW: 184, eSi: 1144, eCarbon: 0.326, gap: 3.51e3 },
-  { tier: "MultiGPU", n: 8000000, timeMs: 64823, powerW: 154, eSi: 9974, eCarbon: 0.716, gap: 1.39e4 },
-  { tier: "MultiGPU", n: 12000000, timeMs: 100158, powerW: 158, eSi: 15837, eCarbon: 1.07, gap: 1.47e4 },
-  { tier: "Hibrido", n: 14000000, timeMs: 563735, powerW: 223, eSi: 125654, eCarbon: 1.29, gap: 9.72e4 },
-  { tier: "Hibrido", n: 16000000, timeMs: 673732, powerW: 225, eSi: 151313, eCarbon: 1.45, gap: 1.04e5 },
+  { tier: "CPU", n: 100, timeMs: 19.1, powerW: 100, eSi: 1.91, eCarbon: 4.67e-6, gap: 409761 },
+  { tier: "CPU", n: 1000, timeMs: 78.7, powerW: 100, eSi: 7.87, eCarbon: 7.39e-5, gap: 106566 },
+  { tier: "CPU", n: 8000, timeMs: 397.8, powerW: 100, eSi: 39.78, eCarbon: 6.0e-4, gap: 66265 },
+  { tier: "SingleGPU", n: 50000, timeMs: 707.5, powerW: 66.8, eSi: 47.24, eCarbon: 3.65e-3, gap: 12954 },
+  { tier: "SingleGPU", n: 250000, timeMs: 849, powerW: 91.2, eSi: 77.42, eCarbon: 1.82e-2, gap: 4249 },
+  { tier: "SingleGPU", n: 1000000, timeMs: 1217, powerW: 139, eSi: 169.16, eCarbon: 5.44e-2, gap: 3111 },
+  { tier: "SingleGPU", n: 6000000, timeMs: 6231, powerW: 184, eSi: 1144, eCarbon: 0.326, gap: 3508 },
+  { tier: "MultiGPU", n: 8000000, timeMs: 64823, powerW: 154, eSi: 9974, eCarbon: 0.716, gap: 13926 },
+  { tier: "MultiGPU", n: 12000000, timeMs: 100158, powerW: 158, eSi: 15837, eCarbon: 1.07, gap: 14748 },
+  { tier: "Hibrido", n: 14000000, timeMs: 563735, powerW: 223, eSi: 125654, eCarbon: 1.29, gap: 97233 },
+  { tier: "Hibrido", n: 16000000, timeMs: 673732, powerW: 225, eSi: 151313, eCarbon: 1.45, gap: 104450 },
 ];
 
 export const TIER_META: Record<Tier, { label: string; bottleneck: string; color: string }> = {
@@ -52,8 +52,7 @@ export const EXP = {
 };
 
 // Formateadores
-export const fmtGap = (g: number) =>
-  g >= 1e4 ? `${(g / 1e3).toFixed(0)} 000×` : `${g.toLocaleString("es")}×`;
+export const fmtGap = (g: number) => `${Math.round(g).toLocaleString("es")}×`;
 
 export const fmtInt = (n: number) => n.toLocaleString("es");
 
