@@ -4,128 +4,138 @@
 **Curso:** Filosofía de las Neurociencias (2026-1)  
 **Profesor:** Santiago Arango-Muñoz  
 **Institución:** Instituto de Filosofía, Universidad de Antioquia  
-**Anexo de Laboratorio:** [reproducir con ejecutar_laboratorio.sh](file:///workspace/ensayo-filosofia-neurociencias/ejecutar_laboratorio.sh) | [Dashboard de Resultados (Next.js)](http://localhost:8000)
+**Anexo experimental:** laboratorio computacional reproducible (6 experimentos biofísicos + benchmark escalonado en cuatro tiers de hardware). Las figuras 1–7 están incrustadas en el texto.
 
 ---
 
 ## Introducción
 
-El problema de la mente y su relación con el sustrato físico es uno de los debates epistemológicos más densos de la ciencia contemporánea. A mediados del siglo XX, el funcionalismo clásico formuló la *tesis de la realizabilidad múltiple* (Putnam, 1967; Fodor, 1974), sosteniendo que los estados mentales son esencialmente estados funcionales y organizacionales. Según esta postura, la mente es realizable en múltiples soportes físicos (carbono, silicio o cualquier medio capaz de sostener las transiciones de estado adecuadas), lo que impulsó la *metáfora del cerebro como computadora* (Daugman, 2001) y la convicción de que los modelos conexionistas (Hinton, 1992) implementados en microchips digitales eventualmente producirían procesos cognitivos conscientes.
+El problema de la relación mente–sustrato es uno de los más densos de la filosofía de la ciencia contemporánea. A mediados del siglo XX, el funcionalismo formuló la *tesis de la realizabilidad múltiple* (Putnam, 1967; Fodor, 1974): los estados mentales son esencialmente estados funcionales y, por tanto, realizables en cualquier medio —carbono, silicio o cualquier soporte— capaz de sostener las transiciones de estado adecuadas. De ahí nació la *metáfora del cerebro como computadora* (Daugman, 2001) y la convicción de que los modelos conexionistas (Hinton, 1992) en microchips digitales producirían, con suficiente escala, procesos cognitivos.
 
-Sin embargo, este ensayo propone una crítica rigurosa a la neutralidad del sustrato defendida por el funcionalismo computacional, delineando los límites materiales e instrumentales del silicio frente al carbono orgánico. A diferencia de las críticas cognitivas tradicionales, estructuramos este análisis sobre tres dimensiones físico-conceptuales, validadas empíricamente mediante un laboratorio computacional anexo (disponible en la aplicación Next.js local):
+Este ensayo defiende una tesis con dos niveles que conviene no confundir. En el nivel **práctico**, sostengo que emular la física continua del carbono vivo sobre silicio digital impone costos que no son un detalle de ingeniería, sino el síntoma de una profunda incompatibilidad material. En el nivel **ontológico** —más especulativo—, exploro si el sustrato vivo es constitutivo de la conciencia; y advierto desde ya que *esta segunda afirmación no se sigue de la primera*: no la fundo en el costo energético, sino en la autopoiesis. Articulo ambos niveles con tres cortes de un laboratorio anexo: la economía de la codificación, el límite termodinámico de la señalización y la relación entre autopoiesis y conciencia.
 
-1. **La divergencia en la economía de la codificación:** el contraste entre el procesamiento densamente distribuido de los modelos de silicio tradicionales y la codificación esparcida basada en "células de concepto" (Quian Quiroga, Fried y Koch, 2013) y la jerarquía retinotópica (Zeki, 1992).
-2. **El límite termodinámico y de señalización:** la diferencia cualitativa entre la conmutación binaria de canal único en el silicio y la física molecular pasiva de la señalización química húmeda (neurotransmisores y modulación volumétrica), lo que genera una insostenible brecha de eficiencia energética al emular la biología en computadoras digitales.
-3. **La relevancia del sustrato en la emergencia de la conciencia:** la vinculación entre autopoiesis (Maturana y Varela, 1974) y la organicidad del carbono, problematizando si la ineficiencia física del silicio constituye un límite práctico o si apunta a una imposibilidad ontológica para originar una conciencia fenoménica en aislamiento corporal.
-
-Aceptando el rigor filosófico, evitamos caer en la falacia de equiparar ineficiencia energética con imposibilidad ontológica absoluta. En su lugar, distinguimos críticamente entre el silicio digital clásico de Von Neumann (nuestro modelo simulado) y los paradigmas de silicio neuromórfico analógico (como *Loihi* de Intel), redefiniendo el debate de un dualismo ingenuo "silicio vs. carbono" a una contraposición de principios físicos: el cómputo lógico discretizado frente a la dinámica física continua del medio metabólico vivo.
+Para no caer en una caricatura, distingo el silicio digital clásico de Von Neumann —lo que el laboratorio simula— de los paradigmas neuromórficos analógicos (*Loihi*, memristores): el debate no es "silicio vs. carbono", sino cómputo lógico discretizado frente a dinámica física continua.
 
 ---
 
-## 1. Conexionismo y Plasticidad Local: El Límite de la Arquitectura Von Neumann
+## 1. Plasticidad local y el cuello de botella de Von Neumann
 
-La suposición de que el software mental es independiente del sustrato físico descansa en la equivalencia de Turing: cualquier cómputo formalizable puede ser resuelto por cualquier máquina abstracta de estados. Sin embargo, en el mundo material, el procesamiento de información requiere energía, espacio y tiempo. Daugman (2001) advierte que la neurociencia ha abusado de las metáforas de época; la computadora digital es solo el andamio conceptual de nuestro tiempo, no una identidad ontológica con el cerebro.
+La independencia del "software mental" respecto de su sustrato se apoya en la equivalencia de Turing (1936): todo cómputo formalizable puede resolverse en cualquier máquina universal. Pero en el mundo material el procesamiento cuesta energía, espacio y tiempo. Daugman (2001) advierte que la neurociencia abusa de las metáforas de época: la computadora digital es el andamio conceptual de nuestro tiempo, no una identidad ontológica con el cerebro.
 
-El primer límite del silicio clásico es estructural. La arquitectura de Von Neumann separa físicamente la unidad de procesamiento (CPU/GPU) de la memoria (RAM), forzando un tráfico masivo de electrones a través de un bus físico limitado (el cuello de botella de Von Neumann). En cambio, el cerebro de carbono es una estructura autoorganizada donde el procesamiento y el almacenamiento son idénticos: ocurren de manera local en el cambio morfológico y molecular de las sinapsis (Bechtel, 2008). 
+El primer límite es estructural. La arquitectura de Von Neumann (1945) separa físicamente el procesador de la memoria y fuerza un tráfico constante de datos por un bus limitado —el *cuello de botella de Von Neumann*—. El cerebro, en cambio, es una estructura autoorganizada donde procesamiento y almacenamiento coinciden: ocurren localmente en el cambio molecular de la sinapsis (Bechtel, 2008).
 
-Los modelos conexionistas (Hinton, 1992) intentan emular la plasticidad biológica mediante algoritmos de aprendizaje global como la retropropagación (*backpropagation*). Sin embargo, el coste lógico de mantener este grafo de cómputo en silicio es inmenso. El **Experimento 5 (Plasticidad y Aprendizaje)** del laboratorio demuestra esta discrepancia al comparar una regla de aprendizaje biológica estrictamente local (STDP) con la actualización global de *backpropagation* en una red de 1,000 neuronas:
-* **Backpropagation (Silicio):** Requiere almacenar las activaciones y gradientes intermedios en un búfer global para realizar la pasada hacia atrás, lo que se tradujo en **768.0 KB** de memoria de estado.
-* **STDP Local (Carbono):** Al depender solo de la diferencia temporal local entre disparos pre y postsinápticos, prescinde de grafos globales y requiere almacenar únicamente el último spike de cada neurona, reduciendo la memoria de estado a **4.0 KB** (ver [exp5_aprendizaje.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/exp5_aprendizaje.png)).
+Los modelos conexionistas (Hinton, 1992) emulan la plasticidad mediante aprendizaje global (retropropagación), cuyo coste de mantener el grafo de cómputo es enorme. El **Experimento 5** contrasta una regla estrictamente local (STDP) con la retropropagación en una red de 1.000 neuronas:
 
-Esta diferencia cuantitativa ilustra que la plasticidad en silicio es una costosa simulación matemática de representaciones abstractas globales, mientras que en el carbono es una reconfiguración física local pasiva. Aunque la computación neuromórfica analógica (memristores) busca mitigar este cuello de botella permitiendo que los dispositivos físicos alteren su conductancia in-situ de forma análoga a la STDP, el silicio comercial actual sigue atrapado en la simulación sintáctica de variables de memoria discretizadas.
+- **Retropropagación (silicio):** almacena activaciones y gradientes intermedios en un búfer global para la pasada hacia atrás → **20.000 KB** de estado.
+- **STDP local (carbono):** depende solo de la diferencia temporal entre disparos pre- y postsinápticos y guarda únicamente el último spike de cada neurona → **39 KB**, una reducción de **512×**.
 
----
+![Memoria de estado: retropropagación vs. STDP local](../simulaciones/graficos/exp5_aprendizaje.png)
+*Fig. 1 — Experimento 5: el aprendizaje global (backprop) exige un búfer 512× mayor que la regla local biológica (STDP).*
 
-## 2. El Problema de la Percepción: Codificación Esparcida contra la Densidad de Silicio
-
-En las redes neuronales artificiales profundas de silicio, la representación de la información es densa y distribuida: clasificar un patrón exige activar simultáneamente millones de pesos flotantes en operaciones matriciales continuas. La neurobiología de la percepción, sin embargo, demuestra que el cerebro optimiza sus recursos materiales mediante la **codificación esparcida**.
-
-Quian Quiroga, Fried y Koch (2013) evidenciaron que en el lóbulo temporal medial humano existen "células de concepto" (o neuronas de la abuela) que responden con una selectividad extrema a conceptos específicos (como "Jennifer Aniston" o "Luke Skywalker"). Estas representaciones no están densamente distribuidas; por el contrario, dependen del disparo de una fracción minúscula de neuronas selectivas rodeadas de un profundo silencio eléctrico del resto de la población celular.
-
-Este silencio no es inactividad; es inhibición competitiva activa. El cerebro biológico utiliza una estrategia de codificación esparcida de aproximadamente el 1% para evitar la interferencia destructiva de memoria (*crosstalk*) y, fundamentalmente, para minimizar el gasto termodinámico. El silicio digital clásico, al basarse en flujos constantes de corriente eléctrica para mantener los estados lógicos de sus transistores, no puede beneficiarse del "silencio físico" del carbono.
-
-El laboratorio modeló este fenómeno en el **Experimento 1 (Jerarquía Visual)** y en el **Experimento 2 (Células de Concepto)**:
-* El **Experimento 1** muestra que estructurar campos receptivos locales retinotópicos (Zeki, 1992) en lugar de conexiones densas conexionistas tradicionales reduce los FLOPs de procesamiento en un **90.0%** (de 525,100 a 52,610 FLOPs, ver [exp1_visual.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/exp1_visual.png)).
-* El **Experimento 2** midió la interferencia al almacenar 20 conceptos. El solapamiento promedio en la red densa (silicio) fue del **64.0%**, provocando una alta interferencia conceptual. En la red esparcida del 1% (WTA biológica), el solapamiento se redujo al **0.01%**, garantizando la inmunidad al crosstalk (ver [exp2_crosstalk.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/exp2_crosstalk.png)).
-
-La esparsidad biológica es, por tanto, una optimización material directa del sustrato de carbono húmedo. En el silicio digital clásico, simular el silencio de una neurona requiere computar explícitamente el valor cero en la memoria RAM, gastando energía de conmutación para procesar la ausencia de señal.
+La plasticidad en silicio es, así, una costosa simulación de representaciones globales abstractas; en el carbono, una reconfiguración física local y pasiva. El silicio comercial sigue atrapado en la simulación sintáctica de variables discretizadas.
 
 ---
 
-## 3. Diversidad de Señales y la Paradoja Energética del Silicio
+## 2. Percepción: codificación esparcida frente a densidad de silicio
 
-El límite más crítico del silicio convencional es su pobreza de medios físicos de comunicación. Un microchip transmite información a través de electrones que conmutan estados binarios en canales de cobre estáticos. El cerebro, por el contrario, utiliza un alfabeto neuroquímico multicanal en el que decenas de neurotransmisores, neuromoduladores (dopamina, serotonina) y gases retrógrados (óxido nítrico) interactúan de forma paralela en el mismo medio físico (LeDoux, 1994; Greenwood y Garfinkel, 2024).
+En las redes profundas de silicio la representación es densa: clasificar un patrón exige activar simultáneamente millones de pesos en operaciones matriciales. La neurobiología muestra otra estrategia. Quian Quiroga, Fried y Koch (2013) hallaron en el lóbulo temporal medial humano "células de concepto" de selectividad extrema —responden a "Jennifer Aniston" o "Luke Skywalker"—: una fracción minúscula de neuronas dispara, rodeada de silencio eléctrico. (No son literalmente neuronas-abuela únicas, advierten los autores, sino un código esparcido *pero* distribuido.)
 
-Esta diversidad química no es un adorno adaptativo; realiza cómputos volumétricos tridimensionales no cableados y altera de forma dinámica los umbrales de plasticidad sináptica. Para explorar el coste físico de simular esta diversidad molecular, implementamos un benchmark de escalamiento masivo (de $N = 100$ a $N = 3,000,000$ neuronas) en el script [ejecutar.py](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/ejecutar.py), comparando la simulación en CPU (NumPy) y en GPU (**RTX 5070 Ti** Blackwell + **RTX 2060** Turing en configuración Multi-GPU con CUDA Streams paralelos) frente al consumo real del carbono orgánico:
+Ese silencio no es inactividad, sino inhibición competitiva: una codificación esparcida (~1 %) que evita la interferencia de memoria (*crosstalk*) y minimiza el gasto termodinámico. El silicio digital clásico, que sostiene sus estados lógicos con corriente constante, no puede aprovechar el "silencio físico" del carbono. El laboratorio lo cuantifica en dos experimentos:
 
-A continuación se detalla la comparación energética justa basada en la transmisión de señales por evento sináptico efectivo (GPU vs. ATP biológico):
+- **Experimento 1 (jerarquía visual, Zeki, 1992):** estructurar campos receptivos locales retinotópicos en lugar de conexiones densas reduce los FLOPs de procesamiento un **90 %** (de 22,15 a 2,22 millones; Fig. 2).
+- **Experimento 2 (células de concepto):** al almacenar 200 conceptos, el solapamiento medio en la red densa fue del **80,0 %** (alta interferencia); en la red esparcida al 1 % (WTA biológica) cayó al **1,03 %** (Fig. 3).
 
-| Neuronas ($N$) | Eventos Sinápticos | Energía por Evento GPU (J) | Energía por Evento Carbono (J) | Factor de Ventaja Biológica |
-| :---: | :---: | :---: | :---: | :---: |
-| 100 | 48,050 | 2.35e-03 | 1.65e-10 | **1.42e+07** (14.2 millones) |
-| 1,000 | 19,701,100 | 4.60e-06 | 1.65e-11 | **2.79e+05** (279,000 veces) |
-| 16,000 | 5,043,416,000 | 2.00e-08 | 1.03e-12 | **1.94e+04** (19,400 veces) |
-| 100,000 | 197,008,480,000 | 9.75e-10 | 1.65e-13 | **5.91e+03** (5,910 veces) |
-| 1,000,000 | 19,700,856,000,000 | 6.78e-11 | 1.65e-14 | **4.11e+03** (4,110 veces) |
-| 2,000,000 | 78,803,040,000,000 | 3.28e-11 | 8.25e-15 | **3.98e+03** (3,980 veces) |
-| 3,000,000 (Multi-GPU) | 522,610,252,800,000 | 4.56e-11 | 5.50e-15 | **8.30e+03** (8,300 veces) |
+![FLOPs de la codificación densa vs. esparcida](../simulaciones/graficos/exp1_visual.png)
+*Fig. 2 — Experimento 1: los campos receptivos locales retinotópicos recortan el 90 % de las operaciones.*
 
-*Nota Metodológica:* Evaluando críticamente estos datos, debemos reconocer que parte de la ineficiencia medida (especialmente a baja escala, como los 450 ms para N=100 en GPU) se debe al **crossover de latencia de CUDA** (el coste temporal y de energía que introduce el entorno de software de Python/PyTorch para lanzar kernels a la tarjeta gráfica). La escala de 3,000,000 neuronas distribuida entre dos GPUs heterogéneas (RTX 5070 Ti + RTX 2060) revela un segundo cuello de botella: la **latencia de sincronización PCIe**. En cada paso de tiempo, los spikes deben cruzar el bus PCIe para propagar la actividad inter-GPU, lo que introduce una penalización temporal de ~9x respecto a la extrapolación lineal. Este fenómeno es análogo a la latencia axonal biológica de largo alcance, pero con un coste energético desproporcionado en el silicio.
+![Interferencia (crosstalk) densa vs. esparcida](../simulaciones/graficos/exp2_crosstalk.png)
+*Fig. 3 — Experimento 2: la esparsidad del 1 % reduce el solapamiento conceptual del 80,0 % al 1,03 %.*
 
-Sin embargo, el límite termodinámico de fondo persiste debido al **Principio de Landauer**: toda conmutación lógica digital borra información y disipa un mínimo de energía calorífica ($kT \ln 2$). En el cerebro de carbono, la difusión química y la modulación de canales iónicos de membrana ocurren de forma **pasiva**, guiadas por gradientes electroquímicos espontáneos y termodinámica molecular a coste energético cero (repolarizándose mediante la bomba ATPasa a un costo biológico dinámico). El silicio digital, al verse obligado a simular matemáticamente estas dinámicas físicas continuas mediante billones de conmutaciones lógicas de transistores bajo una fuente de alimentación activa, gasta entre 4,000 y 8,300 veces más energía por evento sináptico a escalas de millones de neuronas (ver [energia_silicio_vs_carbono.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png)).
+La esparsidad es, pues, una optimización material del sustrato húmedo. En silicio, simular el silencio de una neurona obliga a computar explícitamente el valor cero: se gasta energía de conmutación para procesar la ausencia de señal.
 
 ---
 
-## 4. Dinámica Temporal, Autopoiesis y Relevancia Ontológica del Sustrato
+## 3. Diversidad de señales, termodinámica y la paradoja energética
 
-Esta divergencia material nos traslada del ámbito técnico al debate metafísico. El funcionalismo computacional sostiene que el sustrato físico es ontológicamente irrelevante (Putnam, 1967). Sin embargo, la brecha de eficiencia física y la simulación algorítmica forzada de las dinámicas continuas biológicas sugieren que el sustrato material es ontológicamente constitutivo de los procesos conscientes.
+El límite más profundo del silicio es la pobreza de su medio físico: electrones que conmutan estados binarios en canales estáticos. El cerebro usa un alfabeto neuroquímico multicanal —decenas de neurotransmisores, neuromoduladores y gases retrógrados— que interactúan en paralelo en el mismo volumen (LeDoux, 1994; Marder, 2012), modulando dinámicamente la plasticidad. El **Experimento 3** muestra que simular esa diversidad tiene coste lineal en silicio (120.000 → 428.000 FLOPs de 1 a 15 canales iónicos), nulo en el margen para el carbono. Para medir el costo de escalar, el benchmark se ejecuta *sin optimizar*, como correría una red de silicio típica, en cuatro tiers de hardware (1 s simulado):
 
-Maturana y Varela (1974) postulan la **autopoiesis** como la propiedad definitoria de lo vivo: un sistema capaz de regenerar y mantener continuamente su propia frontera material y su estructura física. En el carbono húmedo, el procesamiento de información (el disparo de espigas y la modulación molecular) es metabólicamente inseparable del mantenimiento de la vida celular. La neurona no computa para resolver un problema lógico; computa para regular su homeostasis y evitar su propia degradación termodinámica.
+| Tier de hardware | N | Tiempo | Potencia | E silicio (J) | E carbono (J) | Brecha (×) |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| CPU (NumPy) | 100 | 19 ms | 100 W | 1,9 | 4,7·10⁻⁶ | 4,1·10⁵ |
+| CPU | 8.000 | 398 ms | 100 W | 40 | 6,0·10⁻⁴ | 6,6·10⁴ |
+| Single GPU (RTX 5070 Ti) | 1.000.000 | 1,2 s | 139 W | 169 | 0,05 | 3,1·10³ |
+| Single GPU | 6.000.000 | 6,2 s | 184 W | 1.144 | 0,33 | 3,5·10³ |
+| Multi-GPU (PCIe) | 12.000.000 | 1 min 40 s | 158 W | 15.837 | 1,07 | 1,5·10⁴ |
+| Híbrido (CPU + 2 GPU + DDR) | 16.000.000 | 11 min 13 s | 225 W | 151.313 | 1,45 | 1,0·10⁵ |
 
-En contraste, el silicio digital es estático. El paso de electrones por un chip de silicio no regenera su estructura; al contrario, la degrada físicamente por electromigración y disipación de calor. El silicio no está vivo. 
+Cautela para leer la tabla: la columna del silicio mide la potencia *total* de un hardware genérico no optimizado; la del carbono, la señalización idealizada por spike (sin el metabolismo basal, dominado por la bomba Na⁺/K⁺). La "brecha" es, pues, una cota superior de una comparación deliberadamente desfavorable al silicio clásico, no una constante de sustrato.
 
-El **Experimento 4 (Oscilaciones y Sincronía)** del laboratorio demuestra cómo las oscilaciones coherentes en la banda Gamma (~40 Hz), indispensables para la integración perceptiva y cognitiva (Bechtel, 2008), emergen espontáneamente de la física pasiva de la red E-I con retardos axonales (ver [exp4_oscilaciones_emergentes.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/exp4_oscilaciones_emergentes.png)). En el silicio digital, simular este acoplamiento temporal requiere indexar miles de variables temporales y buffers en la memoria, mientras que en el carbono emerge de la física pasiva del tejido.
+Con esa cautela, dos lecturas filosóficas emergen. Primera: cada tier revela una nueva pared de tiempo y energía —el cuello de botella de Von Neumann hecho físicamente visible (Fig. 4)—, y la brecha silicio/carbono **no escala de forma monotónica con N** (Fig. 5): se reduce hasta ~3.000× en el régimen de una sola GPU (mejor uso de la VRAM) y vuelve a subir —14.000× en multi-GPU, hasta **104.450×** en el híbrido a 16 M— cada vez que se cruza un límite físico (VRAM → bus PCIe → memoria DDR del host). Añadir más silicio no resuelve el problema de fondo: lo desplaza a otro cuello de botella.
 
-Para resolver la tensión entre la especificidad del carbono y la flexibilidad de la cognición, debemos refinar nuestra tesis: **el silicio puede simular la sintaxis cognitiva, pero carece de la semántica existencial necesaria para originar conciencia primaria (qualia).** El carbono húmedo, gracias a su valencia molecular dinámica, permite el acoplamiento físico directo de la vida con su propio mantenimiento metabólico. Si el silicio es incapaz de albergar qualia no es por falta de transistores o potencia de cálculo (PC de sobra), sino porque carece de la vulnerabilidad homeostática que empuja a un organismo vivo a sentir el mundo para preservar su existencia.
+![Escalera de ineficiencia en log-log](../simulaciones/graficos/tiempo_escalamiento.png)
+*Fig. 4 — El tiempo de simulación choca contra una "pared" física en cada tier (VRAM → PCIe → DDR).*
+
+![Mapa de la brecha de eficiencia](../simulaciones/graficos/brecha_eficiencia_mapa.png)
+*Fig. 5 — La brecha silicio/carbono no es monotónica: es emergente de la arquitectura.*
+
+Segunda, y más importante: esa brecha es **arquitectónica**, no fundamental —nace de la separación procesador-memoria, la alimentación activa y una simulación no optimizada—. El límite verdaderamente fundamental es común a ambos sustratos: el **principio de Landauer (1961)**, según el cual toda conmutación lógica irreversible disipa al menos $kT\ln 2$ (≈2,8·10⁻²¹ J/bit a 300 K). Ni el silicio (~10⁻¹⁵ J/op) ni el carbono (~10⁻⁹ J/spike) se acercan a ese piso: no favorece a ninguno. Lo que distingue al carbono no es acercarse a él, sino *cómo* computa: la difusión química y la apertura de canales iónicos son **pasivas**, guiadas por gradientes espontáneos (la repolarización vía ATPasa cuesta, pero mucho menos que conmutar billones de transistores). Así, mientras la brecha del silicio *sube y baja* con la arquitectura, el principio del carbono —física molecular pasiva— permanece invariante bajo escala.
+
+Esa asimetría se ramifica en tres ejes que la **tesis** anexa desarrolla —la *variabilidad* del estado sináptico (graduado vs. binario), el *modo de intercambio* (químico pasivo vs. eléctrico activo) y el *ancho de banda de I/O* (fan-out y entrega circulatoria vs. cableado plano)—. No es que el silicio no compute la función: su física es de otra clase.
 
 ---
 
-## 5. Computación Morfológica y Acoplamiento Activo: Webb y Clark
+## 4. Dinámica temporal, autopoiesis y la objeción funcionalista
 
-Finalmente, la relación entre mente y sustrato debe analizarse fuera de los límites del cráneo. La cognición es constitutivamente corporizada e interactiva.
+Esta divergencia nos traslada del terreno técnico al metafísico; debo evitar aquí un salto ilícito. El funcionalismo sostiene que el sustrato es ontológicamente irrelevante (Putnam, 1967), y acierta en algo decisivo: **una brecha de eficiencia, por enorme que sea, no implica por sí sola ausencia de conciencia.** Eficiencia y fenomenología son magnitudes ortogonales; un funcionalista consecuente replicaría que la realizabilidad múltiple *predice* que los detalles de implementación (energía, calor, velocidad) varíen entre sustratos: un silicio más lento no toca la organización funcional. La objeción más aguda es la de Chalmers (1995): si sustituyéramos las neuronas por chips funcionalmente idénticos, los qualia no deberían "danzar" ni "desvanecerse" sin que el sujeto lo notara; luego la experiencia la fijaría la organización, no el material.
 
-El trabajo de Barbara Webb (1996) con su grillo robot ilustra este punto. Para emular la fonotaxis del grillo, Webb no programó algoritmos matemáticos complejos de correlación de señales acústicas. En su lugar, utilizó la **computación morfológica**: la distancia física entre los micrófonos del robot y un tubo de desfase acústico emulaban la traquea del grillo, realizando el cálculo de localización de manera pasiva gracias al cuerpo físico del autómata.
+Mi respuesta no niega su fuerza, pero distingue dos cosas que el funcionalista suele fundir: ser *discreto* y estar *desacoplado de la vida*. Que una dinámica continua sea digitalmente aproximable con precisión arbitraria no garantiza preservar lo que aquí importa: el acoplamiento metabólico del cómputo con la auto-conservación del organismo. No afirmo que esa organización sea no-computable en principio; afirmo, más modestamente, que la carga de probar que un medio desacoplado de la vida preserva *lo relevante* no está saldada. Y la autopoiesis ofrece una razón para dudarlo. Maturana y Varela (1974) definen lo vivo como un sistema que regenera continuamente su propia frontera material. En el carbono húmedo, procesar información es inseparable del mantenimiento de la célula: la neurona no computa para resolver un problema lógico, sino para regular su homeostasis. El silicio digital es estático: el paso de electrones no regenera su estructura, la degrada (electromigración, calor). El silicio no está vivo.
 
-El **Experimento 6 (Computación Morfológica)** de nuestro laboratorio modela esta diferencia funcional:
-* **Modelo Desencarnado (Silicio puro):** Debe calcular la dirección del sonido aplicando correlación cruzada de fase y Transformadas de Fourier (FFT), consumiendo **21,480 FLOPs** por ciclo.
-* **Modelo Corporizado (Webb):** Delegando el desfase a la morfología física, reduce el procesamiento neural a una resta de amplitud simple de solo **2 FLOPs** (ver [exp6_morfologia.png](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/exp6_morfologia.png)).
+El **Experimento 4** ilustra cómo, de la física pasiva de una red excitatoria-inhibitoria con retardos axonales, emerge actividad oscilatoria cuya potencia espectral se concentra en el rango beta–gamma (13–80 Hz, ~58 % del total; Fig. 6), indispensable para la integración perceptiva (Bechtel, 2008). En silicio, ese acoplamiento temporal exige indexar miles de buffers en memoria; en el carbono emerge del propio tejido.
 
-Este ahorro masivo evidencia que el cuerpo biológico realiza "cómputo gratuito" a través de sus propiedades físicas y mecánicas. Al carecer de cuerpo físico vivo, el silicio puro se ve obligado a simular matemáticamente la mecánica externa, disparando su costo computacional.
+![Espectro de la red E-I: emergencia de oscilaciones](../simulaciones/graficos/exp4_oscilaciones_emergentes.png)
+*Fig. 6 — Experimento 4: la actividad oscilatoria beta–gamma emerge de la física pasiva del tejido, sin reloj externo.*
 
-Para reconciliar esto con la teoría de la *mente extendida* de Andy Clark (2015, 2023) —que defiende que herramientas externas de silicio (como teléfonos inteligentes) pueden integrarse en el procesamiento predictivo del cerebro—, debemos delimitar los roles del sustrato. El silicio es un excelente **andamio cognitivo sintáctico**. Puede acoplarse externamente al cerebro biológico para extender la memoria o el cálculo espacial, integrándose en lo que Clark llama "recursos tejidos" (*woven resources*). Sin embargo, la intencionalidad originaria y la conciencia fenoménica del sistema híbrido siguen ancladas en la física biológica del organismo de carbono húmedo. El silicio sirve para andamiar la mente, pero no para originarla en aislamiento físico.
+Refino entonces la tesis sin sobreafirmarla: **el silicio digital puede replicar la organización *funcional* de la cognición, pero es dudoso que con ello origine su carácter fenoménico —los qualia—.** No por falta de transistores, sino porque carece de la vulnerabilidad homeostática que, según la tradición enactivista (Varela; Thompson, 2007), empuja a un organismo vivo a *sentir* el mundo para preservarse. Es una conjetura señalada, no un teorema: donde el argumento del costo físico se agota y comienza la apuesta enactivista.
+
+---
+
+## 5. Cómputo morfológico y acoplamiento activo: Webb y Clark
+
+La relación mente–sustrato debe analizarse también fuera del cráneo: la cognición es corporizada e interactiva. El grillo robot de Webb (1996) lo ilustra. Para emular la fonotaxis, Webb no programó correlación acústica, sino **cómputo morfológico**: la distancia entre los micrófonos y un tubo de desfase emulaban la tráquea del grillo y resolvían la localización pasivamente, por la física del cuerpo. El **Experimento 6** modela la diferencia: el modelo desencarnado (silicio puro) calcula la dirección del sonido con correlación cruzada y Transformadas de Fourier, **757.760 FLOPs** por ciclo; el modelo corporizado reduce el cómputo *neural* a una resta de amplitud de solo **2 FLOPs** (Fig. 7).
+
+![Cómputo desencarnado vs. corporizado](../simulaciones/graficos/exp6_morfologia.png)
+*Fig. 7 — Experimento 6: delegar el desfase a la morfología reubica el cómputo del cerebro al cuerpo.*
+
+Ahora bien, el cómputo no desaparece: se **reubica** en la física del cuerpo (el desfase acústico sigue ocurriendo y disipando energía). Y el ejemplo tiene un filo incómodo para mi tesis: el tubo del grillo robot es materia *no viva* y, sin embargo, cognitivamente constitutiva. La lección correcta no es, por tanto, que el *carbono* sea imprescindible, sino que lo es la **autopoiesis**: la auto-producción de la propia frontera, que ni el tubo ni el chip poseen.
+
+Esto permite ubicar a Clark: la mente extendida (2015, 2023) sostiene que herramientas de silicio se integran en el procesamiento predictivo del cerebro. Pero Clark es, en el fondo, funcionalista; tomo su fenomenología sin su principio de paridad: el silicio es un excelente **andamio cognitivo sintáctico**, pero la intencionalidad originaria sigue anclada en el organismo autopoiético. El silicio andamia la mente; no la origina en aislamiento.
 
 ---
 
 ## Conclusión
 
-El análisis crítico y experimental de las limitaciones del silicio demuestra que la equiparación funcionalista entre cerebro y computadora digital es conceptualmente incompleta. La ineficiencia termodinámica del silicio digital no es un detalle técnico secundario, sino el síntoma físico de una incompatibilidad de sustrato: simular mediante conmutación de transistores binarios discretos la física molecular continua y pasiva del carbono orgánico vivo impone un coste energético insostenible.
-
-Como advierte la falacia mereológica (Bennett y Hacker, 2022), no debemos atribuir a una parte del sistema (sea un chip o un cerebro aislado) facultades que corresponden a la totalidad del organismo corporizado que interactúa con su mundo. Si el silicio ha de jugar un papel en la emulación de la mente, debemos abandonar el paradigma digital clásico de Turing y transitar hacia la **tecnología neuromórfica analógica corporizada**, reconociendo que el pensamiento no es el cálculo frío de un software abstracto, sino una propiedad intrínseca de la dinámica material de la vida.
+El análisis muestra que la equiparación funcionalista entre cerebro y computadora digital es, cuando menos, incompleta. La ineficiencia termodinámica del silicio clásico prueba una incompatibilidad *material* concreta: simular con conmutación binaria discreta la física molecular continua y pasiva del carbono vivo impone un costo práctico insostenible. De ahí *no* se sigue la tesis ontológica; esta descansa en un argumento independiente —la autopoiesis—, que vuelve *plausible*, sin demostrarlo, que aquello que convierte un proceso físico en experiencia sea la vulnerabilidad de un sistema que se auto-produce. Como advierte la falacia mereológica (Bennett y Hacker, 2022), no debemos atribuir a una parte —un chip, o un cerebro aislado— facultades propias del organismo corporizado entero que interactúa con su mundo. Si el silicio ha de participar en la emulación de la mente, habrá que abandonar el paradigma digital clásico de Turing y transitar hacia una tecnología neuromórfica analógica corporizada, aceptando que el pensamiento acaso no sea el cálculo frío de un software abstracto, sino una propiedad intrínseca de la dinámica material de la vida.
 
 ---
 
 ## Bibliografía
 
 * Bechtel, W. (2008). *Mental Mechanisms: Philosophical Perspectives on Cognitive Neuroscience*. Routledge.
-* Bechtel, W., Mandik, P., & Mundale, J. (2001). *Philosophy Meets the Neurosciences*. Academic Press.
-* Bennett, M. R., & Hacker, P. M. S. (2022). *Philosophical Foundations of Neuroscience* (2a ed.). Wiley-Blackwell.
-* Chalmers, D. J. (1995). *Absent Qualia, Fading Qualia, Dancing Qualia*. En *Mind, Cognition, and Neuroscience* (2022). OUP.
+* Bennett, M. R., & Hacker, P. M. S. (2022). *Philosophical Foundations of Neuroscience* (2ª ed.). Wiley-Blackwell.
+* Chalmers, D. J. (1995). *Absent Qualia, Fading Qualia, Dancing Qualia*. En T. Metzinger (Ed.), *Conscious Experience*. Schöningh.
 * Clark, A. (2015). *Radical Predictive Processing*. *Southern Journal of Philosophy*, 53, 3-27.
 * Clark, A. (2023). *The Experience Machine: How Our Minds Predict and Shape Reality*. Pantheon Books.
-* Daugman, J. (2001). *Brain Metaphor and Brain Theory*. En Bechtel, W. et al. (Eds.), *Philosophy Meets the Neurosciences*. Academic Press.
+* Daugman, J. (2001). *Brain Metaphor and Brain Theory*. En W. Bechtel, P. Mandik & J. Mundale (Eds.), *Philosophy and the Neurosciences: A Reader*. Blackwell.
 * Fodor, J. A. (1974). *Special Sciences (Or: The Disunity of Science as a Working Hypothesis)*. *Synthese*, 28(2), 97-115.
 * Hinton, G. E. (1992). *How Neural Networks Learn from Experience*. *Scientific American*, 267(3), 144-151.
-* Putnam, H. (1967). *Psychological Predicates*. En Capitan, W. H. & Merrill, D. D. (Eds.), *Art, Mind, and Religion*. University of Pittsburgh Press.
+* Landauer, R. (1961). *Irreversibility and Heat Generation in the Computing Process*. *IBM Journal of Research and Development*, 5(3), 183-191.
+* LeDoux, J. E. (1994). *Emotion, Memory and the Brain*. *Scientific American*, 270(6), 50-57.
+* Marder, E. (2012). *Neuromodulation of Neuronal Circuits: Back to the Future*. *Neuron*, 76(1), 1-11.
+* Putnam, H. (1967). *Psychological Predicates*. En W. H. Capitan & D. D. Merrill (Eds.), *Art, Mind, and Religion*. University of Pittsburgh Press.
 * Quian Quiroga, R., Fried, I., & Koch, C. (2013). *Brain Cells for Grandmother*. *Scientific American*, 308(2), 30-35.
-* Varela, F. J., Maturana, H. R., & Uribe, R. (1974). *Autopoiesis: The Organization of Living Systems, Its Characterization and a Model*. *Biosystems*, 5(4), 187-196.
+* Thompson, E. (2007). *Mind in Life: Biology, Phenomenology, and the Sciences of Mind*. Harvard University Press.
+* Turing, A. M. (1936). *On Computable Numbers, with an Application to the Entscheidungsproblem*. *Proceedings of the London Mathematical Society*, s2-42, 230-265.
+* Varela, F. J., Maturana, H. R., & Uribe, R. (1974). *Autopoiesis: The Organization of Living Systems, Its Characterization and a Model*. *BioSystems*, 5(4), 187-196.
+* von Neumann, J. (1945). *First Draft of a Report on the EDVAC*. Moore School of Electrical Engineering, University of Pennsylvania.
 * Webb, B. (1996). *A Cricket Robot*. *Scientific American*, 275(6), 94-99.
+* Zeki, S. (1992). *The Visual Image in Mind and Brain*. *Scientific American*, 267(3), 68-76.

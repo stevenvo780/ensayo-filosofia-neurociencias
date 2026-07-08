@@ -1,0 +1,30 @@
+{
+  "fecha_utc": "2026-07-06T03:50:22.186687+00:00",
+  "gpus_disponibles": [
+    {
+      "idx": 0,
+      "name": "NVIDIA GeForce RTX 5070 Ti",
+      "memory_gb": 16.64319488
+    },
+    {
+      "idx": 1,
+      "name": "NVIDIA GeForce RTX 2060",
+      "memory_gb": 6.026756096
+    }
+  ],
+  "potencias_w": {
+    "cpu": 100.0,
+    "gpu0": 250.0,
+    "gpu1": 160.0
+  },
+  "constantes_biofisicas": {
+    "atp_por_spike_J": 1.65e-09,
+    "leak_por_neurona_s_J": 5e-11
+  },
+  "N_max_por_tier": {
+    "CPU": 8000,
+    "SingleGPU:cuda:0": 6000000,
+    "MultiGPU:cuda:0+cuda:1": 12000000,
+    "Hibrido:cuda:0+cuda:1+CPU": 16000000
+  }
+}

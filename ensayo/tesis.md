@@ -1,0 +1,175 @@
+# El sustrato no es neutral: variabilidad, intercambio y ancho de banda como límites de la realizabilidad múltiple
+
+### Una defensa filosófico-experimental de la relevancia ontológica del carbono vivo
+
+**Autor:** Steven Vallejo Ortiz
+**Curso:** Filosofía de las Neurociencias (2026-1) · Instituto de Filosofía, Universidad de Antioquia
+**Profesor:** Santiago Arango-Muñoz
+**Documento:** versión extendida (tesis) del ensayo *¿Silicio o Tejido?* · acompaña al laboratorio computacional reproducible
+
+---
+
+## Resumen
+
+El funcionalismo computacional afirma que la mente es sustrato-neutral: cualquier medio que implemente la organización funcional adecuada realizaría los mismos estados mentales. Este trabajo cuestiona esa neutralidad, pero con una distinción que recorre todo el texto y que me niego a difuminar: separo una **tesis práctica** —emular la física del carbono vivo sobre silicio digital impone costos que no son un detalle de ingeniería, sino el síntoma de una incompatibilidad material— de una **tesis ontológica** —el sustrato vivo sería constitutivo de la conciencia fenoménica—. La segunda *no se sigue* de la primera: la fundo, no en el costo energético, sino en la autopoiesis. El aporte metodológico es usar un laboratorio computacional (nueve experimentos reproducibles) para hacer *visible* y *cuantificable* la divergencia de sustrato en cinco ejes —arquitectura, codificación, **variabilidad**, **modo de intercambio** e **I/O**—, y mostrar por qué esos ejes, tomados juntos, presionan la premisa central de la realizabilidad múltiple: que la organización funcionalmente relevante pueda preservarse en un medio de baja variabilidad, bajo ancho de banda e intercambio activo.
+
+---
+
+## 0. Introducción y hoja de ruta
+
+El problema de la relación mente–sustrato es uno de los más densos de la filosofía de la ciencia contemporánea. A mediados del siglo XX, Putnam (1967) y Fodor (1974) formularon la *tesis de la realizabilidad múltiple*: si los estados mentales son estados funcionales —definidos por su rol causal y no por su composición—, entonces son realizables en carbono, silicio o cualquier medio capaz de sostener las transiciones de estado adecuadas. De ahí nació la *metáfora del cerebro como computadora* (Daugman, 2001) y el programa de que redes conexionistas (Hinton, 1992) en microchips digitales producirían, con suficiente escala, procesos cognitivos y —en su versión fuerte— conciencia.
+
+Mi tesis tiene dos niveles que conviene no confundir:
+
+1. **Nivel práctico (demostrable).** Emular la física continua, química y tridimensional del carbono vivo sobre silicio digital de Von Neumann impone costos —de energía, de tiempo, de memoria, de cableado— que crecen y se ramifican con la escala. No son incidentales: se siguen de elecciones de sustrato (electrones-en-cable frente a iones-en-fluido, conmutación binaria frente a modulación graduada, cableado 2D frente a arquitectura 3D con entrega circulatoria).
+
+2. **Nivel ontológico (conjetura fundada).** El sustrato vivo sería *constitutivo* de la conciencia primaria. Y aquí soy explícito: **esta afirmación no se deduce de la anterior.** La ineficiencia y la conciencia son magnitudes ortogonales; ninguna cantidad de julios por evento implica, por sí sola, presencia o ausencia de experiencia. La tesis ontológica descansa en un argumento independiente —la autopoiesis y el enactivismo—, no en el benchmark.
+
+**Sobre el método.** Un ensayo de filosofía que se apoya en GPUs corre un riesgo: que el aparato técnico se lea como espectáculo que no hace trabajo filosófico. Lo asumo de frente en la Parte I y defiendo la tesis metodológica de que, *bien acotada*, la medición ingenieril sí hace trabajo filosófico: no para *deducir* la ontología, sino para (a) refutar la versión ingenua de la neutralidad de sustrato mostrando que el costo de realización no es arbitrario sino estructural, y (b) precisar *qué* propiedad del sustrato es candidata a ser relevante. Distingo desde el inicio el silicio digital clásico de Von Neumann —lo que el laboratorio simula— de los paradigmas neuromórficos analógicos (memristores, *Loihi*): el debate no es "silicio vs. carbono", sino cómputo lógico discretizado frente a dinámica física continua.
+
+La Parte II recorre cinco ejes de divergencia, cada uno anclado a experimentos. La Parte III hace el trabajo propiamente ontológico. La Parte IV enfrenta las objeciones más duras y marca dónde se detiene el argumento.
+
+---
+
+## Parte I. Por qué la ingeniería puede hacer trabajo filosófico
+
+La objeción metodológica es seria: medir la ineficiencia de una simulación no dice nada sobre la conciencia, luego el laboratorio sobra. Concedo la premisa (eficiencia ≠ fenomenología) y niego la conclusión. El laboratorio hace tres cosas que el argumento puramente conceptual no hace igual de bien.
+
+Primero, **refuta la neutralidad ingenua**. La realizabilidad múltiple, en su lectura débil, es casi trivial: por supuesto que una función abstracta puede correr en distintos medios. Su lectura fuerte —la que sostiene el sueño de la mente en silicio— afirma que la *organización relevante* se preserva bajo cambio de sustrato *sin residuo*. El laboratorio muestra que el residuo no es cero ni arbitrario: es estructural y crece con la escala (§II). Eso no refuta la realizabilidad múltiple, pero traslada la carga de la prueba: quien afirme la neutralidad debe mostrar que ese residuo es irrelevante para la organización, no meramente costoso.
+
+Segundo, **precisa el explanandum**. Sin datos, "el sustrato importa" es un eslogan. Con ellos, puedo señalar *qué* del sustrato importa —variabilidad, ancho de banda, modo de intercambio— y separar lo que es contingente (una simulación no optimizada) de lo que es de sustrato (el principio de Landauer, la dimensionalidad del cableado).
+
+Tercero, **disciplina la retórica**. Un benchmark que se ejecuta *deliberadamente sin optimizar*, exactamente como correría una red de silicio típica, convierte cada cuello de botella en una observación reproducible en lugar de una intuición. Y me obliga a la honestidad: cuando la brecha resulta *no monotónica* (§II.6), el dato contradice la narrativa fácil de "más silicio, peor" y me fuerza a atribuir la ineficiencia a la arquitectura, no a una esencia del silicio.
+
+La regla que adopto: **la ingeniería fija cotas y hace distinciones; la filosofía hace las inferencias.** El laboratorio nunca concluye "luego no hay qualia en silicio". Concluye "el costo de realización es estructural y de esta magnitud", y desde ahí el argumento filosófico decide qué se sigue —y qué no.
+
+---
+
+## Parte II. La divergencia de sustrato en cinco ejes
+
+### II.1. Arquitectura: el cuello de botella de Von Neumann y la plasticidad local
+
+La independencia del "software mental" respecto de su sustrato se apoya en la equivalencia de Turing (1936): todo cómputo formalizable puede resolverse en cualquier máquina universal. Pero en el mundo material el procesamiento cuesta energía, espacio y tiempo. La arquitectura de Von Neumann (1945) separa físicamente el procesador de la memoria y fuerza un tráfico constante de datos por un bus limitado. El cerebro, en cambio, es una estructura autoorganizada donde procesamiento y almacenamiento coinciden localmente en la sinapsis (Bechtel, 2008).
+
+El **Experimento 5** contrasta una regla de aprendizaje estrictamente local (STDP) con la retropropagación global en una red de 5.000 neuronas: la retropropagación exige almacenar activaciones y gradientes en un búfer global (**20.000 KB** de estado); la STDP, que solo depende de la diferencia temporal entre disparos pre- y postsinápticos, guarda **39 KB** —una reducción de **512×**—. La plasticidad en silicio es una costosa simulación de representaciones globales abstractas; en el carbono, una reconfiguración física local y pasiva. Este eje ya muestra el patrón que se repetirá: lo que en el carbono es *físico y local* exige en el silicio un *aparato global y contable*.
+
+### II.2. Codificación: esparcimiento contra densidad
+
+En las redes profundas de silicio la representación es densa. La neurobiología muestra otra estrategia. Quian Quiroga, Fried y Koch (2005, 2013) hallaron en el lóbulo temporal medial humano "células de concepto" de selectividad extrema: una fracción minúscula de neuronas dispara, rodeada de silencio eléctrico. El **Experimento 1** muestra que estructurar campos receptivos locales retinotópicos (Zeki, 1992) recorta un **90 %** de los FLOPs (de 22,15 a 2,22 millones). El **Experimento 2** cuantifica la ventaja del silencio: al almacenar 200 conceptos, el solapamiento medio en la red densa fue del **80,0 %** (crosstalk masivo); en la red esparcida al 1 % (competencia *winner-take-all*), del **1,03 %**. El silencio biológico no es inactividad: es inhibición competitiva que evita la interferencia de memoria y minimiza el gasto termodinámico. En silicio, simular ese silencio —computar explícitamente el valor cero— cuesta energía de conmutación.
+
+### II.3. Variabilidad: el espacio de estados por unidad
+
+Aquí empieza el aporte nuevo. La realizabilidad múltiple presupone que un medio de baja variabilidad puede instanciar la misma organización que uno de alta variabilidad, siempre que reproduzca la función de entrada-salida. Pero la *variabilidad interna* —los grados de libertad por unidad de cómputo— puede ser parte de la organización relevante, no un detalle de implementación.
+
+El silicio digital conmuta estados binarios: una unidad de señalización porta **1 bit** (disparo / no disparo por ciclo). El carbono es analógico y molecular. Bartol et al. (2015), en una reconstrucción nanoconectómica del neuropilo hipocampal, midieron **26 estados sinápticos distinguibles**, equivalentes a **4,7 bits por sinapsis** —casi cinco veces la información de una conmutación binaria—. Y esto es solo el nivel sináptico: los potenciales de membrana son graduados (continuos), y la modulación química añade una dimensión combinatoria.
+
+El **Experimento 7** cuantifica el espacio de estados accesible por unidad. Por sinapsis, el carbono aporta 4,7 bits frente a 1 (×4,7). A escala de una neurona pyramidal con ~7.000 sinapsis, el espacio de configuración es de ~**32.900 bits** (log₂ de los estados alcanzables) frente a los 7.000 bits de una señalización binaria. Y la modulación escala combinatoriamente: con 100 neuromoduladores en 10 niveles graduados cada uno se añaden ~**332 bits** de contexto multiplicativo (10¹⁰⁰ configuraciones moduladoras). La lección filosófica: la variabilidad del carbono no es un adorno cuantitativo; cambia el *tipo* de espacio de estados. Emular esa variabilidad en digital exige N bits por valor graduado y un contador global por cada dimensión moduladora —el mismo patrón "físico-local vs. contable-global" de §II.1, ahora en el eje de los grados de libertad—. La pregunta funcionalista se agudiza: ¿es la organización relevante independiente de la cardinalidad del espacio de estados del realizador, o esa cardinalidad es constitutiva de lo que el sistema puede llegar a ser?
+
+### II.4. Modo de intercambio: químico-pasivo frente a eléctrico-activo
+
+El segundo eje nuevo es, para mí, el más decisivo, porque explica *por qué* la energía diverge sin apelar a una esencia. Lo que fija el piso energético no es solo *cuánto* se computa, sino *cómo se intercambia* la señal.
+
+El cerebro usa un alfabeto neuroquímico multicanal: decenas de neurotransmisores, neuromoduladores (dopamina, serotonina) y gases retrógrados (óxido nítrico) que difunden en volumen, en paralelo, en el mismo medio (LeDoux, 1994; Marder, 2012; y la *transmisión de volumen* de Agnati y Fuxe). El **Experimento 3** muestra que simular esa diversidad tiene coste lineal en silicio (de 120.000 a 428.000 FLOPs al pasar de 1 a 15 canales iónicos), mientras el carbono la realiza a coste marginal casi nulo: más canales son más moléculas, pero la difusión es **pasiva**.
+
+Esa es la clave. El intercambio químico riza gradientes electroquímicos espontáneos: el flujo de iones por los canales es pasivo (a favor del gradiente), y el costo metabólico es el de *restaurar* el gradiente mediante la bomba Na⁺/K⁺-ATPasa —un costo amortizado y batcheable, no pagado en cada evento de señalización—. El silicio digital, en cambio, intercambia información moviendo cargas por cables: cada bit movido debe *cargar y descargar activamente* la capacitancia de la línea, y ese costo se paga íntegro, cada vez.
+
+El **Experimento 9** lo cuantifica con datos de la literatura de hardware. Según Horowitz (2014), una operación aritmética cuesta ~0,1–3 pJ, pero *mover* 64 bits desde la DRAM cuesta ~1.300–2.600 pJ: **mover datos cuesta ~650× computarlos**. En una arquitectura realista, **~99,8 % de la energía es intercambio, no cómputo** —el llamado "muro de la memoria"—. Del lado del carbono, un potencial de acción cuesta ~3,29×10⁹ moléculas de ATP ≈ **211 pJ** (Attwell y Laughlin, 2001), pero repartido entre miles de eventos sinápticos y con el transporte guiado pasivamente. La asimetría de consumo, entonces, no es un misterio ni una esencia: se sigue de haber elegido *electrones-que-hay-que-empujar* sobre *iones-que-se-difunden*. Es la versión material y concreta del principio de Landauer (1961): toda conmutación lógica irreversible disipa un mínimo de *kT*·ln2 ≈ 2,8×10⁻²¹ J, un piso universal que *ni* el silicio (~10⁻¹⁵ J/op) *ni* el carbono (~10⁻⁹ J/spike) se acercan a tocar —Landauer no favorece a ninguno—. Lo que distingue al carbono no es acercarse a ese piso, sino el *modo* de intercambio que lo mantiene lejos de tener que pagar el transporte activamente.
+
+### II.5. Ancho de banda de I/O: fan-out 3D y entrega circulatoria
+
+El tercer eje nuevo es la conectividad. Los cables difícilmente superarán a los sistemas circulatorios, y la afirmación es literal, no retórica.
+
+**Fan-out.** Una neurona pyramidal cortical de capa 2/3 recibe y emite del orden de **7.000 sinapsis excitatorias** (más de 1.000 inhibitorias), y en humanos la cifra es 3–4 veces mayor. Una compuerta lógica CMOS tiene un fan-out eléctrico típico de ~**6** antes de necesitar amplificación. El **Experimento 8** fija el ratio en **~1.167×** por unidad.
+
+**Dimensionalidad del cableado.** El cerebro cablea en 3D; el chip, en un plano cuasi-bidimensional de pocas capas de metal. Para conectar *N* unidades con un fan-out dado, la longitud característica de cable escala como *N*^(1/D) en *D* dimensiones; el cociente 2D/3D crece como *N*^(1/6). A escala cerebral (*N* ≈ 10¹¹), el cableado 2D de silicio necesitaría **~68×** el del carbono 3D para la misma conectividad —y esto es una cota inferior generosa, porque ignora la regla de Rent y el dominio del interconexionado que ya vimos en §II.4—.
+
+**Entrega volumétrica de recursos.** Aquí el silicio no tiene análogo. El cerebro posee ~**600 km** de capilares; **cada neurona está a ~20 µm de un capilar**, con una razón capilar:neurona de **~1:1**. Es un sistema circulatorio y glial co-localizado que entrega energía y química *volumétricamente*, en el mismo espacio donde ocurre el cómputo. Un chip entrega potencia por una rejilla 2D y evacúa calor por su superficie; no hay una vasculatura que lleve *combustible y señal* a cada transistor en 3D. La I/O biológica, en suma, no es solo más ancha: es *de otra clase topológica*.
+
+### II.6. La escalera de la ineficiencia: una brecha emergente, no una esencia
+
+Los cinco ejes convergen en el benchmark escalonado. El **Experimento 3–benchmark** ejecuta la simulación *sin optimizar*, en cuatro tiers de hardware (CPU → Single GPU → Multi-GPU → Híbrido), hasta 16 millones de neuronas. La brecha energética silicio/carbono va de **~3.000×** (una sola GPU a 1M neuronas, donde mejor se aprovecha la VRAM) hasta **104.450×** (híbrido a 16M). Y —hallazgo filosóficamente importante— **no escala de forma monotónica con N**: baja en el régimen de una sola GPU y *rebota* cada vez que se cruza un límite físico (VRAM → bus PCIe → memoria DDR). Simular 1 segundo biológico tarda 11 minutos reales en el híbrido.
+
+Una cautela imprescindible, que la honestidad del método exige: la columna del silicio mide la potencia *total* de un hardware genérico no optimizado, y la del carbono, la señalización idealizada por spike. La brecha es una *cota superior* de una comparación deliberadamente desfavorable al silicio clásico, no una constante de sustrato. Pero la *no-monotonicidad* enseña algo que ninguna cota podría falsear: la ineficiencia es **arquitectónica**, emergente de cruzar paredes físicas (variabilidad→memoria, I/O→PCIe, intercambio→DDR). Añadir más silicio no resuelve el problema de fondo: lo desplaza a otro cuello de botella. El benchmark no prueba que el silicio "no pueda"; prueba que el costo de realización es estructural y se reorganiza, no desaparece, al escalar.
+
+---
+
+## Parte III. Del costo material a la conjetura ontológica
+
+### III.1. El puente que no cruzo (y por qué la travesía es tentadora)
+
+Es tentador leer una brecha de 10⁵× como prueba de que el silicio "carece de algo". Me resisto. Eficiencia y fenomenología son ortogonales; un funcionalista consecuente replicaría, con razón, que la realizabilidad múltiple *predice* que los detalles de implementación (energía, calor, velocidad) varíen entre sustratos —que un silicio más lento o más caliente no toca la organización funcional—. Concedido. La Parte II, por sí sola, sostiene *únicamente* la tesis práctica.
+
+Pero la Parte II hace algo más sutil que medir energía: identifica **tres axes de la organización que el funcionalismo suele tratar como implementación y que quizá sean constitutivos** —variabilidad (§II.3), modo de intercambio (§II.4) y ancho de banda de I/O (§II.5)—. Aquí la carga de la prueba se desplaza. La pregunta deja de ser "¿puede el silicio computar la función de E/S?" (respuesta trivial: sí, con suficiente aproximación) y pasa a ser "¿puede un medio de baja variabilidad, bajo ancho de banda e intercambio activo *instanciar la misma organización*, o solo *aproximar su E/S desde afuera*?". Esa distinción —instanciar vs. aproximar— es donde se juega todo.
+
+### III.2. La objeción de Chalmers y la respuesta enactivista
+
+La objeción más aguda es la de Chalmers (1995): si sustituyéramos las neuronas por chips funcionalmente idénticos, componente a componente, los qualia no deberían "danzar" ni "desvanecerse" sin que el sujeto lo advirtiera; luego lo que fija la experiencia sería la organización, no el material. El argumento es fuerte y no lo caricaturizo.
+
+Mi respuesta no niega su fuerza, sino que distingue dos cosas que el funcionalista suele fundir: ser **discreto** y estar **desacoplado de la vida**. Que una dinámica continua sea aproximable digitalmente con precisión arbitraria no garantiza que se preserve la propiedad que aquí importa —el acoplamiento metabólico del cómputo con la auto-conservación del organismo—. No afirmo que esa organización sea no-computable *en principio*; afirmo, más modestamente, que la carga de probar que un medio *desacoplado de la vida* preserva *lo relevante* no está saldada, y que los cinco ejes de la Parte II dan razones concretas para dudarlo: el isomorfo de grano fino que Chalmers imagina tendría que replicar no solo la topología de conexiones, sino la variabilidad graduada, el intercambio pasivo y la entrega volumétrica —y en ese punto ya no es "el mismo sistema en otro sustrato", sino otro sistema físico que hay que construir con esas mismas propiedades—.
+
+### III.3. Autopoiesis: por qué el sustrato vivo es candidato a constitutivo
+
+Aquí está el núcleo de la tesis ontológica, y aquí es donde el argumento deja de apoyarse en el laboratorio. Maturana y Varela (1974) definen lo vivo por la **autopoiesis**: un sistema que produce y regenera continuamente los componentes y la frontera que lo constituyen. En el carbono húmedo, el procesamiento de información es *metabólicamente inseparable* del mantenimiento de la vida celular: la neurona no computa para resolver un problema lógico, sino para regular su homeostasis y evitar su propia degradación termodinámica. Disparar, modular, reconfigurar la sinapsis: todo eso *es* parte de mantenerse existiendo.
+
+La tradición enactivista (Varela; Thompson, 2007, *Mind in Life*) da el paso que necesito: el sentido —el hecho de que algo *importe* a un sistema— surge de la precariedad de un ser que debe activamente producirse para no disolverse. Un sistema autopoiético tiene, por su forma de existir, un punto de vista: hay cosas buenas y malas *para él*. La conjetura ontológica es entonces esta: **el carácter fenoménico de la conciencia primaria (los qualia) podría requerir esa vulnerabilidad homeostática constitutiva** —el que un sistema deba *sentir* el mundo porque su existencia está en juego—. El silicio digital es estático: el paso de electrones no lo regenera; al contrario, lo degrada (electromigración, calor). El silicio no está vivo, y por eso no tiene, en sentido propio, nada que perder.
+
+Nótese cómo la Parte II reaparece transfigurada: la variabilidad, el intercambio pasivo y la entrega circulatoria no son "eficiencia"; son las condiciones materiales de un sistema que se auto-produce. La eficiencia era el *síntoma*; la autopoiesis es la *hipótesis* de qué lo causa y por qué podría importar ontológicamente.
+
+### III.4. Dinámica temporal, cuerpo y mente extendida
+
+Dos matices completan el cuadro. El **Experimento 4** muestra que, de la física pasiva de una red excitatoria-inhibitoria con retardos axonales, emerge actividad oscilatoria beta–gamma (13–80 Hz, ~58 % de la potencia espectral) sin reloj externo —la sincronía que Bechtel (2008) vincula a la integración perceptiva surge del propio tejido, mientras que en silicio exige indexar miles de buffers—. Y el **Experimento 6** modela el cómputo morfológico de Webb (1996): el grillo robot resuelve la fonotaxis con **2 FLOPs** frente a los **757.760** del modelo desencarnado, delegando el desfase acústico a la física de su cuerpo.
+
+Pero el ejemplo de Webb tiene un filo incómodo que debo admitir, y que fortalece la tesis en lugar de debilitarla: **el tubo de desfase del grillo robot es materia *no viva* y, sin embargo, cognitivamente constitutiva.** Si materia no viva puede ser parte del cómputo, entonces lo decisivo no es el *carbono* como material, sino la **autopoiesis** como organización. Por eso tomo la fenomenología de la mente extendida de Clark (2015, 2023) —el silicio como andamio cognitivo que se teje con el cerebro— sin su funcionalismo de fondo: el silicio *andamia* la mente, extiende su memoria y su cálculo, pero la intencionalidad originaria del sistema híbrido sigue anclada en el organismo autopoiético que se juega la existencia. El silicio andamia; no origina en aislamiento.
+
+---
+
+## Parte IV. Objeciones, límites y honestidad del argumento
+
+Un trabajo que se toma en serio debe señalar dónde puede fallar.
+
+**(1) La réplica de la aproximación digital.** Se dirá: toda dinámica continua es aproximable digitalmente a precisión arbitraria, luego la variabilidad del carbono es simulable. Es cierto para la *E/S*. Mi respuesta: aproximar la salida no es instanciar la organización; y aun si se instanciara, hacerlo *desacoplado de la vida* es precisamente lo que la tesis ontológica pone en duda. La aproximación digital gana el argumento práctico-funcional y no toca el ontológico.
+
+**(2) La escapatoria neuromórfica.** El silicio *analógico* (memristores, *Loihi*) podría recuperar variabilidad, intercambio pasivo y localidad. Lo concedo, y es coherente con mi tesis: mi blanco es el silicio *digital de Von Neumann*, no el silicio *qua* materia. Si el neuromorfismo corporizado llegara a ser autopoiético, la frontera relevante se movería —y ya no sería un argumento contra el sustrato, sino a favor de *cierto tipo* de sustrato—. La tesis no es carbono-chauvinista; es un argumento sobre variabilidad, intercambio, ancho de banda y auto-producción.
+
+**(3) La ortogonalidad, otra vez.** Nada en la Parte II *demuestra* la Parte III. Lo repito porque es la tentación permanente. La brecha energética es evidencia diagnóstica de una diferencia *material*, no de una diferencia *fenoménica*. El puente lo tiende la autopoiesis, y ese puente es una conjetura razonada, no un teorema.
+
+**(4) El fantasma de la falacia mereológica.** Como advierten Bennett y Hacker (2022), no debemos atribuir a una parte —un chip, o un cerebro aislado— facultades que corresponden al organismo corporizado entero en su mundo. Esto recorta también mis propias afirmaciones: ni "el silicio no piensa" ni "el carbono siente" son predicados de un material; son, si acaso, predicados de sistemas autopoiéticos completos en acoplamiento con un entorno.
+
+**Dónde se detiene el argumento.** No pruebo que el silicio digital no pueda albergar conciencia. Pruebo que (a) la neutralidad *ingenua* del sustrato es falsa —el costo de realización es estructural y de cinco caras—, y (b) hay una hipótesis material y articulada —la autopoiesis— sobre qué del sustrato podría ser constitutivo de la experiencia. Entre (a) y "no hay qualia en silicio" queda un abismo que este trabajo no cruza, y que señala precisamente para no fingir haberlo cruzado.
+
+---
+
+## Conclusión
+
+Si el método es usar la ingeniería para demostrar puntos filosóficos, hay que tener *ambas cosas* al máximo: ni un ensayo que decora la filosofía con GPUs, ni un benchmark que se disfraza de metafísica. Este trabajo sostiene que la divergencia de sustrato es real y estructural en cinco ejes —arquitectura, codificación, variabilidad, modo de intercambio y ancho de banda de I/O—, que el laboratorio la hace visible y cuantificable, y que esa divergencia presiona la lectura fuerte de la realizabilidad múltiple sin refutarla: traslada la carga de la prueba a quien afirme que la organización relevante se preserva en un medio de baja variabilidad, intercambio activo y I/O planar. El paso a lo ontológico no lo da la energía, sino la autopoiesis: la conjetura de que la conciencia primaria requiere la vulnerabilidad de un sistema que debe producirse para existir. Concluyo, pues, con una tesis práctica demostrada y una tesis ontológica *plausible pero no concluyente* —y con la convicción metodológica de que decir exactamente hasta dónde llega la evidencia es, también, hacer filosofía.
+
+---
+
+## Bibliografía
+
+**Fuentes primarias empíricas (fundamentan el laboratorio)**
+* Attwell, D., & Laughlin, S. B. (2001). *An Energy Budget for Signaling in the Grey Matter of the Brain*. *Journal of Cerebral Blood Flow & Metabolism*, 21(10), 1133-1145.
+* Bartol, T. M., Bromer, C., Kinney, J., Chirillo, M. A., Bourne, J. N., Harris, K. M., & Sejnowski, T. J. (2015). *Nanoconnectomic upper bound on the variability of synaptic plasticity*. *eLife*, 4, e10778.
+* Herculano-Houzel, S. (2009). *The human brain in numbers: a linearly scaled-up primate brain*. *Frontiers in Human Neuroscience*, 3, 31.
+* Horowitz, M. (2014). *Computing's Energy Problem (and what we can do about it)*. *IEEE International Solid-State Circuits Conference (ISSCC)*, 10-14.
+* Landauer, R. (1961). *Irreversibility and Heat Generation in the Computing Process*. *IBM Journal of Research and Development*, 5(3), 183-191.
+* Marder, E. (2012). *Neuromodulation of Neuronal Circuits: Back to the Future*. *Neuron*, 76(1), 1-11.
+* Quian Quiroga, R., Reddy, L., Kreiman, G., Koch, C., & Fried, I. (2005). *Invariant visual representation by single neurons in the human brain*. *Nature*, 435, 1102-1107.
+* Zeki, S. (1992). *The Visual Image in Mind and Brain*. *Scientific American*, 267(3), 68-76.
+
+**Fuentes filosóficas y de fondo**
+* Bechtel, W. (2008). *Mental Mechanisms: Philosophical Perspectives on Cognitive Neuroscience*. Routledge.
+* Bennett, M. R., & Hacker, P. M. S. (2022). *Philosophical Foundations of Neuroscience* (2ª ed.). Wiley-Blackwell.
+* Chalmers, D. J. (1995). *Absent Qualia, Fading Qualia, Dancing Qualia*. En T. Metzinger (Ed.), *Conscious Experience*. Schöningh.
+* Clark, A. (2015). *Radical Predictive Processing*. *Southern Journal of Philosophy*, 53, 3-27.
+* Clark, A. (2023). *The Experience Machine: How Our Minds Predict and Shape Reality*. Pantheon Books.
+* Daugman, J. (2001). *Brain Metaphor and Brain Theory*. En *Philosophy and the Neurosciences: A Reader*. Blackwell.
+* Fodor, J. A. (1974). *Special Sciences (Or: The Disunity of Science as a Working Hypothesis)*. *Synthese*, 28(2), 97-115.
+* Hinton, G. E. (1992). *How Neural Networks Learn from Experience*. *Scientific American*, 267(3), 144-151.
+* LeDoux, J. E. (1994). *Emotion, Memory and the Brain*. *Scientific American*, 270(6), 50-57.
+* Putnam, H. (1967). *Psychological Predicates*. En *Art, Mind, and Religion*. University of Pittsburgh Press.
+* Thompson, E. (2007). *Mind in Life: Biology, Phenomenology, and the Sciences of Mind*. Harvard University Press.
+* Turing, A. M. (1936). *On Computable Numbers, with an Application to the Entscheidungsproblem*. *Proc. London Math. Soc.*, s2-42, 230-265.
+* Varela, F. J., Maturana, H. R., & Uribe, R. (1974). *Autopoiesis: The Organization of Living Systems*. *BioSystems*, 5(4), 187-196.
+* von Neumann, J. (1945). *First Draft of a Report on the EDVAC*. University of Pennsylvania.
+* Webb, B. (1996). *A Cricket Robot*. *Scientific American*, 275(6), 94-99.

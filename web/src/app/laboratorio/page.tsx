@@ -5,6 +5,9 @@ import EfficiencyStaircase from "@/components/explainers/EfficiencyStaircase";
 import LandauerFloor from "@/components/explainers/LandauerFloor";
 import GammaOscillation from "@/components/explainers/GammaOscillation";
 import MorphologyFlops from "@/components/explainers/MorphologyFlops";
+import StateSpaceVariability from "@/components/explainers/StateSpaceVariability";
+import IOBandwidth from "@/components/explainers/IOBandwidth";
+import ExchangeMode from "@/components/explainers/ExchangeMode";
 
 const TIERS = [
   { t: "Tier 1 · CPU", hw: "NumPy · hasta 8K", cuello: "loop Python", c: "var(--si)" },
@@ -20,6 +23,9 @@ const EXPERIMENTS = [
   { n: "04", title: "El piso de Landauer", sub: "Límite termodinámico universal", C: LandauerFloor },
   { n: "05", title: "Oscilaciones beta–gamma", sub: "Exp 4 · emergencia de la física pasiva", C: GammaOscillation },
   { n: "06", title: "Cómputo morfológico", sub: "Exp 6 · 757.760 FLOPs vs 2 FLOPs", C: MorphologyFlops },
+  { n: "07", title: "Variabilidad · espacio de estados", sub: "Exp 7 · 4,7 bits vs 1 bit por sinapsis (Bartol 2015)", C: StateSpaceVariability },
+  { n: "08", title: "Ancho de banda de I/O", sub: "Exp 8 · fan-out 1.167× + entrega circulatoria", C: IOBandwidth },
+  { n: "09", title: "Intercambio: químico vs. eléctrico", sub: "Exp 9 · mover datos cuesta 650× computarlos (Horowitz 2014)", C: ExchangeMode },
 ];
 
 export default function Laboratorio() {

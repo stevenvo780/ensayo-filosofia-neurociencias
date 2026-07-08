@@ -7,6 +7,9 @@ import EfficiencyStaircase from "@/components/explainers/EfficiencyStaircase";
 import LandauerFloor from "@/components/explainers/LandauerFloor";
 import GammaOscillation from "@/components/explainers/GammaOscillation";
 import MorphologyFlops from "@/components/explainers/MorphologyFlops";
+import StateSpaceVariability from "@/components/explainers/StateSpaceVariability";
+import IOBandwidth from "@/components/explainers/IOBandwidth";
+import ExchangeMode from "@/components/explainers/ExchangeMode";
 
 const TOC_ITEMS = [
   { id: "intro", label: "Introducción" },
@@ -15,6 +18,7 @@ const TOC_ITEMS = [
   { id: "s3", label: "3 · Termodinámica" },
   { id: "s4", label: "4 · Autopoiesis" },
   { id: "s5", label: "5 · Morfología" },
+  { id: "s6", label: "6 · Variabilidad" },
   { id: "conclusion", label: "Conclusión" },
   { id: "biblio", label: "Bibliografía" },
 ];
@@ -197,6 +201,50 @@ export default function Home() {
               sino la <strong>autopoiesis</strong>. Por eso tomo la fenomenología de la mente extendida
               de Clark (2015, 2023) sin su funcionalismo: el silicio andamia la mente; no la origina en
               aislamiento.
+            </p>
+          </Reveal>
+
+          {/* 6 — hilos nuevos */}
+          <Reveal>
+            <H2 num="6" id="s6">
+              Variabilidad, intercambio y ancho de banda
+            </H2>
+            <p>
+              La brecha de eficiencia mide un <em>síntoma</em>; su causa se ramifica en tres ejes donde
+              la física del realizador —no solo su función— diverge. Estos tres experimentos convierten
+              esa divergencia en argumento: no es que el silicio "no pueda computar la función", sino que
+              su <strong>variabilidad</strong>, su <strong>modo de intercambio</strong> y su{" "}
+              <strong>ancho de banda de I/O</strong> son de otra clase.
+            </p>
+            <p>
+              <strong>Variabilidad.</strong> El silicio conmuta <span className="si">1 bit</span> por
+              señal; una sinapsis de carbono porta <span className="carbon">4,7 bits</span> (26 estados
+              graduados; Bartol et al., 2015), y la modulación química añade una dimensión combinatoria.
+              El espacio de estados del carbono no es más grande: es de otro tipo.
+            </p>
+            <StateSpaceVariability />
+            <p>
+              <strong>Modo de intercambio.</strong> Lo que fija el piso energético no es cuánto se
+              computa, sino <em>cómo se intercambia</em> la señal. En silicio, mover un dato cuesta{" "}
+              <span className="si">~650×</span> computarlo —el 99,8 % de la energía es tráfico, no
+              cómputo (Horowitz, 2014)—; el carbono difunde química de forma <span className="carbon">pasiva</span>,
+              a favor del gradiente, y solo restaura el gradiente de forma amortizada (Attwell y Laughlin, 2001).
+            </p>
+            <ExchangeMode />
+            <p>
+              <strong>Ancho de banda de I/O.</strong> Una neurona irradia <span className="carbon">~7.000</span>{" "}
+              sinapsis en 3D; una compuerta CMOS, ~6. Y el cerebro entrega energía y química
+              volumétricamente por ~600 km de capilares —cada neurona a ~20 µm de uno—: los cables
+              difícilmente superarán a los sistemas circulatorios.
+            </p>
+            <IOBandwidth />
+            <p style={{ fontSize: "0.98rem", color: "var(--muted)", fontStyle: "italic" }}>
+              El desarrollo completo de estos tres ejes —y de por qué presionan la realizabilidad
+              múltiple sin refutarla— está en la{" "}
+              <a href="https://github.com/stevenvo780/ensayo-filosofia-neurociencias/blob/main/ensayo/tesis.md">
+                versión extendida (tesis)
+              </a>
+              .
             </p>
           </Reveal>
 

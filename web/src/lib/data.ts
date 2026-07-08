@@ -51,6 +51,34 @@ export const EXP = {
   morphology: { disembodied: 757760, embodied: 2 }, // Exp6 FLOPs
 };
 
+// Exp 7 — Variabilidad / espacio de estados
+export const VAR = {
+  bitsSynCarbon: 4.7, // Bartol et al. 2015
+  bitsSynSilicon: 1, // señalización binaria
+  synPerNeuron: 7000,
+  modulatorLevels: 10,
+};
+
+// Exp 8 — I/O / ancho de banda de conexión
+export const IO = {
+  fanoutCarbon: 7000, // sinapsis exc./neurona pyramidal L2/3
+  fanoutSilicon: 6, // fan-out CMOS típico
+  fanoutRatio: 1167,
+  capillariesKm: 600,
+  neuronCapillaryUm: 20,
+  capillaryNeuronRatio: 1,
+  wireRatioBrain: 68, // (1e11)^(1/6): cableado 2D vs 3D a escala cerebral
+};
+
+// Exp 9 — Intercambio químico-pasivo vs eléctrico-activo (Horowitz 2014, Attwell-Laughlin 2001)
+export const EXCHANGE = {
+  eFlopPj: 3, // computar (32-bit mult)
+  eDram64Pj: 1950, // mover 64 bits a DRAM
+  eApPj: 210.85, // potencial de acción (carbono)
+  moveVsComputeRatio: 650,
+  interchangeFraction: 0.998, // 99,8% de la energía del silicio es movimiento
+};
+
 // Formateadores
 export const fmtGap = (g: number) => `${Math.round(g).toLocaleString("es")}×`;
 

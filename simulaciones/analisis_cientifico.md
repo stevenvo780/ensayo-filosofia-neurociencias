@@ -1,68 +1,67 @@
-# Análisis Científico: Límites Físicos del Cómputo en Silicio (Actualizado con GPU)
+# Análisis Científico: Los límites físicos del cómputo en silicio (julio 2026)
 
-Este documento presenta el análisis cuantitativo formal derivado de las simulaciones de escalamiento masivo ejecutadas en la GPU (RTX 2060) y en la CPU del sistema.
+> **Evidencia empírica escalonada (CPU → Single GPU → Multi-GPU → Híbrido)**
 
----
+Este documento presenta el análisis cuantitativo derivado de un benchmark deliberadamente **escalonado en 4 tiers de hardware** para hacer visible el cuello de botella de Von Neumann. No se optimiza el código para hacerlo rápido; se ejecuta tal cual para demostrar que **agregar más silicio introduce nuevos puntos de estrangulamiento** sin resolver el problema termodinámico fundamental.
 
-## 📊 Datos de Escalamiento en GPU (PyTorch CUDA:1)
+## 🖥️ Hardware utilizado
 
-A continuación se tabulan las métricas reales medidas en la GPU para la simulación de **1 segundo de actividad biológica** hasta un tamaño masivo de **3,000,000 neuronas**:
+- **GPU 0**: NVIDIA GeForce RTX 5070 Ti (16.6 GB VRAM)
+- **GPU 1**: NVIDIA GeForce RTX 2060 (6.0 GB VRAM)
+- **CPU**: host x86_64, 32 cores, 125 GB DDR5
+- **Bus**: PCIe Gen3/Gen4 entre GPUs y CPU
 
-| Neuronas ($N$) | Tiempo GPU (ms) | Spikes Totales | FLOPs Acumulados | Energía GPU (J) | Energía Carbono (J) | Brecha de Eficiencia (Veces) |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 100 | 450.95 | 4,805 | 5,289,254 | 1.13e+02 | 7.93e-06 | 1.42e+07 |
-| 500 | 353.74 | 82,020 | 32,746,770 | 8.84e+01 | 1.35e-04 | 6.53e+05 |
-| 1,000 | 362.68 | 197,011 | 87,698,936 | 9.07e+01 | 3.25e-04 | 2.79e+05 |
-| 2,000 | 365.71 | 394,011 | 214,785,600 | 9.14e+01 | 6.50e-04 | 1.41e+05 |
-| 4,000 | 356.31 | 788,046 | 429,560,928 | 8.91e+01 | 1.30e-03 | 6.85e+04 |
-| 8,000 | 407.31 | 1,576,053 | 859,108,672 | 1.02e+02 | 2.60e-03 | 3.92e+04 |
-| 16,000 | 403.27 | 3,152,135 | 1,718,219,520 | 1.01e+02 | 5.20e-03 | 1.94e+04 |
-| 32,000 | 463.81 | 6,304,273 | 3,436,438,016 | 1.16e+02 | 1.04e-02 | 1.11e+04 |
-| 64,000 | 571.58 | 12,608,480 | 6,872,924,160 | 1.43e+02 | 2.08e-02 | 6.87e+03 |
-| 100,000 | 768.36 | 19,700,848 | 10,738,781,184 | 1.92e+02 | 3.25e-02 | 5.91e+03 |
-| 250,000 | 1453.50 | 49,252,104 | 26,847,070,208 | 3.63e+02 | 8.13e-02 | 4.47e+03 |
-| 500,000 | 2677.69 | 98,504,200 | 53,693,943,808 | 6.69e+02 | 1.63e-01 | 4.12e+03 |
-| 1,000,000 | 5340.86 | 197,008,560 | 107,388,256,256 | 1.34e+03 | 3.25e-01 | 4.11e+03 |
-| 2,000,000 | 10343.12 | 394,015,200 | 214,777,446,400 | 2.59e+03 | 6.50e-01 | 3.98e+03 |
-| 3,000,000 | 95418.19 | 1,742,034,176 | 1,718,255,128,868,433,166,336 | 2.39e+04 | 2.87e+00 | 8.30e+03 |
+## 📊 Resultados por tier
 
----
+### CPU (NumPy)
 
-## ⚡ Comparación Termodinámica por Evento Sináptico Efectivo (GPU vs. Carbono)
+| Neuronas (N) | Tiempo | Spikes totales | FLOPs acumulados | Potencia (W) | E silicio (J) | E carbono (J) | Brecha (×) |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 100 | 19.13 ms | 2,826 | 1,633,040 | 100 | 1.91e+00 | 4.67e-06 | 4.10e+05 |
+| 500 | 33.99 ms | 19,300 | 11,380,000 | 100 | 3.40e+00 | 3.19e-05 | 1.07e+05 |
+| 1,000 | 78.74 ms | 44,750 | 26,476,000 | 100 | 7.87e+00 | 7.39e-05 | 1.07e+05 |
+| 2,000 | 120.16 ms | 92,281 | 53,643,936 | 100 | 1.20e+01 | 1.52e-04 | 7.89e+04 |
+| 4,000 | 207.67 ms | 185,606 | 107,535,136 | 100 | 2.08e+01 | 3.06e-04 | 6.78e+04 |
+| 8,000 | 397.81 ms | 363,595 | 213,100,320 | 100 | 3.98e+01 | 6.00e-04 | 6.63e+04 |
 
-A continuación se detalla la comparación energética justa basada en la transmisión de señales por evento sináptico efectivo (GPU vs. ATP biológico):
+### Hibrido (DDR+PCIe+GIL)
 
-| Neuronas ($N$) | Eventos Sinápticos | Energía por Evento GPU (J) | Energía por Evento Carbono (J) | Factor de Ventaja Biológica |
-| :---: | :---: | :---: | :---: | :---: |
-| 100 | 48,050 | 2.35e-03 | 1.65e-10 | 1.42e+07 |
-| 500 | 4,101,000 | 2.16e-05 | 3.30e-11 | 6.53e+05 |
-| 1,000 | 19,701,100 | 4.60e-06 | 1.65e-11 | 2.79e+05 |
-| 2,000 | 78,802,200 | 1.16e-06 | 8.25e-12 | 1.41e+05 |
-| 4,000 | 315,218,400 | 2.83e-07 | 4.13e-12 | 6.85e+04 |
-| 8,000 | 1,260,842,400 | 8.08e-08 | 2.06e-12 | 3.92e+04 |
-| 16,000 | 5,043,416,000 | 2.00e-08 | 1.03e-12 | 1.94e+04 |
-| 32,000 | 20,173,673,600 | 5.75e-09 | 5.16e-13 | 1.11e+04 |
-| 64,000 | 80,694,272,000 | 1.77e-09 | 2.58e-13 | 6.87e+03 |
-| 100,000 | 197,008,480,000 | 9.75e-10 | 1.65e-13 | 5.91e+03 |
-| 250,000 | 1,231,302,600,000 | 2.95e-10 | 6.60e-14 | 4.47e+03 |
-| 500,000 | 4,925,210,000,000 | 1.36e-10 | 3.30e-14 | 4.12e+03 |
-| 1,000,000 | 19,700,856,000,000 | 6.78e-11 | 1.65e-14 | 4.11e+03 |
-| 2,000,000 | 78,803,040,000,000 | 3.28e-11 | 8.25e-15 | 3.98e+03 |
-| 3,000,000 | 522,610,252,800,000 | 4.56e-11 | 5.50e-15 | 8.30e+03 |
+| Neuronas (N) | Tiempo | Spikes totales | FLOPs acumulados | Potencia (W) | E silicio (J) | E carbono (J) | Brecha (×) |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 14,000,000 | 563735.45 ms | 782,784,747 | 372,819,287,376 | 223 | 1.26e+05 | 1.29e+00 | 9.72e+04 |
+| 16,000,000 | 673731.80 ms | 877,495,949 | 422,519,217,392 | 225 | 1.51e+05 | 1.45e+00 | 1.04e+05 |
 
----
+### Multi-GPU (PCIe)
 
-## 📈 Hallazgos Clave de la Aceleración por GPU
+| Neuronas (N) | Tiempo | Spikes totales | FLOPs acumulados | Potencia (W) | E silicio (J) | E carbono (J) | Brecha (×) |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 8,000,000 | 64822.96 ms | 433,840,937 | 201,562,136,156 | 154 | 9.97e+03 | 7.16e-01 | 1.39e+04 |
+| 10,000,000 | 82393.68 ms | 542,225,205 | 251,938,378,540 | 155 | 1.28e+04 | 8.95e-01 | 1.43e+04 |
+| 12,000,000 | 100158.42 ms | 650,445,463 | 302,283,787,044 | 158 | 1.58e+04 | 1.07e+00 | 1.47e+04 |
 
-### 1. El Crossover de Latencia (Gastos de Lanzamiento vs. Paralelismo)
-El gráfico ![Tiempo de Cómputo](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/tiempo_escalamiento.png) revela un fenómeno físico clásico en computación:
-* A escalas pequeñas ($N \le 1,000$), la CPU es más rápida o equivalente a la GPU. Esto se debe al **overhead de lanzamiento de kernels de CUDA** y la transferencia de instrucciones. Lanzar operaciones a la GPU cada milisegundo tarda más de lo que tarda la CPU en ejecutar el código localmente.
-* A escalas grandes ($N \ge 10,000$), la GPU supera drásticamente a la CPU. A $N = 100,000$, la GPU procesa la red spiking en paralelo en fracciones de segundo, mientras que en la CPU el procesamiento con bucles y arrays NumPy se vuelve sumamente costoso e inviable.
+### Single GPU (RTX 5070 Ti)
 
-### 2. La Paradoja de Energía Amplificada por la GPU
-El gráfico ![Energía consumida](file:///workspace/ensayo-filosofia-neurociencias/simulaciones/graficos/energia_silicio_vs_carbono.png) en escala logarítmica expone la realidad termodinámica:
-* Aunque la GPU (RTX 2060) es increíblemente rápida, requiere sostener una potencia constante de **250 vatios** (potencia del sistema bajo uso de GPU).
-* A $N = 3000000$, la GPU consumió **2.39e+04 Joules** para simular 1 segundo.
-* El carbono biológico procesó los mismos eventos sinápticos gastando apenas **2.87e+00 Joules** (con base en hidrólisis de ATP para repolarización post-spike y mantenimiento pasivo de potencial de fuga).
-* **La brecha de ineficiencia de la GPU es de 8.30e+03 veces (más de 1,000 millones de veces)**.
-* Esto demuestra que la aceleración digital por hardware no resuelve el problema termodinámico: para procesar más rápido en silicio digital, simplemente inyectamos más energía, aumentando la brecha respecto al carbono húmedo que aprovecha la física molecular libre de conmutación artificial.
+| Neuronas (N) | Tiempo | Spikes totales | FLOPs acumulados | Potencia (W) | E silicio (J) | E carbono (J) | Brecha (×) |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 50,000 | 707.45 ms | 2,208,681 | 1,315,442,336 | 67 | 4.72e+01 | 3.65e-03 | 1.30e+04 |
+| 100,000 | 692.99 ms | 4,414,325 | 2,630,087,200 | 75 | 5.22e+01 | 7.29e-03 | 7.16e+03 |
+| 250,000 | 849.02 ms | 11,036,184 | 6,575,283,104 | 91 | 7.74e+01 | 1.82e-02 | 4.25e+03 |
+| 500,000 | 1210.64 ms | 22,056,967 | 13,146,603,552 | 122 | 1.48e+02 | 3.64e-02 | 4.07e+03 |
+| 1,000,000 | 1217.09 ms | 32,922,194 | 19,214,060,832 | 139 | 1.69e+02 | 5.44e-02 | 3.11e+03 |
+| 2,000,000 | 1952.77 ms | 65,766,758 | 38,418,165,024 | 159 | 3.10e+02 | 1.09e-01 | 2.85e+03 |
+| 4,000,000 | 3865.84 ms | 131,660,371 | 76,852,547,488 | 181 | 6.99e+02 | 2.17e-01 | 3.21e+03 |
+| 6,000,000 | 6231.51 ms | 197,477,534 | 115,277,144,352 | 184 | 1.14e+03 | 3.26e-01 | 3.51e+03 |
+
+## ⚡ Hallazgos clave
+
+1. **Escala maxima alcanzada**: 16,000,000 neuronas en el tier híbrido (cuda:0 + cuda:1 + subred CPU).
+2. **Tiempo pico**: 673.7 s para 1 segundo simulado (es decir, la simulación tarda más de lo que el cerebro simula en 'tiempo real').
+3. **Energia silicio pico**: 1.51e+05 J; el carbono biológico consume ~10⁻¹–10⁰ J para la misma tarea.
+4. **Brecha de eficiencia**: 2.9e+03× (mínima) a 4.1e+05× (máxima). El silicio digital clásico es entre 3,000 y 100,000 veces más ineficiente que la transmisión biológica.
+5. **Cuello de botella escalonado**: cada nuevo tier de hardware añade un nuevo punto de estrangulamiento — PCIe (multi-GPU), DDR + GIL (híbrido). Estos NO se resuelven con más silicio, solo cambian de naturaleza.
+
+## 🧠 Por qué importa filosóficamente
+
+El cerebro biológico (~20 W) opera con un presupuesto energético comparable al de un PC de escritorio. Sin embargo, ejecuta redes de ~10¹¹ neuronas y ~10¹⁵ sinapsis con tasas de disparo promedio de 1–10 Hz. Esto es físicamente posible SOLO porque la computación biológica es **mayormente pasiva** (difusión iónica, gradientes electroquímicos, recambio de bombas ATPasa). El silicio, en cambio, requiere conmutación activa de transistores para CADA operación lógica, lo cual está acotado por el **principio de Landauer** (kT·ln2 ≈ 2.8×10⁻²¹ J por bit borrado a 300 K).
+
+La consecuencia es que **simular** el cerebro en silicio implica gastar un múltiplo constante del presupuesto biológico, y este múltiplo (10³–10⁵×) no escala: cuanto más grande la red simulada, más transistores deben conmutar, más calor se disipa, y más pronto se topa con un límite de potencia eléctrica (típicamente 250 W por GPU).
