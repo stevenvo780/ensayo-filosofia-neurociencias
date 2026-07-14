@@ -12,8 +12,6 @@ interface Bar {
   color: string;
 }
 
-const LOG_MIN = -21;
-const LOG_MAX = -8;
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 function toSuper(n: number): string {

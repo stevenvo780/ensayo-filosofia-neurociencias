@@ -212,7 +212,7 @@ export default function Home() {
             <p>
               La brecha de eficiencia mide un <em>síntoma</em>; su causa se ramifica en tres ejes donde
               la física del realizador —no solo su función— diverge. Estos tres experimentos convierten
-              esa divergencia en argumento: no es que el silicio "no pueda computar la función", sino que
+              esa divergencia en argumento: no es que el silicio «no pueda computar la función», sino que
               su <strong>variabilidad</strong>, su <strong>modo de intercambio</strong> y su{" "}
               <strong>ancho de banda de I/O</strong> son de otra clase.
             </p>

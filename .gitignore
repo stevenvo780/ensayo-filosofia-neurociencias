@@ -3,5 +3,7 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
+# Intermedio binario regenerable (raster de spikes para el gráfico del Exp4)
 simulaciones/datos/*.npy
-simulaciones/datos/*.csv
+# Nota: los CSV de simulaciones/datos/ SÍ se versionan (ciencia abierta:
+# cada cifra del ensayo es rastreable a su archivo, según el README).

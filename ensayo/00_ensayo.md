@@ -24,7 +24,7 @@ La independencia del "software mental" respecto de su sustrato se apoya en la eq
 
 El primer límite es estructural. La arquitectura de Von Neumann (1945) separa físicamente el procesador de la memoria y fuerza un tráfico constante de datos por un bus limitado —el *cuello de botella de Von Neumann*—. El cerebro, en cambio, es una estructura autoorganizada donde procesamiento y almacenamiento coinciden: ocurren localmente en el cambio molecular de la sinapsis (Bechtel, 2008).
 
-Los modelos conexionistas (Hinton, 1992) emulan la plasticidad mediante aprendizaje global (retropropagación), cuyo coste de mantener el grafo de cómputo es enorme. El **Experimento 5** contrasta una regla estrictamente local (STDP) con la retropropagación en una red de 1.000 neuronas:
+Los modelos conexionistas (Hinton, 1992) emulan la plasticidad mediante aprendizaje global (retropropagación), cuyo coste de mantener el grafo de cómputo es enorme. El **Experimento 5** contrasta una regla estrictamente local (STDP) con la retropropagación en una red de 5.000 neuronas:
 
 - **Retropropagación (silicio):** almacena activaciones y gradientes intermedios en un búfer global para la pasada hacia atrás → **20.000 KB** de estado.
 - **STDP local (carbono):** depende solo de la diferencia temporal entre disparos pre- y postsinápticos y guarda únicamente el último spike de cada neurona → **39 KB**, una reducción de **512×**.

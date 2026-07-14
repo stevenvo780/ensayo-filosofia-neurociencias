@@ -42,7 +42,7 @@ export default function ExchangeMode() {
 
       {/* Barras de energía por evento (escala logarítmica) */}
       <div style={{ display: "flex", flexDirection: "column", gap: 18, margin: "20px 0" }}>
-        {items.map((item, i) => (
+        {items.map((item) => (
           <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <span
               style={{

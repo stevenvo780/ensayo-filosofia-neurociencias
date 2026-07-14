@@ -1,0 +1,3 @@
+metodo,flops_por_segundo,memoria_KB,energia_J_por_s
+Backpropagation (Silicio),200000000,20000.0,0.02
+STDP local + STP (Carbono),187500000,39.0625,4.125e-05

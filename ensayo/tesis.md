@@ -69,7 +69,7 @@ El **Experimento 7** cuantifica el espacio de estados accesible por unidad. Por 
 
 El segundo eje nuevo es, para mí, el más decisivo, porque explica *por qué* la energía diverge sin apelar a una esencia. Lo que fija el piso energético no es solo *cuánto* se computa, sino *cómo se intercambia* la señal.
 
-El cerebro usa un alfabeto neuroquímico multicanal: decenas de neurotransmisores, neuromoduladores (dopamina, serotonina) y gases retrógrados (óxido nítrico) que difunden en volumen, en paralelo, en el mismo medio (LeDoux, 1994; Marder, 2012; y la *transmisión de volumen* de Agnati y Fuxe). El **Experimento 3** muestra que simular esa diversidad tiene coste lineal en silicio (de 120.000 a 428.000 FLOPs al pasar de 1 a 15 canales iónicos), mientras el carbono la realiza a coste marginal casi nulo: más canales son más moléculas, pero la difusión es **pasiva**.
+El cerebro usa un alfabeto neuroquímico multicanal: decenas de neurotransmisores, neuromoduladores (dopamina, serotonina) y gases retrógrados (óxido nítrico) que difunden en volumen, en paralelo, en el mismo medio (LeDoux, 1994; Marder, 2012; y la *transmisión de volumen* de Agnati y Fuxe, 1986). El **Experimento 3** muestra que simular esa diversidad tiene coste lineal en silicio (de 120.000 a 428.000 FLOPs al pasar de 1 a 15 canales iónicos), mientras el carbono la realiza a coste marginal casi nulo: más canales son más moléculas, pero la difusión es **pasiva**.
 
 Esa es la clave. El intercambio químico riza gradientes electroquímicos espontáneos: el flujo de iones por los canales es pasivo (a favor del gradiente), y el costo metabólico es el de *restaurar* el gradiente mediante la bomba Na⁺/K⁺-ATPasa —un costo amortizado y batcheable, no pagado en cada evento de señalización—. El silicio digital, en cambio, intercambia información moviendo cargas por cables: cada bit movido debe *cargar y descargar activamente* la capacitancia de la línea, y ese costo se paga íntegro, cada vez.
 
@@ -81,7 +81,7 @@ El tercer eje nuevo es la conectividad. Los cables difícilmente superarán a lo
 
 **Fan-out.** Una neurona pyramidal cortical de capa 2/3 recibe y emite del orden de **7.000 sinapsis excitatorias** (más de 1.000 inhibitorias), y en humanos la cifra es 3–4 veces mayor. Una compuerta lógica CMOS tiene un fan-out eléctrico típico de ~**6** antes de necesitar amplificación. El **Experimento 8** fija el ratio en **~1.167×** por unidad.
 
-**Dimensionalidad del cableado.** El cerebro cablea en 3D; el chip, en un plano cuasi-bidimensional de pocas capas de metal. Para conectar *N* unidades con un fan-out dado, la longitud característica de cable escala como *N*^(1/D) en *D* dimensiones; el cociente 2D/3D crece como *N*^(1/6). A escala cerebral (*N* ≈ 10¹¹), el cableado 2D de silicio necesitaría **~68×** el del carbono 3D para la misma conectividad —y esto es una cota inferior generosa, porque ignora la regla de Rent y el dominio del interconexionado que ya vimos en §II.4—.
+**Dimensionalidad del cableado.** El cerebro cablea en 3D; el chip, en un plano cuasi-bidimensional de pocas capas de metal. Para conectar *N* unidades con un fan-out dado, la longitud característica de cable escala como *N*^(1/D) en *D* dimensiones; el cociente 2D/3D crece como *N*^(1/6). A escala cerebral (*N* ≈ 10¹¹ neuronas; Herculano-Houzel, 2009), el cableado 2D de silicio necesitaría **~68×** el del carbono 3D para la misma conectividad —y esto es una cota inferior generosa, porque ignora la regla de Rent y el dominio del interconexionado que ya vimos en §II.4—.
 
 **Entrega volumétrica de recursos.** Aquí el silicio no tiene análogo. El cerebro posee ~**600 km** de capilares; **cada neurona está a ~20 µm de un capilar**, con una razón capilar:neurona de **~1:1**. Es un sistema circulatorio y glial co-localizado que entrega energía y química *volumétricamente*, en el mismo espacio donde ocurre el cómputo. Un chip entrega potencia por una rejilla 2D y evacúa calor por su superficie; no hay una vasculatura que lleve *combustible y señal* a cada transistor en 3D. La I/O biológica, en suma, no es solo más ancha: es *de otra clase topológica*.
 
@@ -148,6 +148,7 @@ Si el método es usar la ingeniería para demostrar puntos filosóficos, hay que
 ## Bibliografía
 
 **Fuentes primarias empíricas (fundamentan el laboratorio)**
+* Agnati, L. F., Fuxe, K., Zoli, M., Ozini, I., Toffano, G., & Ferraguti, F. (1986). *Evidence for the existence of two main types of communication in the central nervous system: the volume transmission and the wiring transmission*. *Acta Physiologica Scandinavica*, 128(2), 201-207.
 * Attwell, D., & Laughlin, S. B. (2001). *An Energy Budget for Signaling in the Grey Matter of the Brain*. *Journal of Cerebral Blood Flow & Metabolism*, 21(10), 1133-1145.
 * Bartol, T. M., Bromer, C., Kinney, J., Chirillo, M. A., Bourne, J. N., Harris, K. M., & Sejnowski, T. J. (2015). *Nanoconnectomic upper bound on the variability of synaptic plasticity*. *eLife*, 4, e10778.
 * Herculano-Houzel, S. (2009). *The human brain in numbers: a linearly scaled-up primate brain*. *Frontiers in Human Neuroscience*, 3, 31.

@@ -1,0 +1,4 @@
+evento,energia_pJ,modo
+"Computar (silicio, activo)",3.0,electrico-activo
+"Mover 64 bits a DRAM (silicio, activo)",1950.0,electrico-activo
+Potencial de accion (carbono),210.85,quimico-pasivo (restauracion amortizada)
