@@ -7,3 +7,7 @@ __pycache__/
 simulaciones/datos/*.npy
 # Nota: los CSV de simulaciones/datos/ SÍ se versionan (ciencia abierta:
 # cada cifra del ensayo es rastreable a su archivo, según el README).
+
+# Material de terceros (copyright): insumos de estudio, NO se redistribuyen
+fuentes/
+notas/
