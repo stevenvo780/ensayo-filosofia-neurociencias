@@ -3,12 +3,20 @@ import path from "path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, FlaskConical } from "lucide-react";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import GithubSlugger from "github-slugger";
 import TOC from "@/components/TOC";
 import Reveal from "@/components/Reveal";
+import { enrichBlock } from "@/lib/enrich";
+
+// Enriquece la prosa de la tesis con los mismos tooltips de referencia del
+// ensayo (marca el primer token por párrafo/ítem). No toca headings ni tablas.
+const mdComponents: Components = {
+  p: ({ children }) => <p>{enrichBlock(children, "tp")}</p>,
+  li: ({ children }) => <li>{enrichBlock(children, "tl")}</li>,
+};
 
 export const metadata: Metadata = {
   title: "Tesis — El sustrato no es neutral",
@@ -85,7 +93,11 @@ export default function TesisPage() {
           <TOC items={toc} />
         </aside>
         <Reveal className="prose tesis-prose">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSlug]}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeSlug]}
+            components={mdComponents}
+          >
             {md}
           </ReactMarkdown>
         </Reveal>
