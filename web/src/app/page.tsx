@@ -42,7 +42,7 @@ export default function Home() {
 
         <article className="prose">
           {/* Introducción */}
-          <Reveal>
+          <Reveal enrich>
             <h2 id="intro" style={{ marginTop: "0.4em" }}>
               <span className="sec-num">Introducción</span>
               El sustrato importa
@@ -76,7 +76,7 @@ export default function Home() {
           </Reveal>
 
           {/* 1 */}
-          <Reveal>
+          <Reveal enrich>
             <H2 num="1" id="s1">
               Plasticidad local y el cuello de botella de Von Neumann
             </H2>
@@ -98,7 +98,7 @@ export default function Home() {
           </Reveal>
 
           {/* 2 */}
-          <Reveal>
+          <Reveal enrich>
             <H2 num="2" id="s2">
               Percepción: codificación esparcida frente a densidad de silicio
             </H2>
@@ -120,7 +120,7 @@ export default function Home() {
           </Reveal>
 
           {/* 3 */}
-          <Reveal>
+          <Reveal enrich>
             <H2 num="3" id="s3">
               Diversidad de señales, termodinámica y la paradoja energética
             </H2>
@@ -151,7 +151,7 @@ export default function Home() {
           </Reveal>
 
           {/* 4 */}
-          <Reveal>
+          <Reveal enrich>
             <H2 num="4" id="s4">
               Dinámica temporal, autopoiesis y la objeción funcionalista
             </H2>
@@ -183,7 +183,7 @@ export default function Home() {
           </Reveal>
 
           {/* 5 */}
-          <Reveal>
+          <Reveal enrich>
             <H2 num="5" id="s5">
               Cómputo morfológico y acoplamiento activo: Webb y Clark
             </H2>
@@ -205,7 +205,7 @@ export default function Home() {
           </Reveal>
 
           {/* 6 — hilos nuevos */}
-          <Reveal>
+          <Reveal enrich>
             <H2 num="6" id="s6">
               Variabilidad, intercambio y ancho de banda
             </H2>
@@ -249,7 +249,7 @@ export default function Home() {
           </Reveal>
 
           {/* Conclusión */}
-          <Reveal>
+          <Reveal enrich>
             <h2 id="conclusion">
               <span className="sec-num">Conclusión</span>
               Del costo material a la conjetura ontológica
@@ -269,7 +269,7 @@ export default function Home() {
           </Reveal>
 
           {/* Bibliografía */}
-          <Reveal>
+          <Reveal enrich>
             <h2 id="biblio">
               <span className="sec-num">Referencias</span>
               Bibliografía
