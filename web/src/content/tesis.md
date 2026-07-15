@@ -227,6 +227,8 @@ No hubo intención de fraude: fueron, en su origen, valores de relleno para prob
 
 ### IV.4. El Experimento 10 y κ: la historia completa
 
+![*Experimento 10 (reformado). La misma máquina, bajo la misma perturbación, con dos fronteras distintas: contando sólo el chip, κ = 0,00 (inmune); contando también su fuente de alimentación, κ = 0,70 (24 semillas). El sustrato no cambió: cambió el corte. κ mide compartición de presupuesto de recursos, no autopoiesis.*](../simulaciones/graficos/exp10_acoplamiento.png)
+
 El Experimento 10 era la joya, y es la pieza que más aprendí.
 
 Modelé dos sistemas que computan bajo una «lesión metabólica» y definí un coeficiente **κ** de acoplamiento entre el cómputo y el automantenimiento. Lo presenté como **la firma operacional de la autopoiesis**: κ ≈ 0,88 para el sistema acoplado («carbono»), κ = 0,00 para el desacoplado («silicio»). La lectura era: aquí está, medida, la diferencia.
