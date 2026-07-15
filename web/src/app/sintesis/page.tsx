@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, FileText } from "lucide-react";
+import { ArrowLeft, ArrowDown, ArrowRight, BookOpen, FileText } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import ArgMap from "@/components/ArgMap";
 
@@ -286,8 +286,227 @@ export default function SintesisPage() {
             respuesta la ponga quien pregunta, «¿puede el silicio ser consciente?» no es todavía una
             pregunta: es un recorte a la espera de un argumento.
           </blockquote>
+
+          <ArgFlow />
         </Reveal>
       </div>
     </>
+  );
+}
+
+/**
+ * ArgFlow — diagrama del RECORRIDO narrativo del argumento: pregunta → dos
+ * respuestas en disputa → la distinción que ordena todo → desarrollo en cinco
+ * eslabones (§2–§6) → conclusión. Es un artefacto distinto de <ArgMap />: ese
+ * mapa expone la estructura lógica interna del argumento del sustrato (la
+ * tenaza autopoiesis-estricta/autonomía); este traza la trayectoria completa
+ * del ensayo, de un vistazo. Se lee de arriba abajo; sólo la cadena de
+ * eslabones es ancha y scrollea en horizontal dentro de su propio contenedor.
+ * Reutiliza los estilos ya definidos para .argmap / .argmap__cap / .eyebrow
+ * (globals.css) y las variables de tema del sitio — sin CSS nuevo.
+ */
+function ArgFlow() {
+  const steps: { n: string; title: string; body: string }[] = [
+    {
+      n: "§2",
+      title: "La unidad equivocada",
+      body:
+        "La autopoiesis individúa células: ~10¹³ en un cuerpo, ninguna es el sujeto. El cerebro no es autopoiético (sistema de segundo orden); el hígado lo es tanto como él. Elegir la escala exige integración causal — sustrato-neutral.",
+    },
+    {
+      n: "§3",
+      title: "La clínica ya separó las variables",
+      body:
+        "En la categoría clínica del estado vegetativo (Laureys, 2007) la auto-producción está completa y el sujeto no está. Covaría la conectividad frontoparietal y córtico-talámica, no la magnitud material.",
+    },
+    {
+      n: "§4",
+      title: "La tradición ya lo sabía",
+      body:
+        "Varela (1979) generalizó de autopoiesis a autonomía / clausura operacional: organizacional, realizable en más de un medio. La tenaza: autopoiesis estricta (no individúa) o autonomía (individúa, pero no excluye sustratos).",
+    },
+    {
+      n: "§5",
+      title: "El laboratorio",
+      body:
+        "Un experimento por cada lectura del seminario; ninguno encontró la diferencia de sustrato. El benchmark: la brecha se mueve 143× y no monotónicamente — mide la ingeniería. κ pasa de 0,00 a 0,70 moviendo sólo la frontera.",
+    },
+    {
+      n: "§6",
+      title: "La objeción más fuerte",
+      body:
+        "«Pero sigue siendo necesaria» — ¿necesaria de qué? Del sujeto: ninguno es autopoiético. De los componentes: es una tesis sobre el material que la autopoiesis no funda.",
+    },
+  ];
+
+  const connectorLabel: React.CSSProperties = {
+    fontFamily: "var(--font-mono)",
+    fontSize: "0.72rem",
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    color: "var(--muted)",
+    textAlign: "center",
+  };
+
+  return (
+    <section
+      aria-label="Diagrama: el recorrido del argumento, de la pregunta a la conclusión"
+      style={{ marginTop: "3.2em" }}
+    >
+      <div className="eyebrow" style={{ marginBottom: 6 }}>
+        Para verlo de un vistazo
+      </div>
+      <h2
+        style={{
+          fontFamily: "var(--font-display)",
+          fontWeight: 500,
+          fontSize: "clamp(1.25rem, 3.4vw, 1.6rem)",
+          margin: "0 0 1em",
+          color: "var(--text)",
+        }}
+      >
+        El recorrido del argumento
+      </h2>
+
+      <figure className="argmap" style={{ margin: 0 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <FlowBox kicker="La pregunta" accent="neutral" center>
+            <strong>¿Puede la autopoiesis decidir qué sistemas pueden ser conscientes?</strong>
+            <br />
+            <span style={{ color: "var(--muted)", fontSize: "0.9em" }}>
+              (¿puede una máquina de silicio ser consciente?)
+            </span>
+          </FlowBox>
+
+          <FlowDown />
+          <div style={connectorLabel}>dos respuestas en disputa</div>
+
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <FlowBox kicker="Funcionalismo (Putnam, Fodor)" accent="si" grow>
+              Sí, en principio: los estados mentales se definen por rol causal, no por composición.
+            </FlowBox>
+            <FlowBox kicker="El argumento del sustrato (Searle; enactivismo; Seth)" accent="carbon" grow>
+              No: la conciencia pertenece a lo vivo; lo vivo se autoproduce; el silicio no.
+            </FlowBox>
+          </div>
+
+          <FlowDown />
+
+          <FlowBox kicker="La distinción que ordena todo" accent="key" center>
+            Una <strong>condición necesaria</strong> no es un <strong>criterio de individuación</strong>. El
+            ensayo no niega que la vida sea condición necesaria de la conciencia; niega que la
+            auto-producción sea el criterio que individúa al sujeto.
+          </FlowBox>
+
+          <FlowDown />
+          <div style={connectorLabel}>el desarrollo, en cinco eslabones</div>
+
+          <div style={{ overflowX: "auto", padding: "2px 2px 10px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: "max-content" }}>
+              {steps.flatMap((s, i) => [
+                <div key={`box-${s.n}`} style={{ width: 232 }}>
+                  <FlowBox kicker={s.n} accent="neutral">
+                    <strong style={{ color: "var(--text)" }}>{s.title}.</strong> {s.body}
+                  </FlowBox>
+                </div>,
+                i < steps.length - 1 ? (
+                  <ArrowRight
+                    key={`arrow-${s.n}`}
+                    size={16}
+                    aria-hidden="true"
+                    style={{ color: "var(--muted)", flexShrink: 0 }}
+                  />
+                ) : null,
+              ])}
+            </div>
+          </div>
+
+          <FlowDown />
+
+          <FlowBox kicker="La conclusión" accent="key" center>
+            El argumento del sustrato discute <em>de qué está hecho</em> el sujeto antes de poder decir{" "}
+            <em>cuál</em> es. Lo que queda: automantenimiento <strong>delegado</strong> frente a{" "}
+            <strong>constitutivo</strong> —«ahí sí importa la energía: no por cuánta se gasta, sino por
+            quién responde de ella»—. Y esa diferencia es relativa al corte: mientras la respuesta la
+            ponga quien pregunta, «¿puede el silicio ser consciente?» no es todavía una pregunta: es un
+            recorte a la espera de un argumento.
+          </FlowBox>
+        </div>
+
+        <figcaption className="argmap__cap">
+          Lo que <strong>no</strong> se sigue: que el silicio sienta. Lo que se sigue: que la autopoiesis
+          no es el instrumento que puede decidirlo.
+        </figcaption>
+      </figure>
+    </section>
+  );
+}
+
+function FlowDown() {
+  return (
+    <div aria-hidden="true" style={{ display: "flex", justifyContent: "center" }}>
+      <ArrowDown size={18} style={{ color: "var(--border-strong)" }} />
+    </div>
+  );
+}
+
+function FlowBox({
+  kicker,
+  children,
+  accent = "neutral",
+  center = false,
+  grow = false,
+}: {
+  kicker: string;
+  children: React.ReactNode;
+  accent?: "neutral" | "si" | "carbon" | "key";
+  center?: boolean;
+  grow?: boolean;
+}) {
+  const borderColor =
+    accent === "si"
+      ? "var(--si)"
+      : accent === "carbon" || accent === "key"
+        ? "var(--carbon)"
+        : "var(--border)";
+  const kickerColor =
+    accent === "si" ? "var(--si)" : accent === "carbon" || accent === "key" ? "var(--carbon)" : "var(--muted)";
+  return (
+    <div
+      style={{
+        border: `${accent === "key" ? 2 : 1}px solid ${borderColor}`,
+        borderRadius: 12,
+        background: "var(--surface)",
+        padding: "12px 16px",
+        textAlign: center ? "center" : "left",
+        flex: grow ? "1 1 260px" : undefined,
+        boxSizing: "border-box",
+        height: "100%",
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "var(--font-mono)",
+          fontSize: "0.7rem",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          fontWeight: 700,
+          color: kickerColor,
+          marginBottom: 5,
+        }}
+      >
+        {kicker}
+      </div>
+      <div
+        style={{
+          fontFamily: "var(--font-display)",
+          fontSize: "0.96rem",
+          lineHeight: 1.5,
+          color: "var(--text-soft)",
+        }}
+      >
+        {children}
+      </div>
+    </div>
   );
 }
