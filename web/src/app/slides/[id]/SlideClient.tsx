@@ -320,7 +320,9 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
 
           {slide.argmap && (
             <div className="sd-argmap">
-              <ArgMap />
+              {/* Variante de proyección: el mapa de lectura (940×716) topa en
+                  altura y se queda en scale ~1,01 — ilegible a 10 m. */}
+              <ArgMap compact />
             </div>
           )}
 

@@ -6,9 +6,12 @@ import { VAR } from "@/lib/data";
 import CountUp from "@/components/CountUp";
 
 /**
- * Exp 7 — Variabilidad / espacio de estados.
- * Contraste analógico (carbono: 4.7 bits/sinapsis) vs binario (silicio: 1 bit/sinapsis).
- * La combinatoria neuromoduladora escala el espacio de estados exponencialmente.
+ * Exp 7 — Variabilidad / espacio de estados. PIEZA DE ARCHIVO (§IV.1).
+ * Publicaba un contraste analógico (carbono: 4,7 bits/sinapsis) vs binario (silicio: 1 bit/sinapsis)
+ * que era un error de categoría: el 4,7 es un dato de literatura (Bartol y cols., 2015 — cota
+ * INFERIOR, hipocampo de rata CA1) y el 1,0 una estipulación de representación, no un hecho sobre
+ * el silicio (un peso float32 tiene 32 bits). La comparación honesta invertiría el signo.
+ * Referencia completa en la sección «Fuentes» de /laboratorio.
  */
 export default function StateSpaceVariability() {
   const [modulators, setModulators] = useState(50); // 0..100
@@ -206,8 +209,9 @@ export default function StateSpaceVariability() {
       </div>
 
       <figcaption className="explainer-cap">
-        La sinapsis biológica codifica ~26 potenciales graduados (4,7 bits; Bartol y cols., 2015) y,
-        con moduladores químicos, multiplica el espacio de estados exponencialmente.{" "}
+        En hipocampo de rata (CA1), Bartol y cols. (2015) reportan un <em>mínimo</em> de 26 estados
+        sinápticos distinguibles —≈4,7 bits, una cota <em>inferior</em>— y, con moduladores químicos,
+        el espacio de estados se multiplica exponencialmente [<a href="/laboratorio#fuentes-lab">1</a>].{" "}
         <strong>Cautela — la comparación que este experimento publicaba era falsa:</strong> «el
         silicio conmuta entre dos estados por sinapsis» no es un hecho sobre el silicio, sino una
         decisión de representación mía. Un peso en <code>float32</code> tiene 2³² estados; el cómputo

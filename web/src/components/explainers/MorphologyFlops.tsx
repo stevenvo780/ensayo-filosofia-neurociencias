@@ -74,7 +74,8 @@ export default function MorphologyFlops() {
       <figcaption className="explainer-cap">
         El cómputo no desaparece: se <strong>reubica</strong> en la física del cuerpo. Un circuito
         desencarnado (FFT + correlación cruzada) requiere {fmtInt(disembodied)} operaciones para
-        localizar un sonido; el grillo robot de <em>Webb</em> (1996) lo resuelve con dos micrófonos y
+        localizar un sonido; el grillo robot de <em>Webb</em> (1996) [<a href="/laboratorio#fuentes-lab">2</a>] lo
+        resuelve con dos micrófonos y
         un tubo de desfase acústico: {embodied} FLOPs. El tubo <strong>no está vivo</strong>: no se
         autoproduce, no es autopoiético — y es <em>cognitivamente constitutivo</em> de la solución, no
         un accesorio del sistema que computa sino parte de lo que computa. Si el sistema cognitivo

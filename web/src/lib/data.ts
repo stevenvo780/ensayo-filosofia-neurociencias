@@ -53,8 +53,12 @@ export const EXP = {
 
 // Exp 7 — Variabilidad / espacio de estados
 export const VAR = {
-  bitsSynCarbon: 4.7, // Bartol et al. 2015
-  bitsSynSilicon: 1, // señalización binaria
+  // Bartol et al. 2015, eLife 4:e10778 (doi:10.7554/eLife.10778) — cota INFERIOR (mín. 26 estados
+  // distinguibles) medida en hipocampo de rata, CA1. Ref. completa: /laboratorio#fuentes-lab.
+  bitsSynCarbon: 4.7,
+  // NO es un dato sobre el silicio: es una estipulación de representación (un float32 tiene 32
+  // bits). La comparación 4,7 vs 1 es el error de categoría que §IV.1 retiró.
+  bitsSynSilicon: 1,
   synPerNeuron: 7000,
   modulatorLevels: 10,
 };

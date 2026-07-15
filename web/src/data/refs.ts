@@ -193,7 +193,7 @@ export const REFS: RefEntry[] = [
     label: "Variabilidad sináptica (Bartol)",
     kind: "experimento",
     tooltip:
-      "Bartol et al. (2015) midieron ~26 estados sinápticos distinguibles (≈4,7 bits de precisión) por reconstrucción nanoconectómica. El punto no es «más bits» que un float, sino que el carbono sostiene ese estado graduado como propiedad física pasiva, sin recomputarlo (Exp 7).",
+      "Bartol et al. (2015), por reconstrucción nanoconectómica de hipocampo de rata (CA1), reportan un mínimo de 26 estados sinápticos distinguibles (≈4,7 bits): una cota inferior de la información almacenable por sinapsis. NO es una comparación con silicio —un peso float32 tiene 32 bits—: ese contraste era un error de categoría del laboratorio y §IV.1 lo retiró (Exp 7, pieza de archivo).",
     href: "/#s6",
     tokens: ["variabilidad sináptica", "Bartol", "4,7 bits", "26 estados sinápticos"],
   },

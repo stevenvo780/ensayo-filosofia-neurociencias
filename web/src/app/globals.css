@@ -940,6 +940,10 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 .sd-argmap .argmap { margin: 0; padding: 0; background: transparent; border: none; }
 .sd-argmap .argmap__cap { display: none; }
 .sd-argmap .argmap svg { max-height: 60vh; }
+/* La variante compacta ya es apaisada: no necesita tope de altura, y ponérselo
+   la letterboxearía (preserveAspectRatio encogería TAMBIÉN el ancho, que es
+   justo lo que la volvía ilegible). El escalado del panel ya la hace caber. */
+.sd-argmap .argmap--compact svg { max-height: none; }
 
 /* ── UnidadEquivocada (G1) ─────────────────────────────────────────────
    Diagrama conceptual: la tabla de §II.2-II.4. Su fuerza es la GESTALT de
