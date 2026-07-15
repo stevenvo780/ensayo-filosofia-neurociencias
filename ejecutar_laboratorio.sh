@@ -22,6 +22,13 @@ python3 /workspace/ensayo-filosofia-neurociencias/simulaciones/ejecutar.py
 echo "[+] 2. Ejecutando los 6 experimentos biofísicos basados en autores..."
 python3 /workspace/ensayo-filosofia-neurociencias/simulaciones/ejecutar_experimentos.py
 
+echo "[+] 2b. Ejecutando experimentos 7-9 (variabilidad, fan-out I/O, intercambio energético)..."
+python3 /workspace/ensayo-filosofia-neurociencias/simulaciones/experimentos_variabilidad.py
+python3 /workspace/ensayo-filosofia-neurociencias/simulaciones/graficar_variabilidad.py
+
+echo "[+] 2c. Ejecutando experimento 10 (acoplamiento homeostático / firma de la autopoiesis)..."
+python3 /workspace/ensayo-filosofia-neurociencias/simulaciones/experimento_autopoiesis.py
+
 echo "[+] 3. Generando curvas y gráficos científicos en simulaciones/graficos/..."
 python3 /workspace/ensayo-filosofia-neurociencias/simulaciones/graficar.py
 python3 /workspace/ensayo-filosofia-neurociencias/simulaciones/graficar_resultados.py

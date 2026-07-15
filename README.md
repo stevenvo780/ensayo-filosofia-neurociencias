@@ -6,7 +6,7 @@
 
 ## Estado (julio 2026)
 
-Ensayo completo + **laboratorio computacional escalonado en 4 tiers de hardware** (CPU → Single GPU → Multi-GPU → Híbrido) + **9 experimentos biofísicos específicos**, diseñados para hacer **visible** el cuello de botella de Von Neumann en cada nivel de escala. Cada tier expone un límite físico distinto del silicio digital:
+Ensayo completo + **laboratorio computacional escalonado en 4 tiers de hardware** (CPU → Single GPU → Multi-GPU → Híbrido) + **10 experimentos biofísicos específicos**, diseñados para hacer **visible** el cuello de botella de Von Neumann en cada nivel de escala. Cada tier expone un límite físico distinto del silicio digital:
 
 | Tier | Hardware | Hasta | Cuello de botella |
 |---|---|---|---|
@@ -22,7 +22,7 @@ Ensayo completo + **laboratorio computacional escalonado en 4 tiers de hardware*
 Este repositorio es **completamente abierto**: todo el proceso, los datos y el código de cómo se construyó el trabajo están aquí, para que cualquiera pueda inspeccionarlo, verificarlo y reproducirlo.
 
 - **Textos** (`ensayo/`): ensayo y tesis en Markdown y **PDF**, más el guion de sustentación.
-- **Código** (`simulaciones/`): los modelos biofísicos y los 9 experimentos, sin ofuscación.
+- **Código** (`simulaciones/`): los modelos biofísicos y los 10 experimentos, sin ofuscación.
 - **Datos crudos** (`simulaciones/datos/`): los CSV/JSON exactos que producen las cifras citadas en el ensayo — cada número del texto es rastreable a un archivo.
 - **Gráficos** (`simulaciones/graficos/`): generados por scripts versionados, no editados a mano.
 - **Web** (`web/`): el código fuente de las cuatro superficies interactivas (ensayo, tesis, laboratorio, presentación).
@@ -38,13 +38,14 @@ Este repositorio es **completamente abierto**: todo el proceso, los datos y el c
   * **[tesis.md](ensayo/tesis.md)** · **[tesis.pdf](ensayo/tesis.pdf):** Tesis extendida (~4.500 palabras) con los 3 ejes nuevos (variabilidad, I/O, intercambio) y fuentes primarias.
   * **[guion_presentacion.md](ensayo/guion_presentacion.md):** Guion de sustentación (13 diapositivas, tiempos, defensa de preguntas).
 
-* **[ejecutar_laboratorio.sh](ejecutar_laboratorio.sh):** Script ejecutable que activa el venv, corre los 4 tiers + los 9 experimentos, genera todos los gráficos y el dashboard.
+* **[ejecutar_laboratorio.sh](ejecutar_laboratorio.sh):** Script ejecutable que activa el venv, corre los 4 tiers + los 10 experimentos, genera todos los gráficos y el dashboard.
 
 * **`simulaciones/`:**
   * **[modelos.py](simulaciones/modelos.py):** Modelos biofísicos (HH, LIF multicompartimental, STDP) con homeostasis sináptica y propagación chunked para evitar OOM.
   * **[ejecutar.py](simulaciones/ejecutar.py):** Orquestador del benchmark escalonado (CPU → 4 tiers GPU → Híbrido).
   * **[ejecutar_experimentos.py](simulaciones/ejecutar_experimentos.py):** Experimentos 1-6 (jerarquía visual, células de concepto, diversidad química, oscilaciones, plasticidad, cómputo morfológico).
   * **[experimentos_variabilidad.py](simulaciones/experimentos_variabilidad.py):** Experimentos 7-9 (variabilidad sináptica, fan-out I/O, intercambio energético).
+  * **[experimento_autopoiesis.py](simulaciones/experimento_autopoiesis.py):** Experimento 10 (acoplamiento homeostático cómputo↔auto-mantenimiento: firma operacional de la autopoiesis, κ≈0,88 carbono vs 0,00 silicio; simulación dinámica con 24 semillas y barras de error). **No mide conciencia**, sino el eje de auto-producción que faltaba.
   * **[graficar.py](simulaciones/graficar.py):** Genera los gráficos del benchmark con anotaciones explícitas del cuello de botella por tier.
   * **[graficar_resultados.py](simulaciones/graficar_resultados.py):** Genera los 6 gráficos de los experimentos 1-6 y el dashboard HTML.
   * **[graficar_variabilidad.py](simulaciones/graficar_variabilidad.py):** Genera los 3 gráficos de los experimentos 7-9 (variabilidad, I/O, intercambio).
@@ -55,7 +56,7 @@ Este repositorio es **completamente abierto**: todo el proceso, los datos y el c
 * **`web/`:** Aplicación Next.js 14 desplegada en Vercel (https://neurocarbon.stevenvallejo.com):
   * **`src/app/page.tsx`:** El ensayo completo en formato web.
   * **`src/app/tesis/page.tsx`:** La tesis extendida.
-  * **`src/app/laboratorio/page.tsx`:** Dashboard interactivo con los 9 experimentos.
+  * **`src/app/laboratorio/page.tsx`:** Dashboard interactivo con los 10 experimentos.
   * **`src/app/slides/[id]/`:** Diapositivas con notas del orador.
 
 ## 🔬 Los 9 Experimentos Biofísicos
@@ -110,7 +111,7 @@ Tiempo total de ejecución: ~45-60 minutos (limitado por los tiers multi-GPU, h�
 - **Hardware mínimo:** GPU NVIDIA con CUDA 12.x. Para CPU-only: ejecutar solo el tier 1 (descomentar en `ejecutar.py`).
 - **Dependencias:** NumPy, pandas, PyTorch, Matplotlib, SciPy (simulaciones) · Next.js 14 (web). Ver [`requirements.txt`](requirements.txt).
 - **Entorno web:** Desplegado en Vercel. URL: https://neurocarbon.stevenvallejo.com
-- **Datos de muestra:** Los 9 experimentos generan los CSVs de `simulaciones/datos/` + los PNG de `simulaciones/graficos/` (~90–100 KB cada uno).
+- **Datos de muestra:** Los 10 experimentos generan los CSVs de `simulaciones/datos/` + los PNG de `simulaciones/graficos/` (~90–100 KB cada uno).
 
 ## Checklist de Entrega
 
@@ -121,7 +122,7 @@ Tiempo total de ejecución: ~45-60 minutos (limitado por los tiers multi-GPU, h�
 - [x] Refactorizar simulaciones para escalado a 16M neuronas con homeostasis.
 - [x] Generar benchmark escalonado en 4 tiers de hardware.
 - [x] Actualizar gráficos con anotaciones de cuello de botella por tier.
-- [x] Implementar 9 experimentos biofísicos (1–6 benchmark + 7–9 variabilidad/I/O/intercambio).
+- [x] Implementar 10 experimentos biofísicos (1–6 benchmark + 7–9 variabilidad/I/O/intercambio + 10 acoplamiento homeostático/autopoiesis).
 - [x] Integrar fuentes primarias nuevas (Bartol 2015, Attwell-Laughlin 2001, Horowitz 2014).
 - [x] Desplegar web en Vercel (https://neurocarbon.stevenvallejo.com) con 4 secciones.
 - [x] Actualizar README con estado final.
