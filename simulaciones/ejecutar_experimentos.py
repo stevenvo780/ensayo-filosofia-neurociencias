@@ -45,61 +45,45 @@ def asegurar_directorios():
 # EXP 1: PERCEPCION JERARQUICA (ZEKI)
 # ==========================================
 def ejecutar_exp1_percepcion():
-    print("\n--- EXP 1: Jerarquia Visual (Zeki) ---")
-    # Escala ampliada: de V1 retinotopico a IT con campos receptivos locales
+    """CÁLCULO ILUSTRATIVO — no es una medición.
+
+    Cuenta FLOPs por inferencia de un grafo denso frente a uno con conectividad
+    local al 10 %. El cociente resultante NO es un hallazgo: es `1 - P_CONEXION`
+    leído en voz alta. Se conserva porque ilustra la ventaja de los campos
+    receptivos locales (Zeki, 1992), explotada en silicio desde Fukushima (1980)
+    y LeCun et al. (1998) — es decir, una ventaja ALGORÍTMICA, no del carbono.
+
+    Auditoría 15-jul-2026: las columnas `tiempo_ms` y `energia_J` que este
+    experimento publicaba eran literales escritos a mano (`t_densa_ms = 1.5`,
+    comentado como «tiempo medio empírico»; `t_esparcida_ms = 0.18`, comentado
+    como «~90% menos»), con el cronómetro `time.perf_counter()` declarado y nunca
+    leído. No se medía nada: los tiempos se elegían para dar el 90 %, y la energía
+    se derivaba de ellos. Se ELIMINAN. Este experimento no reporta tiempo ni
+    energía porque no construye ni ejecuta las redes: sólo cuenta operaciones.
+    """
+    print("\n--- EXP 1: Jerarquia Visual (Zeki) — calculo analitico de FLOPs ---")
     capas = [4096, 2048, 1024, 512, 128]
-    # 1. Red Densa (ANN silicio) — conectividad total capa-a-capa
-    t0 = time.perf_counter()
-    flops_densa = 0
-    tiempo_densa_total = 0.0
-    for i in range(len(capas) - 1):
-        n_in, n_out = capas[i], capas[i + 1]
-        # Costo por inferencia de la capa: 2*N_in*N_out + N_out
-        flops_densa += 2 * n_in * n_out + n_out
-    # Simulamos 100 inferencias (1 imagen por inferencia, batch 1)
-    n_inferencias = 100
-    t_densa_ms = 1.5  # tiempo medio empírico por inferencia
-    energia_densa_J = (t_densa_ms / 1000.0) * POTENCIA_PC_W * n_inferencias
-    # 2. Red cortical esparcida (10% conectividad local retinotopica)
-    flops_esparcida = 0
-    for i in range(len(capas) - 1):
-        n_in, n_out = capas[i], capas[i + 1]
-        # Esparcimiento: 10% de las conexiones
-        flops_esparcida += int(2 * n_in * 0.10 * n_out) + n_out
-    t_esparcida_ms = 0.18  # ~90% menos (biológico)
-    energia_esparcida_J = (t_esparcida_ms / 1000.0) * POTENCIA_PC_W * n_inferencias
-    # Bio-inspired: en carbono, el coste asintotico marginal es ~0 (física pasiva)
-    energia_carbono_J = 1.5e-9 * sum(capas) * n_inferencias  # ~ATP leak
+    P_CONEXION = 0.10  # el cociente de FLOPs sera, por construccion, ~(1 - P_CONEXION)
+
+    flops_densa = sum(2 * capas[i] * capas[i + 1] + capas[i + 1] for i in range(len(capas) - 1))
+    flops_esparcida = sum(
+        int(2 * capas[i] * P_CONEXION * capas[i + 1]) + capas[i + 1] for i in range(len(capas) - 1)
+    )
+
     df = pd.DataFrame([
-        {
-            "modelo": "Densa (Silicio ANN)",
-            "flops": flops_densa,
-            "tiempo_ms": t_densa_ms,
-            "energia_J": energia_densa_J,
-            "conectividad": "100%",
-        },
-        {
-            "modelo": "Esparcida Cortical (Carbono)",
-            "flops": flops_esparcida,
-            "tiempo_ms": t_esparcida_ms,
-            "energia_J": energia_esparcida_J,
-            "conectividad": "10%",
-        },
-        {
-            "modelo": "Fisica Pasiva (Carbono real)",
-            "flops": 0,
-            "tiempo_ms": 0.0,
-            "energia_J": energia_carbono_J,
-            "conectividad": "física local",
-        },
+        {"modelo": "Grafo denso", "flops": flops_densa, "conectividad": "100%",
+         "clase": "calculo analitico"},
+        {"modelo": "Grafo con conectividad local", "flops": flops_esparcida, "conectividad": "10%",
+         "clase": "calculo analitico"},
     ])
     df.to_csv(
         "/workspace/ensayo-filosofia-neurociencias/simulaciones/datos/exp1_visual.csv",
         index=False,
     )
-    print(f"  Densa: {flops_densa:,} FLOPs, {energia_densa_J:.3f} J")
-    print(f"  Esparcida: {flops_esparcida:,} FLOPs, {energia_esparcida_J:.3e} J")
-    print(f"  Reduccion: {(1 - flops_esparcida/flops_densa)*100:.1f}%")
+    print(f"  Denso:    {flops_densa:,} FLOPs")
+    print(f"  Local:    {flops_esparcida:,} FLOPs")
+    print(f"  Reduccion: {(1 - flops_esparcida/flops_densa)*100:.1f}%  (== 1 - P_CONEXION, por construccion)")
+    print("  NOTA: no se reporta tiempo ni energia: este experimento no ejecuta las redes.")
 
 
 # ==========================================

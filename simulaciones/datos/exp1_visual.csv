@@ -1,4 +1,3 @@
-modelo,flops,tiempo_ms,energia_J,conectividad
-Densa (Silicio ANN),22154880,1.5,15.0,100%
-Esparcida Cortical (Carbono),2218827,0.18,1.7999999999999998,10%
-Fisica Pasiva (Carbono real),0,0.0,0.0011712,física local
+modelo,flops,conectividad,clase
+Grafo denso,22154880,100%,calculo analitico
+Grafo con conectividad local,2218827,10%,calculo analitico

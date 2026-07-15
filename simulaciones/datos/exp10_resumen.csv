@@ -1,3 +1,4 @@
-sistema,kappa_media,kappa_de,n_semillas
-Acoplado (carbono),0.8759718889108372,0.002412260543109735,24
-Desacoplado (silicio),0.0,0.0,24
+corte,kappa_media,kappa_de,n_semillas
+Recurso propio (el que computa es el que se regenera),0.8788053894043303,0.002357719869649648,24
+Frontera estrecha: chip solo (fuente externa estipulada),0.0,0.0,24
+Frontera ampliada: chip + fuente (MISMA maquina),0.6981810679207472,0.005054276767185941,24
