@@ -133,7 +133,7 @@ De modo que el argumento del sustrato se encuentra en esta posición: la parte q
 
 Ahora puedo decir por qué empecé con Bennett y Hacker (2022), y por qué esto es un problema de filosofía de las neurociencias y no una curiosidad escolástica.
 
-La falacia mereológica, en su forma estándar, consiste en atribuir **al todo** predicados que sólo tienen sentido aplicados **a la persona**: decir que el cerebro decide, o que el hemisferio izquierdo interpreta, o que una región «cree». El error no es empírico; es de gramática filosófica, y fabrica pseudoproblemas que ninguna cantidad de datos resuelve.
+La falacia mereológica, en su forma estándar, consiste en atribuir **a una parte** predicados que sólo tienen sentido aplicados **al todo**: decir que el cerebro decide, o que el hemisferio izquierdo interpreta, o que una región «cree», cuando quien decide, interpreta y cree es la persona. El error no es empírico; es de gramática filosófica, y fabrica pseudoproblemas que ninguna cantidad de datos resuelve.
 
 El argumento del sustrato comete un pariente cercano, y con la dirección invertida. Elige un criterio —la auto-producción— que **sólo se satisface en las partes**, en las células, y pretende que ese criterio decida sobre **el todo**, sobre la persona. No dice «el cerebro decide»; dice, implícitamente, «lo que vale de la célula vale del sujeto». En ambos casos el defecto es el mismo: se predica a través de una frontera mereológica sin haber pagado el precio de justificar el tránsito. Y en ambos casos el síntoma es el mismo: una discusión que parece empírica —«¿tiene el silicio lo que hace falta?»— y que no lo es, porque su desacuerdo real está antes, en cuál es el sujeto del que se discute.
 

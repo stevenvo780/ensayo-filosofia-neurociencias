@@ -72,11 +72,14 @@ export default function VonNeumannBus() {
       </div>
 
       <figcaption className="explainer-cap">
-        En arquitectura Von Neumann, CPU y memoria están separadas por un bus único que se
-        convierte en cuello de botella: cada operación requiere tráfico repetido de datos. En
-        carbono, el almacenamiento y el procesamiento son locales a cada sinapsis, eliminando la
-        congestión del bus central. Resultado: 512× menos tráfico de memoria en aprendizaje
-        (Bechtel et al., 2008).
+        En arquitectura Von Neumann, procesador y memoria están separados por un bus que se
+        convierte en cuello de botella: cada operación exige tráfico repetido de datos. Una regla de
+        aprendizaje <em>local</em> (tipo STDP) no lo necesita, porque sólo depende de lo que pasa en
+        cada sinapsis. <strong>Cautela:</strong> el cociente de 512× que este trabajo publicaba{" "}
+        <em>no es un hallazgo empírico</em>: se sigue analíticamente de la localidad de la regla y no
+        depende del tamaño de la red (ver §IV.2). Y el contraste es entre dos <em>algoritmos</em>
+        —regla local frente a retropropagación—, ambos ejecutables en silicio: no es una medida del
+        carbono.
       </figcaption>
     </figure>
   );
