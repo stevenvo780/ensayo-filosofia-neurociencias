@@ -377,8 +377,7 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
   position: fixed;
   inset: 0;
   z-index: 60;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   color: var(--text);
   font-family: var(--font-serif);
   background:
@@ -418,11 +417,11 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 .sd-stage {
   position: relative;
   z-index: 2;
-  min-height: 100dvh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 46px 20px 128px;
+  padding: 16px;
 }
 
 .sd-panel {

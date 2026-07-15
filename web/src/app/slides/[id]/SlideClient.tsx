@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, ComponentType } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, ComponentType } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Mic, ArrowLeft, ArrowRight, LayoutGrid, X, FileText } from "lucide-react";
@@ -197,7 +197,40 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 export default function SlideClient({ slideIndex }: { slideIndex: number }) {
   const [picker, setPicker] = useState(false);
+  const panelRef = useRef<HTMLElement>(null);
+  const [scale, setScale] = useState(1);
   const total = slidesData.length;
+
+  // Ajuste a la pantalla: cada diapositiva se escala para caber ENTERA en el
+  // viewport (16:9 1080p incluido), sin scroll ni desborde, a cualquier
+  // resolución. Se recalcula al cambiar de slide y al redimensionar.
+  useLayoutEffect(() => {
+    const el = panelRef.current;
+    if (!el) return;
+    let raf = 0;
+    const fit = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const nW = el.offsetWidth;
+        const nH = el.offsetHeight;
+        if (!nW || !nH) return;
+        const availW = window.innerWidth - 32;
+        const availH = window.innerHeight - 92; // reserva la barra flotante
+        setScale(Math.min(1, availW / nW, availH / nH));
+      });
+    };
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(el);
+    window.addEventListener("resize", fit);
+    const timers = [setTimeout(fit, 300), setTimeout(fit, 800)];
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", fit);
+      timers.forEach(clearTimeout);
+      cancelAnimationFrame(raf);
+    };
+  }, [slideIndex]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -240,7 +273,11 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
       <span className="sd-grid" aria-hidden="true" />
 
       <div className="sd-stage">
-        <article className={`sd-panel${isTitle ? " sd-panel-hero" : ""}`}>
+        <article
+          ref={panelRef}
+          className={`sd-panel${isTitle ? " sd-panel-hero" : ""}`}
+          style={{ transform: `scale(${scale})`, transformOrigin: "center center" }}
+        >
           <header className="sd-head">
             <span className="sd-brand">
               <Emblem size={24} />
