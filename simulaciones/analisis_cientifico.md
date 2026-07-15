@@ -1,5 +1,18 @@
 # Análisis Científico: Los límites físicos del cómputo en silicio (julio 2026)
 
+> ⚠️ **DOCUMENTO HISTÓRICO — LEER CON LAS CORRECCIONES DE LA AUDITORÍA (15-jul-2026).**
+> Se conserva como registro, no como posición vigente. Tres advertencias, verificadas contra el
+> código y los CSV en `docs/refactor/experiment-audit.md`:
+> 1. Su marco es **carbono-céntrico** y el ensayo lo abandona. Frases como «sólo pueden relajarse
+>    cambiando la naturaleza del sustrato» o «25.900 bits EXTRA … que la neurona de silicio
+>    simplemente no puede representar» **no se sostienen**: los datos de este mismo documento las
+>    refutan (la brecha se mueve dos órdenes de magnitud con el carbono constante en todas las
+>    filas, luego mide la implementación, no el sustrato).
+> 2. Los **25.900 bits** se siguen de `BITS_SYN_SILICIO = 1.0`
+>    (`experimentos_variabilidad.py:27`), una constante **estipulada y sin fuente**. No es un dato
+>    sobre el silicio: es la constante que produce la conclusión.
+> 3. **Gobierna `ensayo/00_ensayo.md`.** Ningún documento del repo sostiene una tesis distinta.
+
 > **Evidencia empírica escalonada (CPU → Single GPU → Multi-GPU → Híbrido)**
 
 Este documento presenta el análisis cuantitativo derivado de un benchmark deliberadamente **escalonado en 4 tiers de hardware** para hacer visible el cuello de botella de Von Neumann. No se optimiza el código para hacerlo rápido; se ejecuta tal cual para demostrar que **agregar más silicio introduce nuevos puntos de estrangulamiento** sin resolver el problema termodinámico fundamental.

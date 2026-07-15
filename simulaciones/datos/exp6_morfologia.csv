@@ -1,3 +1,3 @@
-modelo,flops,tiempo_ms,energia_J
-Desencarnado (Silicio),757760,0.85,0.08499999999999999
-Corporizado (Grillo Webb),2,0.0001,1e-05
+modelo,flops
+Desencarnado (Silicio),757760
+Corporizado (Grillo Webb),2

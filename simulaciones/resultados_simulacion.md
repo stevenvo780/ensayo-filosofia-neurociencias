@@ -1,5 +1,14 @@
 # Resultados de la Simulación: Silicio vs. Carbono
 
+> ⚠️ **DOCUMENTO HISTÓRICO — SUPERADO (15-jul-2026).** Se conserva como registro de la
+> trayectoria del proyecto, no como posición vigente. Sostiene la tesis **abandonada** de que
+> «la vida y la conciencia dependen de la autoorganización y termodinámica del carbono»
+> (§ Consecuencia Ontológica). **El ensayo la refuta**: ninguna cantidad de julios decide *cuál*
+> es el sujeto, y el propio benchmark mueve la brecha dos órdenes de magnitud sin tocar el
+> carbono, con lo que no mide un sustrato sino una implementación. Laureys (2007) lo dice desde
+> la clínica: «medir los niveles globales de consumo de energía en el cerebro no puede indicar la
+> presencia de consciencia». **Gobierna `ensayo/00_ensayo.md`**; ver `docs/refactor/experiment-audit.md`.
+
 Este experimento compara una red neuronal artificial densa (modelo clásico de silicio) frente a la simulación en silicio de una red biológica con **codificación esparcida** (neuronas de concepto) y **señales químicas diversas** (múltiples neurotransmisores).
 
 ## Parámetros de la Red

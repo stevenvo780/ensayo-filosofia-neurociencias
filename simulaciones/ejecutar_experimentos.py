@@ -280,22 +280,22 @@ def ejecutar_exp6_morfologico():
     flops_xcorr = 2 * tam_fft * 32  # 32 lags
     flops_peak = tam_fft  # busqueda + interpolacion
     flops_desencarnado = flops_fft * 2 + flops_xcorr + flops_peak
-    tiempo_desencarnado_ms = 0.85
     # Modelo corporizado (Webb): resta simple de amplitudes
     flops_corporizado = 2
-    tiempo_corporizado_ms = 0.0001
+    # NOTA (auditoria 15-jul-2026): se eliminaron las columnas tiempo_ms y energia_J.
+    # Eran literales escritos a mano (0.85 y 0.0001 ms), no mediciones: fingian ser un
+    # dato y no lo eran. Es el mismo defecto ya corregido en el Exp 1. Los FLOPs se
+    # conservan, pero son un CONTEO ESTIPULADO a ambos lados de la frontera (en
+    # particular flops_corporizado = 2 es una estipulacion, no una medida del grillo):
+    # cuentan lo que se decidio meter dentro del sistema, que es justamente el punto.
     df = pd.DataFrame([
         {
             "modelo": "Desencarnado (Silicio)",
             "flops": flops_desencarnado,
-            "tiempo_ms": tiempo_desencarnado_ms,
-            "energia_J": (tiempo_desencarnado_ms / 1000.0) * POTENCIA_PC_W,
         },
         {
             "modelo": "Corporizado (Grillo Webb)",
             "flops": flops_corporizado,
-            "tiempo_ms": tiempo_corporizado_ms,
-            "energia_J": (tiempo_corporizado_ms / 1000.0) * POTENCIA_PC_W,
         },
     ])
     df.to_csv(
