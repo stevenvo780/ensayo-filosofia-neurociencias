@@ -165,7 +165,7 @@ export default function Hero() {
           <Emblem size={76} />
         </div>
         <div className="eyebrow" style={{ color: "var(--hero-muted)", marginBottom: 18 }}>
-          Filosofía de las Neurociencias · Límites del sustrato
+          Filosofía de las Neurociencias · La falacia mereológica y el argumento del sustrato
         </div>
         <h1
           style={{
@@ -178,7 +178,7 @@ export default function Hero() {
             color: "#fff",
           }}
         >
-          ¿Silicio o&nbsp;Tejido?
+          La unidad que&nbsp;falta
         </h1>
         <p
           style={{
@@ -191,7 +191,7 @@ export default function Hero() {
             lineHeight: 1.4,
           }}
         >
-          Límites materiales y ontológicos en la emulación de la mente
+          Antes de preguntar de qué está hecho un sujeto, hay que poder decir cuál es
         </p>
         <div
           className="mono"
