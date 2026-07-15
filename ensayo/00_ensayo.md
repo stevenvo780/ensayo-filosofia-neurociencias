@@ -20,7 +20,7 @@ Para no caer en una caricatura, distingo el silicio digital clásico de Von Neum
 
 ## 1. Plasticidad local y el cuello de botella de Von Neumann
 
-La independencia del "software mental" respecto de su sustrato se apoya en la equivalencia de Turing (1936): todo cómputo formalizable puede resolverse en cualquier máquina universal. Pero en el mundo material el procesamiento cuesta energía, espacio y tiempo. Daugman (2001) advierte que la neurociencia abusa de las metáforas de época: la computadora digital es el andamio conceptual de nuestro tiempo, no una identidad ontológica con el cerebro.
+La independencia del "software mental" respecto de su sustrato se apoya en la equivalencia de Turing (1936): todo cómputo formalizable puede resolverse en cualquier máquina universal. Pero en el mundo material el procesamiento cuesta energía, espacio y tiempo.
 
 El primer límite es estructural. La arquitectura de Von Neumann (1945) separa físicamente el procesador de la memoria y fuerza un tráfico constante de datos por un bus limitado —el *cuello de botella de Von Neumann*—. El cerebro, en cambio, es una estructura autoorganizada donde procesamiento y almacenamiento coinciden: ocurren localmente en el cambio molecular de la sinapsis (Bechtel, 2008).
 
@@ -32,7 +32,7 @@ Los modelos conexionistas (Hinton, 1992) emulan la plasticidad mediante aprendiz
 ![Memoria de estado: retropropagación vs. STDP local](../simulaciones/graficos/exp5_aprendizaje.png)
 *Fig. 1 — Experimento 5: el aprendizaje global (backprop) exige un búfer 512× mayor que la regla local biológica (STDP).*
 
-La plasticidad en silicio es, así, una costosa simulación de representaciones globales abstractas; en el carbono, una reconfiguración física local y pasiva. El silicio comercial sigue atrapado en la simulación sintáctica de variables discretizadas.
+La plasticidad en silicio es, así, una costosa simulación de representaciones globales abstractas; en el carbono, una reconfiguración física local y pasiva.
 
 ---
 
@@ -106,9 +106,9 @@ La relación mente–sustrato debe analizarse también fuera del cráneo: la cog
 ![Cómputo desencarnado vs. corporizado](../simulaciones/graficos/exp6_morfologia.png)
 *Fig. 7 — Experimento 6: delegar el desfase a la morfología reubica el cómputo del cerebro al cuerpo.*
 
-Ahora bien, el cómputo no desaparece: se **reubica** en la física del cuerpo (el desfase acústico sigue ocurriendo y disipando energía). Y el ejemplo tiene un filo incómodo para mi tesis: el tubo del grillo robot es materia *no viva* y, sin embargo, cognitivamente constitutiva. La lección correcta no es, por tanto, que el *carbono* sea imprescindible, sino que lo es la **autopoiesis**: la auto-producción de la propia frontera, que ni el tubo ni el chip poseen.
+Ahora bien, el cómputo no desaparece: se **reubica** en la física del cuerpo. Y el ejemplo tiene un filo incómodo para mi tesis: el tubo del grillo robot es materia *no viva* y, sin embargo, cognitivamente constitutiva. La lección correcta no es, por tanto, que el *carbono* sea imprescindible, sino que lo es la **autopoiesis**: la auto-producción de la propia frontera, que ni el tubo ni el chip poseen.
 
-Esto permite ubicar a Clark: la mente extendida (2015, 2023) sostiene que herramientas de silicio se integran en el procesamiento predictivo del cerebro. Pero Clark es, en el fondo, funcionalista; tomo su fenomenología sin su principio de paridad: el silicio es un excelente **andamio cognitivo sintáctico**, pero la intencionalidad originaria sigue anclada en el organismo autopoiético. El silicio andamia la mente; no la origina en aislamiento.
+Esto permite ubicar a Clark: la mente extendida (2015, 2023) sostiene que herramientas de silicio se integran en el procesamiento predictivo del cerebro. Pero Clark es, en el fondo, funcionalista; tomo su fenomenología sin su principio de paridad: el silicio es un excelente **andamio cognitivo sintáctico**, pero la intencionalidad originaria sigue anclada en el organismo autopoiético que se juega la existencia.
 
 ---
 
