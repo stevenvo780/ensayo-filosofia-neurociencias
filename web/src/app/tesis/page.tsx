@@ -36,17 +36,19 @@ const mdComponents: Components = {
   img: () => null,
 };
 
-// Cada eje de la Parte II (y §III.4) ancla a su explicador interactivo, igual
-// que en el ensayo. La clave es el número de sección (p. ej. «II.4»).
+// Los explicadores pertenecen al laboratorio, que en esta versión está subordinado
+// y auditado: viven en §IV.5 («qué se conserva de los cinco ejes»), donde se los
+// reencuadra como comparaciones entre ESQUEMAS ORGANIZACIONALES —no entre
+// sustratos—. La clave es el número de sección (p. ej. «IV.5»).
 const SECTION_VISUAL: Record<string, ReactNode> = {
-  "II.1": <VonNeumannBus />,
-  "II.2": <SparseCoding />,
-  "II.3": <StateSpaceVariability />,
-  "II.4": <ExchangeMode />,
-  "II.5": <IOBandwidth />,
-  "II.6": <EfficiencyStaircase />,
-  "III.4": (
+  "IV.5": (
     <>
+      <VonNeumannBus />
+      <SparseCoding />
+      <StateSpaceVariability />
+      <ExchangeMode />
+      <IOBandwidth />
+      <EfficiencyStaircase />
       <GammaOscillation />
       <MorphologyFlops />
     </>
@@ -54,9 +56,9 @@ const SECTION_VISUAL: Record<string, ReactNode> = {
 };
 
 export const metadata: Metadata = {
-  title: "Tesis — El sustrato no es neutral",
+  title: "Tesis — El argumento del sustrato",
   description:
-    "Versión extendida: variabilidad, modo de intercambio y ancho de banda como límites de la realizabilidad múltiple.",
+    "Versión extendida: por qué la autopoiesis no puede decidir el problema del sustrato, con la auditoría completa del laboratorio.",
 };
 
 function getTesis(): string {
@@ -129,7 +131,7 @@ export default function TesisPage() {
             color: "#fff",
           }}
         >
-          El sustrato no es neutral
+          El argumento del sustrato
         </h1>
         <p
           style={{
@@ -141,7 +143,7 @@ export default function TesisPage() {
             margin: "0 auto 24px",
           }}
         >
-          Variabilidad, intercambio y ancho de banda como límites de la realizabilidad múltiple
+          …y la unidad que le falta
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/" className="btn" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.25)", background: "transparent" }}>
@@ -168,21 +170,22 @@ export default function TesisPage() {
         <Reveal className="prose tesis-prose">
           {segments.map((seg, i) => {
             const visual =
-              seg.key === "III.3" ? (
+              seg.key === "IV.4" ? (
                 <figure className="tesis-figure">
                   <Image
                     src="/graficos/exp10_acoplamiento.png"
-                    alt="Experimento 10: acoplamiento entre cómputo y auto-mantenimiento bajo lesión homeostática."
-                    width={1629}
-                    height={647}
+                    alt="Experimento 10: κ pasa de 0,00 a 0,70 en la misma máquina al mover sólo la frontera del sistema."
+                    width={1704}
+                    height={663}
                     className="tesis-figure__img"
                     sizes="(max-width: 820px) 100vw, 760px"
                   />
                   <figcaption className="tesis-figure__cap">
-                    <strong>Experimento 10.</strong> Firma operacional de la autopoiesis: bajo una
-                    lesión metabólica idéntica, el sistema acoplado (carbono) se desploma
-                    (κ ≈ 0,88 ± 0,00, 24 semillas) mientras el desacoplado (silicio) no se inmuta
-                    (κ = 0,00). Mide el acoplamiento cómputo↔auto-mantenimiento, no la conciencia.
+                    <strong>Experimento 10 (reformado).</strong> La misma máquina, bajo la misma
+                    perturbación, con dos fronteras distintas: contando sólo el chip, κ = 0,00
+                    (inmune); contando también su fuente de alimentación, κ = 0,70 (24 semillas). El
+                    sustrato no cambió: cambió el corte. κ mide compartición de presupuesto de
+                    recursos, no autopoiesis.
                   </figcaption>
                 </figure>
               ) : seg.key ? (
