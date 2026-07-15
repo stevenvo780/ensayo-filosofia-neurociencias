@@ -295,15 +295,19 @@ export default function SintesisPage() {
 }
 
 /**
- * ArgFlow — diagrama del RECORRIDO narrativo del argumento: pregunta → dos
- * respuestas en disputa → la distinción que ordena todo → desarrollo en cinco
- * eslabones (§2–§6) → conclusión. Es un artefacto distinto de <ArgMap />: ese
- * mapa expone la estructura lógica interna del argumento del sustrato (la
- * tenaza autopoiesis-estricta/autonomía); este traza la trayectoria completa
- * del ensayo, de un vistazo. Se lee de arriba abajo; sólo la cadena de
- * eslabones es ancha y scrollea en horizontal dentro de su propio contenedor.
- * Reutiliza los estilos ya definidos para .argmap / .argmap__cap / .eyebrow
- * (globals.css) y las variables de tema del sitio — sin CSS nuevo.
+ * ArgFlow — diagrama del RECORRIDO narrativo del argumento: la pregunta de
+ * partida (el silicio) → la pregunta de fondo a la que se reduce (¿individúa
+ * la autopoiesis al sujeto?) → dos respuestas en disputa → la distinción que
+ * ordena todo → desarrollo en cinco eslabones (§2–§6) → una síntesis compacta
+ * de la tenaza de <ArgMap /> (autopoiesis estricta / autonomía, sin tercera
+ * posición) → conclusión, que cierra volviendo a la pregunta del silicio.
+ * Es un artefacto distinto de <ArgMap />, que no se toca aquí: ese mapa
+ * expone en detalle la estructura lógica interna del dilema; este traza la
+ * trayectoria completa del ensayo, de un vistazo, incorporando una versión
+ * mínima de esa misma tenaza como síntesis. Se lee de arriba abajo; sólo la
+ * cadena de eslabones es ancha y scrollea en horizontal dentro de su propio
+ * contenedor. Reutiliza los estilos ya definidos para .argmap / .argmap__cap
+ * / .eyebrow (globals.css) y las variables de tema del sitio — sin CSS nuevo.
  */
 function ArgFlow() {
   const steps: { n: string; title: string; body: string }[] = [
@@ -350,7 +354,7 @@ function ArgFlow() {
 
   return (
     <section
-      aria-label="Diagrama: el recorrido del argumento, de la pregunta a la conclusión"
+      aria-label="Diagrama: el recorrido del argumento, de la pregunta del silicio a la conclusión"
       style={{ marginTop: "3.2em" }}
     >
       <div className="eyebrow" style={{ marginBottom: 6 }}>
@@ -370,11 +374,22 @@ function ArgFlow() {
 
       <figure className="argmap" style={{ margin: 0 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          <FlowBox kicker="La pregunta" accent="neutral" center>
+          <FlowBox kicker="La pregunta de partida" accent="neutral" center>
+            <strong>¿Podría una máquina de silicio ser consciente?</strong>
+            <br />
+            <span style={{ color: "var(--muted)", fontSize: "0.9em" }}>
+              El problema con el que abre el ensayo — la pregunta popular.
+            </span>
+          </FlowBox>
+
+          <FlowDown />
+          <div style={connectorLabel}>se reduce a la pregunta de fondo</div>
+
+          <FlowBox kicker="La pregunta que hay debajo" accent="neutral" center>
             <strong>¿Puede la autopoiesis decidir qué sistemas pueden ser conscientes?</strong>
             <br />
             <span style={{ color: "var(--muted)", fontSize: "0.9em" }}>
-              (¿puede una máquina de silicio ser consciente?)
+              — es decir, ¿individúa al sujeto?
             </span>
           </FlowBox>
 
@@ -420,6 +435,28 @@ function ArgFlow() {
               ])}
             </div>
           </div>
+
+          <FlowDown />
+          <div style={connectorLabel}>la tenaza (§4): ningún cuerno decide</div>
+
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <FlowBox kicker="Autopoiesis estricta" accent="neutral" grow>
+              Objetiva: hay un hecho sobre si una red metabólica produce su membrana. Pero su unidad
+              es la célula — individúa ~10¹³ unidades, ninguna es el sujeto.
+            </FlowBox>
+            <FlowBox kicker="Autonomía · clausura operacional" accent="neutral" grow>
+              Varela (1979) la generaliza y sí individúa el organismo. Pero es organizacional —se
+              define por cómo se encadenan los procesos—, luego no excluye ningún sustrato.
+            </FlowBox>
+          </div>
+
+          <FlowDown />
+
+          <FlowBox kicker="El dilema: ningún cuerno decide" accent="key" center>
+            Uno individúa pero es material y sólo llega a la célula; el otro individúa el organismo
+            pero es organizacional y no excluye el silicio. <strong>No hay tercera posición</strong>:
+            la autopoiesis no puede decidir sobre el silicio.
+          </FlowBox>
 
           <FlowDown />
 
