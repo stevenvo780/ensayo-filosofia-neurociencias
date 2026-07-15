@@ -28,7 +28,7 @@
 |---|---|---|---|---|---|
 | κ recurso propio | 0,88 | 0,88 | 0,88 | `exp10_resumen.csv` = 0,8788 | ✅ |
 | κ frontera estrecha | 0,00 | 0,00 | 0,00 | `exp10_resumen.csv` = 0,0 | ✅ |
-| κ frontera ampliada | **0,70** | 0,70 | 0,70 | `exp10_resumen.csv` = 0,6989 | ✅ |
+| κ frontera ampliada | **0,70** | 0,70 | 0,70 | `exp10_resumen.csv` = 0,6982 | ✅ |
 | Semillas | 24 | 24 | 24 | `SEMILLAS = list(range(24))` | ✅ |
 | Unidades autopoiéticas | ~10¹³ | ~10¹³ | 10¹³ | orden de magnitud declarado como tal | ✅ |
 
