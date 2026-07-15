@@ -19,9 +19,9 @@ const KIND_LABEL: Record<RefEntry["kind"], string> = {
   seccion: "Sección",
 };
 
-/** «#s4» → «ir a §4 →», «#intro» → «ir a la introducción →», etc. */
+/** «/#s4» → «ir a §4 →», «/#intro» → «ir a la introducción →», etc. */
 function linkLabel(href: string): string {
-  const id = href.replace(/^#/, "");
+  const id = href.replace(/^\/?#/, "");
   if (/^s\d+$/.test(id)) return `ir a §${id.slice(1)} →`;
   if (id === "intro") return "ir a la introducción →";
   if (id === "conclusion") return "ir a la conclusión →";
