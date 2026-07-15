@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, FileText } from "lucide-react";
 import Emblem from "./Emblem";
 
 const REPO = "https://github.com/stevenvo780/ensayo-filosofia-neurociencias";
@@ -19,6 +19,7 @@ function GithubMark() {
 const LINKS = [
   { href: "/", label: "Ensayo" },
   { href: "/tesis", label: "Tesis" },
+  { href: "/sintesis", label: "Síntesis" },
   { href: "/laboratorio", label: "Lab" },
   { href: "/slides/0", label: "Slides" },
 ];
@@ -53,6 +54,14 @@ export default function Nav() {
   // El deck de diapositivas es a pantalla completa: sin barra de navegación del sitio.
   if (pathname?.startsWith("/slides")) return null;
 
+  // El botón PDF entrega el documento de la vista actual: la tesis en /tesis, el
+  // ensayo (entregable principal) en el resto del sitio.
+  const onTesis = pathname?.startsWith("/tesis") ?? false;
+  const pdfHref = onTesis
+    ? "/tesis-el-sustrato-no-es-neutral.pdf"
+    : "/ensayo-silicio-o-tejido.pdf";
+  const pdfTitle = onTesis ? "Descargar la tesis en PDF" : "Descargar el ensayo en PDF";
+
   return (
     <nav className="nav">
       <Link href="/" className="nav-brand" style={{ textDecoration: "none" }}>
@@ -62,7 +71,7 @@ export default function Nav() {
         </span>
       </Link>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+      <div className="nav-right" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <div className="nav-links">
           {LINKS.map((l) => (
             <Link key={l.href} href={l.href} className={isActive(l.href) ? "active" : ""}>
@@ -70,6 +79,16 @@ export default function Nav() {
             </Link>
           ))}
         </div>
+        <a
+          className="nav-pdf"
+          href={pdfHref}
+          download
+          aria-label={pdfTitle}
+          title={pdfTitle}
+        >
+          <FileText size={15} />
+          <span className="nav-pdf-label">PDF</span>
+        </a>
         <a
           className="icon-btn"
           href={REPO}

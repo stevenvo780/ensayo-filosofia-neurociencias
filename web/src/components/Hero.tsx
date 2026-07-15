@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Presentation, FlaskConical } from "lucide-react";
+import { Presentation, FlaskConical, FileText } from "lucide-react";
 import Emblem from "./Emblem";
 
 const SI = "#6ea8e0";
@@ -219,6 +219,14 @@ export default function Hero() {
           >
             <FlaskConical size={15} /> Laboratorio
           </Link>
+          <a
+            href="/ensayo-silicio-o-tejido.pdf"
+            download
+            className="btn"
+            style={{ color: "#fff", borderColor: "rgba(255,255,255,0.25)", background: "transparent" }}
+          >
+            <FileText size={15} /> Ensayo en PDF
+          </a>
         </div>
       </motion.div>
     </header>

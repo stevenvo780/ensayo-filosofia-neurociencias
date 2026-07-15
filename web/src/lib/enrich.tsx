@@ -15,6 +15,9 @@ function isOpaque(el: React.ReactElement): boolean {
   // Componentes React (explainers, headings, etc.) y enlaces/código: no entrar.
   if (typeof t === "function") return true;
   if (t === "a" || t === "code" || t === "pre") return true;
+  // Fórmulas renderizadas por KaTeX: no reescribir su interior.
+  const cls = (el.props as { className?: unknown } | null)?.className;
+  if (typeof cls === "string" && (cls.includes("katex") || cls.includes("math"))) return true;
   return false;
 }
 
