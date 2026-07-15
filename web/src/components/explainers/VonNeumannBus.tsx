@@ -207,48 +207,83 @@ function SiliconScene({ prefersReduced }: SceneProps) {
   );
 }
 
-function CarbonScene({ prefersReduced }: SceneProps) {
-  const nodes = [
-    { x: 60, y: 50 },
-    { x: 150, y: 30 },
-    { x: 240, y: 60 },
-    { x: 80, y: 130 },
-    { x: 200, y: 150 },
-    { x: 310, y: 110 },
-  ];
+/** Sinapsis química detallada: botón presináptico con vesículas, hendidura con
+ *  neurotransmisores cruzando y espina dendrítica postsináptica. La transmisión
+ *  ocurre a lo largo del eje local +x; se orienta con `angle`. Un halo cálido
+ *  pulsa localmente: cómputo y memoria en el mismo punto, sin bus. */
+function SynapseGlyph({
+  x,
+  y,
+  angle,
+  t,
+  reduced,
+}: {
+  x: number;
+  y: number;
+  angle: number;
+  t: number; // 0..1, fase local de actividad
+  reduced: boolean;
+}) {
+  // Ventana de actividad en la primera mitad del ciclo.
+  const firing = reduced ? 0.5 : t < 0.5 ? t / 0.5 : 0; // 0..1 mientras dispara
+  const glow = reduced ? 0.5 : Math.sin(Math.max(0, firing) * Math.PI) * 0.9;
+  // 3 neurotransmisores cruzando la hendidura (x: 7 → 12) escalonados.
+  const nt = [0, 0.33, 0.66].map((off) => {
+    const p = reduced ? 0.5 : (firing + off) % 1;
+    return { p, x: 7 + p * 5, y: (off - 0.33) * 4 };
+  });
+  return (
+    <g transform={`translate(${x} ${y}) rotate(${angle})`}>
+      {/* Halo local: almacenamiento + procesamiento in situ */}
+      <circle r={17} fill="url(#synGlow)" opacity={glow} />
+      {/* Botón axónico presináptico */}
+      <circle r={7.5} fill="url(#bouton)" stroke="var(--carbon)" strokeWidth={0.6} />
+      {/* Vesículas dentro del botón */}
+      {[
+        [-3, -2.5],
+        [1.5, -3],
+        [-1, 2.5],
+        [3, 1.5],
+      ].map(([vx, vy], i) => (
+        <circle key={i} cx={vx} cy={vy} r={1.3} fill="var(--carbon-soft)" opacity={0.9} />
+      ))}
+      {/* Espina dendrítica postsináptica (cuello + cabeza en champiñón) */}
+      <line x1={13.5} y1={0} x2={16.5} y2={0} stroke="var(--carbon)" strokeWidth={2} strokeLinecap="round" opacity={0.55} />
+      <circle cx={19.5} cy={0} r={4.4} fill="var(--carbon)" opacity={0.22} stroke="var(--carbon)" strokeWidth={0.9} />
+      {/* Hendidura sináptica: membrana presináptica (zona activa) + postsináptica */}
+      <path d="M 6.5 -4.5 A 4.5 4.5 0 0 1 6.5 4.5" fill="none" stroke="var(--carbon)" strokeWidth={1.5} />
+      <path d="M 13 -4 A 4 4 0 0 0 13 4" fill="none" stroke="var(--carbon)" strokeWidth={1.3} opacity={0.7} />
+      {/* Receptores en la densidad postsináptica */}
+      {[-2.4, 0, 2.4].map((ry, i) => (
+        <rect key={i} x={13} y={ry - 0.7} width={1.7} height={1.4} rx={0.4} fill="var(--carbon)" opacity={0.55} />
+      ))}
+      {/* Neurotransmisores cruzando la hendidura (encima de las membranas) */}
+      {nt.map((n, i) => (
+        <circle key={i} cx={n.x} cy={n.y} r={1.35} fill="var(--carbon-2)" opacity={0.95} />
+      ))}
+    </g>
+  );
+}
 
-  const [pulses, setPulses] = useState<Array<{ id: string; nodeIdx: number; r: number }>>([]);
+function CarbonScene({ prefersReduced }: SceneProps) {
+  const [t, setT] = useState(0);
 
   useEffect(() => {
-    if (prefersReduced) {
-      setPulses([]);
-      return;
-    }
-
+    if (prefersReduced) return;
     let frame = 0;
-    const animate = () => {
-      frame = (frame + 1) % 240;
-      const newPulses: Array<{ id: string; nodeIdx: number; r: number }> = [];
-
-      nodes.forEach((_, idx) => {
-        const stagger = (idx * 40) % 120;
-        const localFrame = (frame - stagger + 240) % 240;
-        if (localFrame < 60) {
-          const r = 8 + (localFrame / 60) * 8;
-          newPulses.push({
-            id: `${idx}-${Math.floor(frame / 60)}`,
-            nodeIdx: idx,
-            r,
-          });
-        }
-      });
-
-      setPulses(newPulses);
-    };
-
-    const raf = setInterval(animate, 40);
-    return () => clearInterval(raf);
+    const id = setInterval(() => {
+      frame = (frame + 1) % 100;
+      setT(frame / 100);
+    }, 40);
+    return () => clearInterval(id);
   }, [prefersReduced]);
+
+  // Sinapsis distribuidas (sin bus central): posición, orientación y fase.
+  const synapses = [
+    { x: 104, y: 68, angle: 18, phase: 0 },
+    { x: 256, y: 54, angle: 156, phase: 0.34 },
+    { x: 176, y: 146, angle: -58, phase: 0.62 },
+  ];
 
   return (
     <svg
@@ -263,37 +298,57 @@ function CarbonScene({ prefersReduced }: SceneProps) {
         transition: "background 0.35s var(--ease), border-color 0.35s var(--ease)",
       }}
     >
-      {/* Nodos (sinapsis distribuidas) */}
-      {nodes.map((node, i) => (
+      <defs>
+        <radialGradient id="synGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="var(--carbon)" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="var(--carbon)" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="bouton" cx="36%" cy="32%" r="70%">
+          <stop offset="0%" stopColor="var(--carbon-2)" />
+          <stop offset="100%" stopColor="var(--carbon)" />
+        </radialGradient>
+        <radialGradient id="soma" cx="40%" cy="35%" r="70%">
+          <stop offset="0%" stopColor="var(--carbon-2)" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="var(--carbon)" stopOpacity="0.22" />
+        </radialGradient>
+      </defs>
+
+      {/* Tejido: axones y dendritas orgánicas que alimentan cada sinapsis (sin bus) */}
+      <g fill="none" stroke="var(--carbon)" strokeWidth={1.3} strokeLinecap="round" opacity={0.42}>
+        <path d="M 18 44 Q 62 40 96 63" />
+        <path d="M 40 116 Q 110 150 168 143" />
+        <path d="M 384 34 Q 312 42 264 51" />
+        <path d="M 190 30 Q 150 48 122 62" />
+        <path d="M 300 158 Q 250 156 190 150" />
+      </g>
+
+      {/* Somas de fondo (cuerpos neuronales) con dendritas cortas */}
+      {[
+        { x: 26, y: 40 },
+        { x: 372, y: 30 },
+        { x: 32, y: 120 },
+      ].map((s, i) => (
         <g key={i}>
-          <circle cx={node.x} cy={node.y} r={5} fill="var(--carbon)" opacity={0.8} />
-          {/* Halo que indica almacenamiento local */}
-          <circle
-            cx={node.x}
-            cy={node.y}
-            r={8}
-            fill="none"
-            stroke="var(--carbon)"
-            strokeWidth="1"
-            opacity={0.3}
-          />
+          <g fill="none" stroke="var(--carbon)" strokeWidth={1} strokeLinecap="round" opacity={0.35}>
+            <path d={`M ${s.x} ${s.y} q -10 -8 -16 -4`} />
+            <path d={`M ${s.x} ${s.y} q -12 4 -18 2`} />
+            <path d={`M ${s.x} ${s.y} q -4 12 -10 15`} />
+          </g>
+          <circle cx={s.x} cy={s.y} r={7} fill="url(#soma)" stroke="var(--carbon)" strokeWidth={0.7} opacity={0.9} />
         </g>
       ))}
 
-      {/* Pulsos propagándose localmente */}
-      {pulses.map((p) => {
-        const node = nodes[p.nodeIdx];
-        return (
-          <circle
-            key={p.id}
-            cx={node.x}
-            cy={node.y}
-            r={p.r}
-            fill="var(--carbon)"
-            opacity={Math.max(0, 1 - p.r / 16)}
-          />
-        );
-      })}
+      {/* Sinapsis detalladas */}
+      {synapses.map((s, i) => (
+        <SynapseGlyph
+          key={i}
+          x={s.x}
+          y={s.y}
+          angle={s.angle}
+          t={(t + s.phase) % 1}
+          reduced={prefersReduced}
+        />
+      ))}
     </svg>
   );
 }
