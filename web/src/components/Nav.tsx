@@ -58,8 +58,8 @@ export default function Nav() {
   // ensayo (entregable principal) en el resto del sitio.
   const onTesis = pathname?.startsWith("/tesis") ?? false;
   const pdfHref = onTesis
-    ? "/tesis-el-sustrato-no-es-neutral.pdf"
-    : "/ensayo-silicio-o-tejido.pdf";
+    ? "/tesis-la-unidad-que-falta.pdf"
+    : "/ensayo-la-unidad-que-falta.pdf";
   const pdfTitle = onTesis ? "Descargar la tesis en PDF" : "Descargar el ensayo en PDF";
 
   return (

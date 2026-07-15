@@ -151,7 +151,7 @@ export default function TesisPage() {
             <FlaskConical size={15} /> Experimentos interactivos
           </Link>
           <a
-            href="/tesis-el-sustrato-no-es-neutral.pdf"
+            href="/tesis-la-unidad-que-falta.pdf"
             className="btn"
             download
             style={{ color: "#0b1220", borderColor: "transparent", background: "#fff" }}

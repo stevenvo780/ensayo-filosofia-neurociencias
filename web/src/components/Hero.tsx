@@ -220,7 +220,7 @@ export default function Hero() {
             <FlaskConical size={15} /> Laboratorio
           </Link>
           <a
-            href="/ensayo-silicio-o-tejido.pdf"
+            href="/ensayo-la-unidad-que-falta.pdf"
             download
             className="btn"
             style={{ color: "#fff", borderColor: "rgba(255,255,255,0.25)", background: "transparent" }}

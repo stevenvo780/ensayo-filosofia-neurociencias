@@ -7,7 +7,7 @@ import ArgMap from "@/components/ArgMap";
 export const metadata: Metadata = {
   title: "Síntesis — para leer en clase",
   description:
-    "El argumento entero en voz alta: la neutralidad de sustrato en duda, cinco ejes medibles y la autopoiesis como puente hacia lo ontológico. Guión de lectura (~5 min).",
+    "El argumento entero en voz alta: por qué la autopoiesis no puede decidir el problema del sustrato. Guión de lectura (~5 min).",
 };
 
 // Guión de lectura: cada «beat» es una unidad de habla con su tiempo estimado.
@@ -15,102 +15,122 @@ export const metadata: Metadata = {
 const BEATS: { n: string; t: string; title: string; body: React.ReactNode }[] = [
   {
     n: "01",
-    t: "~45 s",
-    title: "La pregunta",
+    t: "~50 s",
+    title: "El problema, y por qué importa",
     body: (
       <>
-        Durante casi sesenta años, una idea ha organizado buena parte de la filosofía de la mente: el{" "}
-        <strong>funcionalismo</strong>. Sostiene que la mente es <em>sustrato-neutral</em> —que si un
-        sistema reproduce la organización funcional correcta, da igual que esté hecho de{" "}
-        <span className="carbon">neuronas</span> o de <span className="si">silicio</span>: pensaría, y
-        quizá sentiría, lo mismo—. Es la promesa de la mente en una máquina. Mi trabajo la pone en
-        duda. Pero con cuidado: hay <strong>dos afirmaciones</strong> aquí, y confundirlas arruina el
-        argumento.
+        La pregunta que voy a atacar es una sola: <strong>¿puede la autopoiesis decidir qué sistemas
+        pueden ser conscientes?</strong>
+        <br />
+        <br />
+        Bennett y Hacker le enseñaron a la filosofía de las neurociencias a desconfiar de un error
+        preciso: atribuirle a la parte lo que sólo se predica del todo. El cerebro no ve; ve la persona.
+        Voy a mostrar que la objeción más atractiva contra el funcionalismo comete un primo de ese error:
+        discute <em>de qué está hecho</em> el sujeto sin haber fijado <em>cuál</em> es. Y importa porque
+        no se resuelve con más datos: el problema está en el sujeto de la oración.
       </>
     ),
   },
   {
     n: "02",
-    t: "~70 s",
-    title: "Las dos tesis que me niego a fundir",
+    t: "~60 s",
+    title: "El argumento del sustrato, en su mejor forma",
     body: (
       <>
-        La primera es <strong>práctica</strong>, y la demuestro: emular la física del{" "}
-        <span className="carbon">carbono vivo</span> sobre <span className="si">silicio digital</span>{" "}
-        cuesta —energía, tiempo, memoria, cableado— y ese costo no es un detalle que una mejor GPU vaya
-        a borrar. Es <strong>estructural</strong>, y crece con la escala.
+        Voy a reconstruirlo en su versión más fuerte, no en una caricatura. La conciencia requiere un
+        sujeto: un sistema que sea <em>uno</em> y para el cual sus estados tengan valencia. Un sistema
+        tiene valencia propia sólo si se produce a sí mismo y puede dejar de existir. Ningún sistema de{" "}
+        <span className="si">silicio digital</span> se produce a sí mismo. Luego ninguno es sujeto de
+        conciencia. Lo llamo <strong>el argumento del sustrato</strong>.
         <br />
         <br />
-        La segunda es <strong>ontológica</strong>, y la ofrezco como conjetura, no como teorema: el
-        sustrato vivo sería <em>constitutivo</em> de la conciencia. Y lo digo con todas las letras:{" "}
-        <strong>la segunda no se deduce de la primera</strong>. La ineficiencia y la experiencia son
-        ortogonales; ningún número de julios por evento prueba, por sí solo, que haya —o no haya—
-        alguien ahí dentro.
+        Y quiero ser exacto con su defensor más cuidadoso: Seth dice que sus argumentos{" "}
+        <em>no refutan</em> el funcionalismo computacional, sino que lo vuelven «menos plausible y menos
+        atractivo». Y rechaza explícitamente el chovinismo del carbono: su eje es vivo contra no-vivo.
+        <br />
+        <br />
+        Fíjense en lo que las dos primeras premisas le exigen a la autopoiesis: no sólo distinguir lo
+        vivo de lo no vivo, sino <strong>individuar al portador de la experiencia</strong>. Ahí, y no en
+        la premisa sobre el silicio, es donde se rompe.
       </>
     ),
   },
   {
     n: "03",
     t: "~80 s",
-    title: "El método: volver contable la diferencia",
+    title: "La unidad equivocada: 10¹³ células, el cerebro, el hígado",
     body: (
       <>
-        ¿Para qué sirve, entonces, el laboratorio? Construí <strong>diez experimentos reproducibles</strong>{" "}
-        que hacen algo que el argumento puramente conceptual no hace igual de bien: vuelven{" "}
-        <em>contable</em> la divergencia de sustrato. La miden en cinco ejes —arquitectura, codificación,
-        variabilidad, modo de intercambio y ancho de banda—.
+        No acuso a la autopoiesis de ser vaga ni relativa al observador. Es <strong>objetiva</strong>:
+        hay un hecho, independiente de nosotros, sobre si una red metabólica produce la membrana que la
+        encierra. Fijada una granularidad, es decidible.
         <br />
         <br />
-        El más decisivo, para mí, es el <strong>modo de intercambio</strong>. El{" "}
-        <span className="carbon">cerebro</span> mueve señales con iones que se difunden solos, a favor
-        del gradiente; el <span className="si">silicio</span> mueve cada bit cargando y descargando un
-        cable, y ese costo se paga entero, cada vez. Por eso mover un dato cuesta unas{" "}
-        <strong>650 veces</strong> más que computarlo. No es una esencia mística del carbono: es haber
-        elegido <em>iones que se difunden</em> en lugar de <em>electrones que hay que empujar</em>.
+        Mi objeción es de <strong>extensión</strong>, no de subjetividad. La unidad canónica de la
+        autopoiesis es <span className="carbon">la célula</span>. Y en mi cuerpo hay del orden de diez
+        billones de unidades autopoiéticas, y ninguna soy yo. Si el sujeto está donde está la
+        auto-producción, hay diez billones de sujetos aquí y ninguno escribe este ensayo. El argumento
+        que debía excluir al silicio termina multiplicando sujetos dentro del carbono.
+        <br />
+        <br />
+        De ahí dos consecuencias peores. El <strong>cerebro no es una unidad autopoiética</strong>: no
+        produce sus componentes, los producen sus células, cada una por su cuenta; es un sistema de
+        segundo orden. Y el <strong>hígado es tan autopoiético como el cerebro</strong>: ambos son
+        agregados de células que se autoproducen. Un criterio del sujeto que no distingue entre órganos
+        no es todavía un criterio. Para escapar hay que añadir integración causal —y eso añadido hace
+        todo el trabajo, y es una propiedad de la organización, no del material—.
       </>
     ),
   },
   {
     n: "04",
-    t: "~80 s",
-    title: "El giro: autopoiesis",
+    t: "~70 s",
+    title: "La tradición ya lo sabía: Varela 1979 y el dilema",
     body: (
       <>
-        Y aquí está el corazón: el puente hacia lo ontológico <strong>no lo tiende la energía</strong>.
-        Lo tiende la <strong>autopoiesis</strong> —la idea de Varela y Maturana de que lo vivo se define
-        por producir y regenerar sin cesar los componentes que lo constituyen—. En el cerebro,{" "}
-        <em>computar y mantenerse vivo son el mismo proceso</em>.
+        Y esto no es un descubrimiento mío. Es exactamente la razón por la que Varela abandonó el marco
+        estrecho. En <em>Principles of Biological Autonomy</em>, de 1979, generaliza la autopoiesis hasta
+        la noción más amplia de <strong>autonomía</strong>, articulada por la clausura operacional,
+        porque la autopoiesis en sentido estricto es celular y no llega ni al organismo ni al sistema
+        nervioso.
         <br />
         <br />
-        El <strong>Experimento 10</strong> le da a esto una medida. Dos sistemas resuelven la misma
-        tarea; les aplico la misma «lesión metabólica». El sistema <span className="carbon">acoplado</span>{" "}
-        —donde lo que computa es lo mismo que hay que regenerar— se desploma: coeficiente de acoplamiento{" "}
-        <strong>κ ≈ 0,88</strong>. El <span className="si">desacoplado</span> —el silicio, alimentado
-        desde afuera— ni se inmuta: <strong>κ = 0,00</strong>. Eso mide la firma operacional de la vida.{" "}
-        <strong>No mide la conciencia.</strong> Y esa frontera la respeto.
+        Pero ahí está el filo. La clausura operacional es una propiedad <strong>organizacional</strong>:
+        se define por cómo se encadenan los procesos, no por de qué están hechos. Y una propiedad
+        definida por la forma de la red es, por definición, realizable en más de un medio.
+        <br />
+        <br />
+        El camino que el enactivismo recorrió para poder individuar al sujeto es el mismo que le quita el
+        argumento contra el silicio. O autopoiesis estricta, que es objetiva y material pero individúa
+        células; o autonomía, que individúa organismos pero no excluye ningún sustrato.{" "}
+        <strong>No hay tercera posición.</strong>
       </>
     ),
   },
   {
     n: "05",
     t: "~70 s",
-    title: "Dónde me detengo",
+    title: "Mi propio experimento me refutó: κ y la frontera",
     body: (
       <>
-        Porque lo honesto es decir dónde para el argumento. <strong>No pruebo</strong> que el silicio
-        digital no pueda albergar conciencia. Pruebo dos cosas: que la neutralidad <em>ingenua</em> del
-        sustrato es falsa —el costo de realizar una mente tiene cinco caras y no se deja borrar—; y que
-        existe una hipótesis material y articulada —la autopoiesis— sobre <em>qué</em> del sustrato
-        podría ser constitutivo de la experiencia. Y no soy el primero: el naturalismo biológico de{" "}
-        <span className="carbon">Searle</span>, la <em>máquina-bestia</em> de <span className="carbon">Seth</span>,
-        la continuidad vida-mente de <span className="carbon">Thompson</span> y la homeostasis de{" "}
-        <span className="carbon">Damasio</span> ya ataron la conciencia a la vida —mi aporte es{" "}
-        <em>medir</em> esa divergencia, no descubrirla—.
+        Le debo esto a un fracaso propio, y exhibirlo es más útil que taparlo. Construí una medida —un
+        coeficiente κ de acoplamiento entre cómputo y auto-mantenimiento— y la presenté como la firma
+        operacional de la autopoiesis. Auditada, medía otra cosa: <strong>compartición de un presupuesto
+        de recursos</strong>. Eso lo tiene un portátil cuyo cómputo compite con su refrigeración por el
+        mismo presupuesto eléctrico. Si κ fuera la firma de la autopoiesis, mi computador estaría vivo.
         <br />
         <br />
-        Entre «el sustrato importa» y «no hay qualia en silicio» queda un abismo. Este trabajo no lo
-        cruza: lo señala, para no fingir haberlo cruzado. Y sostengo que decir exactamente hasta dónde
-        llega la evidencia es, también, <strong>hacer filosofía</strong>.
+        Y hay una comprobación que lo cierra. Si dejo intacta la máquina y muevo sólo la{" "}
+        <strong>frontera</strong> —si cuento la fuente de alimentación como parte del sistema en vez de
+        como un exterior inagotable—, el mismo <span className="si">silicio</span> pasa de κ = 0,00 a{" "}
+        <strong>κ = 0,70</strong>, del orden del 0,88 del supuesto <span className="carbon">carbono</span>.
+        No cambió el sustrato: cambió el corte.
+        <br />
+        <br />
+        Y quiero terminar con el alcance honesto. De nada de esto se sigue que el silicio sienta. No he
+        explicado los qualia, y mi argumento es neutral ante el problema difícil. Lo mostrado es más
+        modesto y más firme: una de las dos grandes objeciones al funcionalismo se apoya en una unidad
+        que no tiene.
       </>
     ),
   },
@@ -154,7 +174,7 @@ export default function SintesisPage() {
             margin: "0 auto 24px",
           }}
         >
-          Síntesis de ¿Silicio o Tejido? — cinco beats para exponer la tesis sin leer las 5.500 palabras
+          Síntesis de <em>La unidad que falta</em> — cinco beats para exponer la tesis sin leerla entera
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/" className="btn" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.25)", background: "transparent" }}>
@@ -164,7 +184,7 @@ export default function SintesisPage() {
             <BookOpen size={15} /> Tesis extendida
           </Link>
           <a
-            href="/ensayo-silicio-o-tejido.pdf"
+            href="/ensayo-la-unidad-que-falta.pdf"
             className="btn"
             download
             style={{ color: "#0b1220", borderColor: "transparent", background: "#fff" }}
@@ -179,19 +199,21 @@ export default function SintesisPage() {
           <section className="lectura__abstract" aria-label="Resumen de la tesis">
             <h2 className="lectura__abstract-h">Resumen</h2>
             <p>
-              El funcionalismo computacional sostiene que la mente es <em>sustrato-neutral</em>:
-              cualquier medio que implemente la organización funcional adecuada realizaría los mismos
-              estados mentales. Esta tesis lo cuestiona con una distinción que no difumina: separa una{" "}
-              <strong>tesis práctica</strong> —emular la física del <span className="carbon">carbono vivo</span>{" "}
-              sobre <span className="si">silicio digital</span> impone costos estructurales, no
-              incidentales— de una <strong>tesis ontológica</strong> —el sustrato vivo sería constitutivo
-              de la conciencia—, y sostiene que la segunda <em>no se deduce</em> de la primera. El puente
-              lo tiende la <strong>autopoiesis</strong>. El aporte es metodológico: un laboratorio de diez
-              experimentos reproducibles que hace <em>cuantificable</em> la divergencia de sustrato en
-              cinco ejes —arquitectura, codificación, variabilidad, modo de intercambio y ancho de banda—
-              y una medida operacional de la firma de la autopoiesis (el coeficiente κ del Experimento 10).
-              Se sitúa en el linaje de Searle, Seth, Thompson y Damasio, y acota su novedad a <em>medir</em>,
-              no a descubrir, que la vida importa.
+              Este ensayo aplica la lección de Bennett y Hacker sobre la <strong>falacia mereológica</strong>{" "}
+              a un problema único: ¿puede la autopoiesis decidir qué sistemas pueden ser conscientes? El{" "}
+              <em>argumento del sustrato</em> —el <span className="si">silicio</span> no se autoproduce,
+              luego no siente— necesita que la auto-producción material individúe al <em>sujeto</em> de la
+              conciencia. No lo hace: individúa <span className="carbon">células</span>. El cargo no es de
+              vaguedad —la autopoiesis es objetiva y, fijada una granularidad, decidible—: es de{" "}
+              <strong>extensión</strong>. En un cuerpo hay del orden de 10¹³ unidades autopoiéticas y
+              ninguna es el sujeto; el cerebro no es una unidad autopoiética, sino un sistema de segundo
+              orden; y el hígado es tan autopoiético como él. Para seleccionar al sujeto entre escalas
+              anidadas hay que añadir integración causal, que es sustrato-neutral. La propia tradición lo
+              supo: Varela generalizó de la autopoiesis a la autonomía y la clausura operacional (1979)
+              precisamente porque la autopoiesis estricta es celular. Pero lo organizacional es realizable
+              en más de un medio. De ahí el dilema —o no individúa al sujeto, o no excluye sustratos—. No
+              se sigue que el silicio sienta: se sigue que la autopoiesis no es el instrumento que puede
+              decidirlo.
             </p>
           </section>
 
@@ -218,8 +240,9 @@ export default function SintesisPage() {
           ))}
 
           <blockquote className="lectura__close">
-            El sustrato no es neutral. Pero <em>por qué</em> importa no lo dice la factura energética: lo
-            dice la vida que se juega existir.
+            Antes de preguntar de qué está hecho un sujeto hay que poder decir cuál es. Mientras la
+            respuesta la ponga quien pregunta, «¿puede el silicio ser consciente?» no es todavía una
+            pregunta: es un recorte a la espera de un argumento.
           </blockquote>
         </Reveal>
       </div>
