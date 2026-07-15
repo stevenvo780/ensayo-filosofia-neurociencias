@@ -24,14 +24,14 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://neurocarbon.stevenvallejo.com"),
-  title: "¿Silicio o Tejido? — Límites materiales y ontológicos de la mente",
+  title: "La unidad que falta — La falacia mereológica y el argumento del sustrato",
   description:
-    "Ensayo y laboratorio biofísico sobre los límites del silicio digital para emular el carbono vivo: economía de la codificación, termodinámica de la señalización y autopoiesis.",
+    "Ensayo de filosofía de las neurociencias: por qué la autopoiesis no puede decidir si una máquina puede ser consciente. Individúa células, no sujetos. Con un laboratorio computacional auditado.",
   authors: [{ name: "Steven Vallejo Ortiz" }],
   openGraph: {
-    title: "¿Silicio o Tejido?",
+    title: "La unidad que falta",
     description:
-      "El sustrato importa: del cuello de botella de Von Neumann a la autopoiesis, con un laboratorio computacional interactivo.",
+      "Antes de preguntar de qué está hecho un sujeto, hay que poder decir cuál es. Un ensayo sobre autopoiesis, individuación y conciencia artificial.",
     type: "article",
     locale: "es_ES",
   },

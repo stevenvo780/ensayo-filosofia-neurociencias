@@ -1,21 +1,50 @@
 # Ensayo Final — Filosofía de las Neurociencias (2026-1)
 
 > **Entrega: 15 de julio de 2026 · Prof. Santiago Arango**  
-> **Extensión: 2.000 palabras (ensayo) + 4.500 palabras (tesis extendida)**  
+> **Extensión: ~2.100 palabras (ensayo) + ~9.300 palabras (tesis extendida)**  
 > **Web: https://neurocarbon.stevenvallejo.com**
 
-## Estado (julio 2026)
+## Estado (15 de julio de 2026) — refactor filosófico
 
-Ensayo completo + **laboratorio computacional escalonado en 4 tiers de hardware** (CPU → Single GPU → Multi-GPU → Híbrido) + **10 experimentos biofísicos específicos**, diseñados para hacer **visible** el cuello de botella de Von Neumann en cada nivel de escala. Cada tier expone un límite físico distinto del silicio digital:
+El trabajo fue **reescrito de raíz** tras una auditoría adversarial. La tesis anterior («el
+sustrato no es neutral», en dos niveles: práctico y ontológico) se **abandonó**: su nivel
+ontológico no estaba argumentado y era, sin residuo, el de Searle/Thompson/Damasio/Seth; y el
+laboratorio —por admisión del propio texto— no hacía trabajo para él.
 
-| Tier | Hardware | Hasta | Cuello de botella |
-|---|---|---|---|
-| 1 | CPU (NumPy) | 8K | loop Python |
-| 2 | Single GPU (RTX 5070 Ti) | 6M | VRAM 16 GB |
-| 3 | Multi-GPU (PCIe Gen3) | 12M | bus PCIe (×10 penalty) |
-| 4 | Híbrido (DDR + PCIe + GIL) | 16M | todo a la vez (×100 penalty) |
+**Tesis actual — «La unidad que falta».** Un solo problema: *¿puede la autopoiesis decidir qué
+sistemas pueden ser conscientes?* Respuesta: no. El argumento «el silicio no se autoproduce, luego
+no siente» necesita que la auto-producción **individúe al sujeto**, y no lo hace: individúa
+**células**. En un cuerpo hay ~10¹³ unidades autopoiéticas y ninguna es el sujeto; el cerebro no es
+una unidad autopoiética; el hígado lo es tanto como él. Para elegir una escala hay que añadir
+**integración causal**, que es sustrato-neutral. Y la propia tradición lo supo: Varela generalizó de
+la autopoiesis a la **autonomía** (1979), que es organizacional y por tanto no excluye sustratos.
 
-**Hallazgo central**: la brecha silicio/carbono es **emergente de la arquitectura**, no monotónica con N. Va de **3.000×** (single GPU 1M neuronas) hasta **104.450×** (híbrido 16M neuronas). Simular 1 segundo biológico tarda 11 minutos en el híbrido.
+**De nada de esto se sigue que el silicio sienta.** Se sigue que la autopoiesis no es el instrumento
+que puede decidirlo.
+
+## El laboratorio, auditado
+
+El laboratorio quedó **subordinado y auditado**, y su auditoría es parte del aporte
+(`docs/refactor/experiment-audit.md`). Lo que la auditoría encontró, y que este repositorio
+declara en vez de esconder:
+
+- **No hay carbono en el laboratorio.** Los diez experimentos corren en silicio y comparan *pares de
+  modelos*, bautizando a uno de cada par «carbono». La etiqueta hacía el trabajo.
+- **8 de 11 cifras publicadas eran analíticas**: consecuencias de constantes elegidas. El «90 %» del
+  Exp 1 *es* `1 − P_CONEXION`; el crosstalk del Exp 2 es `E[·] = p` para vectores Bernoulli(p).
+- **El Exp 1 publicaba tiempo y energía fabricados** (literales escritos a mano, comentados como
+  «tiempo medio empírico», con el cronómetro declarado y nunca leído). **Corregido**: esas columnas
+  se eliminaron.
+- **El coeficiente κ (Exp 10) no medía autopoiesis.** κ=0 era una identidad aritmética (el parámetro
+  lesionado era código muerto: 720 configuraciones dan 0). κ mide **compartición de un presupuesto de
+  recursos** —un portátil con *throttling* térmico tiene κ>0—.
+- **κ se conserva reformado, como contraejemplo construido**: en la misma máquina, moviendo sólo la
+  frontera del sistema para incluir su fuente de alimentación, κ pasa de **0,00 a 0,70** (24
+  semillas). El sustrato no cambió: cambió el corte. Es el único punto donde el laboratorio hace
+  trabajo filosófico, y lo hace **refutando la tesis anterior del autor**.
+- El **benchmark escalonado** (4 tiers, hasta 16 M neuronas) es la única medición empírica genuina, y
+  es una cota superior de una comparación deliberadamente desfavorable al silicio: vale como
+  ilustración de la arquitectura von Neumann, **no** como constante de sustrato.
 
 ## 🔓 Ciencia abierta y reproducibilidad
 
@@ -27,7 +56,7 @@ Este repositorio es **completamente abierto**: todo el proceso, los datos y el c
 - **Gráficos** (`simulaciones/graficos/`): generados por scripts versionados, no editados a mano.
 - **Web** (`web/`): el código fuente de las cuatro superficies interactivas (ensayo, tesis, laboratorio, presentación).
 
-**Método.** El laboratorio no *demuestra* la tesis filosófica: la hace *visible y cuantificable*. Cada experimento aísla un límite físico distinto del silicio digital frente al carbono vivo, y cada cifra está fundamentada en fuentes primarias verificadas (Bartol et al. 2015; Attwell & Laughlin 2001; Horowitz 2014; entre otras). El benchmark se ejecuta **deliberadamente sin optimizar**, tal como correría una red de silicio típica, para que cada cuello de botella sea una observación reproducible y no un detalle de implementación. Reproducir todo: `./ejecutar_laboratorio.sh`.
+**Método.** El laboratorio **no demuestra** la tesis filosófica —que se sostiene sin él— y su auditoría (`docs/refactor/experiment-audit.md`) dice exactamente qué clase de objeto epistémico es cada experimento: cálculo analítico, benchmark dependiente de implementación o contraejemplo construido. Publicar esa auditoría, incluidos los errores encontrados en el propio trabajo, es parte del método. Reproducir todo: `./ejecutar_laboratorio.sh`.
 
 **Licencia:** [MIT](LICENSE) para el código; los textos e imágenes son del autor. Ver [`CRITICA_ENSAYO.md`](CRITICA_ENSAYO.md) para el registro de autocrítica y correcciones.
 

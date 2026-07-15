@@ -327,12 +327,12 @@ export const REFS: RefEntry[] = [
   },
   {
     id: "acoplamiento-homeostatico",
-    label: "Acoplamiento homeostático (Exp 10)",
+    label: "El coeficiente κ (Exp 10)",
     kind: "experimento",
     tooltip:
-      "Experimento 10: mide la firma operacional de la autopoiesis —el acoplamiento entre cómputo y auto-mantenimiento—. Bajo una lesión metabólica, el carbono acoplado se desploma (κ≈0,88) y el silicio desacoplado no (κ=0). Mide el acoplamiento, no la conciencia.",
+      "Experimento 10 (reformado): κ NO mide autopoiesis. Mide compartición de un presupuesto de recursos —un portátil con throttling térmico tiene κ>0—. Y es relativo al corte: la misma máquina pasa de κ=0,00 (contando sólo el chip) a κ=0,70 (contando también su fuente). Contraejemplo construido, no medida de sustrato.",
     href: "/#s4",
-    tokens: ["acoplamiento homeostático", "acoplamiento estructural", "Experimento 10"],
+    tokens: ["coeficiente κ", "acoplamiento homeostático", "Experimento 10"],
   },
 
   // ── Cuerpo y mente extendida ─────────────────────────────────────────────
