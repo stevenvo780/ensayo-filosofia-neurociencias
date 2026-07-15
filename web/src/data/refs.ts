@@ -7,7 +7,7 @@
  * punteado ámbar → popover con explicación llana + enlace a la sección del ensayo.
  *
  * Portado del patrón de autopoesis.stevenvallejo.com (RefTooltip), adaptado a
- * Next App Router y a los conceptos propios de «¿Silicio o Tejido?». Los `href`
+ * Next App Router y a los conceptos propios de «La unidad que falta». Los `href`
  * son absolutos (`/#s4`) para funcionar tanto en `/` (ensayo) como en `/tesis`.
  */
 
@@ -32,7 +32,7 @@ export const REFS: RefEntry[] = [
     label: "Realizabilidad múltiple",
     kind: "concepto",
     tooltip:
-      "Tesis funcionalista (Putnam, Fodor): como los estados mentales se definen por su rol funcional y no por su composición, podrían realizarse en cualquier sustrato —carbono, silicio o cualquier medio— que sostenga las mismas transiciones. Es el blanco del ensayo.",
+      "Tesis funcionalista (Putnam, Fodor): como los estados mentales se definen por su rol funcional y no por su composición, podrían realizarse en cualquier sustrato —carbono, silicio o cualquier medio— que sostenga las mismas transiciones. El ensayo NO la refuta: muestra que la objeción más común contra ella (la autopoiesis) no puede hacer su trabajo.",
     href: "/#intro",
     tokens: ["realizabilidad múltiple"],
   },
@@ -59,7 +59,7 @@ export const REFS: RefEntry[] = [
     label: "Silicio neuromórfico",
     kind: "concepto",
     tooltip:
-      "Hardware analógico (Loihi, memristores) que imita la dinámica física continua del cerebro. El ensayo distingue este paradigma del silicio digital clásico de Von Neumann —que es su verdadero blanco—.",
+      "Hardware analógico (Loihi, memristores) que imita la dinámica física continua del cerebro. Distinción relevante para no confundir «silicio» con «arquitectura von Neumann»: el argumento examinado apunta a lo no-vivo, no a un material.",
     href: "/#intro",
     tokens: ["neuromórfico", "neuromórficos", "neuromórfica", "Loihi", "memristores"],
   },

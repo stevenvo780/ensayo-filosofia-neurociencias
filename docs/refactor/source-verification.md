@@ -1,0 +1,80 @@
+# Verificación de fuentes y tabla de antecedentes
+
+> Todo lo marcado **VERIFICADO** se comprobó contra fuente primaria (PDF/editorial/DOI) durante el
+> refactor del 15-jul-2026. Lo que no pudo verificarse está marcado como tal. No se cita nada que no
+> aparezca en esta tabla.
+
+## 1. Fuentes nuevas incorporadas
+
+| Fuente | Estado | Qué aporta | Riesgo de atribución excesiva |
+|---|---|---|---|
+| **Seth, A. K. (2025)**, *Conscious artificial intelligence and biological naturalism*, BBS, advance online, pp. 1-42, DOI 10.1017/S0140525X25000032 | **VERIFICADO** — Cambridge Core + PDF completo del target article (42 pp.), PMID 40257177 | El antecedente contemporáneo más directo. Ocupa ya el nivel ontológico del proyecto anterior | **ALTO si se descuida.** Ver §2 |
+| **Beer, R. D. (2004)**, *Autopoiesis and Cognition in the Game of Life*, *Artificial Life* 10(3):309-326 | **VERIFICADO** — texto completo extraído y leído; citas comprobadas verbatim | La individuación como **problema abierto dentro** de la teoría autopoiética | **ALTO.** No es una refutación: es un homenaje explícito a Varela |
+| **Varela, F. J. (1979)**, *Principles of Biological Autonomy*, North-Holland | **VERIFICADO** (MIT Press reedición anotada 2024, eds. Di Paolo & Thompson, ISBN 9780262551403) | La generalización autopoiesis → **autonomía**/clausura operacional. Es el eje del argumento | Medio: no atribuirle que renegara de la autopoiesis; la *generaliza* |
+| **Jonas, H. (1968)**, *Biological Foundations of Individuality*, *Int. Philosophical Quarterly* 8(2):231-251 | **VERIFICADO** vía cita en bloque de Barandiaran et al. (2009) | Identidad **propia** vs. **prestada**: «to the artifact the identity is accorded… owned by, not loaned to its subject» | Bajo (se cita como antecedente, no como aliado) |
+| **Barandiaran, Di Paolo & Rohde (2009)**, *Defining Agency*, *Adaptive Behavior* 17(5):367-386 | **VERIFICADO** | La individualidad como 1ª condición de la agencia; el problema del corte arbitrario | Bajo |
+| **Bennett & Hacker (2022)**, *The Mereological Fallacy in Neuroscience* | **Lectura del curso** (`fuentes/BIBLIOGRAFIA.md`, ítem 5b) | El marco del ensayo | Bajo |
+| **Chen et al. (2021)**, *The Emerging Science of Interoception*, *Trends in Neurosciences* 44(1):3-16 | **Lectura del curso** (11a) | Respaldo neurocientífico de la continuidad vida-mente | Bajo |
+| **Greenwood & Garfinkel (2024)**, *Interoceptive Mechanisms and Emotional Processing* | **Lectura del curso** (9a). Datos bibliográficos completos **NO VERIFICADOS** (revista/páginas) | Ídem | Bajo, pero **completar la referencia antes de entregar** |
+| **Mylopoulos, M. (2022)**, *Neurobiological Theories of Consciousness* | **Lectura del curso** (10a). Datos completos **NO VERIFICADOS** | Teorías de la conciencia sustrato-neutrales | Bajo, pero **completar la referencia** |
+
+## 2. Seth 2025 — citas verbatim verificadas (y los errores que evitan)
+
+- «consciousness is a property of only (but not necessarily all) living systems» — su naturalismo
+  biológico **NO es el de Searle**, y Seth lo dice expresamente (§4.0).
+- «The arguments so far **do not disprove** computational functionalism. But they do render it less
+  plausible, and less appealing» (§3.6) ⇒ **prohibido** escribir que Seth «refuta» el funcionalismo.
+- «Nothing gets wet in a weather forecasting computer» (§3.7) — simular ≠ realizar.
+- «**Neither do I endorse carbon chauvinism** (the claim that only carbon-based life can be
+  conscious)» ⇒ **prohibido** atribuirle un eje carbono/silicio. Su eje es **vivo/no-vivo**.
+- Puente costo→sustrato vía *mortal computation* (Hinton 2022; Ororbia & Friston 2023), §3.4.
+
+> **Consecuencia para el proyecto anterior:** su «aporte 3» —«darle a la tesis de Seth un filo
+> ingenieril inesperado»— estaba **muerto antes de escribirse**: Seth ya tiende ese puente.
+
+## 3. Beer 2004 — citas verbatim verificadas
+
+- «Do the states of individual cells in the lattice really deserve to be called components? Does
+  turning a cell on or off really count as production of components? Does a glider really possess a
+  boundary that generates and constrains it?»
+- «The fact that the continuity of glider identity depends crucially on **how we choose to define**
+  glider organization demonstrates a potential problem.»
+- «**Strictly speaking, no system is autopoietic if it is observed over a long enough interval of
+  time.** The formal characterization of organization is an open problem (Fontana and Buss, 1994).»
+
+> Nótese que el pasaje aplica el problema **también a la célula** («how can we judge this from an
+> observation of the current state of the cell?»). Por eso la tesis **no** afirma una asimetría
+> tajante célula/digital: ese fue un error de una versión intermedia, descartado (ver `decisions.md` §3).
+
+## 4. Tabla de antecedentes — veredicto de originalidad
+
+Veredicto independiente de la oleada 2: **B — la tesis ya está dicha en la literatura de
+agencia/autonomía; lo que queda es originalidad de APLICACIÓN, y acotada.**
+
+| Autor | Tesis relevante | Relación con el trabajo | Diferencia real |
+|---|---|---|---|
+| **Jonas (1968)** | Identidad *prestada* del artefacto vs. *propia* del organismo | **Idéntica** a la distinción delegado/constitutivo | Ninguna. Se acredita |
+| **Barandiaran et al. (2009)** | «The problem of individuality becomes the problem of justifying which one we choose among the large set of possible and arbitrary distinctions» | **Muy cercana**: es la relatividad al corte | Ninguna. Se acredita |
+| **Beer (2004)** | La individuación autopoiética como problema abierto | **Muy cercana**, pero *dentro* de la teoría y en un modelo abstracto | No la dirige contra el uso anti-funcionalista |
+| **Searle (1990/1992)** | «Computational states are not discovered within the physics, they are assigned to the physics» | Análoga | Es sobre el **cómputo**, no sobre la **individuación del sistema**. NO se usa como *tu quoque* simétrico (ver `decisions.md` §3) |
+| **Villalobos & Dewhurst (2017)**, *Enactive autonomy in computational systems*, Synthese | Muy cercana | **NO VERIFICADA en profundidad** | **Riesgo abierto**: revisar antes de publicar el reclamo |
+| **Froese & Ziemke (2009)**, *Enactive artificial intelligence* | Muy cercana | **NO VERIFICADA en profundidad** | **Riesgo abierto** |
+| **Shapiro (2007)**, *Functionalism and mental boundaries*, Cognitive Systems Research 8(4) | Muy cercana | **NO VERIFICADA en profundidad** | **Riesgo abierto** |
+| **IIT — postulado de exclusión** | Necesita un postulado para individuar el sustrato de la conciencia | Aliado: concede que la individuación no es gratis | No se desarrolla en el ensayo (falta de espacio) |
+| **Bruineberg et al. (2022)**, *The Emperor's New Markov Blankets* | «Friston blankets cannot simply be 'detected' in some objective way and then used to determine the boundary of a system» | **VERIFICADO.** Confirma, no refuta, la tesis | La manta de Markov la traza el modelador |
+
+### Reclamo defendible (una oración, formulado para resistir a un evaluador hostil)
+
+> No descubro la condición de individualidad —Jonas (1968) y Barandiaran, Di Paolo y Rohde (2009) ya
+> la establecieron para la agencia, y Beer (2004) planteó la individuación como problema abierto
+> dentro de la teoría autopoiética—: la **aplico a un debate donde no se la había cobrado**, y aporto
+> un caso propio y verificable de que el eje es mereológico antes que material (la auditoría de mi κ).
+
+## 5. Riesgos abiertos
+
+1. **Tres antecedentes muy cercanos sin verificar en profundidad** (Villalobos & Dewhurst 2017;
+   Froese & Ziemke 2009; Shapiro 2007). Si alguno formula ya el argumento aplicado a la IA, el
+   reclamo de §4 debe rebajarse de «aplicación» a «aplicación ya hecha, aquí replicada con un caso».
+2. **Dos referencias del curso sin datos completos** (Greenwood & Garfinkel 2024; Mylopoulos 2022):
+   figuran en `fuentes/BIBLIOGRAFIA.md` sin revista ni páginas.
+3. **Seth 2025 no tiene volumen ni número**: es *advance online publication*. No inventarlos.
