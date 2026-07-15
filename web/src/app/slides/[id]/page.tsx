@@ -1,16 +1,7 @@
 import SlideClient from "./SlideClient";
 
 export async function generateStaticParams() {
-  return [
-    { id: "0" },
-    { id: "1" },
-    { id: "2" },
-    { id: "3" },
-    { id: "4" },
-    { id: "5" },
-    { id: "6" },
-    { id: "7" }
-  ];
+  return Array.from({ length: 13 }, (_, i) => ({ id: String(i) }));
 }
 
 export default function SlidePage({ params }: { params: { id: string } }) {

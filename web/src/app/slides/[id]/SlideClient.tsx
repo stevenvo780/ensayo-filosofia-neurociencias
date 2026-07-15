@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, ComponentType } from "react";
+import { useEffect, useState, ComponentType } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Mic, ArrowLeft, ArrowRight } from "lucide-react";
+import { Mic, ArrowLeft, ArrowRight, LayoutGrid, X, FileText } from "lucide-react";
 import Emblem from "@/components/Emblem";
 import SparseCoding from "@/components/explainers/SparseCoding";
 import VonNeumannBus from "@/components/explainers/VonNeumannBus";
@@ -193,23 +193,35 @@ const slidesData: SlideData[] = [
   },
 ];
 
+const pad = (n: number) => String(n).padStart(2, "0");
+
 export default function SlideClient({ slideIndex }: { slideIndex: number }) {
+  const [picker, setPicker] = useState(false);
+  const total = slidesData.length;
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight" && slideIndex < slidesData.length - 1)
+      if (e.key === "Escape") setPicker(false);
+      else if (e.key === "ArrowRight" && slideIndex < total - 1)
         window.location.href = `/slides/${slideIndex + 1}`;
       else if (e.key === "ArrowLeft" && slideIndex > 0)
         window.location.href = `/slides/${slideIndex - 1}`;
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [slideIndex]);
+  }, [slideIndex, total]);
 
-  if (isNaN(slideIndex) || slideIndex < 0 || slideIndex >= slidesData.length) {
+  if (isNaN(slideIndex) || slideIndex < 0 || slideIndex >= total) {
     return (
-      <div style={{ textAlign: "center", padding: 60 }}>
-        <h2>Diapositiva no encontrada</h2>
-        <Link href="/slides/0">Volver al inicio</Link>
+      <div className="sd-deck">
+        <div className="sd-stage">
+          <article className="sd-panel" style={{ textAlign: "center" }}>
+            <h1 className="sd-title">Diapositiva no encontrada</h1>
+            <Link href="/slides/0" className="sd-navlink" style={{ margin: "1rem auto 0" }}>
+              <ArrowLeft size={14} /> Volver al inicio
+            </Link>
+          </article>
+        </div>
       </div>
     );
   }
@@ -217,143 +229,124 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
   const slide = slidesData[slideIndex];
   const Explainer = slide.explainer;
   const isTitle = slideIndex === 0;
+  const kicker = isTitle
+    ? "Sustentación · Filosofía de las Neurociencias"
+    : `Diapositiva ${pad(slideIndex + 1)} · Silicio ⇄ Tejido`;
 
   return (
-    <div className="container" style={{ maxWidth: 960, paddingTop: 32, paddingBottom: 24 }}>
-      {/* Progreso */}
-      <div style={{ display: "flex", gap: 5, marginBottom: 22 }}>
-        {slidesData.map((_, i) => (
-          <div
-            key={i}
-            style={{
-              height: 3,
-              flex: 1,
-              borderRadius: 3,
-              background: i <= slideIndex ? "var(--carbon)" : "var(--border)",
-              transition: "background 0.3s var(--ease)",
-            }}
-          />
-        ))}
-      </div>
+    <div className="sd-deck">
+      <span className="sd-orb sd-orb-a" aria-hidden="true" />
+      <span className="sd-orb sd-orb-b" aria-hidden="true" />
+      <span className="sd-grid" aria-hidden="true" />
 
-      <div
-        style={{
-          background: "var(--surface)",
-          border: "1px solid var(--border)",
-          borderRadius: 18,
-          padding: "clamp(24px, 4vw, 44px)",
-          boxShadow: "var(--shadow-md)",
-          minHeight: "60vh",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 26 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <Emblem size={30} />
-            <span className="mono" style={{ fontSize: "0.72rem", letterSpacing: "0.12em", color: "var(--muted)", textTransform: "uppercase" }}>
+      <div className="sd-stage">
+        <article className={`sd-panel${isTitle ? " sd-panel-hero" : ""}`}>
+          <header className="sd-head">
+            <span className="sd-brand">
+              <Emblem size={24} />
               Silicio ⇄ Tejido
             </span>
+            <span className="sd-counter">
+              {pad(slideIndex + 1)} <i>/</i> {pad(total)}
+            </span>
+          </header>
+
+          <p className="sd-eyebrow">{kicker}</p>
+          <h1 className={`sd-title${isTitle ? " sd-title-hero" : ""}`}>{slide.title}</h1>
+          <p className="sd-subtitle">{slide.subtitle}</p>
+
+          <div className="sd-body" data-media={Explainer || slide.image ? "1" : "0"}>
+            <ul className="sd-bullets">
+              {slide.bullets.map((b, i) => (
+                <li key={i}>{b}</li>
+              ))}
+            </ul>
+
+            {Explainer ? (
+              <div className="sd-screen">
+                <Explainer />
+              </div>
+            ) : slide.image ? (
+              <div className="sd-screen">
+                <Image
+                  src={slide.image}
+                  alt={slide.imageAlt || slide.title}
+                  width={460}
+                  height={280}
+                  style={{ borderRadius: 8, maxWidth: "100%", height: "auto", objectFit: "contain" }}
+                />
+              </div>
+            ) : null}
           </div>
-          <span className="mono" style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
-            {String(slideIndex + 1).padStart(2, "0")} / {String(slidesData.length).padStart(2, "0")}
-          </span>
-        </div>
 
-        <h1
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: isTitle ? "clamp(2.4rem, 7vw, 4rem)" : "clamp(1.8rem, 4.5vw, 2.7rem)",
-            margin: "0 0 0.2em",
-            lineHeight: 1.06,
-          }}
-        >
-          {slide.title}
-        </h1>
-        <p
-          style={{
-            fontFamily: "var(--font-display)",
-            fontStyle: "italic",
-            color: "var(--carbon)",
-            fontSize: "clamp(1.05rem, 2.6vw, 1.35rem)",
-            margin: "0 0 26px",
-          }}
-        >
-          {slide.subtitle}
-        </p>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: Explainer || slide.image ? "repeat(auto-fit, minmax(280px, 1fr))" : "1fr",
-            gap: 30,
-            alignItems: "start",
-          }}
-        >
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 15 }}>
-            {slide.bullets.map((b, i) => (
-              <li key={i} style={{ position: "relative", paddingLeft: 22, lineHeight: 1.55, fontSize: "1.02rem", color: "var(--text-soft)" }}>
-                <span style={{ position: "absolute", left: 0, top: 9, width: 7, height: 7, borderRadius: "50%", background: "var(--carbon)" }} />
-                {b}
-              </li>
-            ))}
-          </ul>
-
-          {Explainer ? (
-            <div style={{ minWidth: 0 }}>
-              <Explainer />
-            </div>
-          ) : slide.image ? (
-            <div style={{ background: "var(--bg-2)", borderRadius: 12, padding: 14, border: "1px solid var(--border)" }}>
-              <Image
-                src={slide.image}
-                alt={slide.imageAlt || slide.title}
-                width={460}
-                height={280}
-                style={{ borderRadius: 6, maxWidth: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </div>
-          ) : null}
-        </div>
-
-        <div
-          style={{
-            marginTop: 28,
-            background: "var(--carbon-soft)",
-            borderLeft: "3px solid var(--carbon)",
-            padding: "14px 18px",
-            borderRadius: 8,
-            fontSize: "0.95rem",
-            color: "var(--text-soft)",
-          }}
-        >
-          <strong style={{ color: "var(--carbon)", display: "flex", alignItems: "center", gap: 6, marginBottom: 4, fontFamily: "var(--font-mono)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-            <Mic size={14} /> Notas del orador
-          </strong>
-          {slide.speakerNotes}
-        </div>
+          <aside className="sd-notes">
+            <strong>
+              <Mic size={13} /> Notas del orador
+            </strong>
+            {slide.speakerNotes}
+          </aside>
+        </article>
       </div>
 
-      {/* Controles */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 18 }}>
-        <span className="mono" style={{ fontSize: "0.74rem", color: "var(--muted)" }}>
-          ← → para navegar
-        </span>
-        <div style={{ display: "flex", gap: 10 }}>
-          {slideIndex > 0 && (
-            <Link href={`/slides/${slideIndex - 1}`} className="btn">
-              <ArrowLeft size={14} /> Anterior
-            </Link>
-          )}
-          {slideIndex < slidesData.length - 1 ? (
-            <Link href={`/slides/${slideIndex + 1}`} className="btn btn-primary">
-              Siguiente <ArrowRight size={14} />
-            </Link>
-          ) : (
-            <Link href="/" className="btn btn-primary">
-              Ir al ensayo <ArrowRight size={14} />
-            </Link>
-          )}
+      {/* Barra flotante */}
+      <nav className="sd-navbar" aria-label="Navegación de diapositivas">
+        <span
+          className="sd-navprogress"
+          style={{ width: `${((slideIndex + 1) / total) * 100}%` }}
+        />
+        <span className="sd-navbrand">S⇄T</span>
+        <button
+          className="sd-arrow"
+          onClick={() => slideIndex > 0 && (window.location.href = `/slides/${slideIndex - 1}`)}
+          disabled={slideIndex === 0}
+          aria-label="Anterior"
+        >
+          <ArrowLeft size={17} />
+        </button>
+        <button className="sd-navpill" onClick={() => setPicker(true)}>
+          <LayoutGrid size={13} />
+          <span className="sd-navpill-label">{slide.title}</span>
+          <small>{pad(slideIndex + 1)}/{pad(total)}</small>
+        </button>
+        <button
+          className="sd-arrow"
+          onClick={() => slideIndex < total - 1 && (window.location.href = `/slides/${slideIndex + 1}`)}
+          disabled={slideIndex === total - 1}
+          aria-label="Siguiente"
+        >
+          <ArrowRight size={17} />
+        </button>
+        <Link href="/" className="sd-navdata">
+          <FileText size={13} /> Ensayo
+        </Link>
+      </nav>
+
+      {/* Selector de diapositivas */}
+      {picker && (
+        <div className="sd-modal-backdrop" onClick={() => setPicker(false)}>
+          <div className="sd-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="sd-modal-head">
+              <span>Diapositivas · {total}</span>
+              <button className="sd-modal-close" onClick={() => setPicker(false)} aria-label="Cerrar">
+                <X size={16} />
+              </button>
+            </div>
+            <div className="sd-modal-grid">
+              {slidesData.map((s, i) => (
+                <Link
+                  key={i}
+                  href={`/slides/${i}`}
+                  className={`sd-modal-item${i === slideIndex ? " active" : ""}`}
+                  onClick={() => setPicker(false)}
+                >
+                  <span className="sd-modal-num">{pad(i + 1)}</span>
+                  <span className="sd-modal-name">{s.title}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

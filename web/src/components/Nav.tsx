@@ -50,6 +50,9 @@ export default function Nav() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href.split("/").slice(0, 2).join("/"));
 
+  // El deck de diapositivas es a pantalla completa: sin barra de navegación del sitio.
+  if (pathname?.startsWith("/slides")) return null;
+
   return (
     <nav className="nav">
       <Link href="/" className="nav-brand" style={{ textDecoration: "none" }}>
