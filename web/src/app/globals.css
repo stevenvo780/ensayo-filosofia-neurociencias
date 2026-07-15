@@ -536,7 +536,6 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 }
 
 .sd-notes {
-  margin-top: clamp(22px, 3vw, 32px);
   display: block;
   border: 1px solid var(--border);
   border-left: 3px solid var(--carbon);
@@ -558,6 +557,39 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
   text-transform: uppercase;
   color: var(--carbon);
 }
+
+/* Cajón de notas del orador: vive FUERA del panel escalado (no se proyecta ni
+   afecta al fit-to-viewport). Se conmuta con «N» o el botón de la barra. */
+.sd-notes-drawer {
+  position: fixed;
+  z-index: 68;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5.6rem;
+  width: min(1040px, calc(100% - 32px));
+  max-height: min(38vh, 340px);
+  overflow-y: auto;
+  background:
+    linear-gradient(152deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.012)),
+    rgba(15, 19, 26, 0.94);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+.sd-notes-close {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 7px;
+  padding: 3px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.sd-notes-close:hover { background: rgba(255, 255, 255, 0.1); color: var(--text); }
+.sd-notes-toggle.active { background: rgba(224, 161, 92, 0.22); color: var(--carbon-2); }
+@media (max-width: 560px) { .sd-notes-drawer { max-height: 44vh; } }
 
 /* ── Barra flotante ── */
 .sd-navbar {

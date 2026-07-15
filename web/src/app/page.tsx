@@ -94,7 +94,7 @@ export default function Home() {
             <p>
               Del lado neurocientífico la convergencia es real: la interocepción muestra hasta qué punto la
               experiencia se organiza alrededor de la regulación del estado corporal (Chen et al., 2021;
-              Greenwood y Garfinkel, 2024). Seth (2025) la lleva a su conclusión filosófica: la conciencia
+              Greenwood y Garfinkel, 2025). Seth (2025) la lleva a su conclusión filosófica: la conciencia
               sería «una propiedad únicamente de los sistemas vivos (aunque no necesariamente de todos)», y
               simular algo no es realizarlo —«nada se moja dentro de una computadora que predice el clima»—.
               Conviene ser exacto con el defensor más cuidadoso de esta posición: sus argumentos, dice, «no
@@ -278,8 +278,11 @@ export default function Home() {
               <em>prestada</em> —la del artefacto, cuya identidad «le es acordada» por otro— es de Jonas
               (1968); y que el problema de la individualidad sea «el de justificar cuál separación elegimos
               entre el gran conjunto de distinciones posibles y arbitrarias» está dicho, con esas palabras,
-              en Barandiaran, Di Paolo y Rohde (2009). No descubro la condición de individualidad: la aplico
-              donde no se la había cobrado.
+              en Barandiaran, Di Paolo y Rohde (2009); y el segundo cuerno de mi dilema lo demostraron antes
+              Villalobos y Dewhurst (2018), que muestran que una máquina de Turing físicamente
+              implementada satisface la clausura operacional y la determinación estructural del
+              enactivismo clásico. No descubro la condición de individualidad, ni ese cuerno: mío es el
+              primero —que la autopoiesis estricta individúa células— y la forma de tenaza.
             </p>
             <p>
               No he mostrado que una máquina sienta, ni que la vida sea irrelevante para la mente: el
@@ -338,16 +341,16 @@ export default function Home() {
                 "Barandiaran, X. E., Di Paolo, E., y Rohde, M. (2009). Defining Agency: Individuality, Normativity, Asymmetry, and Spatio-temporality in Action. Adaptive Behavior, 17(5), 367-386.",
                 "Beer, R. D. (2004). Autopoiesis and Cognition in the Game of Life. Artificial Life, 10(3), 309-326.",
                 "Bennett, M. R., y Hacker, P. M. S. (2022). The Mereological Fallacy in Neuroscience. En Philosophical Foundations of Neuroscience (2ª ed.). Wiley-Blackwell.",
-                "Chen, W. G., et al. (2021). The Emerging Science of Interoception. Trends in Neurosciences, 44(1), 3-16.",
+                "Chen, W. G., y cols. (2021). The emerging science of interoception: Sensing, integrating, interpreting, and regulating signals within the self. Trends in Neurosciences, 44(1), 3-16.",
                 "Clark, A. (2015). Radical Predictive Processing. Southern Journal of Philosophy, 53, 3-27.",
                 "Daugman, J. (2001). Brain Metaphor and Brain Theory. En Philosophy and the Neurosciences: A Reader. Blackwell.",
                 "Di Paolo, E. A. (2005). Autopoiesis, Adaptivity, Teleology, Agency. Phenomenology and the Cognitive Sciences, 4(4), 429-452.",
                 "Fodor, J. A. (1974). Special Sciences. Synthese, 28(2), 97-115.",
-                "Greenwood, K., y Garfinkel, S. (2024). Interoceptive Mechanisms and Emotional Processing.",
+                "Greenwood, B. M., y Garfinkel, S. N. (2025). Interoceptive mechanisms and emotional processing. Annual Review of Psychology, 76(1), 59-86.",
                 "Hinton, G. E. (1992). How Neural Networks Learn from Experience. Scientific American, 267(3), 144-151.",
                 "Jonas, H. (1968). Biological Foundations of Individuality. International Philosophical Quarterly, 8(2), 231-251.",
                 "Maturana, H. R., y Varela, F. J. (1980). Autopoiesis and Cognition: The Realization of the Living. D. Reidel.",
-                "Mylopoulos, M. (2022). Neurobiological Theories of Consciousness.",
+                "Mylopoulos, M. (2022). Neurobiological theories of consciousness. En B. D. Young y C. D. Jennings (Eds.), Mind, Cognition, and Neuroscience: A Philosophical Introduction (pp. 280-293). Routledge.",
                 "Putnam, H. (1967). Psychological Predicates. En Art, Mind, and Religion. Univ. of Pittsburgh Press.",
                 "Searle, J. R. (1980). Minds, Brains, and Programs. Behavioral and Brain Sciences, 3(3), 417-457.",
                 "Searle, J. R. (1992). The Rediscovery of the Mind. MIT Press.",
@@ -355,6 +358,7 @@ export default function Home() {
                 "Thompson, E. (2007). Mind in Life. Harvard University Press.",
                 "Varela, F. J. (1979). Principles of Biological Autonomy. North-Holland. [Ed. anotada: Di Paolo y Thompson (Eds.), MIT Press, 2024.]",
                 "Varela, F. J., Maturana, H. R., y Uribe, R. (1974). Autopoiesis: The Organization of Living Systems. BioSystems, 5(4), 187-196.",
+                "Villalobos, M., y Dewhurst, J. (2018). Enactive autonomy in computational systems. Synthese, 195(5), 1891-1908.",
                 "Webb, B. (1996). A Cricket Robot. Scientific American, 275(6), 94-99.",
               ].map((r, i) => (
                 <li key={i} style={{ marginBottom: 8, paddingLeft: 14, borderLeft: "2px solid var(--border)" }}>

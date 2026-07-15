@@ -193,8 +193,14 @@ const slidesData: SlideData[] = [
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
+// Por debajo de este factor el cuerpo de la diapositiva deja de ser legible a
+// distancia de proyección. Es un SUELO: si una diapositiva lo necesita, su
+// contenido es demasiado largo y hay que recortarlo (se avisa por consola).
+const MIN_SCALE = 0.72;
+
 export default function SlideClient({ slideIndex }: { slideIndex: number }) {
   const [picker, setPicker] = useState(false);
+  const [notesOpen, setNotesOpen] = useState(false);
   const panelRef = useRef<HTMLElement>(null);
   const [scale, setScale] = useState(1);
   const total = slidesData.length;
@@ -202,6 +208,8 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
   // Ajuste a la pantalla: cada diapositiva se escala para caber ENTERA en el
   // viewport (16:9 1080p incluido), sin scroll ni desborde, a cualquier
   // resolución. Se recalcula al cambiar de slide y al redimensionar.
+  // OJO: se mide SÓLO el contenido proyectable. Las notas del orador viven
+  // fuera del panel (cajón conmutable), así que no encogen la diapositiva.
   useLayoutEffect(() => {
     const el = panelRef.current;
     if (!el) return;
@@ -214,7 +222,15 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
         if (!nW || !nH) return;
         const availW = window.innerWidth - 32;
         const availH = window.innerHeight - 92; // reserva la barra flotante
-        setScale(Math.min(1, availW / nW, availH / nH));
+        const raw = Math.min(1, availW / nW, availH / nH);
+        if (raw < MIN_SCALE) {
+          console.warn(
+            `[deck] Diapositiva ${slideIndex + 1} necesita scale ${raw.toFixed(
+              3
+            )} < ${MIN_SCALE}: el contenido es demasiado largo para el viewport actual.`
+          );
+        }
+        setScale(Math.max(MIN_SCALE, raw));
       });
     };
     fit();
@@ -232,8 +248,13 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setPicker(false);
-      else if (e.key === "ArrowRight" && slideIndex < total - 1)
+      if (e.key === "Escape") {
+        setPicker(false);
+        setNotesOpen(false);
+      } else if (e.key === "n" || e.key === "N") {
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        setNotesOpen((v) => !v);
+      } else if (e.key === "ArrowRight" && slideIndex < total - 1)
         window.location.href = `/slides/${slideIndex + 1}`;
       else if (e.key === "ArrowLeft" && slideIndex > 0)
         window.location.href = `/slides/${slideIndex - 1}`;
@@ -323,15 +344,26 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
               </div>
             ) : null}
           </div>
-
-          <aside className="sd-notes">
-            <strong>
-              <Mic size={13} /> Notas del orador
-            </strong>
-            {slide.speakerNotes}
-          </aside>
         </article>
       </div>
+
+      {/* Notas del orador: FUERA del panel medido — no afectan al escalado ni
+          se proyectan. Se conmutan con la tecla «N» o el botón de la barra. */}
+      {notesOpen && (
+        <aside className="sd-notes sd-notes-drawer" aria-label="Notas del orador">
+          <strong>
+            <Mic size={13} /> Notas del orador · {pad(slideIndex + 1)}/{pad(total)}
+            <button
+              className="sd-notes-close"
+              onClick={() => setNotesOpen(false)}
+              aria-label="Cerrar notas del orador"
+            >
+              <X size={14} />
+            </button>
+          </strong>
+          {slide.speakerNotes}
+        </aside>
+      )}
 
       {/* Barra flotante */}
       <nav className="sd-navbar" aria-label="Navegación de diapositivas">
@@ -360,6 +392,15 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
           aria-label="Siguiente"
         >
           <ArrowRight size={17} />
+        </button>
+        <button
+          className={`sd-arrow sd-notes-toggle${notesOpen ? " active" : ""}`}
+          onClick={() => setNotesOpen((v) => !v)}
+          aria-pressed={notesOpen}
+          title="Notas del orador (N)"
+          aria-label="Notas del orador"
+        >
+          <Mic size={15} />
         </button>
         <Link href="/" className="sd-navdata">
           <FileText size={13} /> Ensayo

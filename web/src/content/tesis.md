@@ -49,7 +49,7 @@ De aquí Thompson (2007) extrae la **tesis de continuidad vida-mente**: los prin
 
 ### I.4. El respaldo neurocientífico
 
-Del lado empírico la convergencia es real, y el seminario la recorrió. La ciencia de la **interocepción** —el sentido del estado del propio cuerpo: señales viscerales, cardiovasculares, inmunes, metabólicas— muestra hasta qué punto la experiencia se organiza alrededor de la regulación del medio interno (Chen et al., 2021; Greenwood y Garfinkel, 2024). El afecto no aparece como una capa expresiva sobre una cognición neutra, sino como el modo en que el sistema registra su propia condición de viabilidad. Seth (2021) construye sobre esto su tesis del *beast machine*: percibimos el mundo, y a nosotros mismos, con y a través de un cuerpo cuya persistencia hay que asegurar.
+Del lado empírico la convergencia es real, y el seminario la recorrió. La ciencia de la **interocepción** —el sentido del estado del propio cuerpo: señales viscerales, cardiovasculares, inmunes, metabólicas— muestra hasta qué punto la experiencia se organiza alrededor de la regulación del medio interno (Chen et al., 2021; Greenwood y Garfinkel, 2025). El afecto no aparece como una capa expresiva sobre una cognición neutra, sino como el modo en que el sistema registra su propia condición de viabilidad. Seth (2021) construye sobre esto su tesis del *beast machine*: percibimos el mundo, y a nosotros mismos, con y a través de un cuerpo cuya persistencia hay que asegurar.
 
 Seth (2025) lleva esto a su formulación más cuidada, y aquí quiero ser escrupuloso, porque es el defensor más fuerte de la posición que critico y sería fácil ganarle atribuyéndole lo que no dice. Su tesis es que «la conciencia es una propiedad únicamente de los sistemas vivos (aunque no necesariamente de todos)». Su argumento nuclear es que simular algo no es realizarlo: «nada se moja dentro de una computadora que predice el clima». Pero acota su pretensión con una honestidad que hay que devolverle: «los argumentos presentados hasta aquí no refutan el funcionalismo computacional. Pero lo vuelven menos plausible y menos atractivo». Y rechaza explícitamente el eje que suele atribuírsele: «tampoco suscribo el *chauvinismo* del carbono (la afirmación de que sólo la vida basada en carbono puede ser consciente)». Su eje **no es carbono/silicio; es vivo/no-vivo**. Toda crítica que le impute carbono-centrismo yerra el blanco, y la mía no se lo imputa.
 
@@ -398,16 +398,17 @@ Una línea por término. El propósito es **distinguir sin equiparar**: buena pa
 * Seth, A. K. (2025). *Conscious artificial intelligence and biological naturalism*. *Behavioral and Brain Sciences*, publicación anticipada en línea, 1-42. https://doi.org/10.1017/S0140525X25000032
 * Varela, F. J. (1979). *Principles of Biological Autonomy*. North-Holland. [Ed. anotada: E. A. Di Paolo & E. Thompson (Eds.), MIT Press, 2024.]
 * Varela, F. J., Maturana, H. R., & Uribe, R. (1974). *Autopoiesis: The Organization of Living Systems, Its Characterization and a Model*. *BioSystems*, 5(4), 187-196.
+* Villalobos, M., & Dewhurst, J. (2018). *Enactive autonomy in computational systems*. *Synthese*, 195(5), 1891-1908. https://doi.org/10.1007/s11229-017-1386-z
 * Webb, B. (1996). *A Cricket Robot*. *Scientific American*, 275(6), 94-99.
 
 ### Fuentes secundarias
 
 * Bennett, M. R., & Hacker, P. M. S. (2022). *The Mereological Fallacy in Neuroscience*. En *Philosophical Foundations of Neuroscience* (2ª ed.). Wiley-Blackwell.
-* Chen, W. G., et al. (2021). *The Emerging Science of Interoception: Sensing, Integrating, Interpreting and Regulating Signals within the Self*. *Trends in Neurosciences*, 44(1), 3-16.
+* Chen, W. G., y cols. (2021). *The emerging science of interoception: Sensing, integrating, interpreting, and regulating signals within the self*. *Trends in Neurosciences*, 44(1), 3-16. https://doi.org/10.1016/j.tins.2020.10.007
 * Clark, A. (2015). *Radical Predictive Processing*. *Southern Journal of Philosophy*, 53, 3-27.
 * Daugman, J. (2001). *Brain Metaphor and Brain Theory*. En W. Bechtel, P. Mandik & J. Mundale (Eds.), *Philosophy and the Neurosciences: A Reader*. Blackwell.
-* Greenwood, K., & Garfinkel, S. (2024). *Interoceptive Mechanisms and Emotional Processing*.
+* Greenwood, B. M., & Garfinkel, S. N. (2025). *Interoceptive mechanisms and emotional processing*. *Annual Review of Psychology*, 76(1), 59-86. https://doi.org/10.1146/annurev-psych-020924-125202
 * Hinton, G. E. (1992). *How Neural Networks Learn from Experience*. *Scientific American*, 267(3), 144-151.
-* Mylopoulos, M. (2022). *Neurobiological Theories of Consciousness*.
+* Mylopoulos, M. (2022). *Neurobiological theories of consciousness*. En B. D. Young & C. D. Jennings (Eds.), *Mind, Cognition, and Neuroscience: A Philosophical Introduction* (pp. 280-293). Routledge.
 * Seth, A. K. (2021). *Being You: A New Science of Consciousness*. Faber & Faber.
 * Thompson, E. (2007). *Mind in Life: Biology, Phenomenology, and the Sciences of Mind*. Harvard University Press.
