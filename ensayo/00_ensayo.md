@@ -15,11 +15,11 @@ El debate vive de confundir dos tesis vecinas. **No niego que la vida sea condic
 
 La metáfora del cerebro como computadora acaba dictando la teoría (Daugman, 2001). Su versión filosófica es la realizabilidad múltiple (Putnam, 1967; Fodor, 1974): los estados mentales se definen por rol causal, no por composición, y son realizables en cualquier medio apto. Corolario: el sustrato sería ontológicamente irrelevante.
 
-Contra eso convergen dos tradiciones. Searle (1980) sostiene, con la habitación china, que la sintaxis no basta para la semántica, y su naturalismo biológico (1992), que la conciencia es un fenómeno causado por procesos neurofisiológicos. La segunda viene de la biología teórica: Maturana y Varela definen lo vivo por la **autopoiesis**, un sistema que produce y regenera sus componentes y su frontera (Varela, Maturana y Uribe, 1974; Maturana y Varela, 1980). Thompson (2007) extrae la continuidad vida-mente; Di Paolo (2005) la corrige desde dentro: hace falta **adaptividad**, la regulación activa de la propia precariedad.
+Contra eso convergen dos tradiciones. Searle (1980) sostiene, con la habitación china, que la sintaxis no basta para la semántica, y su naturalismo biológico (1992), que la conciencia es un fenómeno causado por procesos neurofisiológicos. La segunda, de la biología teórica: Maturana y Varela definen lo vivo por la **autopoiesis**, un sistema que produce y regenera componentes y frontera (Varela, Maturana y Uribe, 1974; Maturana y Varela, 1980). Thompson (2007) extrae la continuidad vida-mente; Di Paolo (2005) la corrige desde dentro: hace falta **adaptividad**, la regulación activa de la propia precariedad.
 
 Del lado neurocientífico, la interocepción muestra cuánta experiencia se organiza alrededor de la regulación corporal (Chen et al., 2021; Greenwood y Garfinkel, 2025). Seth (2025) lleva eso a su conclusión filosófica: la conciencia es «una propiedad únicamente de los sistemas vivos (aunque no necesariamente de todos)»; sus argumentos, dice, «no refutan» el funcionalismo, «pero lo vuelven menos plausible», y su eje es vivo/no-vivo, no carbono/silicio.
 
-El argumento canónico: la conciencia requiere un sujeto, un sistema uno cuyos estados tengan valencia; un sistema tiene valencia sólo si se produce a sí mismo y puede dejar de existir; ningún sistema de silicio se produce a sí mismo; luego ninguno es sujeto de conciencia.
+El argumento canónico: la conciencia requiere un sujeto, un sistema uno cuyos estados tengan valencia; un sistema tiene valencia sólo si se produce a sí mismo y puede morir; ningún sistema de silicio se produce a sí mismo; luego ninguno es sujeto de conciencia.
 
 Las dos primeras premisas exigen a la autopoiesis que no sólo distinga lo vivo de lo no vivo, sino que **individúe al portador de la experiencia**: que el sujeto esté donde está la auto-producción. Ahí se rompe.
 
@@ -31,7 +31,7 @@ El problema es de aritmética. En mi cuerpo hay del orden de 10¹³ unidades aut
 
 De ahí tres consecuencias. Primera: **el cerebro no es una unidad autopoiética**. No produce sus componentes; los producen sus células. Es un sistema de *segundo orden*: una unidad de unidades autopoiéticas que no es autopoiética.
 
-Segunda: **el hígado es tan autopoiético como el cerebro**. Si la auto-producción individuara al sujeto, nada explicaría por qué es el cerebro y no el hígado. Un criterio que no distingue entre órganos no es un criterio.
+Segunda: **el hígado es tan autopoiético como el cerebro**. Si la auto-producción individuara al sujeto, nada explicaría por qué es el cerebro y no el hígado. Un criterio que no distingue entre órganos no vale.
 
 Tercera: para escapar hay que añadir —integración causal, clausura operacional— algo que seleccione la escala. Pero **eso añadido hace todo el trabajo**: es una propiedad de la organización, no del material, lo que el funcionalista concede (Mylopoulos, 2022). La auto-producción queda como un epiciclo.
 
@@ -49,11 +49,11 @@ El tejido está vivo, se autoproduce y responde. Lo que falta es **integración*
 
 ## 4. La tradición ya lo sabía
 
-No es un descubrimiento mío: es la razón por la que Varela abandonó el marco estrecho. En *Principles of Biological Autonomy* (1979) generaliza la autopoiesis a la **autonomía**, articulada por la **clausura operacional**, porque la autopoiesis estricta es celular y no llega al organismo ni al sistema nervioso; la autonomía sí, pues no exige producción material, sino una red de procesos que se sostienen recíprocamente.
+No es un descubrimiento mío: es la razón por la que Varela abandonó el marco estrecho. En *Principles of Biological Autonomy* (1979) generaliza la autopoiesis a la **autonomía**, articulada por la **clausura operacional**, porque la autopoiesis estricta es celular y no llega al organismo ni al sistema nervioso; la autonomía sí, pues no exige producción material, sino una red de procesos recíprocos.
 
-La clausura operacional es **organizacional**: se define por cómo se encadenan los procesos, no por de qué están hechos. Una propiedad de la forma de la red es realizable en más de un medio. O la tradición se queda en la autopoiesis estricta —que no individúa al sujeto—, o asciende a la autonomía —que lo individúa, y no excluye sustrato alguno—. No hay tercera posición. **El camino que el enactivismo recorrió para individuar al sujeto es el mismo que le quita el argumento contra el silicio.**
+La clausura operacional es **organizacional**: se define por cómo se encadenan los procesos, no por de qué están hechos. Una propiedad de la forma de la red es realizable en más de un medio. O la tradición se queda en la autopoiesis estricta —que no individúa al sujeto—, o asciende a la autonomía —que lo individúa, sin excluir sustrato—. No hay tercera posición. **El camino que el enactivismo recorrió para individuar al sujeto es el mismo que le quita el argumento contra el silicio.**
 
-Beer (2004), analizando un *glider* del juego de la vida, observa que su identidad «depende crucialmente de cómo elegimos definir» su organización. El criterio es nítido en el caso paradigmático e indeterminado justo donde el argumento lo necesita.
+Beer (2004), analizando un *glider* del juego de la vida, observa que su identidad «depende crucialmente de cómo elegimos definir» su organización. El criterio es nítido en el caso paradigmático e indeterminado donde el argumento lo necesita.
 
 ## 5. Lo que construí, y lo que obtuve en su lugar
 
@@ -79,7 +79,7 @@ No he mostrado que una máquina sienta, ni que la vida sea irrelevante para la m
 
 El argumento del sustrato parecía tener dos cosas: un criterio material —la auto-producción— y un sujeto al cual aplicarlo. Tiene sólo una a la vez: en sentido estricto señala células —diez billones en un cuerpo, ninguna de ellas yo—; en el amplio individúa organismos, pero se ha vuelto una propiedad de la organización que no excluye sustratos: es la tesis del adversario.
 
-Bennett y Hacker enseñaron que atribuir a la parte lo que es del todo fabrica pseudoproblemas. El argumento del sustrato es un caso: discute de qué está hecho el sujeto antes de poder decir cuál es. Queda lo que perseguía mi laboratorio, y no donde lo buscaba: la diferencia real no es carbono contra silicio, sino automantenimiento **delegado** contra **constitutivo** —un sistema cuyas condiciones de persistencia son internas frente a uno que las tiene fuera, en técnicos y redes eléctricas cuya normatividad es ajena—. Ahí sí importa la energía: no por cuánta se gasta, sino por quién responde de ella. Pero esa diferencia es relativa al corte, y decidirlo es la tarea que el debate ha estado saltándose. Mientras la respuesta la ponga quien pregunta, «¿puede el silicio ser consciente?» no es todavía una pregunta: es un recorte a la espera de un argumento.
+Bennett y Hacker enseñaron que atribuir a la parte lo del todo fabrica pseudoproblemas. El argumento del sustrato es un caso: discute de qué está hecho el sujeto antes de decir cuál es. Queda lo que perseguía mi laboratorio, y no donde lo buscaba: la diferencia real no es carbono contra silicio, sino automantenimiento **delegado** contra **constitutivo** —un sistema cuyas condiciones de persistencia son internas frente a uno que las tiene fuera, en técnicos y redes eléctricas cuya normatividad es ajena—. Ahí sí importa la energía: no por cuánta se gasta, sino por quién responde de ella. Pero esa diferencia es relativa al corte, y decidirlo es la tarea que el debate ha estado saltándose. Mientras la respuesta la ponga quien pregunta, «¿puede el silicio ser consciente?» no es todavía una pregunta: es un recorte a la espera de un argumento.
 
 ## Bibliografía
 
