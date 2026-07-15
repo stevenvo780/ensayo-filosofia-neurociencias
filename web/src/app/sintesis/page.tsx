@@ -7,7 +7,7 @@ import ArgMap from "@/components/ArgMap";
 export const metadata: Metadata = {
   title: "Síntesis — para leer en clase",
   description:
-    "El argumento entero en voz alta: por qué la autopoiesis no puede decidir el problema del sustrato. Guión de lectura (~7 min).",
+    "El argumento entero en voz alta: por qué la autopoiesis no puede decidir el problema del sustrato. Guión de lectura (~8 min).",
 };
 
 // Guión de lectura: cada «beat» es una unidad de habla con su tiempo estimado.
@@ -133,24 +133,33 @@ const BEATS: { n: string; t: string; title: string; body: React.ReactNode }[] = 
   },
   {
     n: "06",
-    t: "~90 s",
-    title: "Lo que construí, y la objeción más fuerte",
+    t: "~130 s",
+    title: "El laboratorio, el benchmark, y la objeción más fuerte",
     body: (
       <>
         Construí un experimento por cada lectura del seminario: la jerarquía visual de Zeki, las células
         de concepto de Quian Quiroga, la neuroquímica de LeDoux, la plasticidad de Hinton, el grillo de
-        Webb. Ninguno encontró diferencia de sustrato. El que más rindió fue una medida —un coeficiente κ
-        de acoplamiento entre cómputo y auto-mantenimiento— presentada en su momento como la firma
-        operacional de la autopoiesis. Auditada, medía otra cosa: <strong>compartición de un presupuesto
-        de recursos</strong>. Eso lo tiene un portátil cuyo cómputo compite con su refrigeración por el
-        mismo presupuesto eléctrico. Si κ fuera la firma de la autopoiesis, mi computador estaría vivo.
+        Webb. Ninguno encontró la diferencia de sustrato que yo buscaba.
+        <br />
+        <br />
+        Mi única medición genuina fue otra cosa: un <strong>benchmark de diecinueve
+        configuraciones</strong>, porque empecé buscando en él la prueba de que el silicio es
+        energéticamente inviable. La brecha de eficiencia entre <span className="carbon">carbono</span> y{" "}
+        <span className="si">silicio</span> va de 2,9×10³ a 4,1×10⁵ —se mueve <strong>143 veces</strong>—
+        y no monotónicamente: el mínimo está en medio, no en los extremos, y repartir el mismo cómputo
+        entre dos tarjetas lo <strong>empeora</strong>. Un número que cambia dos órdenes de magnitud según
+        cómo distribuyo el trabajo no mide el silicio: mide mi ingeniería. Laureys ya lo había dicho desde
+        la clínica: el consumo de energía no indica la presencia de consciencia. Mi intuición no era
+        falsa; estaba mal dirigida.
         <br />
         <br />
         Y hay una comprobación que lo cierra. Si dejo intacta la máquina y muevo sólo la{" "}
         <strong>frontera</strong> —si cuento la fuente de alimentación como parte del sistema en vez de
         como un exterior inagotable—, el mismo <span className="si">silicio</span> pasa de κ = 0,00 a{" "}
-        <strong>κ = 0,70</strong>, del orden del 0,88 del supuesto <span className="carbon">carbono</span>.
-        No cambió el sustrato: cambió el corte.
+        <strong>κ = 0,70</strong> (24 semillas). No cambió el sustrato: cambió el corte. Lo que queda, y
+        no en el lugar donde lo buscaba, es que la diferencia real es automantenimiento{" "}
+        <strong>delegado</strong> contra <strong>constitutivo</strong>: ahí sí importa la energía, no por
+        cuánta se gasta, sino por quién responde de ella.
         <br />
         <br />
         Queda la réplica más fuerte: «de acuerdo, la auto-producción no individúa al sujeto, pero sigue
@@ -181,7 +190,7 @@ export default function SintesisPage() {
         }}
       >
         <div className="eyebrow" style={{ color: "var(--hero-muted)", marginBottom: 14 }}>
-          Para leer en clase · ~7 min
+          Para leer en clase · ~8 min
         </div>
         <h1
           style={{

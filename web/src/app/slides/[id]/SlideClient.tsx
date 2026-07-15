@@ -164,18 +164,18 @@ const slidesData: SlideData[] = [
   },
   {
     title: "El laboratorio",
-    subtitle: "Un experimento por lectura del seminario — ninguno encontró la diferencia de sustrato",
+    subtitle: "El benchmark: la brecha se mueve 143×, y no monótonamente",
     bullets: [
-      "Un experimento por lectura: Zeki, Quian Quiroga, LeDoux, Hinton, Webb.",
-      "Ninguno encontró la diferencia de sustrato.",
-      "κ: frontera estrecha (chip solo) = 0,00 · frontera ampliada (+fuente) = 0,70.",
-      "No cambió el sustrato: cambió el corte (24 semillas).",
+      "Un experimento por lectura: Zeki, Quian Quiroga, LeDoux, Hinton, Webb — ninguno halló la diferencia de sustrato.",
+      "El benchmark (19 configs, mi única medición genuina): la brecha va de 2,9×10³ a 4,1×10⁵ — se mueve 143×, no monótonamente.",
+      "El mínimo está en medio, no en los extremos: repartir el cómputo entre dos tarjetas la empeora — mide mi ingeniería, no el silicio.",
+      "κ: chip solo = 0,00 · chip + fuente = 0,70 (24 semillas). Cambió el corte, no el sustrato.",
     ],
     image: "/graficos/exp10_acoplamiento.png",
     imageAlt:
       "Experimento 10: la misma máquina, con la frontera estrecha, es inmune a la lesión (κ=0,00); ampliada para incluir su fuente de alimentación, se degrada (κ=0,70).",
     speakerNotes:
-      "Esto es exhibición, no confesión. Construí un experimento por cada lectura del seminario: la jerarquía visual de Zeki, las células de concepto de Quian Quiroga, la neuroquímica de LeDoux, la plasticidad de Hinton, el grillo de Webb. Ninguno encontró diferencia de sustrato. Los que sobrevivieron a mi propia auditoría me devolvieron la constante que yo había escrito antes de correrlos; otros ni siquiera llegaron a eso. Nada de esto prueba mi tesis, y lo digo yo antes de que lo diga otro: un modelo mal construido siempre devuelve su estipulación, y eso es un hecho sobre mí, no sobre el mundo. El argumento lo llevan las secciones anteriores, no mi código. Lo que el laboratorio sí exhibe es el corte. Intenté construir un coeficiente κ de acoplamiento entre cómputo y automantenimiento como refutador posible de mi propia tesis: una firma autopoiética invariante ante dónde se traza la frontera del sistema. Con la máquina intacta y la misma perturbación, contar la fuente de alimentación como parte del sistema en vez de como un exterior inagotable lleva κ de 0,00 a 0,70, con 24 semillas. No cambió el sustrato: cambió dónde tracé la línea. Cuidado con el lenguaje aquí, porque es fácil pasarse: el número no confirma nada por sí mismo y no lo presenten como si lo hiciera; lo único que muestra es que el corte, no el material, mueve el número.",
+      "Esto es exhibición, no confesión. Construí un experimento por cada lectura del seminario: la jerarquía visual de Zeki, las células de concepto de Quian Quiroga, la neuroquímica de LeDoux, la plasticidad de Hinton, el grillo de Webb. Ninguno encontró la diferencia de sustrato que yo buscaba. Los que sobrevivieron a mi propia auditoría me devolvieron la constante que yo había escrito antes de correrlos; otros ni siquiera llegaron a eso. Mi única medición genuina fue distinta: un benchmark de diecinueve configuraciones, y es la que más me enseñó, porque empecé buscando en ella la prueba de que el silicio es energéticamente inviable. La brecha de eficiencia entre carbono y silicio recorre, en mis propios datos, de 2,9×10³ a 4,1×10⁵ —se mueve ciento cuarenta y tres veces— y no monotónicamente: el mínimo no está en ningún extremo, sino en medio, y repartir el mismo cómputo entre dos tarjetas la empeora. Un número que cambia dos órdenes de magnitud según cómo distribuyo el trabajo no mide una propiedad del silicio: mide mi ingeniería. Laureys ya lo había dicho desde la clínica, con pacientes: el consumo de energía no indica la presencia de consciencia. Mi intuición no era falsa; estaba mal dirigida: medía con cuidado la magnitud equivocada. Nada de esto prueba mi tesis, y lo digo yo antes de que lo diga otro: un modelo mal construido siempre devuelve su estipulación, y eso es un hecho sobre mí, no sobre el mundo. Lo que el laboratorio sí exhibe es el corte. Intenté construir un coeficiente κ de acoplamiento entre cómputo y automantenimiento como refutador posible de mi propia tesis: una firma autopoiética invariante ante dónde se traza la frontera del sistema. Con la máquina intacta y la misma perturbación, contar la fuente de alimentación como parte del sistema en vez de como un exterior inagotable lleva κ de 0,00 a 0,70, con 24 semillas. No cambió el sustrato: cambió dónde tracé la línea. Lo que queda, y no en el lugar donde lo buscaba, es que la diferencia real es automantenimiento delegado contra constitutivo: ahí sí importa la energía, no por cuánta se gasta, sino por quién responde de ella.",
   },
   {
     title: "Qué NO se sigue",

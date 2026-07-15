@@ -10,7 +10,7 @@ const TOC_ITEMS = [
   { id: "s2", label: "2 · La unidad" },
   { id: "s3", label: "3 · La clínica" },
   { id: "s4", label: "4 · La tradición" },
-  { id: "s5", label: "5 · κ y el corte" },
+  { id: "s5", label: "5 · El benchmark y el corte" },
   { id: "s6", label: "6 · Objeción" },
   { id: "conclusion", label: "Conclusión" },
   { id: "biblio", label: "Bibliografía" },
@@ -257,24 +257,33 @@ export default function Home() {
             <p>
               Construí un experimento por cada lectura del seminario: la jerarquía visual de Zeki (1992),
               las células de concepto de Quian Quiroga, la neuroquímica de LeDoux (1994), la plasticidad de
-              Hinton (1992), el grillo de Webb. Ninguno encontró diferencia de sustrato. El que más rindió
-              fue un modelo de dos sistemas que computan bajo una «lesión metabólica» para medir un
-              coeficiente κ de acoplamiento entre cómputo y auto-mantenimiento, presentado en su momento
-              como la <em>firma operacional</em> de la autopoiesis: κ≈0,88 para el acoplado, κ=0,00 para el
-              desacoplado.
+              Hinton (1992), el grillo de Webb. Ninguno encontró la diferencia de sustrato que yo buscaba.
+              Los que sobrevivieron a mi auditoría me devolvieron la constante que había escrito antes de
+              correrlos; otros ni siquiera llegaron a eso.
             </p>
             <p>
-              La auditoría del código muestra tres cosas. κ=0 no es un resultado: en esa rama el recurso se
-              repone por estipulación en cada paso y el parámetro lesionado no aparece en la ecuación
-              —envenenarlo con valores absurdos sigue devolviendo cero—; es una identidad aritmética. κ≈0,88
-              tampoco es un descubrimiento: tiene forma cerrada y recorre todo el rango [0,1] al mover un
-              solo parámetro. Y lo que κ mide, cuando mide algo, es{" "}
-              <strong>compartición de un presupuesto de recursos</strong> —eso lo tiene un portátil cuyo
-              cómputo compite con su refrigeración por el mismo presupuesto eléctrico—. Si κ fuera la firma
-              de la autopoiesis, mi computador estaría vivo. Peor:{" "}
-              <strong>ninguna de mis dos ramas es autopoiética</strong>, pues en ambas la bomba homeostática
-              es un parámetro exógeno que yo lesiono desde fuera; no hay clausura de producción ni
-              adaptividad, que es lo que Di Paolo (2005) exige.
+              Mi única medición genuina fue un <strong>benchmark de diecinueve configuraciones</strong>, y
+              es la que más me enseñó, porque empecé buscando en ella la prueba de que el silicio es
+              energéticamente inviable. La brecha de eficiencia entre{" "}
+              <span className="carbon">carbono</span> y <span className="si">silicio</span> recorre, en mis
+              propios datos, de 2,9×10³ a 4,1×10⁵ —se mueve <strong>143 veces</strong>— y no
+              monotónicamente: el mínimo no está en ningún extremo, sino en medio, y repartir el mismo
+              cómputo entre dos tarjetas la <strong>empeora</strong>. Un número que cambia dos órdenes de
+              magnitud según cómo distribuyo el trabajo no mide una propiedad del silicio: mide{" "}
+              <strong>mi ingeniería</strong>. Laureys ya lo había dicho desde la clínica, y con pacientes: el
+              consumo de energía no indica la presencia de consciencia.{" "}
+              <em>Mi intuición no era falsa; estaba mal dirigida. Medía con cuidado la magnitud
+              equivocada.</em>
+            </p>
+            <p>
+              Nada de esto prueba mi tesis, y conviene decirlo antes de que lo diga otro: un modelo mal
+              construido siempre devuelve su estipulación, y eso es un hecho sobre mí, no sobre el mundo. Un
+              refutador de lo que sostengo sería una medida de la firma autopoiética{" "}
+              <strong>invariante ante el corte</strong>: que diera igual contando o no la fuente de
+              alimentación. Eso intenté construir —un coeficiente κ de acoplamiento entre cómputo y
+              automantenimiento—, y la auditoría mostró que fallaba por aritmética: el parámetro lesionado no
+              aparece siquiera en la ecuación. El argumento lo llevan las secciones anteriores, no mi código.
+              Pero sé qué obtuve en su lugar, cada vez: <strong>el corte</strong>.
             </p>
 
             <figure className="tesis-figure">
@@ -289,21 +298,17 @@ export default function Home() {
               <figcaption className="tesis-figure__cap">
                 <strong>Experimento 10 (reformado).</strong> La misma máquina, bajo la misma perturbación,
                 con dos fronteras distintas: contando sólo el chip, κ = 0,00 (inmune); contando también su
-                fuente de alimentación, κ = 0,70 (24 semillas). El sustrato no cambió: cambió el corte. κ
-                mide compartición de presupuesto de recursos, no autopoiesis.
+                fuente de alimentación, κ = 0,70 (24 semillas). El sustrato no cambió: cambió el corte.
               </figcaption>
             </figure>
 
             <p>
-              Y hay una comprobación que lo cierra. Si dejo intacta la máquina y muevo sólo la{" "}
-              <strong>frontera</strong> —si cuento la fuente de alimentación como parte del sistema en vez de
-              como un exterior inagotable—, el mismo <span className="si">silicio</span>, bajo la misma
-              perturbación, pasa de κ=0,00 a <strong>κ=0,70</strong>, del orden del 0,88 del{" "}
-              <span className="carbon">carbono</span>. No cambió el sustrato; cambió el corte. Construí la
-              operacionalización que debía dar al argumento su base objetiva y la vi fallar, y el diagnóstico
-              de por qué <em>tenía</em> que fallar es el de las secciones anteriores: κ no mide una propiedad
-              del sustrato, mide <strong>dónde tracé la frontera</strong>. La medida no descubre unidades:
-              las presupone.
+              Con la máquina intacta y la misma perturbación, contar la fuente de alimentación como parte
+              del sistema en vez de como un exterior inagotable lleva κ de 0,00 a <strong>0,70</strong>. No
+              cambió el sustrato: cambió dónde tracé la línea. Lo que queda, y no en el lugar donde lo
+              buscaba, es que la diferencia real es automantenimiento <strong>delegado</strong> contra{" "}
+              <strong>constitutivo</strong>: ahí sí importa la energía, no por cuánta se gasta, sino por
+              quién responde de ella.
             </p>
           </Reveal>
 

@@ -227,7 +227,13 @@ Auditando las once cifras publicadas, **ocho son consecuencias analíticas de co
 
 Un cálculo cerrado puede ser informativo —puede hacer vívida una consecuencia no obvia—, pero **no es evidencia** de nada sobre el mundo, y presentarlo con el formato de un experimento es engañoso aunque quien lo haga no tenga intención de engañar. Yo no la tenía; el efecto es el mismo.
 
-La única medición **empíricamente genuina** del laboratorio es el benchmark escalonado de consumo energético. Y aquí quiero reconocerle algo al texto original: ya la descontaba, describiéndola como «una cota superior de una comparación deliberadamente desfavorable». Es decir: la única cifra real del laboratorio es una cota **amañada contra el silicio**, y el texto lo sabía. Sostengo esa lectura y la refuerzo.
+La única medición **empíricamente genuina** del laboratorio es el benchmark escalonado de consumo energético, y es la que más me enseñó, porque fue ahí donde empecé buscando la prueba de que el silicio es energéticamente inviable.
+
+El benchmark recorre diecinueve configuraciones —de CPU a una sola GPU, de una sola GPU a dos en paralelo, y de ahí a un régimen híbrido CPU+GPU+GPU, cada tramo con su propio rango de tamaño de problema—. La brecha de eficiencia entre carbono y silicio, medida por evento sináptico, va de 2.855 a 409.761 (2,9×10³ a 4,1×10⁵) a lo largo de esas diecinueve configuraciones —se mueve ciento cuarenta veces (143×)— y no lo hace monotónicamente: el mínimo no está en ningún extremo de la tabla, sino en medio, y repartir el mismo cómputo entre dos tarjetas en vez de una, lejos de mejorar la eficiencia, la **empeora**.
+
+Un número que cambia dos órdenes de magnitud según cómo distribuyo el trabajo no mide una propiedad del silicio: mide mi ingeniería. Laureys, con pacientes y no con tarjetas gráficas, ya había llegado a la misma advertencia desde la clínica: «medir los niveles globales de consumo de energía en el cerebro no puede indicar la presencia de consciencia» (Laureys, 2007). Mi intuición de partida no era falsa; estaba mal dirigida. Medía con cuidado la magnitud equivocada.
+
+Y aquí quiero reconocerle algo al texto original: ya la descontaba, describiéndola como «una cota superior de una comparación deliberadamente desfavorable». Es decir: la única cifra real del laboratorio es una cota **amañada contra el silicio**, y el texto lo sabía. Sostengo esa lectura y la refuerzo.
 
 ### IV.3. Los datos fabricados del Experimento 1
 
@@ -373,7 +379,7 @@ En sentido estricto, la autopoiesis es objetiva y señala **células**: diez bil
 
 Bennett y Hacker enseñaron que atribuir a la parte lo que es del todo no es un desliz de estilo sino un error que fabrica pseudoproblemas. El argumento del sustrato es un caso, con la dirección invertida: elige un criterio que sólo se satisface en las partes y pretende que decida sobre el todo. Discute de qué está hecho el sujeto antes de poder decir cuál es.
 
-Queda algo, y es lo que me llevo. La diferencia real no es carbono contra silicio, sino automantenimiento **delegado** contra **constitutivo**: la hay, y es genuina, entre un sistema cuyas condiciones de persistencia son internas a la unidad y uno que las tiene fuera, en técnicos y redes eléctricas cuya normatividad es previa y ajena. Pero esa diferencia, como me enseñó mi propio experimento —misma máquina, misma perturbación, κ de 0,00 a 0,70 al mover sólo la frontera—, es **relativa al corte**. Y decidir el corte es la tarea que el debate ha estado saltándose.
+Queda algo, y es lo que me llevo. La diferencia real no es carbono contra silicio, sino automantenimiento **delegado** contra **constitutivo**: la hay, y es genuina, entre un sistema cuyas condiciones de persistencia son internas a la unidad y uno que las tiene fuera, en técnicos y redes eléctricas cuya normatividad es previa y ajena. Ahí sí importa la energía: no por cuánta se gasta, sino por quién responde de ella. Pero esa diferencia, como me enseñó mi propio experimento —misma máquina, misma perturbación, κ de 0,00 a 0,70 al mover sólo la frontera—, es **relativa al corte**. Y decidir el corte es la tarea que el debate ha estado saltándose.
 
 Mientras la respuesta la ponga quien pregunta, «¿puede el silicio ser consciente?» no es todavía una pregunta: es un recorte a la espera de un argumento.
 
