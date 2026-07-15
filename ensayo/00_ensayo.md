@@ -86,7 +86,7 @@ Esa asimetría se ramifica en tres ejes que la **tesis** anexa desarrolla —la 
 
 ## 4. Dinámica temporal, autopoiesis y la objeción funcionalista
 
-Esta divergencia nos traslada del terreno técnico al metafísico; debo evitar aquí un salto ilícito. El funcionalismo sostiene que el sustrato es ontológicamente irrelevante (Putnam, 1967), y acierta en algo decisivo: **una brecha de eficiencia, por enorme que sea, no implica por sí sola ausencia de conciencia.** Eficiencia y fenomenología son magnitudes ortogonales; un funcionalista consecuente replicaría que la realizabilidad múltiple *predice* que los detalles de implementación (energía, calor, velocidad) varíen entre sustratos: un silicio más lento no toca la organización funcional. La objeción más aguda es la de Chalmers (1995): si sustituyéramos las neuronas por chips funcionalmente idénticos, los qualia no deberían "danzar" ni "desvanecerse" sin que el sujeto lo notara; luego la experiencia la fijaría la organización, no el material.
+Esta divergencia nos traslada del terreno técnico al metafísico; debo evitar aquí un salto ilícito. El funcionalismo sostiene que el sustrato es ontológicamente irrelevante (Putnam, 1967), y acierta en algo decisivo: **una brecha de eficiencia, por enorme que sea, no implica por sí sola ausencia de conciencia.** Eficiencia y fenomenología son magnitudes ortogonales, y la realizabilidad múltiple *predice* que los detalles de implementación (energía, calor, velocidad) varíen entre sustratos sin tocar la organización funcional. La objeción más aguda es la de Chalmers (1995): si sustituyéramos las neuronas por chips funcionalmente idénticos, los qualia no deberían "danzar" ni "desvanecerse" sin que el sujeto lo notara; luego la experiencia la fijaría la organización, no el material.
 
 Mi respuesta no niega su fuerza, pero distingue dos cosas que el funcionalista suele fundir: ser *discreto* y estar *desacoplado de la vida*. Que una dinámica continua sea digitalmente aproximable con precisión arbitraria no garantiza preservar lo que aquí importa: el acoplamiento metabólico del cómputo con la auto-conservación del organismo. No afirmo que esa organización sea no-computable en principio; afirmo, más modestamente, que la carga de probar que un medio desacoplado de la vida preserva *lo relevante* no está saldada. Y la autopoiesis ofrece una razón para dudarlo. Varela, Maturana y Uribe (1974) definen lo vivo como un sistema que regenera continuamente su propia frontera material. En el carbono húmedo, procesar información es inseparable del mantenimiento de la célula: la neurona no computa para resolver un problema lógico, sino para regular su homeostasis. El silicio digital es estático: el paso de electrones no regenera su estructura, la degrada (electromigración, calor). El silicio no está vivo.
 
@@ -96,6 +96,8 @@ El **Experimento 4** ilustra cómo, de la física pasiva de una red excitatoria-
 *Fig. 6 — Experimento 4: la actividad oscilatoria beta–gamma emerge de la física pasiva del tejido, sin reloj externo.*
 
 Refino entonces la tesis sin sobreafirmarla: **el silicio digital puede replicar la organización *funcional* de la cognición, pero es dudoso que con ello origine su carácter fenoménico —los qualia—.** No por falta de transistores, sino porque carece de la vulnerabilidad homeostática que, según la tradición enactivista (Thompson, 2007), empuja a un organismo vivo a *sentir* el mundo para preservarse. Es una conjetura señalada, no un teorema: donde el argumento del costo físico se agota y comienza la apuesta enactivista.
+
+Y la sitúo con honestidad: **no soy el primero en atar la conciencia a la vida**. El *naturalismo biológico* de Searle (1980, 1992) —cuya habitación china ya negó que la sintaxis del cómputo baste para la semántica—, la continuidad vida-mente de Thompson (2007) y la neurociencia de la homeostasis de Damasio (2010) y Seth (2021) —el yo consciente como regulación de un cuerpo vivo— convergen en que la conciencia podría requerir estar vivo. Mi aporte no es esa tesis, sino el **método**: un laboratorio reproducible que vuelve *cuantificable* la divergencia de sustrato y mide su firma —el acoplamiento entre cómputo y auto-mantenimiento del Experimento 10—.
 
 ---
 
@@ -125,6 +127,7 @@ El análisis muestra que la equiparación funcionalista entre cerebro y computad
 * Chalmers, D. J. (1995). *Absent Qualia, Fading Qualia, Dancing Qualia*. En T. Metzinger (Ed.), *Conscious Experience*. Schöningh.
 * Clark, A. (2015). *Radical Predictive Processing*. *Southern Journal of Philosophy*, 53, 3-27.
 * Clark, A. (2023). *The Experience Machine: How Our Minds Predict and Shape Reality*. Pantheon Books.
+* Damasio, A. R. (2010). *Self Comes to Mind: Constructing the Conscious Brain*. Pantheon Books.
 * Daugman, J. (2001). *Brain Metaphor and Brain Theory*. En W. Bechtel, P. Mandik & J. Mundale (Eds.), *Philosophy and the Neurosciences: A Reader*. Blackwell.
 * Fodor, J. A. (1974). *Special Sciences (Or: The Disunity of Science as a Working Hypothesis)*. *Synthese*, 28(2), 97-115.
 * Hinton, G. E. (1992). *How Neural Networks Learn from Experience*. *Scientific American*, 267(3), 144-151.
@@ -133,6 +136,9 @@ El análisis muestra que la equiparación funcionalista entre cerebro y computad
 * Marder, E. (2012). *Neuromodulation of Neuronal Circuits: Back to the Future*. *Neuron*, 76(1), 1-11.
 * Putnam, H. (1967). *Psychological Predicates*. En W. H. Capitan & D. D. Merrill (Eds.), *Art, Mind, and Religion*. University of Pittsburgh Press.
 * Quian Quiroga, R., Fried, I., & Koch, C. (2013). *Brain Cells for Grandmother*. *Scientific American*, 308(2), 30-35.
+* Searle, J. R. (1980). *Minds, Brains, and Programs*. *Behavioral and Brain Sciences*, 3(3), 417-457.
+* Searle, J. R. (1992). *The Rediscovery of the Mind*. MIT Press.
+* Seth, A. K. (2021). *Being You: A New Science of Consciousness*. Faber & Faber.
 * Thompson, E. (2007). *Mind in Life: Biology, Phenomenology, and the Sciences of Mind*. Harvard University Press.
 * Turing, A. M. (1936). *On Computable Numbers, with an Application to the Entscheidungsproblem*. *Proceedings of the London Mathematical Society*, s2-42, 230-265.
 * Varela, F. J., Maturana, H. R., & Uribe, R. (1974). *Autopoiesis: The Organization of Living Systems, Its Characterization and a Model*. *BioSystems*, 5(4), 187-196.

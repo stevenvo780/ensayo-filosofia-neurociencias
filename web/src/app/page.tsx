@@ -180,6 +180,16 @@ export default function Home() {
               según la tradición enactivista (Varela; Thompson, 2007), empuja a un organismo vivo a{" "}
               <em>sentir</em> el mundo para preservarse. Es una conjetura señalada, no un teorema.
             </p>
+            <p>
+              Y la sitúo con honestidad: <strong>no soy el primero en atar la conciencia a la vida</strong>.
+              El <em>naturalismo biológico</em> de Searle (1980, 1992) —cuya habitación china ya negó que la
+              sintaxis del cómputo baste para la semántica—, la continuidad vida-mente de Thompson (2007) y
+              la neurociencia de la homeostasis de Damasio (2010) y Seth (2021) —el yo consciente como
+              regulación de un cuerpo vivo— convergen en que la conciencia podría requerir estar vivo. Mi
+              aporte no es esa tesis, sino el <strong>método</strong>: un laboratorio reproducible que vuelve{" "}
+              <em>cuantificable</em> la divergencia de sustrato y mide su firma —el acoplamiento entre
+              cómputo y auto-mantenimiento del Experimento 10—.
+            </p>
           </Reveal>
 
           {/* 5 */}
@@ -289,6 +299,7 @@ export default function Home() {
                 "Chalmers, D. J. (1995). Absent Qualia, Fading Qualia, Dancing Qualia. En T. Metzinger (Ed.), Conscious Experience. Schöningh.",
                 "Clark, A. (2015). Radical Predictive Processing. Southern Journal of Philosophy, 53, 3-27.",
                 "Clark, A. (2023). The Experience Machine. Pantheon Books.",
+                "Damasio, A. R. (2010). Self Comes to Mind: Constructing the Conscious Brain. Pantheon Books.",
                 "Daugman, J. (2001). Brain Metaphor and Brain Theory. En Philosophy and the Neurosciences. Blackwell.",
                 "Fodor, J. A. (1974). Special Sciences. Synthese, 28(2), 97-115.",
                 "Hinton, G. E. (1992). How Neural Networks Learn from Experience. Scientific American, 267(3).",
@@ -297,6 +308,9 @@ export default function Home() {
                 "Marder, E. (2012). Neuromodulation of Neuronal Circuits. Neuron, 76(1), 1-11.",
                 "Putnam, H. (1967). Psychological Predicates. En Art, Mind, and Religion. Univ. of Pittsburgh Press.",
                 "Quian Quiroga, R., Fried, I., y Koch, C. (2013). Brain Cells for Grandmother. Scientific American, 308(2).",
+                "Searle, J. R. (1980). Minds, Brains, and Programs. Behavioral and Brain Sciences, 3(3), 417-457.",
+                "Searle, J. R. (1992). The Rediscovery of the Mind. MIT Press.",
+                "Seth, A. K. (2021). Being You: A New Science of Consciousness. Faber & Faber.",
                 "Thompson, E. (2007). Mind in Life. Harvard University Press.",
                 "Turing, A. M. (1936). On Computable Numbers. Proc. London Math. Soc., s2-42.",
                 "Varela, F. J., Maturana, H. R., y Uribe, R. (1974). Autopoiesis. BioSystems, 5(4), 187-196.",

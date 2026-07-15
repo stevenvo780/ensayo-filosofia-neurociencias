@@ -92,7 +92,7 @@ const BEATS: { n: string; t: string; title: string; body: React.ReactNode }[] = 
   },
   {
     n: "05",
-    t: "~55 s",
+    t: "~70 s",
     title: "Dónde me detengo",
     body: (
       <>
@@ -100,7 +100,11 @@ const BEATS: { n: string; t: string; title: string; body: React.ReactNode }[] = 
         digital no pueda albergar conciencia. Pruebo dos cosas: que la neutralidad <em>ingenua</em> del
         sustrato es falsa —el costo de realizar una mente tiene cinco caras y no se deja borrar—; y que
         existe una hipótesis material y articulada —la autopoiesis— sobre <em>qué</em> del sustrato
-        podría ser constitutivo de la experiencia.
+        podría ser constitutivo de la experiencia. Y no soy el primero: el naturalismo biológico de{" "}
+        <span className="carbon">Searle</span>, la <em>máquina-bestia</em> de <span className="carbon">Seth</span>,
+        la continuidad vida-mente de <span className="carbon">Thompson</span> y la homeostasis de{" "}
+        <span className="carbon">Damasio</span> ya ataron la conciencia a la vida —mi aporte es{" "}
+        <em>medir</em> esa divergencia, no descubrirla—.
         <br />
         <br />
         Entre «el sustrato importa» y «no hay qualia en silicio» queda un abismo. Este trabajo no lo
