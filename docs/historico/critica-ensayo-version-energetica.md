@@ -1,5 +1,13 @@
 # Crítica profunda — Ensayo Final «¿Silicio o Tejido?»
 
+> ⚠️ **DOCUMENTO HISTÓRICO (6-jul-2026).** Es la crítica de una versión **anterior y abandonada**
+> del trabajo, cuando el ensayo se titulaba «¿Silicio o Tejido?» y su tesis era energética
+> (la brecha de eficiencia silicio/carbono). **Nada de lo que aquí se discute describe el ensayo
+> vigente**, que sostiene una tesis distinta: que el argumento del sustrato necesita una unidad
+> que no tiene. Se conserva como registro del proceso, no como evaluación del trabajo actual.
+> Gobierna `ensayo/00_ensayo.md`. Ver `docs/refactor/decisions.md` para por qué se cambió de tesis.
+
+
 > Documento de evaluación interna del ensayo `ensayo/00_ensayo.md` frente a la consigna
 > (`CONSIGNA.md`), los datos crudos del laboratorio (`simulaciones/datos/`) y los estándares
 > del seminario de Filosofía de las Neurociencias.

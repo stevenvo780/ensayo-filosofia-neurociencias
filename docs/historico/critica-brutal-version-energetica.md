@@ -1,5 +1,12 @@
 # Crítica brutal — «¿Silicio o Tejido?» (ensayo) y «El sustrato no es neutral» (tesis)
 
+> ⚠️ **DOCUMENTO HISTÓRICO (14-jul-2026).** Lectura adversarial de una versión **anterior y
+> abandonada** del trabajo («¿Silicio o Tejido?» / «El sustrato no es neutral»), de tesis
+> energética. Sus referencias de línea apuntan a archivos que desde entonces se reescribieron por
+> completo. **No describe el ensayo vigente.** Se conserva porque su diagnóstico es parte de la
+> razón por la que la tesis cambió. Gobierna `ensayo/00_ensayo.md`; ver `docs/refactor/decisions.md`.
+
+
 > Lectura adversarial, sin cortesía. El objetivo no es celebrar el trabajo —que es bueno— sino
 > encontrar dónde se rompe. Escrita como la escribiría el evaluador más hostil y competente que
 > podrías encontrar: un filósofo de la mente funcionalista que además sabe de hardware.

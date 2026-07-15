@@ -15,8 +15,12 @@
 | **Barandiaran, Di Paolo & Rohde (2009)**, *Defining Agency*, *Adaptive Behavior* 17(5):367-386 | **VERIFICADO** | La individualidad como 1ª condición de la agencia; el problema del corte arbitrario | Bajo |
 | **Bennett & Hacker (2022)**, *The Mereological Fallacy in Neuroscience* | **Lectura del curso** (`fuentes/BIBLIOGRAFIA.md`, ítem 5b) | El marco del ensayo | Bajo |
 | **Chen et al. (2021)**, *The Emerging Science of Interoception*, *Trends in Neurosciences* 44(1):3-16 | **Lectura del curso** (11a) | Respaldo neurocientífico de la continuidad vida-mente | Bajo |
-| **Greenwood & Garfinkel (2024)**, *Interoceptive Mechanisms and Emotional Processing* | **Lectura del curso** (9a). Datos bibliográficos completos **NO VERIFICADOS** (revista/páginas) | Ídem | Bajo, pero **completar la referencia antes de entregar** |
-| **Mylopoulos, M. (2022)**, *Neurobiological Theories of Consciousness* | **Lectura del curso** (10a). Datos completos **NO VERIFICADOS** | Teorías de la conciencia sustrato-neutrales | Bajo, pero **completar la referencia** |
+| **Greenwood, B. M., & Garfinkel, S. N. (2025)**, *Interoceptive Mechanisms and Emotional Processing*, *Annual Review of Psychology*, 76(1), 59-86, DOI 10.1146/annurev-psych-020924-125202 | **VERIFICADO** (lectura del curso, 9a). Año corregido: 2024 → **2025** | Respaldo neurocientífico de la continuidad vida-mente | Bajo |
+| **Mylopoulos, M. (2022)**, *Neurobiological Theories of Consciousness*, en B. D. Young & C. D. Jennings (Eds.), *Mind, Cognition, and Neuroscience: A Philosophical Introduction* (pp. 280-293), Routledge (cap. 21) | **VERIFICADO** (lectura del curso, 10a) | Teorías de la conciencia sustrato-neutrales | Bajo |
+| **Laureys, S. (2007)**, *Eyes Open, Brain Shut*, *Scientific American*, 296(5), 84-89 | **VERIFICADO** — PDF del curso (lectura 10b), citas comprobadas verbatim con grep | El contraejemplo clínico: el estado vegetativo disocia auto-producción (completa) y sujeto (ausente); lo que covaría con el sujeto es la conectividad, no la magnitud material | **ALTO si se descuida.** Ver §4 |
+| **Quian Quiroga, R., Fried, I., & Koch, C. (2013)**, *Brain Cells for Grandmother*, *Scientific American*, 308(2), 30-35 | **VERIFICADO** — PDF del curso (lectura 7b), citas comprobadas verbatim con grep | Codificación esparcida pero distribuida: «a set of corresponding neurons assigned to it» | **Medio.** No atribuirle la tesis fuerte de "neurona de la abuela". Ver §5 |
+| **Zeki, S. (1992)**, *The Visual Image in Mind and Brain*, *Scientific American*, 267(3), 68-76 | **VERIFICADO** (cabecera del PDF, lectura 6b) | Lectura que el Exp 1 modela (jerarquía visual); no se le atribuye ninguna tesis | Bajo |
+| **LeDoux, J. E. (1994)**, *Emotion, Memory and the Brain*, *Scientific American*, 270(6), 50-57 | **VERIFICADO** (cabecera del PDF, lectura 9b) | Lectura que el Exp 3 modela (neuroquímica); no se le atribuye ninguna tesis | Bajo |
 
 ## 2. Seth 2025 — citas verbatim verificadas (y los errores que evitan)
 
@@ -46,7 +50,45 @@
 > observation of the current state of the cell?»). Por eso la tesis **no** afirma una asimetría
 > tajante célula/digital: ese fue un error de una versión intermedia, descartado (ver `decisions.md` §3).
 
-## 4. Tabla de antecedentes — veredicto de originalidad
+## 4. Laureys 2007 — citas verbatim verificadas
+
+- «It illustrates how the two main components of consciousness can become completely
+  dissociated: wakefulness remains intact, but awareness— encompassing all thoughts and
+  feelings— is abolished» (p. 84).
+- «Moreover, we observed that some fully conscious and healthy volunteers have global brain
+  metabolism values comparable to those seen in some patients in a vegetative state... Hence,
+  measuring overall levels of energy consumption in the brain cannot indicate the presence of
+  awareness» (p. 87).
+- «functional connectivity, within this frontoparietal network and with centers deeper in the
+  brain, notably the thalamus» (p. 88).
+- «was isolated and disconnected from the rest of the brain» (p. 88).
+
+> **Riesgo de atribución excesiva — ALTO si se descuida.** Laureys NO menciona autopoiesis, ni a
+> Maturana/Varela, ni el silicio: la inferencia (auto-producción constante vs. sujeto ausente) es
+> del autor del ensayo, no del artículo. Y **no se puede afirmar que "en el estado vegetativo no
+> hay sujeto" sobre pacientes individuales**: Laureys documenta conciencia encubierta detectada por
+> fMRI y diagnóstico errado en más de un tercio de los casos. La afirmación defendible es sobre la
+> **categoría clínica**, no sobre casos particulares. El ensayo respeta ambas cautelas explícitamente
+> (línea 48: «la cautela obliga a hablar de la categoría clínica, y la inferencia es mía»).
+
+## 5. Quian Quiroga, Fried & Koch 2013 — citas verbatim verificadas
+
+- «a set of corresponding neurons assigned to it»
+- «creating a few links between the groups of cells»
+
+> **Riesgo de atribución excesiva — Medio.** El artículo MATIZA la lectura fuerte de "neurona de la
+> abuela": la codificación es esparcida pero **distribuida**, no una única célula por concepto. El
+> ensayo no le atribuye la tesis fuerte.
+>
+> **Precedente de auditoría a registrar:** durante el trabajo, un agente propuso atribuirle a esta
+> fuente la cita «was not necessary for the patient to recognize the actress». Se verificó con
+> `grep` contra el PDF original y **esa cita no existe** en el artículo — lo que sí existe es una
+> frase sobre el hipocampo, «not necessary for perception but is critical for transferring
+> short-term memories». La atribución fue descartada antes de llegar al ensayo. Se deja constancia
+> como caso ejemplar de por qué toda cita se audita con `grep` contra la fuente primaria, nunca se
+> acepta de memoria ni de un borrador de agente.
+
+## 6. Tabla de antecedentes — veredicto de originalidad
 
 Veredicto independiente de la oleada 2: **B — la tesis ya está dicha en la literatura de
 agencia/autonomía; lo que queda es originalidad de APLICACIÓN, y acotada.**
@@ -57,7 +99,7 @@ agencia/autonomía; lo que queda es originalidad de APLICACIÓN, y acotada.**
 | **Barandiaran et al. (2009)** | «The problem of individuality becomes the problem of justifying which one we choose among the large set of possible and arbitrary distinctions» | **Muy cercana**: es la relatividad al corte | Ninguna. Se acredita |
 | **Beer (2004)** | La individuación autopoiética como problema abierto | **Muy cercana**, pero *dentro* de la teoría y en un modelo abstracto | No la dirige contra el uso anti-funcionalista |
 | **Searle (1990/1992)** | «Computational states are not discovered within the physics, they are assigned to the physics» | Análoga | Es sobre el **cómputo**, no sobre la **individuación del sistema**. NO se usa como *tu quoque* simétrico (ver `decisions.md` §3) |
-| **Villalobos & Dewhurst (2017)**, *Enactive autonomy in computational systems*, Synthese | Muy cercana | **NO VERIFICADA en profundidad** | **Riesgo abierto**: revisar antes de publicar el reclamo |
+| **Villalobos & Dewhurst (2018)**, *Enactive autonomy in computational systems*, *Synthese*, 195(5), 1891-1908, DOI 10.1007/s11229-017-1386-z | Muy cercana | **VERIFICADO** contra el PDF open-access. Año corregido: 2017 → **2018** (recibido 2016, publicado online 2017, volumen 2018) | **Riesgo cerrado.** Cita verbatim comprobada: «enactivism, on the basis of the autonomy requirement alone, need not rule out computational characterizations of the nervous system». El ensayo lo acredita explícitamente como el segundo cuerno del dilema (línea 74) |
 | **Froese & Ziemke (2009)**, *Enactive artificial intelligence* | Muy cercana | **NO VERIFICADA en profundidad** | **Riesgo abierto** |
 | **Shapiro (2007)**, *Functionalism and mental boundaries*, Cognitive Systems Research 8(4) | Muy cercana | **NO VERIFICADA en profundidad** | **Riesgo abierto** |
 | **IIT — postulado de exclusión** | Necesita un postulado para individuar el sustrato de la conciencia | Aliado: concede que la individuación no es gratis | No se desarrolla en el ensayo (falta de espacio) |
@@ -70,11 +112,16 @@ agencia/autonomía; lo que queda es originalidad de APLICACIÓN, y acotada.**
 > dentro de la teoría autopoiética—: la **aplico a un debate donde no se la había cobrado**, y aporto
 > un caso propio y verificable de que el eje es mereológico antes que material (la auditoría de mi κ).
 
-## 5. Riesgos abiertos
+## 7. Riesgos abiertos
 
-1. **Tres antecedentes muy cercanos sin verificar en profundidad** (Villalobos & Dewhurst 2017;
-   Froese & Ziemke 2009; Shapiro 2007). Si alguno formula ya el argumento aplicado a la IA, el
-   reclamo de §4 debe rebajarse de «aplicación» a «aplicación ya hecha, aquí replicada con un caso».
-2. **Dos referencias del curso sin datos completos** (Greenwood & Garfinkel 2024; Mylopoulos 2022):
-   figuran en `fuentes/BIBLIOGRAFIA.md` sin revista ni páginas.
+1. **Dos antecedentes muy cercanos siguen sin verificar en profundidad** (Froese & Ziemke 2009;
+   Shapiro 2007). Si alguno formula ya el argumento aplicado a la IA, el reclamo de §6 debe
+   rebajarse de «aplicación» a «aplicación ya hecha, aquí replicada con un caso».
+   **Cerrado dentro de este mismo grupo:** Villalobos & Dewhurst — ya no figura como riesgo; se
+   verificó contra el PDF open-access, el año correcto es 2018 (no 2017) y el ensayo lo acredita
+   explícitamente como el segundo cuerno del dilema (§6).
+2. **CERRADO.** Las dos referencias del curso que figuraban sin datos completos (Greenwood &
+   Garfinkel; Mylopoulos 2022) ya están verificadas con datos bibliográficos completos (revista,
+   volumen, páginas, DOI/editorial) — ver §1. Greenwood & Garfinkel: el año correcto es 2025, no
+   2024.
 3. **Seth 2025 no tiene volumen ni número**: es *advance online publication*. No inventarlos.
