@@ -23,6 +23,7 @@ import IOBandwidth from "@/components/explainers/IOBandwidth";
 import EfficiencyStaircase from "@/components/explainers/EfficiencyStaircase";
 import GammaOscillation from "@/components/explainers/GammaOscillation";
 import MorphologyFlops from "@/components/explainers/MorphologyFlops";
+import ArgMap from "@/components/ArgMap";
 
 // Enriquece la prosa de la tesis con los mismos tooltips de referencia del
 // ensayo (marca el primer token por párrafo/ítem). No toca headings, tablas ni
@@ -30,6 +31,9 @@ import MorphologyFlops from "@/components/explainers/MorphologyFlops";
 const mdComponents: Components = {
   p: ({ children }) => <p>{enrichBlock(children, "tp")}</p>,
   li: ({ children }) => <li>{enrichBlock(children, "tl")}</li>,
+  // En web el mapa del argumento es el componente <ArgMap> (theme-aware); la
+  // imagen del markdown existe solo para el PDF, así que aquí no se renderiza.
+  img: () => null,
 };
 
 // Cada eje de la Parte II (y §III.4) ancla a su explicador interactivo, igual
@@ -185,6 +189,10 @@ export default function TesisPage() {
                 SECTION_VISUAL[seg.key] ?? null
               ) : null;
 
+            // El mapa conceptual del argumento va tras la hoja de ruta (§0),
+            // como brújula de todo el texto.
+            const showMap = seg.text.includes("Introducción y hoja de ruta");
+
             return (
               <div key={i} className="tesis-seg">
                 <ReactMarkdown
@@ -192,8 +200,9 @@ export default function TesisPage() {
                   rehypePlugins={[rehypeSlug, rehypeKatex]}
                   components={mdComponents}
                 >
-                  {seg.text}
+                  {seg.text.replace(/^!\[.*$/gm, "").trimEnd()}
                 </ReactMarkdown>
+                {showMap && <ArgMap />}
                 {visual}
               </div>
             );

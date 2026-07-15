@@ -25,6 +25,8 @@ Mi tesis tiene dos niveles que conviene no confundir:
 
 La Parte II recorre cinco ejes de divergencia, cada uno anclado a experimentos. La Parte III hace el trabajo propiamente ontológico. La Parte IV enfrenta las objeciones más duras y marca dónde se detiene el argumento.
 
+![Mapa del argumento: la ineficiencia (cinco ejes) sostiene la tesis práctica; la autopoiesis funda la ontológica; y la segunda no se deduce de la primera. El aporte metodológico es hacer contable la divergencia y medir (κ, Exp 10) la firma de la autopoiesis.](../simulaciones/graficos/mapa_argumento.png)
+
 ## Parte I. Por qué la ingeniería puede hacer trabajo filosófico
 
 La objeción metodológica es seria: medir la ineficiencia de una simulación no dice nada sobre la conciencia, luego el laboratorio sobra. Concedo la premisa (eficiencia ≠ fenomenología) y niego la conclusión. El laboratorio hace tres cosas que el argumento puramente conceptual no hace igual de bien.

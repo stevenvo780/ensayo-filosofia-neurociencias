@@ -14,6 +14,9 @@ Este ensayo defiende una tesis con dos niveles que conviene no confundir. En el 
 
 Para no caer en una caricatura, distingo el silicio digital clásico de Von Neumann —lo que el laboratorio simula— de los paradigmas neuromórficos analógicos (*Loihi*, memristores): el debate no es "silicio vs. carbono", sino cómputo lógico discretizado frente a dinámica física continua.
 
+![Mapa conceptual del argumento](../simulaciones/graficos/mapa_argumento.png)
+*Fig. 0 — Mapa del argumento: la ineficiencia (cinco ejes) sostiene la tesis práctica; la autopoiesis funda la ontológica; y la segunda no se deduce de la primera.*
+
 ## 1. Plasticidad local y el cuello de botella de Von Neumann
 
 La independencia del "software mental" respecto de su sustrato se apoya en la equivalencia de Turing (1936): todo cómputo formalizable puede resolverse en cualquier máquina universal. Pero en el mundo material el procesamiento cuesta energía, espacio y tiempo.

@@ -13,6 +13,7 @@ import MorphologyFlops from "@/components/explainers/MorphologyFlops";
 import StateSpaceVariability from "@/components/explainers/StateSpaceVariability";
 import ExchangeMode from "@/components/explainers/ExchangeMode";
 import IOBandwidth from "@/components/explainers/IOBandwidth";
+import ArgMap from "@/components/ArgMap";
 
 interface SlideData {
   title: string;
@@ -21,6 +22,7 @@ interface SlideData {
   explainer?: ComponentType;
   image?: string;
   imageAlt?: string;
+  argmap?: boolean;
   speakerNotes: string;
 }
 
@@ -36,6 +38,14 @@ const slidesData: SlideData[] = [
     ],
     speakerNotes:
       "Buenas tardes. La tesis tiene dos niveles que no hay que confundir: uno práctico —el costo de emular carbono sobre silicio es insostenible— y uno ontológico —el sustrato vivo sería constitutivo de la conciencia—, y este segundo NO se sigue del primero: se funda en la autopoiesis.",
+  },
+  {
+    title: "El argumento de un vistazo",
+    subtitle: "Dos tesis, dos evidencias y un puente que no se cruza",
+    bullets: [],
+    argmap: true,
+    speakerNotes:
+      "Antes del detalle, el mapa completo: la afirmación 'el sustrato no es neutral' se desdobla en una tesis práctica (demostrable, sostenida por los cinco ejes de divergencia) y una ontológica (conjetura, fundada en la autopoiesis). La clave metodológica —y la honestidad del trabajo— es que la segunda NO se deduce de la primera. El aporte es hacer contable la divergencia y medir la firma de la autopoiesis con el coeficiente κ del Experimento 10.",
   },
   {
     title: "El cuello de botella de Von Neumann",
@@ -292,7 +302,17 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
           <h1 className={`sd-title${isTitle ? " sd-title-hero" : ""}`}>{slide.title}</h1>
           <p className="sd-subtitle">{slide.subtitle}</p>
 
-          <div className="sd-body" data-media={Explainer || slide.image ? "1" : "0"}>
+          {slide.argmap && (
+            <div className="sd-argmap">
+              <ArgMap />
+            </div>
+          )}
+
+          <div
+            className="sd-body"
+            data-media={Explainer || slide.image ? "1" : "0"}
+            style={slide.argmap ? { display: "none" } : undefined}
+          >
             <ul className="sd-bullets">
               {slide.bullets.map((b, i) => (
                 <li key={i}>{b}</li>

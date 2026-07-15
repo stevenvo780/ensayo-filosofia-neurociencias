@@ -853,3 +853,58 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
   .beat__meta { flex-direction: row; align-items: baseline; gap: 12px; position: static; }
   .beat__num { font-size: 1.15rem; }
 }
+
+/* --- Síntesis: bloque de resumen (abstract académico) --- */
+.lectura__abstract {
+  margin: 0 0 2.4em;
+  padding: 22px 26px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.lectura__abstract-h {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--carbon);
+  margin: 0 0 0.7em;
+}
+.lectura__abstract p {
+  font-family: var(--font-display);
+  font-size: 1.06rem;
+  line-height: 1.7;
+  color: var(--text-soft);
+  text-align: justify;
+  margin: 0;
+}
+.lectura__abstract strong { color: var(--text); font-weight: 600; }
+.lectura__abstract em { font-style: italic; color: var(--text); }
+
+/* --- Mapa conceptual del argumento (ArgMap) --- */
+.argmap {
+  margin: 2.4em 0;
+  padding: 20px 20px 8px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.argmap svg { display: block; }
+.argmap foreignObject > div { overflow: hidden; }
+.argmap__cap {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 12px 4px 6px;
+  text-align: center;
+}
+.argmap__cap strong { color: var(--text); font-style: normal; }
+
+/* ArgMap dentro del deck: sin caja/caption (el subtítulo ya lo dice), a lo ancho */
+.sd-argmap { margin-top: 8px; }
+.sd-argmap .argmap { margin: 0; padding: 0; background: transparent; border: none; }
+.sd-argmap .argmap__cap { display: none; }
+.sd-argmap .argmap svg { max-height: 60vh; }

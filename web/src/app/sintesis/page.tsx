@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, FileText } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import ArgMap from "@/components/ArgMap";
 
 export const metadata: Metadata = {
   title: "Síntesis — para leer en clase",
@@ -175,6 +176,27 @@ export default function SintesisPage() {
 
       <div className="lectura">
         <Reveal>
+          <section className="lectura__abstract" aria-label="Resumen de la tesis">
+            <h2 className="lectura__abstract-h">Resumen</h2>
+            <p>
+              El funcionalismo computacional sostiene que la mente es <em>sustrato-neutral</em>:
+              cualquier medio que implemente la organización funcional adecuada realizaría los mismos
+              estados mentales. Esta tesis lo cuestiona con una distinción que no difumina: separa una{" "}
+              <strong>tesis práctica</strong> —emular la física del <span className="carbon">carbono vivo</span>{" "}
+              sobre <span className="si">silicio digital</span> impone costos estructurales, no
+              incidentales— de una <strong>tesis ontológica</strong> —el sustrato vivo sería constitutivo
+              de la conciencia—, y sostiene que la segunda <em>no se deduce</em> de la primera. El puente
+              lo tiende la <strong>autopoiesis</strong>. El aporte es metodológico: un laboratorio de diez
+              experimentos reproducibles que hace <em>cuantificable</em> la divergencia de sustrato en
+              cinco ejes —arquitectura, codificación, variabilidad, modo de intercambio y ancho de banda—
+              y una medida operacional de la firma de la autopoiesis (el coeficiente κ del Experimento 10).
+              Se sitúa en el linaje de Searle, Seth, Thompson y Damasio, y acota su novedad a <em>medir</em>,
+              no a descubrir, que la vida importa.
+            </p>
+          </section>
+
+          <ArgMap />
+
           <p className="lectura__cue">
             Guión de lectura. Cada bloque es una unidad de habla con su tiempo aproximado a ritmo de
             exposición. Las palabras en <span className="si">azul</span> y{" "}
