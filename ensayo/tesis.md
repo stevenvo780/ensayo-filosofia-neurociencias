@@ -11,7 +11,7 @@
 
 ## Resumen
 
-Examino un solo problema: si la autopoiesis puede decidir qué sistemas pueden ser conscientes. Reconstruyo primero, con la máxima caridad, el argumento que llamo *del sustrato*: la conciencia pertenece a los seres vivos; lo vivo se define por producirse a sí mismo; el silicio digital no se produce a sí mismo; luego no siente. Sostengo que ese argumento le exige a la autopoiesis algo que la autopoiesis no entrega: **individuar al portador de la experiencia**. Y no falla por vaguedad —la autopoiesis es objetiva, y fijada una granularidad es decidible—, sino por **extensión**: individúa células. En un cuerpo humano hay del orden de 10¹³ unidades autopoiéticas y ninguna es el sujeto; el cerebro no es una unidad autopoiética, sino un sistema de segundo orden; y el hígado es tan autopoiético como el cerebro. Para seleccionar al sujeto entre escalas anidadas hay que añadir integración causal, que es sustrato-neutral. La propia tradición lo advirtió: Varela (1979) generalizó de la autopoiesis a la autonomía y la clausura operacional precisamente porque la autopoiesis estricta es celular. Pero la clausura operacional es organizacional, y lo organizacional es realizable en más de un medio. El camino que el enactivismo recorrió para individuar al sujeto es el mismo que le retira el argumento anti-funcionalista. Documento además la auditoría de un laboratorio propio cuyo resultado fue negativo. No se sigue que el silicio sienta; se sigue que la autopoiesis no es el instrumento que puede decidirlo.
+Examino un solo problema: si la autopoiesis puede decidir qué sistemas pueden ser conscientes. Reconstruyo primero, con la máxima caridad, el argumento que llamo *del sustrato*: la conciencia pertenece a los seres vivos; lo vivo se define por producirse a sí mismo; el silicio digital no se produce a sí mismo; luego no siente. Sostengo que ese argumento le exige a la autopoiesis algo que la autopoiesis no entrega: **individuar al portador de la experiencia**. Y no falla por vaguedad —la autopoiesis es objetiva, y fijada una granularidad es decidible—, sino por **extensión**: individúa células. En un cuerpo humano hay del orden de 10¹³ unidades autopoiéticas y ninguna es el sujeto; el cerebro no es una unidad autopoiética, sino un sistema de segundo orden; y el hígado es tan autopoiético como el cerebro. Para seleccionar al sujeto entre escalas anidadas hay que añadir integración causal, que es sustrato-neutral. La propia tradición lo advirtió: Varela (1979) generalizó de la autopoiesis a la autonomía y la clausura operacional precisamente porque la autopoiesis estricta es celular. Pero la clausura operacional es organizacional, y lo organizacional es realizable en más de un medio. El camino que el enactivismo recorrió para individuar al sujeto es el mismo que le retira el argumento anti-funcionalista. La neurología clínica corrobora el diagnóstico sin proponérselo: en el estado vegetativo la auto-producción del organismo está completa y el sujeto, en la categoría clínica así definida, no está; lo que covaría con su presencia es la conectividad frontoparietal y córtico-talámica, no el metabolismo, que Laureys (2007) descalifica explícitamente como indicador. Documento además la auditoría de un laboratorio propio cuyo resultado fue negativo. No se sigue que el silicio sienta; se sigue que la autopoiesis no es el instrumento que puede decidirlo.
 
 ---
 
@@ -23,7 +23,7 @@ Este documento aplica esa lección a un problema único: **¿puede la autopoiesi
 
 Llamaré a ese argumento **el argumento del sustrato**. Es una reconstrucción mía —su forma canónica la enuncio en la Parte I—; no se la atribuyo verbatim a ningún autor, aunque sus piezas están en autores reales y las cito.
 
-La hoja de ruta: la **Parte I** reconstruye el argumento en su mejor forma, antes de tocarlo, porque un argumento derrotado en su versión débil no se ha derrotado. La **Parte II** presenta el cargo central: la autopoiesis individúa la unidad equivocada, y el cargo es de extensión, no de vaguedad. La **Parte III** muestra que la tradición ya conocía el problema y se movió por él —Varela (1979) generaliza de la autopoiesis a la autonomía— sin notar que ese movimiento le retira el argumento anti-funcionalista que quería fundar. La **Parte IV** audita un laboratorio propio: construí una medida de la «firma operacional» de la autopoiesis y, auditada, medía otra cosa. La **Parte V** enfrenta las objeciones serias y fija dónde se detiene el argumento. Cierran una conclusión, un glosario que distingue sin equiparar las nociones que el debate suele fundir, y la bibliografía.
+La hoja de ruta: la **Parte I** reconstruye el argumento en su mejor forma, antes de tocarlo, porque un argumento derrotado en su versión débil no se ha derrotado. La **Parte II** presenta el cargo central: la autopoiesis individúa la unidad equivocada, y el cargo es de extensión, no de vaguedad. La **Parte III** muestra que la clínica ya separó, en pacientes reales, las dos variables que el argumento funde: en el estado vegetativo la auto-producción está completa y el sujeto no está. La **Parte IV** muestra que la tradición ya conocía el problema de escala y se movió por él —Varela (1979) generaliza de la autopoiesis a la autonomía— sin notar que ese movimiento le retira el argumento anti-funcionalista que quería fundar. La **Parte V** audita un laboratorio propio: construí una medida de la «firma operacional» de la autopoiesis y, auditada, medía otra cosa. La **Parte VI** enfrenta las objeciones serias —empezando por la más fuerte, que la vida siga siendo condición necesaria aunque no individúe— y fija dónde se detiene el argumento. Cierran una conclusión, un glosario que distingue sin equiparar las nociones que el debate suele fundir, y la bibliografía.
 
 ---
 
@@ -97,7 +97,7 @@ Y **ninguna soy yo**.
 
 Registro la ironía: el argumento construido para **excluir** al silicio termina **multiplicando** sujetos dentro del carbono. No da pocos sujetos; da demasiados, y ninguno el correcto.
 
-Anticipo la respuesta inmediata: «pero el organismo también es una unidad autopoiética, de orden superior». Es la respuesta que la tradición da, y la examino en II.3 y en la Parte III. Adelanto el resultado: para darla hay que dejar de hablar de autopoiesis en sentido estricto, y en cuanto se deja de hablar de autopoiesis en sentido estricto se pierde el argumento contra el silicio.
+Anticipo la respuesta inmediata: «pero el organismo también es una unidad autopoiética, de orden superior». Es la respuesta que la tradición da, y la examino en II.3 y en la Parte IV. Adelanto el resultado: para darla hay que dejar de hablar de autopoiesis en sentido estricto, y en cuanto se deja de hablar de autopoiesis en sentido estricto se pierde el argumento contra el silicio.
 
 ### II.3. El cerebro no es una unidad autopoiética
 
@@ -129,6 +129,8 @@ Y ahora el filo. **La integración causal es una propiedad de la organización, 
 
 De modo que el argumento del sustrato se encuentra en esta posición: la parte que le da un sujeto es sustrato-neutral, y la parte que excluye sustratos no le da un sujeto. Tiene las dos cosas que necesita, pero nunca al mismo tiempo.
 
+Aquí conviene traer lo que la neurociencia del curso enseña sobre dónde sí está el correlato, y no es donde está la auto-producción. Quian Quiroga, Fried y Koch (2013) hallaron neuronas que responden selectivamente a una persona, pero advierten que su lectura es esparcida y distribuida: cada concepto tendría «un conjunto de neuronas correspondientes asignadas a él», y asociar dos conceptos exige «crear unos pocos enlaces entre los grupos de células» que representan cada uno. Cada una de esas células se autoproduce igual que las demás —igual que las del hígado en II.4—; lo que varía, y lo que hace el trabajo explicativo, es con quién está conectada. La auto-producción es constante en todo el cuerpo; el correlato no. Es la misma integración causal de la que acabo de hablar, ahora vista al nivel de la neurona individual y no del órgano.
+
 ### II.6. La falacia mereológica, invertida
 
 Ahora puedo decir por qué empecé con Bennett y Hacker (2022), y por qué esto es un problema de filosofía de las neurociencias y no una curiosidad escolástica.
@@ -141,9 +143,39 @@ Que la frontera del sujeto no sea un dato que el mundo entrega ya hecho lo ense�
 
 ---
 
-## Parte III. La tradición ya lo sabía
+## Parte III. La clínica ya separó las variables
 
-### III.1. Varela 1979: de la autopoiesis a la autonomía, y por qué
+La Parte II mostró, por argumento, que la auto-producción no puede individuar al sujeto: en un cuerpo hay demasiadas unidades autopoiéticas y ninguna es la persona. El punto no depende sólo de ese argumento. La neurología clínica ya separó, en pacientes reales y sin proponérselo, las dos variables que el argumento del sustrato funde en una sola: cuánto se autoproduce un sistema y si hay alguien ahí. No hace falta esperar una máquina consciente para poner a prueba la tesis de la Parte II; basta con leer lo que la clínica ya sabe.
+
+### III.1. El estado vegetativo: auto-producción completa, sujeto ausente
+
+Laureys (2007) describe el estado vegetativo como la disociación de los dos componentes clásicos de la conciencia —vigilia y consciencia—: «la vigilia permanece intacta, pero la consciencia —que abarca todos los pensamientos y sentimientos— queda abolida». La descripción clínica es precisa y merece leerse con el mismo rigor con que la Parte II leyó la definición de autopoiesis. Estos pacientes tienen ciclos de sueño-vigilia, abren los ojos, respiran sin asistencia mecánica y ejecutan movimientos espontáneos; ninguno de estos signos falta. En los términos de la Parte II: la auto-producción, en el organismo entero y en cada una de sus partes, está **completa**. Las del orden de 10¹³ unidades autopoiéticas que en II.2 no bastaban para dar un sujeto en un cuerpo sano siguen ahí, produciéndose, en el cuerpo del paciente. El organismo se automantiene; está vivo sin que quepa discusión alguna sobre el punto. Y, en la categoría clínica así definida, el sujeto no está.
+
+No hay aquí ninguna premisa nueva sobre autopoiesis o silicio —Laureys no discute ninguno de los dos, y la inferencia que conecta su hallazgo con el argumento de este documento es mía, no suya—. Lo que hay es un caso en el que las variables que el argumento del sustrato trata como si fueran una sola —auto-producción y sujeto, atadas— se mueven por separado, delante de un clínico, con un diagnóstico de por medio.
+
+### III.2. El metabolismo, descalificado por quien lo mide
+
+Si algo pudiera parecerse a una medida clínica de «cuánto se autoproduce» un cerebro, sería su metabolismo: el consumo global de energía es, de todos los correlatos disponibles, el que mejor aproxima la intuición autopoiética de un tejido ocupado en sostenerse a sí mismo. Y es exactamente ese candidato el que Laureys descarta, desde dentro de la propia disciplina que lo mide. Reporta que «voluntarios sanos y plenamente conscientes tienen valores de metabolismo cerebral global comparables a los de algunos pacientes en estado vegetativo», y concluye, sin ambigüedad: «medir los niveles globales de consumo de energía en el cerebro no puede indicar la presencia de consciencia».
+
+El punto no es menor para el argumento de este documento. Si el candidato empírico más cercano a la auto-producción —el metabolismo, la firma más directa de un tejido que se mantiene a sí mismo— no covaría con el sujeto, entonces ninguna versión razonablemente ajustada del criterio autopoiético va a covariar mejor. La clínica no está diciendo «la autopoiesis es difícil de medir»; está diciendo que la cantidad que más se le parece **ya se midió**, y no sirve.
+
+### III.3. Lo que sí covaría: conectividad, no producción
+
+Laureys no deja la pregunta sin respuesta. Lo que sí covaría con la presencia del sujeto es «conectividad funcional dentro de esta red frontoparietal y con centros más profundos del cerebro, en particular el tálamo». En uno de sus casos, el estímulo sensorial llegaba a la corteza y ahí se detenía: la región activa «estaba aislada y desconectada del resto del cerebro». El tejido respondía —captaba el estímulo, se activaba, metabolizaba glucosa— y aun así el sujeto no estaba, porque esa activación no se integraba con el resto.
+
+Esto es, en el vocabulario de la Parte II, la integración causal (II.5) leída en una neuroimagen. No es auto-producción: es la propiedad organizacional —cómo se encadenan los procesos, con quién está conectada cada región— la que hace el trabajo de seleccionar dónde está el sujeto. El tejido está vivo, se autoproduce, metaboliza y responde; lo que falta, cuando falta, es integración.
+
+### III.4. Cautela: la categoría clínica, no el paciente
+
+Debo ser exacto sobre el alcance de este argumento, porque es fácil sobre-extenderlo hacia donde la evidencia no llega. Laureys documenta también el fenómeno inverso: conciencia encubierta detectada por neuroimagen funcional en pacientes diagnosticados, a pie de cama, como vegetativos, y un error de diagnóstico en más de un tercio de los casos. No afirmo, ni puedo afirmar con esta evidencia, que un paciente individual dado carezca de sujeto: eso es precisamente lo que el diagnóstico por neuroimagen puede estar corrigiendo. Lo que el argumento usa es la **categoría clínica** —el estado vegetativo tal como se define por sus criterios conductuales—, no el veredicto sobre ningún paciente particular. Y dentro de esa categoría, definida con independencia de cualquier tesis filosófica sobre sustratos, la disociación entre auto-producción completa y sujeto ausente es el hallazgo que la clínica reporta.
+
+La clínica, entonces, hace por casos reales lo que la Parte II hizo por argumento: mantiene constante la auto-producción y mueve al sujeto. El factor que covaría no es la auto-producción; es organizacional.
+
+---
+
+## Parte IV. La tradición ya lo sabía
+
+### IV.1. Varela 1979: de la autopoiesis a la autonomía, y por qué
 
 Nada de lo anterior es un descubrimiento mío, y debo decir con precisión de quién es qué.
 
@@ -153,7 +185,7 @@ El hecho central es éste: **Varela mismo abandonó el marco estrecho, y lo aban
 
 Es decir: la tradición identificó el problema de la escala antes que yo, lo tomó en serio, y se movió por él. Mi aporte, si tiene alguno, es señalar lo que ese movimiento le cuesta en el debate del sustrato.
 
-### III.2. El filo: lo organizacional es realizable en más de un medio
+### IV.2. El filo: lo organizacional es realizable en más de un medio
 
 Porque el movimiento tiene un precio, y creo que no se ha cobrado.
 
@@ -169,9 +201,9 @@ De ahí el dilema, que enuncio como la conclusión central de este documento:
 
 No hay tercera posición en la que se tengan a la vez las dos cosas que el argumento necesita. **El camino que el enactivismo recorrió para poder individuar al sujeto es exactamente el mismo que le retira el argumento anti-funcionalista.** No es que el enactivismo se haya equivocado al recorrerlo: hizo bien, porque la autopoiesis estricta efectivamente no llegaba al organismo. Es que al llegar al organismo llegó también, sin advertirlo, al terreno del funcionalista.
 
-Quiero marcar el estatus de esta afirmación: es un argumento conceptual, y su fuerza depende de que «propiedad organizacional» signifique lo que he dicho. Un enactivista podría responder que la clausura operacional biológica involucra esencialmente la **precariedad material**, y que ésa no es organizacional. Es la mejor respuesta disponible y la trato en V.3; adelanto que, si se la toma, se vuelve a necesitar la auto-producción, y con ella vuelven los diez billones.
+Quiero marcar el estatus de esta afirmación: es un argumento conceptual, y su fuerza depende de que «propiedad organizacional» signifique lo que he dicho. Un enactivista podría responder que la clausura operacional biológica involucra esencialmente la **precariedad material**, y que ésa no es organizacional. Es la mejor respuesta disponible y la trato en VI.4; adelanto que, si se la toma, se vuelve a necesitar la auto-producción, y con ella vuelven los diez billones.
 
-### III.3. Beer 2004: nítido en el caso paradigmático, indeterminado en los disputados
+### IV.3. Beer 2004: nítido en el caso paradigmático, indeterminado en los disputados
 
 Añádase la advertencia que la teoría se hace a sí misma, y que quiero presentar con exactitud porque es fácil abusar de ella.
 
@@ -193,11 +225,11 @@ Insisto en el matiz, porque es la diferencia entre un buen argumento y uno malo:
 
 ---
 
-## Parte IV. El laboratorio: qué mide y qué no
+## Parte V. El laboratorio: qué mide y qué no
 
-Ésta es la sección que me importa, y la escribo porque creo que exhibir un fracaso propio es más útil que taparlo, y porque el fracaso resultó ser el mejor argumento que tengo. Marco el estatus de todo lo que sigue: son **hechos verificados sobre mi propio código**, obtenidos auditándolo, y varios de ellos son desfavorables para mí.
+Cada uno de los diez experimentos de este laboratorio nace de una lectura del seminario: la jerarquía visual de Zeki (1992), las células de concepto de Quian Quiroga, Fried y Koch (2013), la neuroquímica de LeDoux (1994), la plasticidad de Hinton (1992), el grillo de Webb (1996). Cinco lecturas, diez experimentos, un solo patrón: ninguno encontró una diferencia de sustrato. Los que sobrevivieron a la auditoría que sigue devolvieron la constante que yo mismo había escrito antes de correrlos; otros ni siquiera llegaron a tener una constante que devolver. Lo consigno con el detalle que sigue porque un modelo mal construido siempre devuelve su estipulación, y eso es un hecho sobre mí, no sobre el mundo —y un patrón que se repite cinco veces, sobre cinco lecturas distintas, es un dato más interesante que cualquier resultado aislado hubiera sido. Marco además el estatus de todo lo que sigue: son **hechos verificados sobre mi propio código**, obtenidos auditándolo, y varios de ellos son desfavorables para mí. Lo que un experimento necesitaría, para contar en contra de la Parte II, es una medida de la firma autopoiética invariante **ante el corte**: que diera igual contando o no, por ejemplo, la fuente de alimentación de la máquina como parte del sistema. Ése fue el objetivo del Experimento 10 (V.4), y es donde el laboratorio más se acerca a decir algo —aunque termine diciendo lo contrario de lo que buscaba—. El argumento de este documento no lo llevan estos experimentos: lo llevan las Partes I a IV. Lo que sigue es la auditoría, no la premisa.
 
-### IV.1. Qué pretendía el laboratorio, y por qué era la pregunta equivocada
+### V.1. Qué pretendía el laboratorio, y por qué era la pregunta equivocada
 
 Construí un laboratorio computacional de diez experimentos con la intención de dar al argumento del sustrato una base cuantitativa: mostrar, con cifras, que hay una diferencia medible entre el modo «carbono» y el modo «silicio» de resolver un problema, y que esa diferencia favorece al carbono en dimensiones que importan.
 
@@ -205,7 +237,7 @@ El defecto de fondo es sencillo de enunciar y me costó verlo: **no hay carbono 
 
 Retrospectivamente, esto era predecible desde la Parte II: si la individuación de la unidad es previa a la medición, entonces ninguna medición puede entregarla. Yo estaba pidiéndole al laboratorio que decidiera dónde estaba el sujeto, y el laboratorio sólo podía devolverme el recorte que yo había codificado en él.
 
-### IV.2. Clasificación epistémica honesta
+### V.2. Clasificación epistémica honesta
 
 Auditando las once cifras publicadas, **ocho son consecuencias analíticas de constantes que yo mismo elegí**. No son hallazgos: son teoremas triviales sobre mis propios parámetros, presentados con la tipografía de un resultado empírico. Tres ejemplos, para que se vea la forma del error:
 
@@ -217,7 +249,7 @@ Un cálculo cerrado puede ser informativo —puede hacer vívida una consecuenci
 
 La única medición **empíricamente genuina** del laboratorio es el benchmark escalonado de consumo energético. Y aquí quiero reconocerle algo al texto original: ya la descontaba, describiéndola como «una cota superior de una comparación deliberadamente desfavorable». Es decir: la única cifra real del laboratorio es una cota **amañada contra el silicio**, y el texto lo sabía. Sostengo esa lectura y la refuerzo.
 
-### IV.3. Los datos fabricados del Experimento 1
+### V.3. Los datos fabricados del Experimento 1
 
 Debo decir esto explícitamente, y no en una nota al pie.
 
@@ -225,7 +257,7 @@ El Experimento 1 publicaba columnas de tiempo y energía que eran **literales es
 
 No hubo intención de fraude: fueron, en su origen, valores de relleno para probar el pipeline de graficación, que sobrevivieron a la limpieza y se publicaron. Pero la intención no cambia el estatus de la cifra, y una explicación no es una excusa. **Ya está corregido**: esas columnas se eliminaron. Lo consigno aquí porque un trabajo que denuncia el autoengaño ajeno y esconde el propio no vale nada, y porque el hecho de que yo mismo haya podido publicar un número fabricado sin advertirlo es, precisamente, un dato sobre lo fácil que es que la etiqueta preceda a la medición.
 
-### IV.4. El Experimento 10 y κ: la historia completa
+### V.4. El Experimento 10 y κ: la historia completa
 
 ![*Experimento 10 (reformado). La misma máquina, bajo la misma perturbación, con dos fronteras distintas: contando sólo el chip, κ = 0,00 (inmune); contando también su fuente de alimentación, κ = 0,70 (24 semillas). El sustrato no cambió: cambió el corte. κ mide compartición de presupuesto de recursos, no autopoiesis.*](../simulaciones/graficos/exp10_acoplamiento.png)
 
@@ -257,7 +289,7 @@ No cambió el sustrato. **Cambió el corte.**
 
 La conclusión que extraigo es exactamente la de la Parte II, ahora en forma de resultado: **κ no mide una propiedad del sustrato; mide dónde tracé la frontera**. La medida no descubre unidades: las **presupone**. Y no podía ser de otro modo, porque toda medida necesita un sistema al que aplicarse, y decidir cuál es ese sistema es la tarea previa que ninguna medición puede hacer por sí misma. Construí la operacionalización que debía darle al argumento del sustrato su base objetiva, la vi fallar, y el diagnóstico de por qué **tenía** que fallar es el argumento de este documento. Considero este resultado negativo el aporte más sólido del trabajo, precisamente porque no lo buscaba.
 
-### IV.5. Qué se conserva de los cinco ejes
+### V.5. Qué se conserva de los cinco ejes
 
 No propongo tirar el laboratorio. Propongo **reencuadrarlo**, y creo que reencuadrado sigue siendo útil.
 
@@ -269,19 +301,33 @@ Lo que sí sobrevive como distinción sustantiva, y lo ofrezco como **reencuadre
 
 ---
 
-## Parte V. Objeciones y límites
+## Parte VI. Objeciones y límites
 
-### V.1. «Caricaturizas a Thompson y a Di Paolo»
+### VI.1. «Sigue siendo necesaria»: condición versus criterio de individuación
 
-Es la objeción más fuerte y la que un evaluador competente hará primero. Dice: ni Thompson ni Di Paolo sostienen jamás que la célula sea el sujeto de la experiencia. Hablan de **autonomía del organismo**, de sistemas de identidad de orden superior, de agencia adaptativa. Tu problema de aritmética ataca una posición que nadie defiende.
+La objeción más fuerte que se le puede hacer a este documento no niega nada de lo mostrado: lo concede y pregunta si basta. Dice así: «de acuerdo, la auto-producción no individúa al sujeto; la Parte II lo mostró y la Parte III lo confirmó en la clínica. Pero sigue siendo **necesaria**. El silicio no se autoproduce, luego le falta una condición sin la cual no hay conciencia, individúe o no».
+
+Concedo la premisa entera y niego que salve la conclusión que el argumento del sustrato necesita. Este documento nunca ha negado que la vida sea condición necesaria de la conciencia: lo dije en la introducción y lo repito aquí, porque es el punto en el que más fácil es que se me malentienda. Lo que niego es que la auto-producción sea el **criterio que individúa al sujeto** —el que decide, entre los sistemas anidados en un cuerpo, cuál de ellos siente—. Una condición necesaria y un criterio de individuación son dos cosas distintas, y el argumento del sustrato necesita las dos a la vez para llegar a su conclusión sobre el silicio; sin la segunda, de «el silicio no se autoproduce» no se sigue nada sobre lo que el silicio pueda o no sentir, aunque la primera sea verdadera.
+
+Para verlo, hay que preguntar algo que la objeción da por resuelto: ¿de qué, exactamente, es necesaria la autopoiesis?
+
+**Si es necesaria del sujeto** —si lo que se afirma es que el portador de la experiencia tiene que ser, él mismo, una unidad autopoiética—, entonces la objeción hereda intacto el problema de la Parte II. El sujeto tendría que ser una unidad autopoiética, y ninguno lo es: somos, como mostró II.3, sistemas de segundo orden, compuestos de unidades autopoiéticas sin ser ellos mismos autopoiéticos en sentido estricto. Quien exija auto-producción al portador de la experiencia se queda sin portador también en el carbono, por la misma aritmética de II.2. La objeción, en esta lectura, no rescata el argumento: lo hunde más rápido, porque convierte en necesaria una propiedad que ni el cerebro humano posee.
+
+**Si es necesaria de los componentes** —si lo que se afirma es, más modestamente, que el material del que está hecho el sujeto tiene que ser capaz de autoproducirse, aunque el sujeto mismo no lo sea—, entonces la objeción ha cambiado de tesis sin decirlo. Ya no es una tesis sobre el sujeto, sino sobre el sustrato en que la organización que sí individúa (la integración causal de II.5) se realiza. Y esa tesis necesita un argumento adicional, uno que diga por qué ese material y no otro es apto para soportar la organización relevante. La autopoiesis no puede dar ese argumento, porque la autopoiesis no habla de sujetos ni de organizaciones que individúan: habla de **células**, de si una red metabólica produce su propia membrana. Que las células se autoproduzcan no dice nada, por sí solo, sobre si el silicio puede o no sostener la clase de integración causal que la Parte II identificó como lo que hace el trabajo. Para eso hace falta otro argumento, y éste no lo es.
+
+Una condición de fondo, en suma, no es un criterio de exclusión. Que todo lo consciente conocido resulte ser vivo —si lo es— no implica que sólo lo vivo pueda serlo; implica, a lo sumo, que hasta ahora no hemos visto el caso que lo decidiría. El argumento del sustrato quiere extraer una prohibición metafísica de una correlación conocida, y ese paso es el que la distinción entre condición y criterio bloquea. Esto es lo que blinda a este documento frente al arma más fácil que se le podía apuntar: no porque yo niegue que la vida importe, sino porque nunca necesité negarlo. Bastaba con que importar no fuera lo mismo que individuar.
+
+### VI.2. «Caricaturizas a Thompson y a Di Paolo»
+
+Es la siguiente objeción seria, y la que un evaluador competente hará en cuanto conceda VI.1. Dice: ni Thompson ni Di Paolo sostienen jamás que la célula sea el sujeto de la experiencia. Hablan de **autonomía del organismo**, de sistemas de identidad de orden superior, de agencia adaptativa. Tu problema de aritmética ataca una posición que nadie defiende.
 
 **Concedo el hecho, y niego que me perjudique: es mi argumento.**
 
-En efecto, no sostienen que la célula sea el sujeto. Precisamente por eso pasan a la autonomía. Y ese paso es lo que estoy documentando, no lo que estoy negando. Mi tesis no es «los enactivistas creen que la célula siente». Mi tesis es: **en cuanto la tradición pasa a la autonomía para poder individuar al organismo, deja de tener un argumento *material* contra el silicio y pasa a tener una teoría *organizacional* de la unidad, compatible con la realizabilidad múltiple.** La concesión que la objeción me pide es la premisa que necesito. Cuanto más se insista en que Thompson y Di Paolo hablan de autonomía y no de autopoiesis celular, más completo queda el cuerno organizacional del dilema de III.2.
+En efecto, no sostienen que la célula sea el sujeto. Precisamente por eso pasan a la autonomía. Y ese paso es lo que estoy documentando, no lo que estoy negando. Mi tesis no es «los enactivistas creen que la célula siente». Mi tesis es: **en cuanto la tradición pasa a la autonomía para poder individuar al organismo, deja de tener un argumento *material* contra el silicio y pasa a tener una teoría *organizacional* de la unidad, compatible con la realizabilidad múltiple.** La concesión que la objeción me pide es la premisa que necesito. Cuanto más se insista en que Thompson y Di Paolo hablan de autonomía y no de autopoiesis celular, más completo queda el cuerno organizacional del dilema de IV.2.
 
 No sostengo que se equivoquen sobre la vida. Creo que su teoría de la vida es la mejor que hay. Sostengo algo más limitado: que su mejor teoría de la individuación **no puede hacer el trabajo anti-funcionalista** que se le encarga en el debate del sustrato, y que el encargo se le hizo sin advertir el precio.
 
-### V.2. «Convencionalidad no es relatividad al observador»
+### VI.3. «Convencionalidad no es relatividad al observador»
 
 La objeción dice: estás deslizándote de «la definición de organización tiene un momento convencional» a «la autopoiesis es relativa al observador», y ese deslizamiento es un error categorial. Fijada una granularidad, si una bacteria se autoproduce es un hecho físico. Tu uso de Beer repite el error de decir «la vida es ambigua en los virus, luego la vida no existe».
 
@@ -289,7 +335,7 @@ La objeción dice: estás deslizándote de «la definición de organización tie
 
 El argumento que defiendo **no dice** que la autopoiesis sea subjetiva. Dice que es **objetiva y de extensión equivocada**. Es una tesis sobre **extensión**, no sobre relatividad al observador, y la diferencia no es cosmética: mi cargo sobrevive intacto aunque la autopoiesis sea la propiedad más objetiva del universo. De hecho lo necesito objetiva: si fuera vaga, mi problema de aritmética no tendría fuerza, porque no habría un hecho determinado sobre cuántas unidades autopoiéticas hay en mi cuerpo. Lo hay, y son demasiadas.
 
-### V.3. «¿Y si la integración causal tampoco individúa?»
+### VI.4. «¿Y si la integración causal tampoco individúa?»
 
 La objeción más interesante, y la que un enactivista sofisticado debería hacer, es ésta: tu escape —la integración causal— sufre del mismo mal. También la integración causal depende de cómo se describa el sistema; también ella admite cortes múltiples; también ella, con otra granularidad, da otra respuesta. No has resuelto el problema de la individuación: lo has mudado.
 
@@ -299,7 +345,7 @@ Si la integración causal tampoco individúa, entonces el problema de la individ
 
 Una variante enactivista mejor responde: la clausura operacional biológica no es puramente organizacional, porque involucra esencialmente la **precariedad material** —el sistema se desintegra si la red se detiene—, y eso no es forma, es materia. Es la mejor respuesta disponible y la tomo en serio. Pero obsérvese lo que hace: reintroduce la exigencia material para bloquear la realizabilidad múltiple, y al reintroducirla vuelve a caer en el primer cuerno del dilema. Si la precariedad material es esencial a la clausura, entonces la clausura vuelve a satisfacerse allí donde hay producción material de componentes —en las células— y volvemos a los diez billones. El dilema no es un accidente retórico: es una tijera, y ambos cortes están afilados.
 
-### V.4. El zombi autopoiético
+### VI.5. El zombi autopoiético
 
 Un límite que debo reconocer, y que en parte me impuso el examen de una versión anterior de este trabajo.
 
@@ -307,7 +353,7 @@ Supóngase un sistema plenamente autopoiético, adaptativo, precario, operaciona
 
 Registro esto porque es un límite y no una victoria. No lo uso como argumento contra el enactivismo —sería un mal argumento, del tipo que reprocho a otros—: lo uso para marcar que **mi tesis no necesita resolver el problema difícil, y no lo resuelve**. Y también porque, si el zombi autopoiético es concebible, entonces la auto-producción no sólo falla en individuar: tampoco garantiza lo que quería garantizar. Pero esa es una consideración adicional, más débil que la principal, y no apoyo nada en ella.
 
-### V.5. Antecedentes: qué es mío y qué no
+### VI.6. Antecedentes: qué es mío y qué no
 
 No finjo prioridad, y quiero ser explícito sobre las deudas.
 
@@ -325,7 +371,7 @@ Que el problema de la individualidad sea «el de justificar cuál separación el
 
 Formulado ante un evaluador hostil, en una oración: *no reclamo haber descubierto que la individuación es un problema para la autopoiesis —Beer lo planteó desde dentro de la teoría—, sino haber mostrado que ese problema abierto es **fatal precisamente para el uso que la tradición hace de la autopoiesis en el debate del sustrato**, y haberlo mostrado construyendo la métrica que debía evitarlo y viéndola medir mi propia estipulación.*
 
-### V.6. Dónde se detiene el argumento
+### VI.7. Dónde se detiene el argumento
 
 Marco los límites con precisión, porque una tesis que no dice dónde para no dice nada.
 
@@ -377,6 +423,7 @@ Una línea por término. El propósito es **distinguir sin equiparar**: buena pa
 | **Inteligencia** | Eficacia en resolver problemas dado un objetivo; **no implica** experiencia ni normatividad propia, y su presencia no es evidencia de conciencia. |
 | **Conciencia** | Que haya algo que es ser ese sistema. **No** se sigue de ninguno de los términos anteriores; el punto de este documento no es explicarla. |
 | **Unidad fenomenológica** | Que las experiencias de un sujeto se den como experiencias de **un solo** sujeto; el explanandum que (P1) presupone y que la autopoiesis no entrega. |
+| **Condición necesaria** | Un requisito sin el cual X no se da; no dice, por sí sola, cuál de varios candidatos anidados es X. Confundirla con el criterio de individuación es el error que VI.1 diagnostica en (P2). |
 | **Individuación** | La determinación de **cuál** sistema es el sistema: dónde va el corte entre unidad y entorno. Problema previo a toda medición, y el que este documento pone en el centro. |
 | **Autonomía** | Identidad sostenida por clausura operacional, con la autopoiesis como **un caso** (Varela, 1979). Individúa organismos; por organizacional, no excluye sustratos. Ahí está el dilema. |
 
@@ -393,6 +440,7 @@ Una línea por término. El propósito es **distinguir sin equiparar**: buena pa
 * Jonas, H. (1968). *Biological Foundations of Individuality*. *International Philosophical Quarterly*, 8(2), 231-251.
 * Maturana, H. R., & Varela, F. J. (1980). *Autopoiesis and Cognition: The Realization of the Living*. D. Reidel.
 * Putnam, H. (1967). *Psychological Predicates*. En W. H. Capitan & D. D. Merrill (Eds.), *Art, Mind, and Religion*. University of Pittsburgh Press.
+* Quian Quiroga, R., Fried, I., & Koch, C. (2013). *Brain Cells for Grandmother*. *Scientific American*, 308(2), 30-35.
 * Searle, J. R. (1980). *Minds, Brains, and Programs*. *Behavioral and Brain Sciences*, 3(3), 417-457.
 * Searle, J. R. (1992). *The Rediscovery of the Mind*. MIT Press.
 * Seth, A. K. (2025). *Conscious artificial intelligence and biological naturalism*. *Behavioral and Brain Sciences*, publicación anticipada en línea, 1-42. https://doi.org/10.1017/S0140525X25000032
@@ -405,10 +453,12 @@ Una línea por término. El propósito es **distinguir sin equiparar**: buena pa
 
 * Bennett, M. R., & Hacker, P. M. S. (2022). *The Mereological Fallacy in Neuroscience*. En *Philosophical Foundations of Neuroscience* (2ª ed.). Wiley-Blackwell.
 * Chen, W. G., y cols. (2021). *The emerging science of interoception: Sensing, integrating, interpreting, and regulating signals within the self*. *Trends in Neurosciences*, 44(1), 3-16. https://doi.org/10.1016/j.tins.2020.10.007
-* Clark, A. (2015). *Radical Predictive Processing*. *Southern Journal of Philosophy*, 53, 3-27.
 * Daugman, J. (2001). *Brain Metaphor and Brain Theory*. En W. Bechtel, P. Mandik & J. Mundale (Eds.), *Philosophy and the Neurosciences: A Reader*. Blackwell.
 * Greenwood, B. M., & Garfinkel, S. N. (2025). *Interoceptive mechanisms and emotional processing*. *Annual Review of Psychology*, 76(1), 59-86. https://doi.org/10.1146/annurev-psych-020924-125202
 * Hinton, G. E. (1992). *How Neural Networks Learn from Experience*. *Scientific American*, 267(3), 144-151.
+* Laureys, S. (2007). *Eyes Open, Brain Shut*. *Scientific American*, 296(5), 84-89.
+* LeDoux, J. E. (1994). *Emotion, Memory and the Brain*. *Scientific American*, 270(6), 50-57.
 * Mylopoulos, M. (2022). *Neurobiological theories of consciousness*. En B. D. Young & C. D. Jennings (Eds.), *Mind, Cognition, and Neuroscience: A Philosophical Introduction* (pp. 280-293). Routledge.
 * Seth, A. K. (2021). *Being You: A New Science of Consciousness*. Faber & Faber.
 * Thompson, E. (2007). *Mind in Life: Biology, Phenomenology, and the Sciences of Mind*. Harvard University Press.
+* Zeki, S. (1992). *The Visual Image in Mind and Brain*. *Scientific American*, 267(3), 68-76.

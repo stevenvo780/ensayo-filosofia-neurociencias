@@ -8,9 +8,10 @@ const TOC_ITEMS = [
   { id: "intro", label: "Introducción" },
   { id: "s1", label: "1 · El problema" },
   { id: "s2", label: "2 · La unidad" },
-  { id: "s3", label: "3 · La tradición" },
-  { id: "s4", label: "4 · κ y el corte" },
-  { id: "s5", label: "5 · Objeción" },
+  { id: "s3", label: "3 · La clínica" },
+  { id: "s4", label: "4 · La tradición" },
+  { id: "s5", label: "5 · κ y el corte" },
+  { id: "s6", label: "6 · Objeción" },
   { id: "conclusion", label: "Conclusión" },
   { id: "biblio", label: "Bibliografía" },
 ];
@@ -57,11 +58,13 @@ export default function Home() {
               Sostendré que comete un primo de esa falacia: discute <strong>de qué está hecho</strong> el
               sujeto sin haber fijado <strong>cuál</strong> es. Su criterio —la autopoiesis— no puede
               fijarlo, y no por vago, sino porque es nítido y señala la unidad equivocada: individúa{" "}
-              <span className="carbon">células</span>, no personas. La propia tradición lo advirtió y se
-              movió de la autopoiesis a la autonomía, sin notar que ese movimiento le retira el argumento
-              que quería fundar. Cierro con un fracaso propio: construí una medida de la «firma» de la
-              autopoiesis y, auditada, medía otra cosa. De nada de esto se sigue que el silicio sienta; se
-              sigue que la autopoiesis no es el instrumento que puede decidirlo.
+              <span className="carbon">células</span>, no personas. La clínica ya separó esas dos
+              variables: en el estado vegetativo la auto-producción está completa y el sujeto no está. La
+              propia tradición lo advirtió y se movió de la autopoiesis a la autonomía, sin notar que ese
+              movimiento le retira el argumento que quería fundar. Cierro con un laboratorio: un
+              experimento por cada lectura del seminario, y ninguno encontró diferencia de sustrato. De
+              nada de esto se sigue que el silicio sienta; se sigue que la autopoiesis no es el instrumento
+              que puede decidirlo.
             </p>
           </Reveal>
 
@@ -158,6 +161,15 @@ export default function Home() {
               no explica ningún caso que la integración causal no explique ya, y sola no explica ninguno.
             </p>
             <p>
+              La neurociencia del curso enseña, además, dónde sí está el correlato, y no es donde está la
+              auto-producción. Quian Quiroga, Fried y Koch (2013) hallaron neuronas que responden
+              selectivamente a una persona, pero su lectura es esparcida y distribuida: cada concepto
+              tendría «un conjunto de neuronas correspondientes asignadas a él», y asociar dos conceptos
+              exige «crear unos pocos enlaces entre los grupos de células» que representan cada uno. Cada
+              una de esas células se autoproduce igual que las demás; lo que varía —y lo que explica— es
+              con quién está conectada. La auto-producción es constante en todo el cuerpo; el correlato no.
+            </p>
+            <p>
               La falacia mereológica reaparece invertida: el argumento del sustrato elige un criterio que
               sólo se satisface en las partes —las células— y pretende que decida sobre el todo. Y que la
               frontera del sujeto no sea un dato lo enseña el propio seminario: el grillo robot de Webb
@@ -169,6 +181,40 @@ export default function Home() {
           {/* 3 */}
           <Reveal enrich>
             <H2 num="3" id="s3">
+              La clínica ya separó las variables
+            </H2>
+            <p>
+              El argumento no necesita esperar una máquina consciente para ponerse a prueba: la
+              neurología ya disoció en pacientes las dos variables que importan. Laureys (2007) describe
+              el estado vegetativo como la disociación de los dos componentes de la conciencia: «la
+              vigilia permanece intacta, pero la consciencia —que abarca todos los pensamientos y
+              sentimientos— queda abolida». Estos pacientes conservan ciclos de sueño-vigilia, respiran sin
+              asistencia y hacen movimientos espontáneos. La auto-producción está <strong>completa</strong>:
+              el organismo se automantiene, está vivo. Y el sujeto no está.
+            </p>
+            <p>
+              Laureys añade algo más incómodo: algunos «voluntarios sanos y plenamente conscientes tienen
+              valores de metabolismo cerebral global comparables a los de algunos pacientes en estado
+              vegetativo». Concluye: «medir los niveles globales de consumo de energía en el cerebro no
+              puede indicar la presencia de consciencia». Lo que sí covaría con el sujeto es la
+              «conectividad funcional dentro de esta red frontoparietal y con centros más profundos del
+              cerebro, en particular el tálamo». En sus pacientes el estímulo llegaba a la corteza
+              somatosensorial primaria y allí moría: la región activa «estaba aislada y desconectada del
+              resto del cerebro».
+            </p>
+            <p>
+              El tejido está vivo, se autoproduce y responde. Lo que falta es <strong>integración</strong>.
+              Laureys documenta conciencia encubierta detectada por neuroimagen y diagnóstico errado en más
+              de un tercio de los casos; la cautela obliga a hablar de la categoría clínica, y la
+              inferencia es mía —Laureys no discute autopoiesis ni silicio—. Pero basta: la clínica
+              mantiene constante la auto-producción y mueve al sujeto. El factor diferencial{" "}
+              <strong>no es la auto-producción</strong> —es organizacional—.
+            </p>
+          </Reveal>
+
+          {/* 4 */}
+          <Reveal enrich>
+            <H2 num="4" id="s4">
               La tradición ya lo sabía
             </H2>
             <p>
@@ -203,16 +249,18 @@ export default function Home() {
             </p>
           </Reveal>
 
-          {/* 4 */}
+          {/* 5 */}
           <Reveal enrich>
-            <H2 num="4" id="s4">
-              Una demostración construida
+            <H2 num="5" id="s5">
+              Lo que construí, y lo que obtuve en su lugar
             </H2>
             <p>
-              Debo lo anterior a un fracaso propio, y exhibirlo es más útil que taparlo. Construí un modelo
-              de dos sistemas que computan bajo una «lesión metabólica» para medir un coeficiente κ de
-              acoplamiento entre cómputo y auto-mantenimiento, y lo presenté como la{" "}
-              <em>firma operacional</em> de la autopoiesis: κ≈0,88 para el acoplado, κ=0,00 para el
+              Construí un experimento por cada lectura del seminario: la jerarquía visual de Zeki (1992),
+              las células de concepto de Quian Quiroga, la neuroquímica de LeDoux (1994), la plasticidad de
+              Hinton (1992), el grillo de Webb. Ninguno encontró diferencia de sustrato. El que más rindió
+              fue un modelo de dos sistemas que computan bajo una «lesión metabólica» para medir un
+              coeficiente κ de acoplamiento entre cómputo y auto-mantenimiento, presentado en su momento
+              como la <em>firma operacional</em> de la autopoiesis: κ≈0,88 para el acoplado, κ=0,00 para el
               desacoplado.
             </p>
             <p>
@@ -259,15 +307,25 @@ export default function Home() {
             </p>
           </Reveal>
 
-          {/* 5 */}
+          {/* 6 */}
           <Reveal enrich>
-            <H2 num="5" id="s5">
+            <H2 num="6" id="s6">
               La objeción más fuerte, y los límites
             </H2>
             <p>
-              La réplica seria es que caricaturizo: Thompson y Di Paolo nunca dijeron que la célula sea el
-              sujeto; hablan de autonomía del organismo. Concedo el hecho y niego que me perjudique: es mi
-              argumento. En cuanto la tradición pasa a la autonomía para individuar al organismo, deja de
+              La réplica seria es: «de acuerdo, la auto-producción no individúa al sujeto; pero sigue
+              siendo <strong>necesaria</strong>. El silicio no se autoproduce, luego le falta una condición
+              sin la cual no hay conciencia». Concedo la premisa y niego la inferencia. ¿De qué es necesaria
+              la autopoiesis? Si del sujeto, el sujeto tendría que ser una unidad autopoiética, y ninguno lo
+              es: somos sistemas de segundo orden. Si de los componentes, es una tesis sobre el material, y
+              hace falta un argumento que diga por qué ese material y no otro; argumento que la autopoiesis
+              no puede dar: habla de células, no de sujetos. Una condición de fondo no es un criterio de
+              exclusión: que todo lo consciente conocido sea vivo no implica que sólo lo vivo pueda serlo.
+            </p>
+            <p>
+              La réplica que sigue es que caricaturizo: Thompson y Di Paolo nunca dijeron que la célula sea
+              el sujeto; hablan de autonomía del organismo. Concedo el hecho y niego que me perjudique: es
+              mi argumento. En cuanto la tradición pasa a la autonomía para individuar al organismo, deja de
               tener un argumento <em>material</em> contra el silicio y pasa a tener una teoría{" "}
               <em>organizacional</em> de la unidad, compatible con la realizabilidad múltiple. No sostengo
               que se equivoquen sobre la vida; sostengo que su mejor teoría de la individuación no puede
@@ -342,16 +400,18 @@ export default function Home() {
                 "Beer, R. D. (2004). Autopoiesis and Cognition in the Game of Life. Artificial Life, 10(3), 309-326.",
                 "Bennett, M. R., y Hacker, P. M. S. (2022). The Mereological Fallacy in Neuroscience. En Philosophical Foundations of Neuroscience (2ª ed.). Wiley-Blackwell.",
                 "Chen, W. G., y cols. (2021). The emerging science of interoception: Sensing, integrating, interpreting, and regulating signals within the self. Trends in Neurosciences, 44(1), 3-16.",
-                "Clark, A. (2015). Radical Predictive Processing. Southern Journal of Philosophy, 53, 3-27.",
                 "Daugman, J. (2001). Brain Metaphor and Brain Theory. En Philosophy and the Neurosciences: A Reader. Blackwell.",
                 "Di Paolo, E. A. (2005). Autopoiesis, Adaptivity, Teleology, Agency. Phenomenology and the Cognitive Sciences, 4(4), 429-452.",
                 "Fodor, J. A. (1974). Special Sciences. Synthese, 28(2), 97-115.",
                 "Greenwood, B. M., y Garfinkel, S. N. (2025). Interoceptive mechanisms and emotional processing. Annual Review of Psychology, 76(1), 59-86.",
                 "Hinton, G. E. (1992). How Neural Networks Learn from Experience. Scientific American, 267(3), 144-151.",
                 "Jonas, H. (1968). Biological Foundations of Individuality. International Philosophical Quarterly, 8(2), 231-251.",
+                "Laureys, S. (2007). Eyes Open, Brain Shut. Scientific American, 296(5), 84-89.",
+                "LeDoux, J. E. (1994). Emotion, Memory and the Brain. Scientific American, 270(6), 50-57.",
                 "Maturana, H. R., y Varela, F. J. (1980). Autopoiesis and Cognition: The Realization of the Living. D. Reidel.",
                 "Mylopoulos, M. (2022). Neurobiological theories of consciousness. En B. D. Young y C. D. Jennings (Eds.), Mind, Cognition, and Neuroscience: A Philosophical Introduction (pp. 280-293). Routledge.",
                 "Putnam, H. (1967). Psychological Predicates. En Art, Mind, and Religion. Univ. of Pittsburgh Press.",
+                "Quian Quiroga, R., Fried, I., y Koch, C. (2013). Brain Cells for Grandmother. Scientific American, 308(2), 30-35.",
                 "Searle, J. R. (1980). Minds, Brains, and Programs. Behavioral and Brain Sciences, 3(3), 417-457.",
                 "Searle, J. R. (1992). The Rediscovery of the Mind. MIT Press.",
                 "Seth, A. K. (2025). Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences, publicación anticipada en línea, 1-42. doi:10.1017/S0140525X25000032",
@@ -360,6 +420,7 @@ export default function Home() {
                 "Varela, F. J., Maturana, H. R., y Uribe, R. (1974). Autopoiesis: The Organization of Living Systems. BioSystems, 5(4), 187-196.",
                 "Villalobos, M., y Dewhurst, J. (2018). Enactive autonomy in computational systems. Synthese, 195(5), 1891-1908.",
                 "Webb, B. (1996). A Cricket Robot. Scientific American, 275(6), 94-99.",
+                "Zeki, S. (1992). The Visual Image in Mind and Brain. Scientific American, 267(3), 68-76.",
               ].map((r, i) => (
                 <li key={i} style={{ marginBottom: 8, paddingLeft: 14, borderLeft: "2px solid var(--border)" }}>
                   {r}

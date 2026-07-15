@@ -127,6 +127,18 @@ const slidesData: SlideData[] = [
       "Tercera consecuencia, y es la decisiva. Para escapar de las escalas anidadas —célula, tejido, órgano, organismo— hay que añadir algo que seleccione una: integración causal, clausura operacional. Pero fíjense en lo que pasa entonces: eso añadido hace todo el trabajo. La integración causal es una propiedad de la organización, no del material, y es exactamente lo que ofrecen las teorías neurobiológicas de la conciencia que revisó el seminario. Es también lo que el funcionalista concede sin pestañear, porque es su tesis. Con lo cual la auto-producción queda como un epiciclo: no explica ningún caso que la integración causal no explique ya, y sola no explica ninguno. Y que la frontera del sujeto no sea un dato lo enseña el propio seminario: el grillo robot de Webb delega el cómputo de la fonotaxis a un tubo de desfase —materia no viva, y sin embargo cognitivamente constitutiva—.",
   },
   {
+    title: "La clínica ya separó las variables",
+    subtitle: "Laureys (2007): auto-producción completa, sujeto ausente",
+    bullets: [
+      "Vegetativo: respira solo, ciclos sueño-vigilia, se mueve — vivo, sin discusión.",
+      "«la vigilia permanece intacta, pero la consciencia —que abarca todos los pensamientos y sentimientos— queda abolida»",
+      "«medir los niveles globales de consumo de energía en el cerebro no puede indicar la presencia de consciencia»",
+      "Covaría el sujeto: conectividad frontoparietal y córtico-talámica. No la materia.",
+    ],
+    speakerNotes:
+      "Esto ya no es un experimento mental: la neurología ya disoció en pacientes las dos variables que el argumento confunde. Laureys describe el estado vegetativo como la disociación de los dos componentes de la conciencia: «la vigilia permanece intacta, pero la consciencia —que abarca todos los pensamientos y sentimientos— queda abolida». Estos pacientes conservan ciclos de sueño-vigilia, respiran sin asistencia, hacen movimientos espontáneos: la auto-producción está completa, el organismo se automantiene, está vivo sin discusión. Y el sujeto no está. Laureys añade algo más incómodo: hay voluntarios sanos y plenamente conscientes con metabolismo cerebral global comparable al de algunos pacientes vegetativos, y de ahí concluye la frase que quiero que se les quede: «medir los niveles globales de consumo de energía en el cerebro no puede indicar la presencia de consciencia». Lo que sí covaría con el sujeto es la «conectividad funcional dentro de esta red frontoparietal y con centros más profundos del cerebro, en particular el tálamo»; en sus pacientes el estímulo llegaba a la corteza somatosensorial primaria y ahí moría, porque esa región «estaba aislada y desconectada del resto del cerebro». No es la materia. No es la energía. Es la integración. Cautela obligatoria, y la digo antes de que me la pidan: esto no significa que en cada paciente vegetativo no haya sujeto —Laureys documenta conciencia encubierta detectada por neuroimagen y diagnóstico errado en más de un tercio de los casos—; hablo de la categoría clínica, no de individuos. Y la inferencia hacia la autopoiesis y el silicio es mía, no de Laureys: él no discute autopoiesis ni sustratos de silicio. Lo que tomo de él es el hecho clínico —auto-producción completa, sujeto ausente—; la lectura filosófica es mía. Referencia: Laureys, S. (2007). Eyes Open, Brain Shut. Scientific American, 296(5), 84-89.",
+  },
+  {
     title: "La tradición ya lo sabía",
     subtitle: "Varela 1979: de la autopoiesis a la autonomía — y el dilema",
     bullets: [
@@ -151,31 +163,31 @@ const slidesData: SlideData[] = [
       "La advertencia se la hace la teoría a sí misma. Beer, en 2004, analiza un glider del juego de la vida como sistema autopoiético —y quiero ser justo: es un homenaje explícito a Varela, no una refutación, y plantea la individuación como problema abierto—. Se detiene en las preguntas previas: si los estados de las celdas «merecen realmente llamarse componentes», si encender o apagar una celda «cuenta realmente como producción de componentes», si el glider «posee realmente una frontera que lo genera y lo constriñe». Y observa dos cosas que uso: que la continuidad de su identidad «depende crucialmente de cómo elegimos definir» su organización, y que «estrictamente hablando, ningún sistema es autopoiético si se lo observa durante un intervalo suficientemente largo». Su conclusión —que la caracterización formal de la organización sigue abierta— es la mía: el criterio es nítido en el caso paradigmático y se vuelve indeterminado justo en los disputados, los únicos donde el argumento lo necesita.",
   },
   {
-    title: "Mi experimento me refutó",
-    subtitle: "Mismo hardware, otro corte: κ de 0,00 a 0,70",
+    title: "El laboratorio",
+    subtitle: "Un experimento por lectura del seminario — ninguno encontró la diferencia de sustrato",
     bullets: [
-      "Recurso propio: κ = 0,88 ± 0,00.",
-      "Frontera estrecha (chip solo): κ = 0,00 ± 0,00.",
-      "Frontera ampliada (chip + fuente): κ = 0,70 ± 0,01.",
-      "No cambió el sustrato: cambió el corte.",
+      "Un experimento por lectura: Zeki, Quian Quiroga, LeDoux, Hinton, Webb.",
+      "Ninguno encontró la diferencia de sustrato.",
+      "κ: frontera estrecha (chip solo) = 0,00 · frontera ampliada (+fuente) = 0,70.",
+      "No cambió el sustrato: cambió el corte (24 semillas).",
     ],
     image: "/graficos/exp10_acoplamiento.png",
     imageAlt:
       "Experimento 10: la misma máquina, con la frontera estrecha, es inmune a la lesión (κ=0,00); ampliada para incluir su fuente de alimentación, se degrada (κ=0,70).",
     speakerNotes:
-      "Debo lo anterior a un fracaso propio, y exhibirlo es más útil que taparlo. Construí un coeficiente κ de acoplamiento entre cómputo y auto-mantenimiento y lo presenté como la firma operacional de la autopoiesis. La auditoría lo desarmó. κ igual a cero no era un resultado: era una identidad aritmética. κ de 0,88 tampoco era un descubrimiento: tiene forma cerrada. Y lo que κ mide, cuando mide algo, es compartición de un presupuesto de recursos —eso lo tiene un portátil cuyo cómputo compite con su refrigeración por el mismo presupuesto eléctrico—. Si κ fuera la firma de la autopoiesis, mi computador estaría vivo. La comprobación que lo cierra la corrí con 24 semillas: dejo intacta la máquina y muevo sólo la frontera —cuento la fuente de alimentación como parte del sistema y no como un exterior inagotable— y el mismo silicio, bajo la misma perturbación, pasa de 0,00 a 0,70. No cambió el sustrato; cambió el corte. Y ninguna de las dos ramas es autopoiética: la bomba es exógena, no hay clausura de producción ni adaptividad, que es lo que Di Paolo exige. La medida no descubre unidades: las presupone.",
+      "Esto es exhibición, no confesión. Construí un experimento por cada lectura del seminario: la jerarquía visual de Zeki, las células de concepto de Quian Quiroga, la neuroquímica de LeDoux, la plasticidad de Hinton, el grillo de Webb. Ninguno encontró diferencia de sustrato. Los que sobrevivieron a mi propia auditoría me devolvieron la constante que yo había escrito antes de correrlos; otros ni siquiera llegaron a eso. Nada de esto prueba mi tesis, y lo digo yo antes de que lo diga otro: un modelo mal construido siempre devuelve su estipulación, y eso es un hecho sobre mí, no sobre el mundo. El argumento lo llevan las secciones anteriores, no mi código. Lo que el laboratorio sí exhibe es el corte. Intenté construir un coeficiente κ de acoplamiento entre cómputo y automantenimiento como refutador posible de mi propia tesis: una firma autopoiética invariante ante dónde se traza la frontera del sistema. Con la máquina intacta y la misma perturbación, contar la fuente de alimentación como parte del sistema en vez de como un exterior inagotable lleva κ de 0,00 a 0,70, con 24 semillas. No cambió el sustrato: cambió dónde tracé la línea. Cuidado con el lenguaje aquí, porque es fácil pasarse: el número no confirma nada por sí mismo y no lo presenten como si lo hiciera; lo único que muestra es que el corte, no el material, mueve el número.",
   },
   {
     title: "Qué NO se sigue",
-    subtitle: "El alcance, dicho antes de que me lo pregunten",
+    subtitle: "El blindaje: condición necesaria no es criterio de individuación",
     bullets: [
       "No se sigue que el silicio sienta.",
-      "No refuto a Seth: su argumento no usa la premisa que ataco.",
-      "No explico los qualia: soy neutral ante el problema difícil.",
-      "La objeción fuerte —«caricaturizas»— es mi argumento.",
+      "«Pero sigue siendo necesaria» — concedo la premisa, niego la inferencia.",
+      "¿Necesaria de qué? Del sujeto: ninguno es autopoiético (2.º orden).",
+      "De los componentes: es tesis sobre material, no sobre sujetos.",
     ],
     speakerNotes:
-      "El alcance, y lo digo yo antes de que me lo pregunten. No he mostrado que una máquina sienta, ni que la vida sea irrelevante para la mente. El argumento de Seth no depende de la premisa que ataco, así que no lo refuto. Tampoco explico los qualia: mi argumento es neutral ante el problema difícil, y la neutralidad es deliberada, porque vale sea el funcionalismo verdadero o falso. Y la réplica seria es que caricaturizo: Thompson y Di Paolo nunca dijeron que la célula sea el sujeto; hablan de autonomía del organismo. Concedo el hecho y niego que me perjudique, porque es mi argumento: en cuanto la tradición pasa a la autonomía para individuar al organismo, deja de tener un argumento material contra el silicio y pasa a tener una teoría organizacional de la unidad, compatible con la realizabilidad múltiple. Y no finjo prioridad: la distinción entre identidad propia y prestada —la del artefacto, cuya identidad «le es acordada» por otro— es de Jonas, del 68; y que el problema de la individualidad sea «el de justificar cuál separación elegimos entre el gran conjunto de distinciones posibles y arbitrarias» está dicho, con esas palabras, en Barandiaran, Di Paolo y Rohde. No descubro la condición de individualidad: la aplico donde no se la habían cobrado.",
+      "El alcance, y lo digo yo antes de que me lo pregunten. No he mostrado que una máquina sienta, ni que la vida sea irrelevante para la mente. Tampoco explico los qualia: mi argumento es neutral ante el problema difícil, y la neutralidad es deliberada, porque vale sea el funcionalismo verdadero o falso. Y no refuto a Seth: sus argumentos, dice él mismo, «no refutan» el funcionalismo, sólo lo vuelven «menos plausible»; mi premisa dos no es la suya. Ahora el blindaje, porque esta es la réplica que de verdad van a hacerme: «de acuerdo, la auto-producción no individúa al sujeto; pero sigue siendo necesaria. El silicio no se autoproduce, luego le falta una condición sin la cual no hay conciencia». Concedo la premisa y niego la inferencia. La pregunta es: ¿de qué es necesaria la autopoiesis? Si dicen que del sujeto, el sujeto tendría que ser una unidad autopoiética, y ninguno lo es: somos sistemas de segundo orden, esto ya lo mostré. Si dicen que de los componentes, es una tesis sobre el material, y hace falta un argumento aparte que diga por qué ese material y no otro —argumento que la autopoiesis no puede dar, porque habla de células, no de sujetos—. Una condición de fondo no es un criterio de exclusión: que todo lo consciente conocido sea vivo no implica que sólo lo vivo pueda serlo. Debo reconocer de quién es lo que sobrevive: la distinción entre identidad propia y prestada es de Jonas, del 68; y que individuar sea «justificar cuál separación elegimos entre el gran conjunto de distinciones posibles y arbitrarias» está dicho, con esas palabras, en Barandiaran, Di Paolo y Rohde. No descubro la condición de individualidad: la aplico donde no se la habían cobrado.",
   },
   {
     title: "La unidad que falta",

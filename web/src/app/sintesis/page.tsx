@@ -7,11 +7,11 @@ import ArgMap from "@/components/ArgMap";
 export const metadata: Metadata = {
   title: "Síntesis — para leer en clase",
   description:
-    "El argumento entero en voz alta: por qué la autopoiesis no puede decidir el problema del sustrato. Guión de lectura (~5 min).",
+    "El argumento entero en voz alta: por qué la autopoiesis no puede decidir el problema del sustrato. Guión de lectura (~7 min).",
 };
 
 // Guión de lectura: cada «beat» es una unidad de habla con su tiempo estimado.
-// Los tiempos suman ~5 min a ritmo de exposición oral (~150 palabras/min).
+// Los tiempos suman ~7 min a ritmo de exposición oral (~150 palabras/min).
 const BEATS: { n: string; t: string; title: string; body: React.ReactNode }[] = [
   {
     n: "01",
@@ -84,6 +84,30 @@ const BEATS: { n: string; t: string; title: string; body: React.ReactNode }[] = 
   },
   {
     n: "04",
+    t: "~60 s",
+    title: "La clínica ya separó las variables",
+    body: (
+      <>
+        El argumento no necesita esperar una máquina consciente para ponerse a prueba: la neurología ya
+        disoció en pacientes las dos variables que importan. Laureys (2007) describe el estado vegetativo
+        como la disociación de los dos componentes de la conciencia: «la vigilia permanece intacta, pero
+        la consciencia —que abarca todos los pensamientos y sentimientos— queda abolida». Estos pacientes
+        conservan ciclos de sueño-vigilia y respiran sin asistencia. La auto-producción está{" "}
+        <strong>completa</strong>: el organismo se automantiene, está vivo. Y el sujeto no está.
+        <br />
+        <br />
+        Laureys concluye algo más incómodo: «medir los niveles globales de consumo de energía en el
+        cerebro no puede indicar la presencia de consciencia». Lo que sí covaría con el sujeto es la
+        «conectividad funcional dentro de esta red frontoparietal y con centros más profundos del cerebro,
+        en particular el tálamo». La cautela obliga a hablar de la categoría clínica, y la inferencia es
+        mía —Laureys no discute autopoiesis ni silicio—. Pero basta: la clínica mantiene constante la
+        auto-producción y mueve al sujeto. El factor diferencial <strong>no es la auto-producción</strong>{" "}
+        —es organizacional—.
+      </>
+    ),
+  },
+  {
+    n: "05",
     t: "~70 s",
     title: "La tradición ya lo sabía: Varela 1979 y el dilema",
     body: (
@@ -108,13 +132,15 @@ const BEATS: { n: string; t: string; title: string; body: React.ReactNode }[] = 
     ),
   },
   {
-    n: "05",
-    t: "~70 s",
-    title: "Mi propio experimento me refutó: κ y la frontera",
+    n: "06",
+    t: "~90 s",
+    title: "Lo que construí, y la objeción más fuerte",
     body: (
       <>
-        Le debo esto a un fracaso propio, y exhibirlo es más útil que taparlo. Construí una medida —un
-        coeficiente κ de acoplamiento entre cómputo y auto-mantenimiento— y la presenté como la firma
+        Construí un experimento por cada lectura del seminario: la jerarquía visual de Zeki, las células
+        de concepto de Quian Quiroga, la neuroquímica de LeDoux, la plasticidad de Hinton, el grillo de
+        Webb. Ninguno encontró diferencia de sustrato. El que más rindió fue una medida —un coeficiente κ
+        de acoplamiento entre cómputo y auto-mantenimiento— presentada en su momento como la firma
         operacional de la autopoiesis. Auditada, medía otra cosa: <strong>compartición de un presupuesto
         de recursos</strong>. Eso lo tiene un portátil cuyo cómputo compite con su refrigeración por el
         mismo presupuesto eléctrico. Si κ fuera la firma de la autopoiesis, mi computador estaría vivo.
@@ -125,6 +151,12 @@ const BEATS: { n: string; t: string; title: string; body: React.ReactNode }[] = 
         como un exterior inagotable—, el mismo <span className="si">silicio</span> pasa de κ = 0,00 a{" "}
         <strong>κ = 0,70</strong>, del orden del 0,88 del supuesto <span className="carbon">carbono</span>.
         No cambió el sustrato: cambió el corte.
+        <br />
+        <br />
+        Queda la réplica más fuerte: «de acuerdo, la auto-producción no individúa al sujeto, pero sigue
+        siendo <strong>necesaria</strong>». Concedo la premisa y niego la inferencia. ¿Necesaria de qué?
+        Si del sujeto, ninguno lo es —somos sistemas de segundo orden—. Si de los componentes, es una
+        tesis sobre el material que la autopoiesis no puede fundar: habla de células, no de sujetos.
         <br />
         <br />
         Y quiero terminar con el alcance honesto. De nada de esto se sigue que el silicio sienta. No he
@@ -149,7 +181,7 @@ export default function SintesisPage() {
         }}
       >
         <div className="eyebrow" style={{ color: "var(--hero-muted)", marginBottom: 14 }}>
-          Para leer en clase · ~5 min
+          Para leer en clase · ~7 min
         </div>
         <h1
           style={{
@@ -174,7 +206,7 @@ export default function SintesisPage() {
             margin: "0 auto 24px",
           }}
         >
-          Síntesis de <em>La unidad que falta</em> — cinco beats para exponer la tesis sin leerla entera
+          Síntesis de <em>La unidad que falta</em> — seis beats para exponer la tesis sin leerla entera
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/" className="btn" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.25)", background: "transparent" }}>
@@ -208,12 +240,13 @@ export default function SintesisPage() {
               <strong>extensión</strong>. En un cuerpo hay del orden de 10¹³ unidades autopoiéticas y
               ninguna es el sujeto; el cerebro no es una unidad autopoiética, sino un sistema de segundo
               orden; y el hígado es tan autopoiético como él. Para seleccionar al sujeto entre escalas
-              anidadas hay que añadir integración causal, que es sustrato-neutral. La propia tradición lo
-              supo: Varela generalizó de la autopoiesis a la autonomía y la clausura operacional (1979)
-              precisamente porque la autopoiesis estricta es celular. Pero lo organizacional es realizable
-              en más de un medio. De ahí el dilema —o no individúa al sujeto, o no excluye sustratos—. No
-              se sigue que el silicio sienta: se sigue que la autopoiesis no es el instrumento que puede
-              decidirlo.
+              anidadas hay que añadir integración causal, que es sustrato-neutral. La clínica ya separó
+              esas variables: en el estado vegetativo (Laureys, 2007) la auto-producción está completa y
+              el sujeto no está. La propia tradición lo supo: Varela generalizó de la autopoiesis a la
+              autonomía y la clausura operacional (1979) precisamente porque la autopoiesis estricta es
+              celular. Pero lo organizacional es realizable en más de un medio. De ahí el dilema —o no
+              individúa al sujeto, o no excluye sustratos—. No se sigue que el silicio sienta: se sigue que
+              la autopoiesis no es el instrumento que puede decidirlo.
             </p>
           </section>
 

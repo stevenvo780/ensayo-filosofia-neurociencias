@@ -110,7 +110,7 @@ export const REFS: RefEntry[] = [
     tooltip:
       "Neuronas del lóbulo temporal medial de selectividad extrema (Quian Quiroga, Fried y Koch): responden a «Jennifer Aniston» con una fracción minúscula de disparos. No son neuronas-abuela únicas: el código es esparcido pero distribuido.",
     href: "/#s2",
-    tokens: ["células de concepto", "concept cells", "neurona de la abuela", "Quian Quiroga", "Jennifer Aniston"],
+    tokens: ["células de concepto", "concept cells", "neurona de la abuela", "Quian Quiroga", "Jennifer Aniston", "Fried", "Koch"],
   },
   {
     id: "wta",
@@ -138,6 +138,15 @@ export const REFS: RefEntry[] = [
       "Zeki (1992) describió el procesamiento visual como una jerarquía con campos receptivos locales retinotópicos. Estructurarlos así, en vez de conexiones densas, recorta ~90 % de los FLOPs (Exp 1).",
     href: "/#s2",
     tokens: ["jerarquía visual", "campos receptivos", "retinotópicos", "Zeki"],
+  },
+  {
+    id: "ledoux-neurociencia-emocional",
+    label: "LeDoux (1994) — Emoción y memoria",
+    kind: "concepto",
+    tooltip:
+      "LeDoux (1994) documenta cómo la amígdala y el hipocampo procesan la emoción y la memoria con independencia relativa de la corteza. Muestra la diversidad de vías neuroquímicas: diferentes emociones y memorias reclutan distintos circuitos y neurotransmisores (acetilcolina, dopamina, noradrenalina, serotonina).",
+    href: "/#s2",
+    tokens: ["LeDoux", "emoción", "memoria", "amígdala", "circuitos emocionales"],
   },
 
   // ── Termodinámica y energía ──────────────────────────────────────────────
@@ -234,6 +243,15 @@ export const REFS: RefEntry[] = [
       "Definición de lo vivo (Maturana y Varela, 1974): un sistema que produce y regenera continuamente los componentes y la frontera que lo constituyen. Es el puente —conjetural— hacia la tesis ontológica: procesar información sería inseparable de mantenerse existiendo.",
     href: "/#s4",
     tokens: ["autopoiesis", "autopoiético", "autopoiética", "auto-producción", "Maturana", "Varela"],
+  },
+  {
+    id: "laureys-estado-vegetativo",
+    label: "Laureys (2007) — Estado vegetativo",
+    kind: "concepto",
+    tooltip:
+      "Laureys documenta en pacientes en estado vegetativo la disociación clínica de dos variables: la auto-producción está completa (vigilia intacta, ciclos de sueño-vigilia, respiración espontánea, vivo sin discusión), pero la consciencia está abolida. Lo que covaría con el sujeto es la conectividad funcional frontoparietal, no la auto-producción ni el metabolismo basal. Refuta que la autopoiesis sea el criterio que individúa al sujeto consciente.",
+    href: "/#s3",
+    tokens: ["Laureys", "estado vegetativo", "vigilia sin consciencia", "conectividad frontoparietal", "disociación"],
   },
   {
     id: "qualia",
