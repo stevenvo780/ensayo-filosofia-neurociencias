@@ -198,6 +198,13 @@ const pad = (n: number) => String(n).padStart(2, "0");
 // contenido es demasiado largo y hay que recortarlo (se avisa por consola).
 const MIN_SCALE = 0.72;
 
+// TECHO. Sin esto el panel se quedaba clavado en sus 1040 px de ancho maquetado:
+// en un 1080p ocupaba el 54 % de la pantalla, con márgenes muertos enormes y el
+// texto innecesariamente pequeño al proyectar. La diapositiva debe CRECER hasta
+// llenar el espacio disponible, no sólo encogerse para caber (patrón reveal.js).
+// El límite evita que una diapositiva muy corta se infle de forma grotesca.
+const MAX_SCALE = 1.8;
+
 export default function SlideClient({ slideIndex }: { slideIndex: number }) {
   const [picker, setPicker] = useState(false);
   const [notesOpen, setNotesOpen] = useState(false);
@@ -222,7 +229,7 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
         if (!nW || !nH) return;
         const availW = window.innerWidth - 32;
         const availH = window.innerHeight - 92; // reserva la barra flotante
-        const raw = Math.min(1, availW / nW, availH / nH);
+        const raw = Math.min(MAX_SCALE, availW / nW, availH / nH);
         if (raw < MIN_SCALE) {
           console.warn(
             `[deck] Diapositiva ${slideIndex + 1} necesita scale ${raw.toFixed(
@@ -283,7 +290,7 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
   const isTitle = slideIndex === 0;
   const kicker = isTitle
     ? "Sustentación · Filosofía de las Neurociencias"
-    : `Diapositiva ${pad(slideIndex + 1)} · Silicio ⇄ Tejido`;
+    : `Diapositiva ${pad(slideIndex + 1)} · La unidad que falta`;
 
   return (
     <div className="sd-deck">
@@ -300,7 +307,7 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
           <header className="sd-head">
             <span className="sd-brand">
               <Emblem size={24} />
-              Silicio ⇄ Tejido
+              La unidad que falta
             </span>
             <span className="sd-counter">
               {pad(slideIndex + 1)} <i>/</i> {pad(total)}
@@ -371,7 +378,7 @@ export default function SlideClient({ slideIndex }: { slideIndex: number }) {
           className="sd-navprogress"
           style={{ width: `${((slideIndex + 1) / total) * 100}%` }}
         />
-        <span className="sd-navbrand">S⇄T</span>
+        <span className="sd-navbrand">LUQF</span>
         <button
           className="sd-arrow"
           onClick={() => slideIndex > 0 && (window.location.href = `/slides/${slideIndex - 1}`)}

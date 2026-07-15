@@ -264,11 +264,15 @@ export default function GammaOscillation() {
       </div>
 
       <figcaption className="explainer-cap">
-        De la física pasiva de una red excitatoria-inhibitoria con retardos
-        axonales emerge actividad beta–gamma (13–80 Hz) sin reloj externo. El
-        acoplamiento E-I controla la coherencia: bajo = ruido; alto =
-        oscilaciones rítmicas. En silicio, indexar miles de buffers de retardo
-        es prohibitivo; en tejido, la morfología axonal lo regala.
+        <strong>Coherencia por organización, no por material.</strong> De una red
+        excitatoria-inhibitoria con retardos axonales emerge actividad beta–gamma
+        (13–80 Hz) <em>sin reloj externo</em>: mueve el acoplamiento E-I y verás la
+        transición de ruido a ritmo. Lo que produce la coherencia no es de qué está
+        hecha la red, sino <strong>cómo está enlazada</strong> — y la comprobación la
+        tienes delante: esta red corre en silicio, en tu navegador, ahora mismo. Es el
+        tipo de propiedad de la Parte II: definida por la forma del acoplamiento y por
+        tanto sin compromiso con el sustrato. <em>Ilustra una tesis organizacional; no
+        la prueba, y no dice nada sobre si algo se siente aquí.</em>
       </figcaption>
     </figure>
   );

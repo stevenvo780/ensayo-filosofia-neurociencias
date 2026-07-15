@@ -940,3 +940,87 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 .sd-argmap .argmap { margin: 0; padding: 0; background: transparent; border: none; }
 .sd-argmap .argmap__cap { display: none; }
 .sd-argmap .argmap svg { max-height: 60vh; }
+
+/* ── UnidadEquivocada (G1) ─────────────────────────────────────────────
+   Diagrama conceptual: la tabla de §II.2-II.4. Su fuerza es la GESTALT de
+   las dos columnas «● SÍ» que nunca coinciden en una fila, así que se lee
+   entera de un golpe: nada de scroll horizontal ni de filas ocultas.
+   En pantallas estrechas se retiran las dos columnas diagnósticas
+   (¿produce componentes? / ¿produce frontera?) y NUNCA las dos que
+   argumentan — el detalle cede, el argumento no. */
+.ue-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.ue-th {
+  padding: 0 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.ue-th--escala { text-align: left; width: 30%; }
+.ue-th--n { width: 10%; }
+.ue-th--diag { width: 14%; }
+.ue-th--si { width: 16%; color: var(--si); }
+.ue-th--carbon { width: 16%; color: var(--carbon); }
+.ue-cell {
+  padding: 9px 6px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  font-weight: 400;
+}
+.ue-row-name {
+  padding: 9px 6px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-soft);
+}
+.ue-row-name--marcada { font-weight: 600; color: var(--text); }
+.ue-nota {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.ue-cell--si { color: var(--si); font-weight: 700; background: var(--si-soft); }
+.ue-cell--carbon {
+  font-family: var(--font-display);
+  color: var(--carbon);
+  font-weight: 700;
+  background: var(--carbon-soft);
+}
+.ue-remate {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-strong);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+  text-align: center;
+}
+.ue-remate strong { color: var(--text); }
+@media (max-width: 640px) {
+  .ue-diag { display: none; }
+  .ue-th--escala { width: 40%; }
+  .ue-th--n { width: 10%; }
+  .ue-th--si, .ue-th--carbon { width: 25%; }
+  .ue-th { font-size: 0.55rem; letter-spacing: 0.04em; }
+  .ue-cell { font-size: 0.85rem; padding: 8px 4px; }
+}

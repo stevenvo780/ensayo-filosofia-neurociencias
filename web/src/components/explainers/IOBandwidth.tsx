@@ -213,15 +213,17 @@ export default function IOBandwidth() {
       </div>
 
       <figcaption className="explainer-cap">
-        Cada neurona biológica emite ~{IO.fanoutCarbon.toLocaleString("es")} sinapsis (fan-out masivo en 3D);
-        un transistor CMOS típico emite ~{IO.fanoutSilicon} (fan-out en rejilla 2D). Arrastra el rango de escala:
-        el ratio de cableado requerido crece como N<sup>1/6</sup>. A escala cerebral ({(1e11).toLocaleString("es")} neuronas),
-        el silicio requeriría ~68× más interconexiones que el tejido. Dato: {IO.capillariesKm} km de capilares
-        sirven neurona a neurona cada ~{IO.neuronCapillaryUm} µm —{" "}
-        <span style={{ fontStyle: "italic", color: "var(--muted)" }}>
-          los cables difícilmente superan a los sistemas circulatorios
-        </span>
-        .
+        <strong>Densidad de acoplamiento: un parámetro organizacional.</strong> Una neurona emite
+        ~{IO.fanoutCarbon.toLocaleString("es")} sinapsis embebidas en 3D; una celda CMOS en rejilla
+        planar, ~{IO.fanoutSilicon}. Arrastra el rango de escala: el cableado requerido crece como
+        N<sup>1/6</sup>. <strong>La restricción es del empaquetado planar, no del silicio</strong> —el
+        apilamiento 3D existe (TSV, litografía multicapa) y avanza—, así que esto no es una frontera
+        de sustrato sino un estado de la técnica. Lo que sí ilustra es la magnitud que la Parte II
+        señala como el motor real del argumento: la <strong>integración causal</strong>, que se define
+        por cómo se enlazan los procesos y no por de qué están hechos. Y una advertencia contra la
+        lectura fácil: <strong>más acoplamiento no es más sujeto</strong>. Un cuenco de neuronas en
+        placa tiene el fan-out y no es nadie. La topología puede seleccionar una escala; ninguna
+        cantidad de fan-out entrega experiencia.
       </figcaption>
     </figure>
   );

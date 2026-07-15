@@ -9,7 +9,6 @@ export default function MorphologyFlops() {
 
   const disembodied = EXP.morphology.disembodied; // 757760
   const embodied = EXP.morphology.embodied; // 2
-  const factor = Math.round(disembodied / embodied); // 378880
 
   const prefersReduced = useMemo(() => {
     if (typeof window === "undefined") return false;
@@ -25,13 +24,13 @@ export default function MorphologyFlops() {
             className={mode === "disembodied" ? "active" : ""}
             onClick={() => setMode("disembodied")}
           >
-            Desencarnado (silicio)
+            Desencarnado (FFT)
           </button>
           <button
             className={mode === "embodied" ? "active" : ""}
             onClick={() => setMode("embodied")}
           >
-            Corporizado (grillo de Webb)
+            Corporizado (tubo de Webb)
           </button>
         </div>
       </div>
@@ -72,31 +71,17 @@ export default function MorphologyFlops() {
         </div>
       </div>
 
-      {/* Factor (reduction ratio) */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: 24,
-        }}
-      >
-        <div className="stat" style={{ textAlign: "center" }}>
-          <div className="stat-num" style={{ color: "var(--carbon)" }}>
-            <CountUp to={factor} format={fmtInt} suffix="×" />
-          </div>
-          <div className="stat-label">Factor de eficiencia</div>
-        </div>
-      </div>
-
       <figcaption className="explainer-cap">
         El cómputo no desaparece: se <strong>reubica</strong> en la física del cuerpo. Un circuito
-        neuronal desencarnado (FFT + correlación cruzada) requiere {fmtInt(disembodied)} operaciones
-        para localizar un sonido; un <em>grillo de Webb</em> (1996) lo resuelve con dos micrófonos
-        y un tubo de desfase acústico: apenas {embodied} FLOPs. La autopoiesis —el acoplamiento
-        estructural entre el sistema nervioso y el cuerpo— no depende del carbono ni del silicio,
-        sino de la {" "}
-        <strong>geometría viva</strong> que deslocaliza la cognición fuera del
-        procesamiento simbólico.
+        desencarnado (FFT + correlación cruzada) requiere {fmtInt(disembodied)} operaciones para
+        localizar un sonido; el grillo robot de <em>Webb</em> (1996) lo resuelve con dos micrófonos y
+        un tubo de desfase acústico: {embodied} FLOPs. El tubo <strong>no está vivo</strong>: no se
+        autoproduce, no es autopoiético — y es <em>cognitivamente constitutivo</em> de la solución, no
+        un accesorio del sistema que computa sino parte de lo que computa. Si el sistema cognitivo
+        incluye el tubo, su frontera no coincide con ninguna frontera autopoiética: dónde termina el
+        sistema y empieza el entorno no se lee de la naturaleza, se decide.{" "}
+        <strong>Cautela:</strong> las dos cifras son conteos de operaciones de dos modelos
+        estipulados, <em>no mediciones</em>; su cociente es un cociente entre dos estipulaciones.
       </figcaption>
     </figure>
   );

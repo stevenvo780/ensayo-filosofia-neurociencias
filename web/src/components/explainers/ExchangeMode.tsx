@@ -175,11 +175,19 @@ export default function ExchangeMode() {
       </div>
 
       <figcaption className="explainer-cap">
-        En silicio, mover un bit a DRAM (intercambio eléctrico <strong>activo</strong>) cuesta ~{EXCHANGE.moveVsComputeRatio}× computarlo
-        (Horowitz 2014). En tejido neural, el transporte es difusión química <strong>pasiva</strong> (gradiente
-        espontáneo), sin bomba activa — solo se paga la restauración amortizada del potencial (Attwell–Laughlin
-        2001). El modo de intercambio fija el piso energético: activo (silicio, 1950 pJ) vs pasivo (carbono,
-        solo el AP restaurativo: 210.85 pJ).
+        Mover un bit a DRAM cuesta ~{EXCHANGE.moveVsComputeRatio}× computarlo; en la hendidura
+        sináptica el transporte es difusión química por gradiente.{" "}
+        <strong>Cautela — este experimento tiene tres defectos y por eso salió de la tesis:</strong>{" "}
+        (i) es <em>física de materiales</em>, no organización: dos mecanismos de transporte, sin
+        topología ni clausura — y «de qué está hecho» es el eje que §IV.1 declaró muerto; (ii) la
+        comparación está sesgada por construcción, porque enfrenta el <em>peor caso</em> del silicio
+        (atravesar toda la jerarquía hasta DRAM, 1.950 pJ) contra el <em>mejor caso</em> del tejido
+        (restauración amortizada del potencial, 210,85 pJ), omitiendo que un acceso a SRAM local
+        cuesta ~1–2 pJ: el ratio sale de haber elegido los dos extremos convenientes; (iii) llamar
+        «pasivo» al tejido era un error de biología — el potencial de acción <em>es</em> transporte
+        activo, con bombas Na⁺/K⁺ que consumen ATP hasta ~el 50 % del presupuesto energético
+        cerebral. Pieza de archivo; su contenido honesto está mejor medido en el benchmark escalonado
+        y mejor dicho en el piso de Landauer.
       </figcaption>
     </figure>
   );

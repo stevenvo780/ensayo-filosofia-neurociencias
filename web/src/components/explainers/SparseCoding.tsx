@@ -123,8 +123,14 @@ export default function SparseCoding() {
       <figcaption className="explainer-cap">
         Cada punto es una neurona; azul y ámbar son dos conceptos almacenados, y el{" "}
         <span style={{ color: "#d94f4f", fontStyle: "normal", fontWeight: 600 }}>rojo</span> es su
-        solapamiento. Arrastra: en régimen denso (80%) la interferencia es masiva; la esparsidad
-        biológica del 1% la reduce a ~1%, garantizando inmunidad al crosstalk.
+        solapamiento. Arrastra la densidad y observa lo que ocurre:{" "}
+        <strong>el solapamiento sigue a la densidad, porque es la densidad.</strong> Para vectores
+        Bernoulli(<em>p</em>), E[solapamiento] = <em>p</em>: el «80,0 % frente a 1,03 %» que este
+        trabajo publicaba como resultado del Experimento 2 era <em>p</em> elegido y <em>p</em>{" "}
+        reportado (§IV.2). La consecuencia es real y el deslizador la hace visible; lo que no hay aquí
+        es <strong>evidencia</strong>. Este gráfico no mide el mundo: mide un parámetro que elegí. Lo
+        dejo puesto porque la distancia entre «esto es un teorema sobre mi constante» y «esto es un
+        hallazgo» se recorre sin darse cuenta — y ésa es la lección de la Parte IV.
       </figcaption>
     </figure>
   );

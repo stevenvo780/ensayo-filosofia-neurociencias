@@ -267,8 +267,10 @@ export default function LandauerFloor() {
         <strong style={{ color: "var(--carbon)", fontStyle: "normal" }}>
           {fmtOrden(gapC)} órdenes
         </strong>
-        . Ambos muy por encima del techo que la termodinámica prohíbe franquear — la pregunta del
-        ensayo es cuál de los dos lo cierra primero.
+        . Ambos, a órdenes de magnitud del único suelo que la física impone de verdad — y el suelo es
+        <strong> el mismo para los dos</strong>. No hay aquí ninguna barrera de sustrato: ninguna
+        diferencia física fundamental separa a los dos candidatos. Todo lo que los separa es{" "}
+        <strong>arquitectura</strong> — y la arquitectura es elegible.
       </figcaption>
     </figure>
   );

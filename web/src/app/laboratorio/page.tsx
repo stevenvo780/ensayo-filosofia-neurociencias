@@ -17,15 +17,15 @@ const TIERS = [
 ];
 
 const EXPERIMENTS = [
-  { n: "01", title: "Codificación esparcida", sub: "Exp 2 · crosstalk 80% → 1,03%", C: SparseCoding },
-  { n: "02", title: "Cuello de botella de Von Neumann", sub: "Exp 5 · 20.000 KB vs 39 KB (512×)", C: VonNeumannBus },
-  { n: "03", title: "La escalera de la ineficiencia", sub: "Benchmark · brecha 3.000× → 104.450×", C: EfficiencyStaircase },
-  { n: "04", title: "El piso de Landauer", sub: "Límite termodinámico universal", C: LandauerFloor },
-  { n: "05", title: "Oscilaciones beta–gamma", sub: "Exp 4 · emergencia de la física pasiva", C: GammaOscillation },
-  { n: "06", title: "Cómputo morfológico", sub: "Exp 6 · 757.760 FLOPs vs 2 FLOPs", C: MorphologyFlops },
-  { n: "07", title: "Variabilidad · espacio de estados", sub: "Exp 7 · 4,7 bits vs 1 bit por sinapsis (Bartol 2015)", C: StateSpaceVariability },
-  { n: "08", title: "Ancho de banda de I/O", sub: "Exp 8 · fan-out 1.167× + entrega circulatoria", C: IOBandwidth },
-  { n: "09", title: "Intercambio: químico vs. eléctrico", sub: "Exp 9 · mover datos cuesta 650× computarlos (Horowitz 2014)", C: ExchangeMode },
+  { n: "01", title: "Codificación esparcida", sub: "Exp 2 · ◐ cálculo cerrado — E[solapamiento] = p", C: SparseCoding },
+  { n: "02", title: "Cuello de botella de Von Neumann", sub: "Exp 5 · memoria separada vs. memoria local", C: VonNeumannBus },
+  { n: "03", title: "La escalera de la ineficiencia", sub: "Benchmark · ● la única medición real, y es una cota amañada", C: EfficiencyStaircase },
+  { n: "04", title: "El piso de Landauer", sub: "Límite universal · no favorece a ningún sustrato", C: LandauerFloor },
+  { n: "05", title: "Oscilaciones beta–gamma", sub: "Exp 4 · coherencia por organización, no por material", C: GammaOscillation },
+  { n: "06", title: "Cómputo morfológico", sub: "Exp 6 · el tubo de Webb no está vivo, y computa", C: MorphologyFlops },
+  { n: "07", title: "Variabilidad · espacio de estados", sub: "Exp 7 · archivo — la premisa «1 bit» era una estipulación", C: StateSpaceVariability },
+  { n: "08", title: "Ancho de banda de I/O", sub: "Exp 8 · fan-out ~7.000 vs ~4 · restricción de empaquetado", C: IOBandwidth },
+  { n: "09", title: "Intercambio: químico vs. eléctrico", sub: "Exp 9 · archivo — comparación sesgada por construcción", C: ExchangeMode },
 ];
 
 export default function Laboratorio() {

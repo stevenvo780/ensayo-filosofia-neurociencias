@@ -25,13 +25,13 @@ export default function VonNeumannBus() {
             className={scene === "silicon" ? "active" : ""}
             onClick={() => setScene("silicon")}
           >
-            Silicio (Von Neumann)
+            Memoria separada (bus)
           </button>
           <button
             className={scene === "carbon" ? "active" : ""}
             onClick={() => setScene("carbon")}
           >
-            Carbono (local)
+            Memoria local (sin bus)
           </button>
         </div>
       </div>
@@ -55,19 +55,21 @@ export default function VonNeumannBus() {
           <div className="stat-num" style={{ color: "var(--si)" }}>
             <CountUp to={EXP.learning.backpropKB} decimals={0} suffix=" KB" />
           </div>
-          <div className="stat-label">Backprop (silicio)</div>
+          <div className="stat-label">Backprop · regla no local</div>
         </div>
         <div className="stat" style={{ textAlign: "center" }}>
           <div className="stat-num" style={{ color: "var(--carbon)" }}>
             <CountUp to={EXP.learning.stdpKB} decimals={0} suffix=" KB" />
           </div>
-          <div className="stat-label">STDP local (carbono)</div>
+          <div className="stat-label">STDP · regla local</div>
         </div>
         <div className="stat" style={{ textAlign: "center" }}>
-          <div className="stat-num" style={{ color: "#d94f4f" }}>
-            <CountUp to={EXP.learning.factor} decimals={0} suffix="×" />
+          {/* Sin CountUp: animar esta cifra la presentaría como un hallazgo. Es una
+              consecuencia analítica de la localidad de la regla (§IV.2). */}
+          <div className="stat-num" style={{ color: "var(--muted)" }}>
+            {EXP.learning.factor}×
           </div>
-          <div className="stat-label">Reducción de tráfico</div>
+          <div className="stat-label">◐ cálculo cerrado, no medición</div>
         </div>
       </div>
 

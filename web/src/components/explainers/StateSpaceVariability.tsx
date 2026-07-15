@@ -206,10 +206,15 @@ export default function StateSpaceVariability() {
       </div>
 
       <figcaption className="explainer-cap">
-        El silicio conmuta entre dos estados por sinapsis. El carbono codifica ~26 potenciales
-        graduados (4,7 bits) y, con moduladores químicos, multiplica el espacio de estados
-        exponencialmente. En 7000 sinapsis por neurona + 50–100 moléculas señalizadoras, el
-        carbono alcanza espacios de estado que el silicio requeriría miles de bits para emular.
+        La sinapsis biológica codifica ~26 potenciales graduados (4,7 bits; Bartol y cols., 2015) y,
+        con moduladores químicos, multiplica el espacio de estados exponencialmente.{" "}
+        <strong>Cautela — la comparación que este experimento publicaba era falsa:</strong> «el
+        silicio conmuta entre dos estados por sinapsis» no es un hecho sobre el silicio, sino una
+        decisión de representación mía. Un peso en <code>float32</code> tiene 2³² estados; el cómputo
+        analógico en silicio tiene un continuo. Esto no enfrentaba carbono contra silicio: enfrentaba
+        potenciales graduados contra una estipulación. Y el tamaño del espacio de estados{" "}
+        <em>no individúa nada</em>: un sistema con 2²⁶·⁰⁰⁰ estados y sin frontera definida sigue sin
+        ser nadie. Pieza de archivo del eje abandonado (§IV.1); no ilustra ningún paso de la tesis.
       </figcaption>
     </figure>
   );

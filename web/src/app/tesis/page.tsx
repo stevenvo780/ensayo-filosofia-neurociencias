@@ -17,13 +17,12 @@ import Reveal from "@/components/Reveal";
 import { enrichBlock } from "@/lib/enrich";
 import VonNeumannBus from "@/components/explainers/VonNeumannBus";
 import SparseCoding from "@/components/explainers/SparseCoding";
-import StateSpaceVariability from "@/components/explainers/StateSpaceVariability";
-import ExchangeMode from "@/components/explainers/ExchangeMode";
-import IOBandwidth from "@/components/explainers/IOBandwidth";
 import EfficiencyStaircase from "@/components/explainers/EfficiencyStaircase";
+import LandauerFloor from "@/components/explainers/LandauerFloor";
 import GammaOscillation from "@/components/explainers/GammaOscillation";
 import MorphologyFlops from "@/components/explainers/MorphologyFlops";
 import ArgMap from "@/components/ArgMap";
+import UnidadEquivocada from "@/components/UnidadEquivocada";
 
 // Enriquece la prosa de la tesis con los mismos tooltips de referencia del
 // ensayo (marca el primer token por párrafo/ítem). No toca headings, tablas ni
@@ -36,21 +35,41 @@ const mdComponents: Components = {
   img: () => null,
 };
 
-// Los explicadores pertenecen al laboratorio, que en esta versión está subordinado
-// y auditado: viven en §IV.5 («qué se conserva de los cinco ejes»), donde se los
-// reencuadra como comparaciones entre ESQUEMAS ORGANIZACIONALES —no entre
-// sustratos—. La clave es el número de sección (p. ej. «IV.5»).
+// Cada figura va donde trabaja el argumento que ilustra, no amontonada al final.
+// La clave es el número de sección (p. ej. «II.6»).
+//
+// Criterio de reparto: un explicador sólo se queda si ilustra un paso del argumento
+// que la tesis defiende HOY. Los cinco ejes se construyeron para el eje carbono/
+// silicio que §IV.1 declara muerto y §IV.5 reencuadra como comparación entre
+// ESQUEMAS ORGANIZACIONALES; el reencuadre no es gratis, así que sólo sobrevive lo
+// que ES organizacional (prueba: ¿el contraste es implementable en el otro
+// sustrato?). Fuera de la tesis, por no pasarla: StateSpaceVariability (la premisa
+// «el silicio es binario» es una estipulación, no un hecho), ExchangeMode (física de
+// materiales, no organización) e IOBandwidth (N^(1/6) es del empaquetado planar, no
+// del silicio; y sugiere que el carbono «gana» en integración causal, que es lo
+// contrario de lo que la tesis sostiene). Los tres siguen en /laboratorio, con su
+// leyenda auditada, como archivo del eje abandonado.
 const SECTION_VISUAL: Record<string, ReactNode> = {
+  // El cargo central de la Parte II —la conjunción que la prosa sólo puede afirmar
+  // y la tabla puede mostrar— junto a la aritmética que lo abre.
+  "II.2": <UnidadEquivocada />,
+  // §II.6 cita el grillo de Webb en prosa: es un pie de figura pidiendo su figura.
+  "II.6": <MorphologyFlops />,
+  // El dilema se enuncia y se cobra aquí; el mapa vuelve, ya no como promesa sino
+  // como remate. (No se construye un diagrama nuevo: ArgMap YA es esa figura.)
+  "III.2": <ArgMap />,
+  // «Un cálculo cerrado puede hacer vívida una consecuencia no obvia, pero no es
+  // evidencia»: SparseCoding es exactamente eso, y aquí demuestra la auditoría en
+  // vez de cometer el error que la auditoría denuncia.
+  "IV.2": <SparseCoding />,
+  // Los cuatro que sobreviven al reencuadre. Landauer va tras la escalera y es su
+  // antídoto: sin él, el lector puede leer los 104.450× como una barrera física.
   "IV.5": (
     <>
       <VonNeumannBus />
-      <SparseCoding />
-      <StateSpaceVariability />
-      <ExchangeMode />
-      <IOBandwidth />
       <EfficiencyStaircase />
+      <LandauerFloor />
       <GammaOscillation />
-      <MorphologyFlops />
     </>
   ),
 };

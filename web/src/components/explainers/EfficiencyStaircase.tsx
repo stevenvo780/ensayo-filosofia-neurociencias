@@ -270,8 +270,14 @@ export default function EfficiencyStaircase() {
       </div>
       <figcaption className="explainer-cap">
         La escalera no es monotónica: la brecha baja hasta ~3.000× en single-GPU 1M, donde mejor se
-        usa la VRAM, pero rebota a 104.450× en el híbrido 16M cuando aparecen PCIe, DDR y GIL. No es una
-        ley suave de escala, sino un patrón emergente de arquitectura y de sus cuellos sucesivos.
+        usa la VRAM, pero rebota a 104.450× en el híbrido 16M cuando aparecen PCIe, DDR y GIL. No es
+        una ley suave de escala, sino un patrón emergente de arquitectura y de sus cuellos sucesivos.{" "}
+        <strong>Léase con el descuento que el propio experimento se aplica:</strong> es la única
+        medición empíricamente genuina de este laboratorio, y es una <em>cota superior</em> de una
+        comparación <em>deliberadamente desfavorable</em> al silicio (§IV.2) — la única cifra real es
+        la que más se esforzó por perder. Y lo que la no-monotonicidad muestra no es una ley del
+        sustrato: la brecha la fija la <strong>arquitectura</strong>. Cambia la arquitectura y cambia
+        la brecha; el silicio no se movió.
       </figcaption>
     </figure>
   );
