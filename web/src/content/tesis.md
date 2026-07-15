@@ -7,13 +7,9 @@
 **Profesor:** Santiago Arango-Muñoz
 **Documento:** versión extendida (tesis) del ensayo *¿Silicio o Tejido?* · acompaña al laboratorio computacional reproducible
 
----
-
 ## Resumen
 
 El funcionalismo computacional afirma que la mente es sustrato-neutral: cualquier medio que implemente la organización funcional adecuada realizaría los mismos estados mentales. Este trabajo cuestiona esa neutralidad, pero con una distinción que recorre todo el texto y que me niego a difuminar: separo una **tesis práctica** —emular la física del carbono vivo sobre silicio digital impone costos que no son un detalle de ingeniería, sino el síntoma de una incompatibilidad material— de una **tesis ontológica** —el sustrato vivo sería constitutivo de la conciencia fenoménica—. La segunda *no se sigue* de la primera: la fundo, no en el costo energético, sino en la autopoiesis. El aporte metodológico es usar un laboratorio computacional (diez experimentos reproducibles) para hacer *visible* y *cuantificable* la divergencia de sustrato en cinco ejes —arquitectura, codificación, **variabilidad**, **modo de intercambio** e **I/O**—, y mostrar por qué esos ejes, tomados juntos, presionan la premisa central de la realizabilidad múltiple: que la organización funcionalmente relevante pueda preservarse en un medio de baja variabilidad, bajo ancho de banda e intercambio activo. Sitúo el trabajo en el linaje del naturalismo biológico y la continuidad vida-mente —Searle, Seth, Thompson, Damasio— y acoto mi aporte a lo metodológico: no la tesis de que la vida importa, ya establecida por ellos, sino un modo reproducible de *medir* la divergencia de sustrato y una firma operacional (Exp 10) de la autopoiesis.
-
----
 
 ## 0. Introducción y hoja de ruta
 
@@ -29,8 +25,6 @@ Mi tesis tiene dos niveles que conviene no confundir:
 
 La Parte II recorre cinco ejes de divergencia, cada uno anclado a experimentos. La Parte III hace el trabajo propiamente ontológico. La Parte IV enfrenta las objeciones más duras y marca dónde se detiene el argumento.
 
----
-
 ## Parte I. Por qué la ingeniería puede hacer trabajo filosófico
 
 La objeción metodológica es seria: medir la ineficiencia de una simulación no dice nada sobre la conciencia, luego el laboratorio sobra. Concedo la premisa (eficiencia ≠ fenomenología) y niego la conclusión. El laboratorio hace tres cosas que el argumento puramente conceptual no hace igual de bien.
@@ -44,8 +38,6 @@ Tercero, **disciplina la retórica**. Un benchmark que se ejecuta *deliberadamen
 La regla que adopto: **la ingeniería fija cotas y hace distinciones; la filosofía hace las inferencias.** El laboratorio nunca concluye "luego no hay qualia en silicio". Concluye "el costo de realización es estructural y de esta magnitud", y desde ahí el argumento filosófico decide qué se sigue —y qué no.
 
 Un apunte de honestidad sobre el anexo, porque un revisor exigente lo pedirá. Los diez experimentos no son homogéneos: unos son *analíticos* —cuentan FLOPs o memoria a partir de fórmulas y parámetros declarados (Exp 1-3, 5-9)— y no tienen varianza que acotar; otros son *simulaciones dinámicas* con aleatoriedad genuina —el benchmark, el Exp 4 (oscilaciones E-I) y el Exp 10 (acoplamiento homeostático)—, y ahí sí reporto incertidumbre (el Exp 10 la da como media ± DE sobre 24 semillas). No presento como "medición" lo que es un cálculo, ni como "ley del silicio" lo que es una implementación no optimizada. La fuerza del anexo no está en simular la biología con fidelidad de laboratorio húmedo —no lo pretende—, sino en hacer *contable*, con supuestos explícitos y reproducibles, una divergencia de sustrato que la discusión suele dejar en el terreno de la intuición.
-
----
 
 ## Parte II. La divergencia de sustrato en cinco ejes
 
@@ -97,8 +89,6 @@ Los cinco ejes convergen en el benchmark escalonado. El **Experimento 3–benchm
 
 Una cautela imprescindible, que la honestidad del método exige: la columna del silicio mide la potencia *total* de un hardware genérico no optimizado, y la del carbono, la señalización idealizada por spike. La brecha es una *cota superior* de una comparación deliberadamente desfavorable al silicio clásico, no una constante de sustrato; la cifra estrella (104.450×) vale como *síntoma* del cuello de botella, no como magnitud fundamental —una implementación optimizada o un sustrato neuromórfico la colapsarían—. Pero la *no-monotonicidad* enseña algo que ninguna cota podría falsear: la ineficiencia es **arquitectónica**, emergente de cruzar paredes físicas (variabilidad→memoria, I/O→PCIe, intercambio→DDR). Añadir más silicio no resuelve el problema de fondo: lo desplaza a otro cuello de botella. El benchmark no prueba que el silicio "no pueda"; prueba que el costo de realización es estructural y se reorganiza, no desaparece, al escalar.
 
----
-
 ## Parte III. Del costo material a la conjetura ontológica
 
 ### III.1. El puente que no cruzo (y por qué la travesía es tentadora)
@@ -139,8 +129,6 @@ Y precisamente porque la comparto debo decir dónde **aporto algo, y qué**, sin
 
 En justicia debo nombrar también a quien afila la objeción y a quien la complica. Piccinini (2015; Piccinini y Bahar, 2013) defiende que el cómputo es un mecanismo y que el cómputo *neural* es de una clase propia, no idéntica al cómputo digital clásico; esto refuerza §II.1 y §II.3 —la pregunta no es solo si el silicio puede *calcular la función*, sino si el cómputo neural es siquiera *la misma clase de cosa*—. Y el principio de energía libre de Friston (2010) describe la auto-organización de cualquier sistema con una *frontera de Markov* en términos indiferentes al sustrato: un flanco amistoso pero real. Mi respuesta: Friston captura la *forma* de la auto-organización, no si una implementación digital *desacoplada* preserva el acoplamiento material que mi κ mide; el principio es compatible con mi tesis, pero la sub-determina —y es justo ahí, en esa sub-determinación, donde el laboratorio añade lo que a la ecuación le falta—.
 
----
-
 ## Parte IV. Objeciones, límites y honestidad del argumento
 
 Un trabajo que se toma en serio debe señalar dónde puede fallar.
@@ -163,13 +151,9 @@ Un trabajo que se toma en serio debe señalar dónde puede fallar.
 
 **Dónde se detiene el argumento.** No pruebo que el silicio digital no pueda albergar conciencia. Pruebo que (a) la neutralidad *ingenua* del sustrato es falsa —el costo de realización es estructural y de cinco caras—, y (b) hay una hipótesis material y articulada —la autopoiesis— sobre qué del sustrato podría ser constitutivo de la experiencia. Entre (a) y "no hay qualia en silicio" queda un abismo que este trabajo no cruza, y que señala precisamente para no fingir haberlo cruzado.
 
----
-
 ## Conclusión
 
 Si el método es usar la ingeniería para demostrar puntos filosóficos, hay que tener *ambas cosas* al máximo: ni un ensayo que decora la filosofía con GPUs, ni un benchmark que se disfraza de metafísica. Este trabajo sostiene que la divergencia de sustrato es real y estructural en cinco ejes —arquitectura, codificación, variabilidad, modo de intercambio y ancho de banda de I/O—, que el laboratorio la hace visible y cuantificable, y que esa divergencia presiona la lectura fuerte de la realizabilidad múltiple sin refutarla: traslada la carga de la prueba a quien afirme que la organización relevante se preserva en un medio de baja variabilidad, intercambio activo y I/O planar. El paso a lo ontológico no lo da la energía, sino la autopoiesis: la conjetura de que la conciencia primaria requiere la vulnerabilidad de un sistema que debe producirse para existir. Concluyo, pues, con una tesis práctica demostrada y una tesis ontológica *plausible pero no concluyente* —y con la convicción metodológica de que decir exactamente hasta dónde llega la evidencia es, también, hacer filosofía.
-
----
 
 ## Bibliografía
 

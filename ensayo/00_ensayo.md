@@ -6,8 +6,6 @@
 **Institución:** Instituto de Filosofía, Universidad de Antioquia  
 **Anexo experimental:** laboratorio computacional reproducible (10 experimentos biofísicos + benchmark escalonado en cuatro tiers de hardware). Los tres últimos ejes se desarrollan en la *tesis* anexa. Las figuras 1–7 están incrustadas en el texto.
 
----
-
 ## Introducción
 
 El problema de la relación mente–sustrato es uno de los más densos de la filosofía de la ciencia contemporánea. A mediados del siglo XX, el funcionalismo formuló la *tesis de la realizabilidad múltiple* (Putnam, 1967; Fodor, 1974): los estados mentales son esencialmente estados funcionales y, por tanto, realizables en cualquier medio —carbono, silicio o cualquier soporte— capaz de sostener las transiciones de estado adecuadas. De ahí nació la *metáfora del cerebro como computadora* (Daugman, 2001) y la convicción de que los modelos conexionistas (Hinton, 1992) en microchips digitales producirían, con suficiente escala, procesos cognitivos.
@@ -15,8 +13,6 @@ El problema de la relación mente–sustrato es uno de los más densos de la fil
 Este ensayo defiende una tesis con dos niveles que conviene no confundir. En el nivel **práctico**, sostengo que emular la física continua del carbono vivo sobre silicio digital impone costos que no son un detalle de ingeniería, sino el síntoma de una profunda incompatibilidad material. En el nivel **ontológico** —más especulativo—, exploro si el sustrato vivo es constitutivo de la conciencia; y advierto desde ya que *esta segunda afirmación no se sigue de la primera*: no la fundo en el costo energético, sino en la autopoiesis. Articulo ambos niveles con tres cortes de un laboratorio anexo: la economía de la codificación, el límite termodinámico de la señalización y la relación entre autopoiesis y conciencia.
 
 Para no caer en una caricatura, distingo el silicio digital clásico de Von Neumann —lo que el laboratorio simula— de los paradigmas neuromórficos analógicos (*Loihi*, memristores): el debate no es "silicio vs. carbono", sino cómputo lógico discretizado frente a dinámica física continua.
-
----
 
 ## 1. Plasticidad local y el cuello de botella de Von Neumann
 
@@ -34,8 +30,6 @@ Los modelos conexionistas (Hinton, 1992) emulan la plasticidad mediante aprendiz
 
 La plasticidad en silicio es, así, una costosa simulación de representaciones globales abstractas; en el carbono, una reconfiguración física local y pasiva.
 
----
-
 ## 2. Percepción: codificación esparcida frente a densidad de silicio
 
 En las redes profundas de silicio la representación es densa: clasificar un patrón exige activar simultáneamente millones de pesos en operaciones matriciales. La neurobiología muestra otra estrategia. Quian Quiroga, Fried y Koch (2013) hallaron en el lóbulo temporal medial humano "células de concepto" de selectividad extrema —responden a "Jennifer Aniston" o "Luke Skywalker"—: una fracción minúscula de neuronas dispara, rodeada de silencio eléctrico. (No son literalmente neuronas-abuela únicas, advierten los autores, sino un código esparcido *pero* distribuido.)
@@ -52,8 +46,6 @@ Ese silencio no es inactividad, sino inhibición competitiva: una codificación 
 *Fig. 3 — Experimento 2: la esparsidad del 1 % reduce el solapamiento conceptual del 80,0 % al 1,03 %.*
 
 La esparsidad es, pues, una optimización material del sustrato húmedo. En silicio, simular el silencio de una neurona obliga a computar explícitamente el valor cero: se gasta energía de conmutación para procesar la ausencia de señal.
-
----
 
 ## 3. Diversidad de señales, termodinámica y la paradoja energética
 
@@ -82,8 +74,6 @@ Segunda, y más importante: esa brecha es **arquitectónica**, no fundamental �
 
 Esa asimetría se ramifica en tres ejes que la **tesis** anexa desarrolla —la *variabilidad* del estado sináptico (graduado vs. binario), el *modo de intercambio* (químico pasivo vs. eléctrico activo) y el *ancho de banda de I/O* (fan-out y entrega circulatoria vs. cableado plano)—. No es que el silicio no compute la función: su física es de otra clase.
 
----
-
 ## 4. Dinámica temporal, autopoiesis y la objeción funcionalista
 
 Esta divergencia nos traslada del terreno técnico al metafísico; debo evitar aquí un salto ilícito. El funcionalismo sostiene que el sustrato es ontológicamente irrelevante (Putnam, 1967), y acierta en algo decisivo: **una brecha de eficiencia, por enorme que sea, no implica por sí sola ausencia de conciencia.** Eficiencia y fenomenología son magnitudes ortogonales, y la realizabilidad múltiple *predice* que los detalles de implementación (energía, calor, velocidad) varíen entre sustratos sin tocar la organización funcional. La objeción más aguda es la de Chalmers (1995): si sustituyéramos las neuronas por chips funcionalmente idénticos, los qualia no deberían "danzar" ni "desvanecerse" sin que el sujeto lo notara; luego la experiencia la fijaría la organización, no el material.
@@ -99,8 +89,6 @@ Refino entonces la tesis sin sobreafirmarla: **el silicio digital puede replicar
 
 Y la sitúo con honestidad: **no soy el primero en atar la conciencia a la vida**. El *naturalismo biológico* de Searle (1980, 1992) —cuya habitación china ya negó que la sintaxis del cómputo baste para la semántica—, la continuidad vida-mente de Thompson (2007) y la neurociencia de la homeostasis de Damasio (2010) y Seth (2021) —el yo consciente como regulación de un cuerpo vivo— convergen en que la conciencia podría requerir estar vivo. Mi aporte no es esa tesis, sino el **método**: un laboratorio reproducible que vuelve *cuantificable* la divergencia de sustrato y mide su firma —el acoplamiento entre cómputo y auto-mantenimiento del Experimento 10—.
 
----
-
 ## 5. Cómputo morfológico y acoplamiento activo: Webb y Clark
 
 La relación mente–sustrato debe analizarse también fuera del cráneo: la cognición es corporizada e interactiva. El grillo robot de Webb (1996) lo ilustra. Para emular la fonotaxis, Webb no programó correlación acústica, sino **cómputo morfológico**: la distancia entre los micrófonos y un tubo de desfase emulaban la tráquea del grillo y resolvían la localización pasivamente, por la física del cuerpo. El **Experimento 6** modela la diferencia: el modelo desencarnado (silicio puro) calcula la dirección del sonido con correlación cruzada y Transformadas de Fourier, **757.760 FLOPs** por ciclo; el modelo corporizado reduce el cómputo *neural* a una resta de amplitud de solo **2 FLOPs** (Fig. 7).
@@ -112,13 +100,9 @@ Ahora bien, el cómputo no desaparece: se **reubica** en la física del cuerpo. 
 
 Esto permite ubicar a Clark: la mente extendida (2015, 2023) sostiene que herramientas de silicio se integran en el procesamiento predictivo del cerebro. Pero Clark es, en el fondo, funcionalista; tomo su fenomenología sin su principio de paridad: el silicio es un excelente **andamio cognitivo sintáctico**, pero la intencionalidad originaria sigue anclada en el organismo autopoiético que se juega la existencia.
 
----
-
 ## Conclusión
 
 El análisis muestra que la equiparación funcionalista entre cerebro y computadora digital es, cuando menos, incompleta. La ineficiencia termodinámica del silicio clásico prueba una incompatibilidad *material* concreta: simular con conmutación binaria discreta la física molecular continua y pasiva del carbono vivo impone un costo práctico insostenible. De ahí *no* se sigue la tesis ontológica; esta descansa en un argumento independiente —la autopoiesis—, que vuelve *plausible*, sin demostrarlo, que aquello que convierte un proceso físico en experiencia sea la vulnerabilidad de un sistema que se auto-produce. Como advierte la falacia mereológica (Bennett y Hacker, 2022), no debemos atribuir a una parte —un chip, o un cerebro aislado— facultades propias del organismo corporizado entero que interactúa con su mundo. Si el silicio ha de participar en la emulación de la mente, habrá que abandonar el paradigma digital clásico de Turing y transitar hacia una tecnología neuromórfica analógica corporizada, aceptando que el pensamiento acaso no sea el cálculo frío de un software abstracto, sino una propiedad intrínseca de la dinámica material de la vida.
-
----
 
 ## Bibliografía
 
